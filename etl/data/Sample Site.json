@@ -1,0 +1,695 @@
+db.site.insert({
+	"siteHierarchy": [{
+		"siteId": "1",
+		"siteCode": "DMST01",
+		"siteName": "DEMO SITE 01",
+		"isActive": "True",
+		"orgHierarchy": [{
+				"organizationId": "1",
+				"organizationName": "DEMO ORGANIZATION 01",
+				"organizationCode": "DMORG01",
+				"organizationType": "ORGANIZATION",
+				"organizationSubType": "PRIVATE",
+				"country": "IND",
+				"region": "ASIA",
+				"address": [{
+						"addressType": "Registered",
+						"addressLine1": "",
+						"addressLine2": "",
+						"addressLine3": "",
+						"city": "",
+						"state": "",
+						"country": "",
+						"pincode": "",
+						"isActive": "True"
+					},
+					{
+						"addressType": "Work",
+						"addressLine1": "",
+						"addressLine2": "",
+						"addressLine3": "",
+						"city": "",
+						"state": "",
+						"country": "",
+						"pincode": "",
+						"isActive": "False"
+					}
+				],
+				"contactDetails": [{
+						"phone": [{
+							"countryCode": "Work",
+							"format": "",
+							"phoneNumber": "",
+							"isActive": "True"
+						}, {
+							"contactType": "Work",
+							"countryCode": "",
+							"format": "",
+							"phoneNumber": "",
+							"isActive": "True"
+						}]
+					},
+					{
+						"email": [{
+							"emailType": "Work",
+							"emailAddress": "",
+							"isActive": "True"
+						}, {
+							"emailType": "Home",
+							"emailAddress": "",
+							"isActive": "True"
+						}]
+					}
+				],
+				"entities": [{
+						"entityName": "DEMO ENTITY 01",
+						"entityCode": "ORG001-ENT001",
+						"entityDescription": "DEMO ENTITY 01 FOR ORG 001",
+						"entityLevel": "1",
+						"isActive": "True",
+						"entityType": "HO",
+						"parentEntity": "",
+						"isETLEnabled": "True",
+						"address": [{
+							"addressType": "Registered",
+							"addressLine1": "",
+							"addressLine2": "",
+							"addressLine3": "",
+							"city": "",
+							"state": "",
+							"country": "",
+							"pincode": "",
+							"isActive": "True"
+						}],
+						"contactDetails": [{
+								"phone": [{
+									"countryCode": "Work",
+									"format": "",
+									"phoneNumber": "",
+									"isActive": "True"
+								}, {
+									"contactType": "Work",
+									"countryCode": "",
+									"format": "",
+									"phoneNumber": "",
+									"isActive": "True"
+								}]
+							},
+							{
+								"email": [{
+									"emailType": "Work",
+									"emailAddress": "",
+									"isActive": "True"
+								}, {
+									"emailType": "Home",
+									"emailAddress": "",
+									"isActive": "True"
+								}]
+							}
+						],
+						"branches": [{
+								"entityName": "DEMO BRANCH 01",
+								"entityCode": "ORG001-ENT002-BRN001",
+								"entityDescription": "DEMO BRANCH 01 FOR ENTITY 01 UNDER ORG 001",
+								"entityLevel": "2",
+								"isActive": "True",
+								"entityType": "BRANCH",
+								"parentEntityCode": "ORG001-ENT001",
+								"isETLEnabled": "True",
+								"address": [{
+									"addressType": "Registered",
+									"addressLine1": "",
+									"addressLine2": "",
+									"addressLine3": "",
+									"city": "",
+									"state": "",
+									"country": "",
+									"pincode": "",
+									"isActive": "True"
+								}],
+								"contactDetails": [{
+										"phone": [{
+											"countryCode": "Work",
+											"format": "",
+											"phoneNumber": "",
+											"isActive": "True"
+										}, {
+											"contactType": "Work",
+											"countryCode": "",
+											"format": "",
+											"phoneNumber": "",
+											"isActive": "True"
+										}]
+									},
+									{
+										"email": [{
+											"emailType": "Work",
+											"emailAddress": "",
+											"isActive": "True"
+										}, {
+											"emailType": "Home",
+											"emailAddress": "",
+											"isActive": "True"
+										}]
+									}
+								]
+							},
+							{
+								"entityName": "DEMO BRANCH 02",
+								"entityCode": "ORG001-ENT002-BRN002",
+								"entityDescription": "DEMO BRANCH 02 FOR ENTITY 01 UNDER ORG 001",
+								"entityLevel": "2",
+								"isActive": "True",
+								"entityType": "BRANCH",
+								"parentEntityCode": "ORG001-ENT001",
+								"isETLEnabled": "True",
+								"address": [{
+									"addressType": "Registered",
+									"addressLine1": "",
+									"addressLine2": "",
+									"addressLine3": "",
+									"city": "",
+									"state": "",
+									"country": "",
+									"pincode": "",
+									"isActive": "True"
+								}],
+								"contactDetails": [{
+										"phone": [{
+											"countryCode": "Work",
+											"format": "",
+											"phoneNumber": "",
+											"isActive": "True"
+										}, {
+											"contactType": "Work",
+											"countryCode": "",
+											"format": "",
+											"phoneNumber": "",
+											"isActive": "True"
+										}]
+									},
+									{
+										"email": [{
+											"emailType": "Work",
+											"emailAddress": "",
+											"isActive": "True"
+										}, {
+											"emailType": "Home",
+											"emailAddress": "",
+											"isActive": "True"
+										}]
+									}
+								]
+							}
+						]
+					},
+					{
+						"entityName": "DEMO ENTITY 02",
+						"entityCode": "ORG001-ENT002",
+						"entityDescription": "DEMO ENTITY 02 FOR ORG 001",
+						"entityLevel": "1",
+						"isActive": "True",
+						"entityType": "",
+						"parentEntity": "",
+						"isETLEnabled": "True",
+						"address": [{
+							"addressType": "Registered",
+							"addressLine1": "",
+							"addressLine2": "",
+							"addressLine3": "",
+							"city": "",
+							"state": "",
+							"country": "",
+							"pincode": "",
+							"isActive": "True"
+						}],
+						"contactDetails": [{
+								"phone": [{
+									"countryCode": "Work",
+									"format": "",
+									"phoneNumber": "",
+									"isActive": "True"
+								}, {
+									"contactType": "Work",
+									"countryCode": "",
+									"format": "",
+									"phoneNumber": "",
+									"isActive": "True"
+								}]
+							},
+							{
+								"email": [{
+									"emailType": "Work",
+									"emailAddress": "",
+									"isActive": "True"
+								}, {
+									"emailType": "Home",
+									"emailAddress": "",
+									"isActive": "True"
+								}]
+							}
+						],
+						"branches": [{
+								"entityName": "DEMO BRANCH 01",
+								"entityCode": "ORG001-ENT002-BRN001",
+								"entityDescription": "DEMO BRANCH 01 FOR ENTITY 02 UNDER ORG 001",
+								"entityLevel": "2",
+								"isActive": "True",
+								"entityType": "BRANCH",
+								"parentEntityCode": "ORG001-ENT002",
+								"isETLEnabled": "True",
+								"address": [{
+									"addressType": "Registered",
+									"addressLine1": "",
+									"addressLine2": "",
+									"addressLine3": "",
+									"city": "",
+									"state": "",
+									"country": "",
+									"pincode": "",
+									"isActive": "True"
+								}],
+								"contactDetails": [{
+										"phone": [{
+											"countryCode": "Work",
+											"format": "",
+											"phoneNumber": "",
+											"isActive": "True"
+										}, {
+											"contactType": "Work",
+											"countryCode": "",
+											"format": "",
+											"phoneNumber": "",
+											"isActive": "True"
+										}]
+									},
+									{
+										"email": [{
+											"emailType": "Work",
+											"emailAddress": "",
+											"isActive": "True"
+										}, {
+											"emailType": "Home",
+											"emailAddress": "",
+											"isActive": "True"
+										}]
+									}
+								]
+							},
+							{
+								"entityName": "DEMO BRANCH 02",
+								"entityCode": "ORG001-ENT002-BRN002",
+								"entityDescription": "DEMO BRANCH 02 FOR ENTITY 02 UNDER ORG 001",
+								"entityLevel": "2",
+								"isActive": "True",
+								"entityType": "BRANCH",
+								"parentEntityCode": "ORG001-ENT002",
+								"isETLEnabled": "True",
+								"address": [{
+									"addressType": "Registered",
+									"addressLine1": "",
+									"addressLine2": "",
+									"addressLine3": "",
+									"city": "",
+									"state": "",
+									"country": "",
+									"pincode": "",
+									"isActive": "True"
+								}],
+								"contactDetails": [{
+										"phone": [{
+											"countryCode": "Work",
+											"format": "",
+											"phoneNumber": "",
+											"isActive": "True"
+										}, {
+											"contactType": "Work",
+											"countryCode": "",
+											"format": "",
+											"phoneNumber": "",
+											"isActive": "True"
+										}]
+									},
+									{
+										"email": [{
+											"emailType": "Work",
+											"emailAddress": "",
+											"isActive": "True"
+										}, {
+											"emailType": "Home",
+											"emailAddress": "",
+											"isActive": "True"
+										}]
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"organizationId": "2",
+				"organizationName": "DEMO ORGANIZATION 02",
+				"organizationCode": "DMORG02",
+				"organizationType": "ORGANIZATION",
+				"organizationSubType": "PRIVATE",
+				"country": "USA",
+				"region": "NA",
+				"address": [{
+						"addressType": "Registered",
+						"addressLine1": "",
+						"addressLine2": "",
+						"addressLine3": "",
+						"city": "",
+						"state": "",
+						"country": "",
+						"pincode": "",
+						"isActive": "True"
+					},
+					{
+						"addressType": "Work",
+						"addressLine1": "",
+						"addressLine2": "",
+						"addressLine3": "",
+						"city": "",
+						"state": "",
+						"country": "",
+						"pincode": "",
+						"isActive": "False"
+					}
+				],
+				"contactDetails": [{
+						"phone": [{
+							"countryCode": "Work",
+							"format": "",
+							"phoneNumber": "",
+							"isActive": "True"
+						}, {
+							"contactType": "Work",
+							"countryCode": "",
+							"format": "",
+							"phoneNumber": "",
+							"isActive": "True"
+						}]
+					},
+					{
+						"email": [{
+							"emailType": "Work",
+							"emailAddress": "",
+							"isActive": "True"
+						}, {
+							"emailType": "Home",
+							"emailAddress": "",
+							"isActive": "True"
+						}]
+					}
+				],
+				"entities": [{
+						"entityName": "DEMO ENTITY 01",
+						"entityCode": "ORG002-ENT001",
+						"entityDescription": "DEMO ENTITY 01 FOR ORG 002",
+						"entityLevel": "1",
+						"isActive": "True",
+						"entityType": "HO",
+						"parentEntity": "",
+						"isETLEnabled": "True",
+						"address": [{
+							"addressType": "Registered",
+							"addressLine1": "",
+							"addressLine2": "",
+							"addressLine3": "",
+							"city": "",
+							"state": "",
+							"country": "",
+							"pincode": "",
+							"isActive": "True"
+						}],
+						"contactDetails": [{
+								"phone": [{
+									"countryCode": "Work",
+									"format": "",
+									"phoneNumber": "",
+									"isActive": "True"
+								}, {
+									"contactType": "Work",
+									"countryCode": "",
+									"format": "",
+									"phoneNumber": "",
+									"isActive": "True"
+								}]
+							},
+							{
+								"email": [{
+									"emailType": "Work",
+									"emailAddress": "",
+									"isActive": "True"
+								}, {
+									"emailType": "Home",
+									"emailAddress": "",
+									"isActive": "True"
+								}]
+							}
+						],
+						"branches": [{
+								"entityName": "DEMO BRANCH 01",
+								"entityCode": "ORG002-ENT002-BRN001",
+								"entityDescription": "DEMO BRANCH 01 FOR ENTITY 01 UNDER ORG 002",
+								"entityLevel": "2",
+								"isActive": "True",
+								"entityType": "BRANCH",
+								"parentEntityCode": "ORG002-ENT001",
+								"isETLEnabled": "True",
+								"address": [{
+									"addressType": "Registered",
+									"addressLine1": "",
+									"addressLine2": "",
+									"addressLine3": "",
+									"city": "",
+									"state": "",
+									"country": "",
+									"pincode": "",
+									"isActive": "True"
+								}],
+								"contactDetails": [{
+										"phone": [{
+											"countryCode": "Work",
+											"format": "",
+											"phoneNumber": "",
+											"isActive": "True"
+										}, {
+											"contactType": "Work",
+											"countryCode": "",
+											"format": "",
+											"phoneNumber": "",
+											"isActive": "True"
+										}]
+									},
+									{
+										"email": [{
+											"emailType": "Work",
+											"emailAddress": "",
+											"isActive": "True"
+										}, {
+											"emailType": "Home",
+											"emailAddress": "",
+											"isActive": "True"
+										}]
+									}
+								]
+							},
+							{
+								"entityName": "DEMO BRANCH 02",
+								"entityCode": "ORG002-ENT002-BRN002",
+								"entityDescription": "DEMO BRANCH 02 FOR ENTITY 01 UNDER ORG 002",
+								"entityLevel": "2",
+								"isActive": "True",
+								"entityType": "BRANCH",
+								"parentEntityCode": "ORG002-ENT001",
+								"isETLEnabled": "True",
+								"address": [{
+									"addressType": "Registered",
+									"addressLine1": "",
+									"addressLine2": "",
+									"addressLine3": "",
+									"city": "",
+									"state": "",
+									"country": "",
+									"pincode": "",
+									"isActive": "True"
+								}],
+								"contactDetails": [{
+										"phone": [{
+											"countryCode": "Work",
+											"format": "",
+											"phoneNumber": "",
+											"isActive": "True"
+										}, {
+											"contactType": "Work",
+											"countryCode": "",
+											"format": "",
+											"phoneNumber": "",
+											"isActive": "True"
+										}]
+									},
+									{
+										"email": [{
+											"emailType": "Work",
+											"emailAddress": "",
+											"isActive": "True"
+										}, {
+											"emailType": "Home",
+											"emailAddress": "",
+											"isActive": "True"
+										}]
+									}
+								]
+							}
+						]
+					},
+					{
+						"entityName": "DEMO ENTITY 02",
+						"entityCode": "ORG002-ENT002",
+						"entityDescription": "DEMO ENTITY 02 FOR ORG 002",
+						"entityLevel": "1",
+						"isActive": "True",
+						"entityType": "",
+						"parentEntity": "",
+						"isETLEnabled": "True",
+						"address": [{
+							"addressType": "Registered",
+							"addressLine1": "",
+							"addressLine2": "",
+							"addressLine3": "",
+							"city": "",
+							"state": "",
+							"country": "",
+							"pincode": "",
+							"isActive": "True"
+						}],
+						"contactDetails": [{
+								"phone": [{
+									"countryCode": "Work",
+									"format": "",
+									"phoneNumber": "",
+									"isActive": "True"
+								}, {
+									"contactType": "Work",
+									"countryCode": "",
+									"format": "",
+									"phoneNumber": "",
+									"isActive": "True"
+								}]
+							},
+							{
+								"email": [{
+									"emailType": "Work",
+									"emailAddress": "",
+									"isActive": "True"
+								}, {
+									"emailType": "Home",
+									"emailAddress": "",
+									"isActive": "True"
+								}]
+							}
+						],
+						"branches": [{
+								"entityName": "DEMO BRANCH 01",
+								"entityCode": "ORG002-ENT002-BRN001",
+								"entityDescription": "DEMO BRANCH 01 FOR ENTITY 02 UNDER ORG 002",
+								"entityLevel": "2",
+								"isActive": "True",
+								"entityType": "BRANCH",
+								"parentEntityCode": "ORG002-ENT002",
+								"isETLEnabled": "True",
+								"address": [{
+									"addressType": "Registered",
+									"addressLine1": "",
+									"addressLine2": "",
+									"addressLine3": "",
+									"city": "",
+									"state": "",
+									"country": "",
+									"pincode": "",
+									"isActive": "True"
+								}],
+								"contactDetails": [{
+										"phone": [{
+											"countryCode": "Work",
+											"format": "",
+											"phoneNumber": "",
+											"isActive": "True"
+										}, {
+											"contactType": "Work",
+											"countryCode": "",
+											"format": "",
+											"phoneNumber": "",
+											"isActive": "True"
+										}]
+									},
+									{
+										"email": [{
+											"emailType": "Work",
+											"emailAddress": "",
+											"isActive": "True"
+										}, {
+											"emailType": "Home",
+											"emailAddress": "",
+											"isActive": "True"
+										}]
+									}
+								]
+							},
+							{
+								"entityName": "DEMO BRANCH 02",
+								"entityCode": "ORG002-ENT002-BRN002",
+								"entityDescription": "DEMO BRANCH 02 FOR ENTITY 02 UNDER ORG 002",
+								"entityLevel": "2",
+								"isActive": "True",
+								"entityType": "BRANCH",
+								"parentEntityCode": "ORG002-ENT002",
+								"isETLEnabled": "True",
+								"address": [{
+									"addressType": "Registered",
+									"addressLine1": "",
+									"addressLine2": "",
+									"addressLine3": "",
+									"city": "",
+									"state": "",
+									"country": "",
+									"pincode": "",
+									"isActive": "True"
+								}],
+								"contactDetails": [{
+										"phone": [{
+											"countryCode": "Work",
+											"format": "",
+											"phoneNumber": "",
+											"isActive": "True"
+										}, {
+											"contactType": "Work",
+											"countryCode": "",
+											"format": "",
+											"phoneNumber": "",
+											"isActive": "True"
+										}]
+									},
+									{
+										"email": [{
+											"emailType": "Work",
+											"emailAddress": "",
+											"isActive": "True"
+										}, {
+											"emailType": "Home",
+											"emailAddress": "",
+											"isActive": "True"
+										}]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}]
+})

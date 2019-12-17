@@ -1,0 +1,23 @@
+{
+"moduleCode":"ACTPBL",
+"moduleDimensions":
+[{
+"_id":"1",
+"dimensionName":"Period",
+"dimensionCode":"dmPeriod",
+"dimensionType":"date"
+"isHierarchy":"False",
+"dimensionAttributes":{"YEAR","QUARTER","WOY","MONTH","WOM","DAY"},
+"dimensionRange":{"YEAR":"[-5]:[0]:[+5]"}, "MONTH":"[-12]:[0]:[+12]", "QUARTER":"[-4]:[0]:[+4]", "WOY":"[-52]:[0]:[+52]", "WOM":"[-5]:[0]:[+5]", "DAY":"[-31]:[0]:[+31]"}
+},
+{
+"_id":"2",
+"dimensionName":"Period",
+"dimensionCode":"dmPeriod",
+"dimensionType":"date"
+"isHierarchy":"False",
+
+}
+
+]
+}

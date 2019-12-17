@@ -1,0 +1,165 @@
+db.kpis.insert({
+	"_id": "1",
+	"siteCode": "DMST01",
+	"organizationCode": "DMORG01",
+	"moduleCode": "ACTPBL",
+	"dataModelCode": "DM_ACTPBL_INVOICE",
+	"kpis": [{
+		"_id": "1",
+		"seq": "1",
+		"kpiName": "Sales Analysis",
+		"kpiDescription": "",
+		"kpiCode": "SLSNLYS",
+		"kpiType": [
+			"time", "lookup"
+		],
+		"aggregationType": "standard",
+		"customRoutine": "",
+		"dimensions": [{
+				"_id": "1",
+				"displayOrder": "1",
+				"dimensionName": "Period",
+				"dimensionCode": "dmPeriod",
+				"dimensionType": "date",
+				"isHierarchy": "False",
+				"isActive": "True",
+				"isFilter": "False",
+				"isSlider": "True",
+				"isSorted": "True",
+				"sortOrder": "desc",
+				"dimensionAttributes": ["YEAR", "QUARTER", "WOY", "MONTH", "WOM", "DAY"],
+				"defaults": {
+					"YEAR": "current",
+					"QUARTER": "current",
+					"WOY": "current",
+					"MONTH": "current",
+					"WOM": "current",
+					"DAY": "current"
+				},
+				"filterKeys": "",
+				"dimensionRange": {
+					"YEAR": "[-5]:[0]:[+5]",
+					"MONTH": "[-12]:[0]:[+12]",
+					"QUARTER": "[-4]:[0]:[+4]",
+					"WOY": "[-52]:[0]:[+52]",
+					"WOM": "[-5]:[0]:[+5]",
+					"DAY": "[-31]:[0]:[+31]"
+				}
+			},
+			{
+				"_id": "2",
+				"displayOrder": "2",
+				"dimensionName": "Customer Region",
+				"dimensionCode": "dmCustRegion",
+				"dimensionType": "lookup",
+				"isHierarchy": "False",
+				"isFilter": "True",
+				"isActive": "True",
+				"isSlider": "False",
+				"isSorted": "True",
+				"sortOrder": "asc",
+				"dimensionAttributes": "master.customer.customerRegion",
+				"defaults": "",
+				"filterKeys": ["siteCode", "organizationCode", "moduleCode"],
+				"dimensionRange": ""
+			},
+			{
+				"_id": "3",
+				"displayOrder": "3",
+				"dimensionName": "Customer Type",
+				"dimensionCode": "dmCustType",
+				"dimensionType": "lookup",
+				"isHierarchy": "False",
+				"isFilter": "True",
+				"isActive": "True",
+				"isSlider": "False",
+				"isSorted": "True",
+				"sortOrder": "asc",
+				"dimensionAttributes": "master.customer.customerType",
+				"defaults": "",
+				"filterKeys": ["siteCode", "organizationCode", "moduleCode"],
+				"dimensionRange": ""
+			},
+			{
+				"_id": "4",
+				"displayOrder": "4",
+				"dimensionName": "Customer Category",
+				"dimensionCode": "dmCustCategory",
+				"dimensionType": "lookup",
+				"isHierarchy": "False",
+				"isFilter": "True",
+				"isActive": "True",
+				"isSlider": "False",
+				"isSorted": "True",
+				"sortOrder": "asc",
+				"dimensionAttributes": "master.customer.customerCategory",
+				"defaults": "",
+				"filterKeys": ["siteCode", "organizationCode", "moduleCode"],
+				"dimensionRange": ""
+			},
+			{
+				"_id": "5",
+				"displayOrder": "5",
+				"dimensionName": "Channel",
+				"dimensionCode": "dmChannel",
+				"dimensionType": "lookup",
+				"isHierarchy": "False",
+				"isFilter": "True",
+				"isActive": "True",
+				"isSlider": "False",
+				"isSorted": "True",
+				"sortOrder": "asc",
+				"dimensionAttributes": "master.customer.Channel",
+				"defaults": "",
+				"filterKeys": ["siteCode", "organizationCode", "moduleCode"],
+				"dimensionRange": ""
+			},
+			{
+				"_id": "6",
+				"displayOrder": "6",
+				"dimensionName": "Customer Name",
+				"dimensionCode": "dmCustName",
+				"dimensionType": "lookup",
+				"isHierarchy": "False",
+				"isFilter": "True",
+				"isActive": "True",
+				"isSlider": "False",
+				"isSorted": "True",
+				"sortOrder": "asc",
+				"dimensionAttributes": "master.customer.Customer",
+				"defaults": "",
+				"filterKeys": ["siteCode", "organizationCode", "moduleCode"],
+				"dimensionRange": ""
+			}
+
+		],
+		"measures": [{
+				"_id": "1",
+				"measureName": "Total Invoice Value",
+				"measureCode": "msInvoiceAmount",
+				"isActive": "True",
+				"isByCount": "True",
+				"isByValue": "True",
+				"attributeName": "invoiceValue"
+			},
+			{
+				"_id": "2",
+				"measureName": "Total Line Amount",
+				"measureCode": "msLineAmount",
+				"isActive": "True",
+				"isByCount": "True",
+				"isByValue": "True",
+				"attributeName": "lineAmount"
+			},
+			{
+				"_id": "3",
+				"measureName": "Total Assessable Amount",
+				"measureCode": "msAssessableAmount",
+				"isActive": "True",
+				"isByCount": "True",
+				"isByValue": "True",
+				"attributeName": "totalAssessablevalue"
+			}
+		]
+	}]
+})
