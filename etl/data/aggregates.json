@@ -1,0 +1,52 @@
+db.aggregates.insert(
+[{
+		"_id":"1",	
+		"catalogId": "1",
+		"processingSeq":"01",
+		"aggSourceDataSetCode":"DMST01_DMORG01_ACTPBL_INVOICE_02",
+		"aggCode":"DMST01_DMORG01_ACTPBL_INVOICE_02_TS_AGG_01",		
+		"aggCategory": "TimeSeries",
+		"isRebuild":"False",
+		"isAppend":"True",
+		"isActive":"True",
+		"createdOn": ISODate("2019-01-01T04:00:00Z"),
+		"lastUpdatedOn":ISODate("2019-01-01T04:00:00Z"),
+		"lastUpdatedBy":"orgadmin1",
+		"deActivatedOn":"",
+		"isTimeSeries":"True",	
+		"dimensions":
+		[
+			{"dimId":"01", "dimCode":"dmPeriodInvoiceDate", "dimDisplayName":"Period","dimType":"ByDate", "isHierarchy":"True", "attributeName":["invoiceDate"], "dimGranularity": ["YEAR", "QUARTER", "WOY", "MONTH", "WOM", "DAY"],"isActive":"True"}
+		],
+		"measures":
+		[
+			{"measureId":"01", "measureCode":"msInvoiceAmount", "measureDisplayName":"Total Invoice Amount","measureType":["ByValue","ByCount"], "attributeName":"invoiceValue", "isActive":"True", "measureOperators":["Sum", "Count", "Min", "Max", "Avg"]},
+			{"measureId":"02", "measureCode":"msLineAmount", "measureDisplayName":"Total Line Amount","measureType":["ByValue" ], "attributeName":"lineAmount", "isActive":"True", "measureOperators":"Sum"},
+			{"measureId":"03", "measureCode":"msAssessableAmount", "measureDisplayName":"Total Assessable Amount","measureType":["ByValue"], "attributeName":"totalAssessablevalue", "isActive":"True" , "measureOperators":"Sum"}
+		]
+	},
+	{
+		"_id":"2",	
+		"processingSeq":"02",
+		"aggSourceDataSetCode":"DMST01_DMORG01_ACTPBL_INVOICE_02",
+		"aggCode":"DMST01_DMORG01_ACTPBL_INVOICE_02_TS_AGG_02",	
+		"aggCategory": "TimeSeries",
+		"isRebuild":"False",
+		"isAppend":"True",
+		"isActive":"True",
+		"createdOn": ISODate("2019-01-01T04:00:00Z"),
+		"lastUpdatedOn":ISODate("2019-01-01T04:00:00Z"),
+		"lastUpdatedBy":"orgadmin1",
+		"deActivatedOn":"",
+		"isTimeSeries":"True",	
+		"dimensions":
+		[
+			{"dimId":"02", "dimCode":"dmPeriod", "dimDisplayName":"Period","dimType":"ByDate", "isHierarchy":"True", "attributeName":["salesOrderDate"], "dimGranularity": ["YEAR", "QUARTER", "WOY", "MONTH", "WOM", "DAY"],"isActive":"True"}
+		],
+		"measures":
+		[
+			{"measureId":"01", "measureCode":"msInvoiceAmount", "measureDisplayName":"Total Invoice Amount","measureType":["ByValue","ByCount"], "attributeName":"invoiceValue", "isActive":"True", "measureOperators":["Sum", "Count", "Min", "Max", "Avg"]},
+			{"measureId":"02", "measureCode":"msLineAmount", "measureDisplayName":"Total Line Amount","measureType":["ByValue" ], "attributeName":"lineAmount", "isActive":"True", "measureOperators":["Sum"]},
+			{"measureId":"03", "measureCode":"msAssessableAmount", "measureDisplayName":"Total Assessable Amount","measureType":["ByValue"], "attributeName":"totalAssessablevalue", "isActive":"True" , "measureOperators":["Sum"]}
+		]
+	}]);

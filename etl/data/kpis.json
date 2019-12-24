@@ -5,23 +5,29 @@ db.kpis.insert({
 	"moduleCode": "ACTPBL",
 	"dataModelCode": "DM_ACTPBL_INVOICE",
 	"kpis": [{
-		"_id": "1",
-		"seq": "1",
+		"kpiId": "1",
 		"kpiName": "Sales Analysis",
 		"kpiDescription": "",
 		"kpiCode": "SLSNLYS",
-		"kpiType": [
-			"time", "lookup"
-		],
-		"aggregationType": "standard",
-		"customRoutine": "",
-		"dimensions": [{
+		"isActive":"True",
+		"version":"1.0",
+		"createdOn": "",
+		"createdBy": "",
+		"lastUpdatedOn":"",	
+		"lastUpdatedBy":"",	
+		"isDashboard":"True",
+		"isDisplayDetailRecords":"True",
+		"kpiDetails": 
+		[
+			"kpiType":"TimeSeries" ,		
+			"dimensions": 
+			[{
 				"_id": "1",
 				"displayOrder": "1",
 				"dimensionName": "Period",
 				"dimensionCode": "dmPeriod",
 				"dimensionType": "date",
-				"isHierarchy": "False",
+				"isHierarchy": "True",
 				"isActive": "True",
 				"isFilter": "False",
 				"isSlider": "True",

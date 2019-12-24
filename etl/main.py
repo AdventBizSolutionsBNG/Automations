@@ -28,15 +28,13 @@ try:
             sConditions = ""
             curCatalogs = util.executeDBQuery(oEtlSettings._METADATA_DB_CONN, 'site','catalogs', sQuery, sConditions)
             if curCatalogs is not None:
-                for catalog in curCatalogs:
-                    
+                for catalog in curCatalogs:                    
                     iCatalogId = catalog['catalogId']
                     sCatalogName = catalog['catalogName']
                     sCatalogCode = catalog['catalogCode']
                     sQuery =    {"isActive":"True", "catalogId":iCatalogId}  
                     curDatasets = util.executeDBQuery(oEtlSettings._METADATA_DB_CONN, 'site','datasets', sQuery, sConditions)
-                    if curDatasets is not None:
-                         
+                    if curDatasets is not None:                         
                         for dataset in curDatasets:
                             iDatasetId = dataset['datasetId']
                             sDatasetName = dataset['datasetName']

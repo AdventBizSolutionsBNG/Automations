@@ -1,0 +1,88 @@
+db.datasets.insert(
+	[{
+			"_id":"1",			
+			"catalogId": "1",
+			"sequenceId": "01",
+			"datasetDescription": "Dataset for Demo Org - Invoice Data",
+			"datasetId": "1",			
+			"objectName": "invoice",
+			"datasetCode": "DMST01_DMORG01_ACTPBL_INVOICE_02", 
+			"dataModelCode":"DM_ACTPBL_INVOICE_02",
+			"dataSource": [{
+				"seq":"01",
+				"storageType": "FILE",
+				"folderPath":"C:\\Mywork\\Advent\\ETL\\data\\DEMO1\\DEMO1-ORG1\\DEMO1-ORG1-0001\\DEMO1-ORG1-0001-0001\\BANK\\input",
+				"folderPathPattern":"",
+				"fileName":"sample",
+				"fileNamePattern":"",
+				"fileExtn":"txt",
+				"separator":"\t", 
+				"maxFileSizeMb":"5",
+				"isZipped":"False",
+				"isPassword":"",
+				"password":"",
+				"errorFolderPath":"",
+				"archiveFolderPath":"",
+				"startRow":"9",
+				"endRow":"-1" ,
+				"isActive":"True",
+				"isStoreSourceCopy":"True"
+				}],
+			"targetStorage": [{
+					"seq":"01",
+					"storageType": "PARQUET",
+					"partitionKey": "",
+					"isAppend": "True",
+					"rootPathURL": "",
+					"isActive":"False"
+				},
+				{
+					"seq":"02",
+					"storageType": "FILE",
+					"folderPath":"C:\\Mywork\\Advent\\ETL\\data\\DEMO1\\DEMO1-ORG1\\DEMO1-ORG1-0001\\DEMO1-ORG1-0001-0001\\BANK\\output",
+					"folderPathPattern":"%Y%m%d%h%m",
+					"fileName":"",
+					"fileSuffix":"%Y%m%d",
+					"fileNamePattern":"%datasetCode%_Output",
+					"fileExtn":"txt",
+					"separator":"\t",
+					"isZipped":"False",
+					"isActive":"True"
+				}],
+			"isIncrementalLoad": "True",
+			"isValidateData": "True",
+			"isActive": "True",
+			"version": "1.0",
+			"createdOn": ISODate("2019-01-01T04:00:00Z"),
+			"lastUpdatedOn":ISODate("2019-01-01T04:00:00Z"),
+			"lastUpdatedBy":"orgadmin1"
+	},
+	{
+			"_id":"2",
+			"catalogId": "1",
+			"sequenceId": "01",
+			"datasetDescription": "Dataset for Demo Org - Order Data",
+			"datasetId": "2",			
+			"objectName": "order",
+			"datasetCode": "DMST01_DMORG01_ACTPBL_ORDER_02",
+			"dataModelCode":"DM_ACTPBL_ORDER_02",
+			"dataSource": [{
+				"dataSourceType": "KAFKA",
+				"topicName": "",
+				"serverURL": "",
+				"offsetType": ""}],
+			"targetStorage": [{
+				"storageType": "PARQUET",
+				"partitionKey": "",
+				"isAppend": "True",
+				"rootPathURL": ""
+			}],
+			"isIncrementalLoad": "True",
+			"isValidateData": "True",
+			"isActive": "True",
+			"version": "1.0",
+			"createdOn": ISODate("2019-01-01T04:00:00Z"),
+			"lastUpdatedOn":ISODate("2019-01-01T04:00:00Z"),
+			"lastUpdatedBy":"orgadmin1"
+	}]
+	);
