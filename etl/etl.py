@@ -5,6 +5,11 @@ from pprint import pprint
 import json
 import os, sys
 import traceback
+from pyspark import SparkContext, SparkConf
+from pyspark.sql import SparkSession
+
+#from pyspark.sql import sparkSession
+
 from packages.utils.common import openDBConnection
 
 class ClsEtlExecParameters():
@@ -12,6 +17,8 @@ class ClsEtlExecParameters():
     _ETLEXEC_ORG_CODE=""
     _ETLEXEC_ENTITY_CODE=""
     _ETLEXEC_MODULE_CODE=""
+    _ETLEXEC_CALENDAR = ""
+  
     
 
     def __init__(self, pParamFile):
@@ -24,6 +31,8 @@ class ClsEtlExecParameters():
                 self._ETLEXEC_ORG_CODE = jsonData[x].get('organizationCode')
                 self._ETLEXEC_ENTITY_CODE = jsonData[x].get('entityCode')
                 self._ETLEXEC_MODULE_CODE = jsonData[x].get('moduleCode')
+                self._ETLEXEC_CALENDAR = jsonData[x].get('calendar')
+                
              
         except Exception as e:
             print("Error in reading ETL Execution Parameters from the file!!", e )
@@ -61,30 +70,39 @@ class ClsEtlSettings():
     _LOG_TEXT_FORMATTER = ""
     _LOG_TEXT_DATE_FORMATTER = ""
     
+    _ETLSPARK_SETTINGS = ""
+    _ETLSPARK_CONTEXT = ""
+    _ETLSPARK_SESSION = ""
     
     def __init__(self):
         try:
             sFile = "config\\settings.cfg"
             with open(sFile,'r') as fHandle:
-                jsonData = json.load(fHandle)             
-            for x in jsonData:                
-                if x == "metadataDb":                   
-                    self._METADATA_DB_SERVER =  jsonData[x].get('dbServer')
-                    self._METADATA_DB_TYPE = jsonData[x].get('dbType')
-                    self._METADATA_DB_PORT = jsonData[x].get('dbPort')
-                    self._METADATA_DB_USER = jsonData[x].get('dbUser')
-                    self._METADATA_DB_PASSWORD = jsonData[x].get('dbPassword')
-                    self._METADATA_DB_NAME = jsonData[x].get('dbName')
-                    self._METADATA_DEFAULT_SCHEMA = jsonData[x].get('defaultSchema')
-                    self._METADATA_IS_SYSTEM = jsonData[x].get('isSystem')           
-                    print('Loaded ETL Settings successfully!!!')
-
-                    self._METADATA_DB_CONN = MongoClient(self._METADATA_DB_SERVER,  int(self._METADATA_DB_PORT), userName = self._METADATA_DB_USER, authMechanism='SCRAM-SHA-1', password = self._METADATA_DB_PASSWORD,  authSource = str(self._METADATA_DB_NAME), maxPoolSize=10, waitQueueTimeoutMS=100)                 
-                    print('Connected to Metadata Database successfully!!!')
-                    
+                settings = json.load(fHandle)   
+                      
+            for settingKey, settingValue in settings.items():                            
+                if settingKey == "metadataDb":                                       
+                    self._METADATA_DB_SERVER =  settingValue['dbServer']
+                    self._METADATA_DB_TYPE = settingValue['dbType']
+                    self._METADATA_DB_PORT = settingValue['dbPort']
+                    self._METADATA_DB_USER = settingValue['dbUser']
+                    self._METADATA_DB_PASSWORD = settingValue['dbPassword']
+                    self._METADATA_DB_NAME = settingValue['dbName']
+                    self._METADATA_DEFAULT_SCHEMA = settingValue['defaultSchema']
+                    self._METADATA_IS_SYSTEM = settingValue['isSystem']
+                     
+                elif settingKey == "sparkEngine":
+                    self._ETLSPARK_SETTINGS = settingValue
+                    self._ETLSPARK_CONTEXT = settingValue['sparkContext']                    
+                    self._ETLSPARK_SESSION = settingValue['sparkSession']
+            print('Loaded ETL Settings successfully!!!')
+            
+            self._METADATA_DB_CONN = MongoClient(self._METADATA_DB_SERVER,  int(self._METADATA_DB_PORT), userName = self._METADATA_DB_USER, authMechanism='SCRAM-SHA-1', password = self._METADATA_DB_PASSWORD,  authSource = str(self._METADATA_DB_NAME), maxPoolSize=10, waitQueueTimeoutMS=100)                 
+            print('Connected to Metadata Database successfully!!!')
+                
                 #else:
                 #    print("Settings missing for reading metadata!! No details specified for Metadata Database" )
-             
+            
         except (FileNotFoundError, IOError):
             print("Error in loadEtlSettings!! Settings file not found!!")
             sys.exit()
@@ -95,6 +113,13 @@ class ClsEtlSettings():
 
 
     
+    def startSparkSession(self):
+        try:
+            pass
+
+        except Exception as e:
+            print("Error in starting Spark Session", e)
+
     #To Do
     def verifyETLSettings(self):
         try:
@@ -103,4 +128,42 @@ class ClsEtlSettings():
             return 'True'
         except Exception as e:
             print("Error in verifying ETL Settings" ,e)
+
+    def startSparkContext(self):
+        try:
+            print("Initializing Spark Context....")
+            confCxt = SparkConf() \
+                        .setAppName(self._ETLSPARK_SETTINGS["appName"]) \
+                        .setMaster(self._ETLSPARK_SETTINGS["hostName"]) \
+                        .set("spark.executor.memory", self._ETLSPARK_CONTEXT["spark.executor.memory"]) \
+                        .set("spark.driver.cores", self._ETLSPARK_CONTEXT["spark.driver.cores"]) \
+                        .set("spark.logConf", self._ETLSPARK_CONTEXT["spark.logConf"]) \
+                        .set("spark.eventLog.enabled", self._ETLSPARK_CONTEXT["spark.eventLog.enabled"]) \
+                        .set("spark.cores.max", self._ETLSPARK_CONTEXT["spark.cores.max"]) \
+                        .set("spark.executor.cores", self._ETLSPARK_CONTEXT["spark.executor.cores"]) 
+
+            #spark = SparkSession
+            spark = SparkSession.builder.config(conf=confCxt).getOrCreate()
+            #sc = SparkContext(conf = confCxt).getOrCreate
+            sc = spark.sparkContext
+            
+            return sc
+            
+            # spark = SparkSession \
+            #             .builder.appName(self._ETLSPARK_SETTINGS["appName"])  \
+            #             .master(self._ETLSPARK_SETTINGS["hostName"]).getOrCreate()  \
+            #             .config("spark.executor.memory", self._ETLSPARK_CONTEXT["spark.executor.memory"]) \
+            #             .getOrCreate()    
+                        
+            #sc = spark.sparkContext
+            
+            
+            #print(sc.getConf().getAll())
+            
+
+        except Exception as e:
+            print("Error in initializing Spark Context", e)
+            print(traceback.print_stack())
+            sys.exit()
+    
 

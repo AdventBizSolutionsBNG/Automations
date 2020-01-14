@@ -56,7 +56,7 @@ class ClsAccountPayables():
                                             sample_sub = sample.subtract(sample_start)
                                             sample_end = sample.subtract(sc.parallelize(sample.take(sample.count() + iEndRows)))
                                             self._RDD_SOURCE = sample_sub.subtract(sample_end)
-
+                                            sc.close()
                                             #
                                             #rddSource = sc.textFile(sSourceFile).filter(lambda x: x[1] > sSkipLines).map(lambda line: line.split("\t"))
                                             #sample = sc.textFile(sSourceFile)

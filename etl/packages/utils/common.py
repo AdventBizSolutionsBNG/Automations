@@ -15,11 +15,14 @@ def openDBConnection(_METADATA_DB_SERVER,_METADATA_DB_PORT ,_METADATA_DB_USER,_M
         print(traceback.print_stack())
         sys.exit()
 
-def executeDBQuery(pDBConn, pSchema, pCollection, pQuery, pConditions):
+def executeDBQuery(pDBConn, pSchema, pCollection, pQuery, pConditionType, pConditions):
         try:                                     
             myDb = pDBConn[pSchema]     
-            myColl = myDb[pCollection]   
-            myDoc = myColl.find(pQuery)
+            myColl = myDb[pCollection]  
+            if pConditionType is None or pConditionType == "": 
+                myDoc = myColl.find(pQuery)                     
+            elif pConditionType == "distinct":            
+                myDoc = myColl.find(pQuery).distinct(pConditions)
             return myDoc   
                
             

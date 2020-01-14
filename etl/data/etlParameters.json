@@ -1,9 +1,10 @@
 {"etlParameters":
 	{
-		"siteCode":"DMST01",		
-		"organizationCode":"DMORG01",		 
+		"siteCode":"ST001",		
+		"organizationCode":"ORG001",		 
 		"entityCode":"ORG001-ENT001",		 
-		"moduleCode":"ACTPBL",
-		"datasetCode":"DMST01_DMORG01_ACTPBL_INVOICE"
+		"moduleCode":"ACTRBL",
+		"datasetCode":"ST001_ORG001_ACTPBL_INVOICE",
+		"calendar":"F1"
 	}
 }
