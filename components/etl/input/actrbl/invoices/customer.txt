@@ -1,0 +1,4 @@
+customerCode,customerFName,customerLastName
+112222,ABC,XYZ
+3344555,NMJ,HHRU
+2343434,ERRR,EFEUE

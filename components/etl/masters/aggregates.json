@@ -1,0 +1,245 @@
+db.aggregates.insert([{
+		"_id": "1",
+		"catalogCode": "CTLG_ACTRBL",
+		"seq": "001",
+		"datasetCode": "DS_ACTRBL_INVOICE",
+		"aggCode": "AGG_ACTRBL_INVOICE_001",
+		"aggId": "827edbb6-378a-11ea-978f-2e728ce88125",
+		"aggFolder": "/home/setupadmin/adbiz/components/etl/output/actrbl/aggregates",
+		"containerCode": ["CNT_ACTRBL_INVOICE_001"],
+		"aggCategory": "TimeSeries",
+		"isRebuild": "False",
+		"isAppend": "True",
+		"isActive": "True",
+		"createdOn": {
+			"$date": "2019-01-01T04:00:00Z"
+		},
+		"lastUpdatedOn": {
+			"$date": "2019-01-01T04:00:00Z"
+		},
+		"lastUpdatedBy": "orgadmin1",
+		"deActivatedOn": "",
+		"isTimeSeries": "True",
+		"dimensions": [{
+			"ByDate": {
+				"attributeName": "invoiceDate",
+				"dimCode": "dmPeriodInvoiceDate",
+				"isActive": "True"
+			}
+		}, {
+			"ByLookup": {
+				"attributeName": "",
+				"dimCode": "",
+				"isActive": ""
+			}
+		}],
+		"measures": [{
+			"_Id": "1",
+			"measureCode": "msInvoiceAmount",
+			"measureDisplayName": "Total Invoice Amount",
+			"measureType": ["ByValue", "ByCount"],
+			"attributeName": "invoiceValue",
+			"isActive": "True",
+			"measureOperators": ["Sum", "Count", "Min", "Max", "Avg"]
+		}, {
+			"_Id": "2",
+			"measureCode": "mstotalLineAmount",
+			"measureDisplayName": "Total Line Amount",
+			"measureType": ["ByValue"],
+			"attributeName": "totalLineAmount",
+			"isActive": "True",
+			"measureOperators": ["Sum"]
+		}, {
+			"_Id": "3",
+			"measureCode": "msAssessableAmount",
+			"measureDisplayName": "Total Assessable Amount",
+			"measureType": ["ByValue"],
+			"attributeName": "totalAssessablevalue",
+			"isActive": "True",
+			"measureOperators": ["Sum"]
+		}]
+	},
+	{
+		"_id": "2",
+		"catalogCode": "CTLG_ACTRBL",
+		"seq": "002",
+		"datasetCode": "DS_ACTRBL_INVOICE",
+		"aggCode": "AGG_ACTRBL_INVOICE_002",
+		"aggId": "827ede2c-378a-11ea-978f-2e728ce88125",
+		"aggFolder": "/home/setupadmin/adbiz/components/etl/output/actrbl/aggregates",
+		"containerCode": ["CNT_ACTRBL_INVOICE_001"],
+		"aggCategory": "TimeSeries",
+		"isRebuild": "False",
+		"isAppend": "True",
+		"isActive": "True",
+		"createdOn": {
+			"$date": "2019-01-01T04:00:00Z"
+		},
+		"lastUpdatedOn": {
+			"$date": "2019-01-01T04:00:00Z"
+		},
+		"lastUpdatedBy": "orgadmin1",
+		"deActivatedOn": "",
+		"isTimeSeries": "True",
+		"dimensions": [{
+			"ByDate": {
+				"attributeName": "invoiceDate",
+				"dimCode": "dmPeriodInvoiceDate",
+				"isActive": "True"
+			}
+		}, {
+			"ByLookup": {
+				"attributeName": "customerRegion",
+				"dimCode": "dmCustRegion",
+				"isActive": "True"
+			}
+		}],
+		"measures": [{
+			"_Id": "1",
+			"measureCode": "msInvoiceAmount",
+			"measureDisplayName": "Total Invoice Amount",
+			"measureType": ["ByValue", "ByCount"],
+			"attributeName": "invoiceValue",
+			"isActive": "True",
+			"measureOperators": ["Sum", "Count", "Min", "Max", "Avg"]
+		}, {
+			"_Id": "2",
+			"measureCode": "mstotalLineAmount",
+			"measureDisplayName": "Total Line Amount",
+			"measureType": ["ByValue"],
+			"attributeName": "totalLineAmount",
+			"isActive": "True",
+			"measureOperators": ["Sum"]
+		}, {
+			"_Id": "3",
+			"measureCode": "msAssessableAmount",
+			"measureDisplayName": "Total Assessable Amount",
+			"measureType": ["ByValue"],
+			"attributeName": "totalAssessablevalue",
+			"isActive": "True",
+			"measureOperators": ["Sum"]
+		}]
+	},
+	{
+		"_id": "3",
+		"catalogCode": "CTLG_ACTRBL",
+		"seq": "003",
+		"datasetCode": "DS_ACTRBL_INVOICE",
+		"aggCode": "AGG_ACTRBL_INVOICE_003",
+		"aggId": "827edf80-378a-11ea-978f-2e728ce88125",
+		"aggFolder": "/home/setupadmin/adbiz/components/etl/output/actrbl/aggregates",
+		"containerCode": ["CNT_ACTRBL_INVOICE_001"],
+		"aggCategory": "TimeSeries",
+		"isRebuild": "False",
+		"isAppend": "True",
+		"isActive": "True",
+		"createdOn": {
+			"$date": "2019-01-01T04:00:00Z"
+		},
+		"lastUpdatedOn": {
+			"$date": "2019-01-01T04:00:00Z"
+		},
+		"lastUpdatedBy": "orgadmin1",
+		"deActivatedOn": "",
+		"isTimeSeries": "True",
+		"dimensions": [{
+			"ByDate": {
+				"attributeName": "invoiceDate",
+				"dimCode": "dmPeriodInvoiceDate",
+				"isActive": "True"
+			}
+		}, {
+			"ByLookup": {
+				"attributeName": "productCategory",
+				"dimCode": "dmProductCategory",
+				"isActive": "True"
+			}
+		}],
+		"measures": [{
+			"_Id": "1",
+			"measureCode": "msInvoiceAmount",
+			"measureDisplayName": "Total Invoice Amount",
+			"measureType": ["ByValue", "ByCount"],
+			"attributeName": "invoiceValue",
+			"isActive": "True",
+			"measureOperators": ["Sum", "Count", "Min", "Max", "Avg"]
+		}, {
+			"_Id": "2",
+			"measureCode": "mstotalLineAmount",
+			"measureDisplayName": "Total Line Amount",
+			"measureType": ["ByValue"],
+			"attributeName": "totalLineAmount",
+			"isActive": "True",
+			"measureOperators": ["Sum"]
+		}, {
+			"_Id": "3",
+			"measureCode": "msAssessableAmount",
+			"measureDisplayName": "Total Assessable Amount",
+			"measureType": ["ByValue"],
+			"attributeName": "totalAssessablevalue",
+			"isActive": "True",
+			"measureOperators": ["Sum"]
+		}]
+	},
+	{
+		"_id": "4",
+		"catalogCode": "CTLG_ACTRBL",
+		"seq": "004",
+		"datasetCode": "DS_ACTRBL_INVOICE",
+		"aggCode": "AGG_ACTRBL_INVOICE_004",
+		"aggId": "827ee372-378a-11ea-978f-2e728ce88125",
+		"aggFolder": "/home/setupadmin/adbiz/components/etl/output/actrbl/aggregates",
+		"containerCode": ["CNT_ACTRBL_INVOICE_001"],
+		"aggCategory": "TimeSeries",
+		"isRebuild": "False",
+		"isAppend": "True",
+		"isActive": "True",
+		"createdOn": {
+			"$date": "2019-01-01T04:00:00Z"
+		},
+		"lastUpdatedOn": {
+			"$date": "2019-01-01T04:00:00Z"
+		},
+		"lastUpdatedBy": "orgadmin1",
+		"deActivatedOn": "",
+		"isTimeSeries": "True",
+		"dimensions": [{
+			"ByDate": {
+				"attributeName": "invoiceDate",
+				"dimCode": "dmPeriodInvoiceDate",
+				"isActive": "True"
+			}
+		}, {
+			"ByLookup": {
+				"attributeName": "productName",
+				"dimCode": "dmProductName",
+				"isActive": "True"
+			}
+		}],
+		"measures": [{
+			"_Id": "1",
+			"measureCode": "msInvoiceAmount",
+			"measureDisplayName": "Total Invoice Amount",
+			"measureType": ["ByValue", "ByCount"],
+			"attributeName": "invoiceValue",
+			"isActive": "True",
+			"measureOperators": ["Sum", "Count", "Min", "Max", "Avg"]
+		}, {
+			"_Id": "2",
+			"measureCode": "mstotalLineAmount",
+			"measureDisplayName": "Total Line Amount",
+			"measureType": ["ByValue"],
+			"attributeName": "totalLineAmount",
+			"isActive": "True",
+			"measureOperators": ["Sum"]
+		}, {
+			"_Id": "3",
+			"measureCode": "msAssessableAmount",
+			"measureDisplayName": "Total Assessable Amount",
+			"measureType": ["ByValue"],
+			"attributeName": "totalAssessablevalue",
+			"isActive": "True",
+			"measureOperators": ["Sum"]
+		}]
+	}
+])

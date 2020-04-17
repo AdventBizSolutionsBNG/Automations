@@ -1,0 +1,179 @@
+db.kpis.insert([
+{
+	"_id": 1.0,
+	"seq": "001",
+	"moduleCode": "ACTRBL",
+	"catalogType": "adbiz.catalogType.multiEntity.SOMOED",
+	"siteCode": "ST001",
+	"organizationCode": "ORG001",
+	"dataModelCode": "DM_ACTRBL_INVOICE",
+	"kpiName": "Sales Analysis",
+	"kpiDescription": "Perform Sales Analysis",
+	"kpiCode": "ACTRBL_KPI_001",
+	"kpiFolder": "/home/setupadmin/adbiz/components/etl/output/actrbl/kpis",	
+	"refreshData": "False",
+	"refreshInterval": "",
+	"dataPullType": "static",
+	"isActive": "True",
+	"components": [
+	{
+		"seq": "002",
+		"componentCode": "ACTRBL_KPI_001_CMPNT_002",
+		"recordType": "multi",
+		"displayType": "widget",
+		"widgetCode": "WDGT_002",
+		"chartType": "bar",
+		"aggType": "ByValue",
+		"componentType": "TimeSeries",
+		"isActive": "False",
+		"componentDescription": "Display total sales (top 10) by Customer Regions for the last 30 days ",
+		"roleFilter": {
+				"entityCode":  ["<ALL>"],
+				"divCode":  ["<ALL>"]
+				},
+		"systemFilter": {
+			"siteCode": "ST001",
+			"organizationCode": "ORG001",
+			"moduleCode": "ACTRBL",
+			"objCode": "invoice"
+		},
+		"storageFilter":{"containerCode": "CNT_ACTRBL_INVOICE_001","aggCode": "AGG_ACTRBL_INVOICE_002"},
+		"criteria": {
+			"dimension": {
+				"dimCode": "dmCustomerRegion",
+				"attributeName": "customerRegion",
+				"dimFilterRegEx": "",
+				"dimSelectedValue": ["<ALL>"]
+			},
+			"measure": [{
+				"measureCode": "msInvoiceAmount",
+				"attributeName": "invoiceValue",
+				"measureConditions": [{
+					"operator": "max",
+					"value": "",
+					"filter":""
+				}, {
+					"operator": "sum",
+					"value": "",
+					"filter":""
+				}]
+			}],
+			"dateFilter": {
+				"quickOption": "previous",
+				"value": "300",
+				"dateKey": "day",
+				"dimCode": "dmPeriodInvoiceDate",
+				"attributeName": "invoiceDate",
+				"datePartitionModel": "YQMD"
+			},
+			"sortBy":{"attributeName":"invoiceValue", "operator": "sum", "sortOrder": "desc"},
+			"topRows": "10"
+		}
+	}, 
+	{
+		"seq": "001",
+		"componentCode": "ACTRBL_KPI_001_CMPNT_001",
+		"recordType": "multi",
+		"displayType": "widget",
+		"widgetCode": "WDGT_001",
+		"chartType": "bar", 
+		"aggType": "ByValue",
+		"componentType": "TimeSeries",
+		"isActive": "False",
+		"componentDescription": "Display total sales (top 10) for the last 3 months ",
+		"roleFilter": {
+				"entityCode":  ["<ALL>"],
+				"divCode":  ["<ALL>"]
+				},
+		"systemFilter": {
+			"siteCode": "ST001",
+			"organizationCode": "ORG001",
+			"moduleCode": "ACTRBL",
+			"objCode": "invoice"
+		},
+		"storageFilter":{"containerCode": "CNT_ACTRBL_INVOICE_001","aggCode": "AGG_ACTRBL_INVOICE_001"},
+		"criteria": {
+			"dimension": {
+				"dimCode": "",
+				"attributeName": "",
+				"dimFilterRegEx": "",
+				"dimSelectedValue":[]
+			},
+			"measure": [{
+				"measureCode": "msInvoiceAmount",
+				"attributeName": "invoiceValue",
+				"measureConditions": [{
+					"operator": "max",
+					"value": "",
+					"filter":""
+				}, {
+					"operator": "sum",
+					"value": "",
+					"filter":""
+				}]
+			}],
+			"dateFilter": {
+				"quickOption": "previous",
+				"value": "12",
+				"dateKey": "month",
+				"dimCode": "dmPeriodInvoiceDate",
+				"attributeName": "invoiceDate",
+				"datePartitionModel": "YQMD"
+			},			
+			"sortBy":{"attributeName":"invoiceValue", "operator": "sum", "sortOrder": "desc"},
+			"topRows": "10"
+		}
+	},
+	{
+		"seq": "003",
+		"componentCode": "ACTRBL_KPI_001_CMPNT_003",
+		"componentDescription": "Top Invoice Value in the given period",
+		"widgetCode": "",
+		"recordType": "single",
+		"displayType": "table",
+		"chartType": "",
+		"aggType": "ByValue",
+		"componentType": "TimeSeries",
+		"isActive": "True",
+		"roleFilter": {
+				"entityCode":  ["<ALL>"],
+				"divCode":  ["<ALL>"]
+				},
+		"systemFilter": {
+			"siteCode": "ST001",
+			"organizationCode": "ORG001",
+			"moduleCode": "ACTRBL",
+			"objCode": "invoice"
+		},
+		"storageFilter":{"containerCode": "CNT_ACTRBL_INVOICE_001","aggCode": "AGG_ACTRBL_INVOICE_004"},	
+		"criteria": {
+			"dimension": { 
+				"dimCode": "dmProductName",
+				"attributeName": "productName",
+				"dimFilterRegEx": "",
+				"dimSelectedValue": []
+			},
+			"measure": [{
+				"measureCode": "msInvoiceAmount",
+				"attributeName": "invoiceValue",
+				"measureConditions": [{
+					"operator": "max",
+					"value": ""
+				}]
+			}],
+			"dateFilter": {
+				"quickOption": "between",
+				"startDate": "01/01/2019",
+				"endDate": "01/12/2019",
+				"value": "",
+				"dateKey": "day",
+				"dimCode": "dmPeriodInvoiceDate",
+				"attributeName": "invoiceDate",
+				"datePartitionModel": "YQMD"
+			},			
+			"sortBy":{"attributeName":"invoiceValue", "operator": "max", "sortOrder": "desc"},
+			"topRows": "1"
+		}
+	}]
+}
+]);

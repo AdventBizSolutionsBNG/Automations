@@ -1,0 +1,63 @@
+db.modules.insert([{
+	"_id": "1",
+	"moduleName": "Product Administration",
+	"moduleDisplayName": "Product Administration",
+	"moduleDescription": "Product Administration",
+	"moduleCode": "PRDCTADM",
+	"isUserModule": "False",
+	"domain": "Finance",
+	"version": "1.0",
+	"activeSince": "",
+	"isETLRequired": "False"
+}, {
+	"_id": "2",
+	"moduleName": "AccountPayables",
+	"moduleDisplayName": "Account Payables",
+	"moduleDescription": "Account Payables",
+	"moduleCode": "ACTPBL",
+	"isUserModule": "True",
+	"domain": "Finance",
+	"version": "1.0",
+	"activeSince": "",
+	"isETLRequired": "True"
+}, {
+	"_id": "3",
+	"moduleName": "AccountReceivables",
+	"moduleCode": "ACTRBL",
+	"moduleDisplayName": "Account Receivables",
+	"moduleDescription": "Handles Receivables",
+	"isUserModule": "True",
+	"version": "1.0",
+	"activeSince": "",
+	"isETLRequired": "True"
+}, {
+	"_id": "4",
+	"moduleName": "BankReconciliation",
+	"moduleCode": "BNKRCL",
+	"moduleDisplayName": "Bank Reconciliation",
+	"moduleDescription": "Bank Reconciliation",
+	"isUserModule": "True",
+	"version": "1.0",
+	"activeSince": "",
+	"isETLRequired": "True"
+}, {
+	"_id": "5",
+	"moduleName": "VendorReconciliation",
+	"moduleCode": "VDRRCL",
+	"moduleDisplayName": "Vendor Reconciliation",
+	"moduleDescription": "Vendor Reconciliation",
+	"isUserModule": "True",
+	"version": "1.0",
+	"activeSince": "",
+	"isETLRequired": "True"
+}, {
+	"_id": "6",
+	"moduleName": "Consolidation",
+	"moduleCode": "CONSOL",
+	"moduleDisplayName": "GL Consolidation",
+	"moduleDescription": "GL Consolidation",
+	"isUserModule": "True",
+	"version": "1.0",
+	"activeSince": "",
+	"isETLRequired": "True"
+}])

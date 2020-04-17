@@ -1,0 +1,44 @@
+db.catalogs.insert(
+[{
+	"_id": "1",
+	"siteCode": "ST001",
+	"organizationCode": "ORG001",
+	"moduleCode": "ACTRBL",
+	"catalogName": "Catalog for Organization DEMO 01 - Module Account Receivables",
+	"catalogDescription": "",
+	"catalogCode": "CTLG_ACTRBL",
+	"catalogType": "adbiz.catalogType.multiEntity.SOMOED",
+	"calendarType": "adbiz.system.fiscalCalendars.mar_apr",
+	"lineage": "ST001.ORG001.ACTRBL",
+	"isActive": "True",
+	"createdOn": {
+		"$date": "2019-01-01T04:00:00Z"
+	},
+	"lastUpdatedOn": {
+		"$date": "2019-01-01T04:00:00Z"
+	},
+	"lastUpdatedBy": "orgadmin1",
+	"deActivatedOn": ""
+}, {
+	"_id": "2",
+	"siteCode": "ST001",
+	"organizationCode": "ORG001",
+	"moduleCode": "ACTPBL",
+	"catalogName": "Catalog for Organization DEMO 01 - Module Account Payables",
+	"catalogDescription": "",
+	"catalogCode": "CTLG_ACTPBL",
+	"catalogType": "adbiz.catalogType.multiEntity.SOMOED",
+	"calendarType": "adbiz.fiscalCalendar.mar_apr",
+	"lineage": "ST001.ORG001.ACTPBL",
+	"isActive": "True",
+	"createdOn": {
+		"$date": "2019-01-01T04:00:00Z"
+	},
+	"lastUpdatedOn": {
+		"$date": "2019-01-01T04:00:00Z"
+	},
+	"lastUpdatedBy": "orgadmin1",
+	"deActivatedOn": ""
+}]
+
+)
