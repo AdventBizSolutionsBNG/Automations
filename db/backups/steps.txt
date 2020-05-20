@@ -1,0 +1,226 @@
+sudo adduser setupadmin
+sudo usermod -aG sudo setupadmin
+su - setupadmin
+
+--setup python---
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install python3.8
+#sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.8
+sudo ln -s /usr/bin/python3.8 /usr/bin/python
+
+
+sudo apt install -y python3-pip
+sudo apt install python3-venv
+sudo apt install curl
+sudo apt install net-tools
+sudo apt install locate
+sudo apt-get install git
+sudo apt-get install git-core
+sudo apt install tree
+
+
+--- git
+git config --global user.email abhishek@adventbizsolutions.com
+git init .
+git remote add origin https://github.com/AdventBizSolutionsBNG/Automations.git
+-- update code base
+git add .
+git commit -m "------ msg ------"
+git checkout -b withHive  --- create new branch
+git push origin withHive
+
+
+--create virtual env for ETL & WebApp
+\home\setupadmin\adbiz\components\etl
+sudo python -m venv etlenv
+
+\home\setupadmin\adbiz\components\api
+sudo python -m venv apienv
+
+
+--- java --- 
+sudo apt install openjdk-8-jdk
+sudo nano /etc/environment
+	add -> JAVA_HOME="/usr/bin/java'
+source /etc/environment
+echo $JAVA_HOME
+
+check any other version of java-> sudo update-alternatives --config java
+
+
+--- start anaconda  for pyspark ----
+\home\setupadmin\downloads
+	mkdir  anaconda3
+	cd anaconda3
+
+curl -O https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
+ bash Anaconda3-2020.02-Linux-x86_64.sh
+ 
+conda create --name my_env python=3
+
+upgrade conda: -> conda update -n base conda
+
+--create virutal env:
+python -m pip install --user virtualenv
+
+------- start  mongodb -------
+
+sudo wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
+sudo apt-get install gnupg
+sudo wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
+sudo echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+
+--  To prevent unintended upgrades, pin packages
+echo "mongodb-org hold" | sudo dpkg --set-selections
+echo "mongodb-org-server hold" | sudo dpkg --set-selections
+echo "mongodb-org-shell hold" | sudo dpkg --set-selections
+echo "mongodb-org-mongos hold" | sudo dpkg --set-selections
+echo "mongodb-org-tools hold" | sudo dpkg --set-selections
+
+sudo systemctl start mongod
+sudo systemctl enable mongod
+sudo systemctl stop mongod
+sudo systemctl restart mongod
+------- end mongodb ---------
+
+
+
+---- setup adbiz platform ----------------
+
+-- create folder:
+/home/setupadmin/adbiz/components/Web/api/adbizWebAPI
+
+
+
+--- setup postgres
+
+
+---- spark
+pip install pyspark	
+sudo apt-get install scala
+
+wget https://mirrors.estointernet.in/apache/spark/spark-2.4.5/spark-2.4.5-bin-hadoop2.7.tgz
+
+mkdir /home/setupadmin/tools/spark2.4.5
+tar -xvf 
+
+vi ~/.bashrc
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=$PATH:$JAVA_HOME/bin
+export SPARK_HOME=/home/setupadmin/tools/spark2.4.5
+export PATH=$PATH:$SPARK_HOME/bin
+export PATH=$PATH: /home/setupadmin/tools/anaconda3/bin
+export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH
+export PYSPARK_DRIVER_PYTHON="jupyter"
+export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
+export PYSPARK_PYTHON=python3
+
+
+function snotebook () 
+{
+#Spark path (based on your computer)
+SPARK_PATH=/home/setupadmin/tools/spark2.4.5
+
+export PYSPARK_DRIVER_PYTHON="jupyter"
+export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
+
+$SPARK_PATH/bin/pyspark --master local[2]
+}
+
+
+--- mysql prompt/root-Admin@1234
+
+sudo apt install mysql-workbench 
+sudo mysql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Admin@1234';
+FLUSH PRIVILEGES;
+GRANT ALL PRIVILEGES ON *.* TO 'adbizadmin'@'localhost' IDENTIFIED BY 'Admin@1234';
+
+sudo apt-get install python-dev default-libmysqlclient-dev 
+sudo apt-get install python3-dev
+pip install mysqlclient
+
+mysql > create database adbiz_metadata;
+mysql > create database adbiz_product;
+mysql> CREATE USER 'adbiz_api'@'localhost' IDENTIFIED BY 'Adbiz@1234';
+mysql> GRANT CREATE, ALTER, REFERENCES, SELECT, INSERT, DELETE, INDEX , UPDATE ON adbiz_metadata.*  TO  adbiz_api@'localhost';
+mysql> GRANT CREATE, ALTER, REFERENCES, SELECT, INSERT, DELETE, INDEX , UPDATE ON adbiz_product.*  TO  adbiz_api@'localhost';
+
+
+mysql > create database adbiz_reco;
+mysql > create database adbiz_actpbl;
+mysql > create database adbiz_actrbl;
+mysql > create database adbiz_main;
+mysql > create database adbiz_catalog;
+mysql > create database adbiz_core;
+mysql> GRANT CREATE, ALTER, REFERENCES, SELECT, INSERT, DELETE, INDEX , UPDATE ON adbiz_reco.*  TO  adbiz_api@'localhost';
+mysql> GRANT CREATE, ALTER, REFERENCES, SELECT, INSERT, DELETE, INDEX , UPDATE ON adbiz_actpbl.*  TO  adbiz_api@'localhost';
+mysql> GRANT CREATE, ALTER, REFERENCES, SELECT, INSERT, DELETE, INDEX , UPDATE ON adbiz_actrbl.*  TO  adbiz_api@'localhost';
+mysql> GRANT CREATE, ALTER, REFERENCES, SELECT, INSERT, DELETE, INDEX , UPDATE ON adbiz_main.*  TO  adbiz_api@'localhost';
+mysql> GRANT CREATE, ALTER, REFERENCES, SELECT, INSERT, DELETE, INDEX , UPDATE ON adbiz_catalog.*  TO  adbiz_api@'localhost';
+mysql> GRANT CREATE, ALTER, REFERENCES, SELECT, INSERT, DELETE, INDEX , UPDATE ON adbiz_core.*  TO  adbiz_api@'localhost';
+
+sudo mysql-workbench
+
+
+--- django
+/home/setupadmin/adbiz/components/Web/api/adbizWebAPI
+pip install django
+pip install pyyaml
+pip install djangorestframework
+pip install markdown        
+pip install django-filter 
+pip install django-audit-log  (Add audit_log.middleware.UserLoggingMiddleware to your MIDDLEWARE_CLASSES:)
+pip install django-regex
+pip install django-utils
+pip install django_audit_fields
+pip install python-secrets
+pip install django-utils2
+ pip install djangorestframework_simplejwt
+ pip install django django-rest-framework django-cors-headers
+ 
+sudo apt install mysql-server
+sudo systemctl status mysql
+sudo mysql_secure_installation
+
+
+-- create admin app
+./manage.py makemigrations
+./manage.py migrate
+./manage createsuperuser
+
+
+
+-- mod-wsgi install 
+create folder /home/setupadmin/dowloads/mod_wsgi
+wget https://github.com/GrahamDumpleton/mod_wsgi/archive/4.7.1.tar.gz
+tar -xvf 4.7.1.tar.gz -C /home/setupadmin/tools/mod_wsgi
+
+-- using apache with django 
+sudo apt-get install apache2-dev
+sudo apt install apache2
+check http://localhost:80
+
+go to /home/setupadmin/dowloads/mod_wsgi/mod_wsgi-4.7.1
+./configure
+make
+sudo make install 
+sudo apt install libpython3.8-dev
+edit: apache2.conf file -> add below lines
+	LoadModule wsgi_module /usr/lib/apache2/smodules/mod_wsgi.so
+	WSGIDaemonProcess adbizWebAPI
+	WSGIProcessGroup adbiz
+	WSGIScriptAlias / /home/setupadmin/adbiz/components/Web/api/adbizWebAPI/adbizWebAPI
+	WSGIPythonHome /home/setupadmin/tools/anaconda3/envs/adbizEnv/
+	WSGIPythonPath /home/setupadmin/adbiz/components/Web/api/adbizWebAPI
+
+
+
+
+-- etlengine
+python manage.py createsuperuser --username=etladmin --email=etladmin@adventbizsolutions.com
+password: etladmin@adbiz.com
