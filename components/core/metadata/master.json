@@ -1,0 +1,16 @@
+{
+  "version": {
+    "major": "1.0",
+    "minor": "1",
+    "build": "1",
+    "releasedDate" : ""
+  },
+  "productInfo": {
+    "productName": "adbiz",
+    "productCode": "",
+    "productDesc": "",
+    "registeredTo": "ABC Corporation",
+    "registeredTradeMark": "ABC Corp",
+    "registeredSince": ""
+  }
+  }

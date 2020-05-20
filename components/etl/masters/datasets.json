@@ -1,0 +1,102 @@
+db.datasets.insert([{
+	"_id": "1",
+	"catalogCode": "CTLG_ACTRBL",
+	"seq": "01",
+	"datasetDescription": "Dataset for Demo Org - Invoice Data",
+	"objectName": "invoice",
+	"datasetCode": "DS_ACTRBL_INVOICE",
+	"lineage": "ST001.ORG001.ACTRBL.CTLG_ACTRBL.DM_ACTRBL_INVOICE",
+	"datasetName": "",
+	"dataModelCode": "DM_ACTRBL_INVOICE",
+	"dataSource": [{
+		"_id": "1",
+		"storageType": "FILE",
+		"folderPath": "/home/setupadmin/adbiz/components/etl/input/actrbl/invoices",
+		"folderPathPattern": "",
+		"fileName": "invoices",
+		"fileNamePattern": "",
+		"fileExtn": "txt",
+		"separator": "\t",
+		"maxFileSizeMb": "20",
+		"isZipped": "False",
+		"isPassword": "",
+		"password": "",
+		"errorFolderPath": "/home/setupadmin/adbiz/components/etl/output/actrbl/logs",
+		"isArchive": "True",
+		"archiveFolderPath": "/home/setupadmin/adbiz/components/etl/archive/actrbl",
+		"startRow": "2",
+		"endRow": "5",
+		"isActive": "True",
+		"isEcrypted": "False",
+		"encryptionType": "",
+		"ignoreHeaderRow": "True"
+	}],
+	"targetStorage": [{
+		"_id": "1",
+		"storageType": "PARQUET",
+		"targetFolder": "/home/setupadmin/adbiz/components/etl/output/actrbl",
+		"hiveServer": "thrift:/192.168.0.7:54310",
+		"saveMode": "APPEND",
+		"isPartitioned": "True",
+		"rootPathURL": "",
+		"isActive": "True"
+	}, {
+		"_id": "2",
+		"storageType": "FILE",
+		"folderPath": "/home/setupadmin/adbiz/components/etl/output/actrbl/data1",
+		"folderPathPattern": "%Y%m%d%h%m",
+		"fileName": "",
+		"fileSuffix": "%Y%m%d",
+		"fileNamePattern": "%datasetCode%_Output",
+		"fileExtn": "txt",
+		"separator": "\t",
+		"isZipped": "False",
+		"isActive": "False"
+	}],
+	"isIncrementalLoad": "True",
+	"isValidateData": "True",
+	"isActive": "True",
+	"version": "1.0",
+	"createdOn": {
+		"$date": "2019-01-01T04:00:00Z"
+	},
+	"lastUpdatedOn": {
+		"$date": "2019-01-01T04:00:00Z"
+	},
+	"lastUpdatedBy": "orgadmin1"
+}, {
+	"_id": "2",
+	"catalogCode": "CTLG_ACTPBL",
+	"seq": "01",
+	"datasetDescription": "Dataset for Demo Org - Order Data",
+	"datasetName": "",
+	"objectName": "order",
+	"datasetCode": "DS_ACTPBL_ORDER",
+	"dataModelCode": "DM_ACTPBL_ORDER",
+	"dataSource": [{
+		"_id": "1",
+		"dataSourceType": "KAFKA",
+		"topicName": "",
+		"serverURL": "",
+		"offsetType": ""
+	}],
+	"targetStorage": [{
+		"_id": "1",
+		"storageType": "PARQUET",
+		"partitionKey": "",
+		"isAppend": "True",
+		"rootPathURL": ""
+	}],
+	"isIncrementalLoad": "True",
+	"isValidateData": "True",
+	"isActive": "True",
+	"version": "1.0",
+	"createdOn": {
+		"$date": "2019-01-01T04:00:00Z"
+	},
+	"lastUpdatedOn": {
+		"$date": "2019-01-01T04:00:00Z"
+	},
+	"lastUpdatedBy": "orgadmin1"
+}]);
+

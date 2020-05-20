@@ -1,0 +1,16 @@
+{% extends "master.html" %}
+
+{% block page_block %}
+<h2>Year : {{ time | date:'m' }}</h2>
+{% load static %}
+    <img src = "{% static 'images/image1.jpg' %}">
+{% if product_engine %}
+    <ul>
+    {% for pe in product_engine %}
+        <li>{{ pe.engine_id }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No PE are available.</p>
+{% endif %}
+{% endblock %}

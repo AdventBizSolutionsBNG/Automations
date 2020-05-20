@@ -1,0 +1,52 @@
+{
+	"databaseType": "mysql",
+	"mysql": [{
+			"module": "auth",
+			"credentials": {
+				"server": "localhost",
+				"user": "adbiz_api",
+				"password": "Adbiz@1234",
+				"database": "adbiz_auth",
+				"options": "",
+				"port": "3306",
+				"default-character-set": "utf8"
+			}
+		},
+		{
+			"module": "actpbl",
+			"credentials": {
+				"server": "localhost",
+				"user": "adbiz_api",
+				"password": "Adbiz@1234",
+				"database": "adbiz_actpbl",
+				"options": "",
+				"port": "3306",
+				"default-character-set": "utf8"
+			}
+		},
+		{
+			"module": "actrbl",
+			"credentials": {
+				"server": "localhost",
+				"user": "adbiz_api",
+				"password": "Adbiz@1234",
+				"database": "adbiz_actrbl",
+				"options": "",
+				"port": "3306",
+				"default-character-set": "utf8"
+			}
+		},
+		{
+			"module": "reco",
+			"credentials": {
+				"server": "localhost",
+				"user": "adbiz_api",
+				"password": "Adbiz@1234",
+				"database": "adbiz_reco",
+				"options": "",
+				"port": "3306",
+				"default-character-set": "utf8"
+			}
+		}
+	]
+}

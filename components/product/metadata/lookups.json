@@ -1,0 +1,12 @@
+{
+    "Domains": ["Retail","Manufacturing","FMCG","Automobile"],
+    "licensingTypes": ["Subscription","Perpetual","Evaluation","Free","Limited Features"],
+    "Editions": ["Basic","Standard","Enterprise"],
+    "InstanceTypes": ["Development","Integration","Production"],
+    "Modules": ["Account Receivables","Account Payaables", "Reconciliation"],
+    "Consumers": ["ETL", "WebUI","WebAPI"],
+    "Engines": ["KPIEngine", "QueryEngine"],
+    "CompanyTypes": ["Private","Public"],
+    "CompanyCategories": ["Proprietorship","One Person Company","Traditional Partnership","Limited Liability Partnership (LLP)","Private Limited Company"],
+    "CompanySubCategories": ["Listed","Not Listed"]
+  }

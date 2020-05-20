@@ -1,0 +1,88 @@
+db.containers.insert([{
+		"_id": 1.0,
+		"seq": "000",
+		"catalogCode": "CTLG_ACTRBL",
+		"datasetCode": "DS_ACTRBL_INVOICE",
+		"containerCode": "CNT_ACTRBL_INVOICE_000",
+		"containerId": "d6817e7e-3615-11ea-978f-2e728ce88125",
+		"containerCategory": "Generic",
+		"containerType":"TimeSeries",
+		"containerFolder": "/home/setupadmin/adbiz/components/etl/output/actrbl/containers",
+		"containerDescription": "Generic Container to hold the entire source invoice data post transformations & validations",
+		"conditions": [""],
+		"isActive": "False",
+		"isIncrementalLoad": "True",
+		"isFirstTimeLoad": "False",
+		"createdOn": {
+			"$date": "2019-01-01T04:00:00Z"
+		},
+		"lastUpdatedOn": {
+			"$date": "2019-01-01T04:00:00Z"
+		},
+		"lastUpdatedBy": "orgadmin1", 	
+		"deActivatedOn": "",
+		"isCustomExtraction":"False"
+	},
+	{
+		"_id": 2.0,
+		"seq": "001",
+		"catalogCode": "CTLG_ACTRBL",
+		"containerId": "e77c3016-3615-11ea-978f-2e728ce88125",
+		"datasetCode": "DS_ACTRBL_INVOICE",
+		"containerCode": "CNT_ACTRBL_INVOICE_005",
+		"containerCategory": "userSpecified",
+		"containerType":"TimeSeries",
+		"containerFolder": "/home/setupadmin/adbiz/components/etl/output/actrbl/containers",
+		"containerDescription": "Container to hold only open invoices post transformations & validations",
+		"conditions": [{
+			"_id": 1.0,
+			"seq": "1",
+			"attributeName": "invoiceStatus",
+			"subconditions": [{
+				"subconditionId": "1",
+				"operator": " == ",
+				"value": "Open",
+				"joinSubCondition": "OR"
+			}, {
+				"subconditionId": "2",
+				"operator": " in ",
+				"value": ["Open", "Cancelled"],
+				"joinSubCondition": ""
+			}],
+			"joinCondition": "AND"
+		}, {
+			"_id": 2.0,
+			"seq": "2",
+			"attributeName": "invoiceStatus",
+			"subconditions": [{
+				"subconditionId": "1",
+				"operator": " == ",
+				"value": "Open",
+				"joinSubCondition": "OR"
+			}, {
+				"subconditionId": "2",
+				"operator": " in ",
+				"value": ["Open", "Cancelled"],
+				"joinSubCondition": ""
+			}],
+			"joinCondition": ""
+		}],
+		"isIncrementalLoad": "True",
+		"isFirstTimeLoad": "False",
+		"isActive": "True",
+		"createdOn": {
+			"$date": "2019-01-01T04:00:00Z"
+		},
+		"lastUpdatedOn": {
+			"$date": "2019-01-01T04:00:00Z"
+		},
+		"lastUpdatedBy": "orgadmin1",
+		"deActivatedOn": "",
+		"isCustomExtraction":"True",
+		"customExtraction":{
+			"sourceAttributes": ["shipSite","shipSiteName","invoiceId","invoiceDate","salesOrderId","salesOrderDate","gstID","channel","customerCode","customerName","city","state","country","customerType","customerRegion","currency","paymentTerms","paymentDescription","taxUsage","taxCategory","taxClass","invoiceQty","totalDiscountValue","invoiceValue","invoiceValueINR","salesCGSTValue","salesHandlingChargesValue","salesIGSTValue","salesPackingForwardValue","salesSGSTValue","salesTCSGSTValue","totalLineAmount","totalAssessablevalue"],						
+			"operator":"sum",
+			"measures": ["invoiceQty","totalDiscountValue","invoiceValue","invoiceValueINR","salesCGSTValue","salesHandlingChargesValue","salesIGSTValue","salesPackingForwardValue","salesSGSTValue","salesTCSGSTValue","totalLineAmount","totalAssessablevalue"]
+		}
+	}
+])

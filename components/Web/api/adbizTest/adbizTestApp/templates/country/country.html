@@ -1,0 +1,38 @@
+<!--{% extends "base.html" %}-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+{% block title %} List of Countries{% endblock %}
+<h1>Country list</h1>
+{% block content %}
+<div>
+<table>
+    <tr>
+        <th hidden> Id </th>
+        <th> Country Code </th>
+        <th> Country Name </th>
+    </tr>
+    {% for country in country_list %}
+    <tr>
+        <td hidden> {{ country.id}} </td>
+        <td> {{ country.country_code}} </td>
+        <td> {{ country.country_name }} </td>
+        <td> <button name = "View-{{ country.id}}" type="submit"  >Select</button> </td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+<!--formaction="http://127.0.0.1:8000/test/country/{{country.country_code}}"-->
+<div>
+    <form  method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% endblock %}
+
+</body>
+</html>

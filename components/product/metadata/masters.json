@@ -1,0 +1,22 @@
+{
+  "namespace": {
+    "root": "adbiz"
+  },
+  "components": {
+    "ProductEngine": {"name": "Product Engine", "description":"" ,"type": "SYSTEM", "code": "PRDCT_ENGN", "starOrder": 1},
+    "CoreEngine": {"name": "Core Engine", "description":"" ,"type": "SYSTEM", "code": "CORE_ENGN", "starOrder": 2},
+    "ETLEngine": {"name": "ETL Engine", "description":"" ,"type": "SYSTEM", "code": "ETL_ENGN", "starOrder": 7},
+    "QueryEngine": {"name": "Query Engine", "description":"" ,"type": "SYSTEM", "code": "QRY_ENGN", "starOrder": 3},
+    "KPIEngine": {"name": "KPI Engine", "description":"" ,"type": "SYSTEM", "code": "KPI_ENGN", "starOrder": 4},
+    "WebUIEngine": {"name": "WEB UI Engine", "description":"" ,"type": "SYSTEM", "code": "WBUI_ENGN", "starOrder": 6},
+    "WebAPIEngine": {"name": "WEB API Engine", "description":"" ,"type": "SYSTEM", "code": "WBAPI_ENGN", "starOrder": 5}
+  },
+  "productInfo": {
+    "productName": "Advent Product Suite",
+    "productCode": "",
+    "productDesc": "",
+    "registeredTo": "ABC Corporation",
+    "registeredTradeMark": "ABC Corp",
+    "registeredSince": ""
+  }
+}

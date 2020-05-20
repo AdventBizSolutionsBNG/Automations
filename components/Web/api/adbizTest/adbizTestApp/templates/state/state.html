@@ -1,0 +1,12 @@
+<!--{% extends "base.html" %}-->
+
+{% block title %}List of States{% endblock %}
+
+{% block content %}
+<h1>state list</h1>
+
+{% for state in state_list %}
+    <p>{{ state.state_code}}</p>
+    <p>known as  {{ state.state_name }}</p>
+{% endfor %}
+{% endblock %}

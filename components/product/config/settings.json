@@ -1,0 +1,122 @@
+{
+    "releaseInfo": "/home/setupadmin/adbiz/components/product/metadata/release.json",
+    "activationFile": "/home/setupadmin/product_engine_activation.key",
+    "metaData": [
+    {
+      "constants": {
+        "type": "file",
+        "file": {
+          "location": "/home/setupadmin/adbiz/components/product/metadata/constants.json",
+          "isEncrypted": "N",
+          "isPassword": "N",
+          "isZipped": "N",
+          "password": ""
+        }
+      }
+    },
+    {
+      "lookups": {
+        "type": "file",
+        "file": {
+          "location": "/home/setupadmin/adbiz/components/product/metadata/lookups.json",
+          "isEncrypted": "N",
+          "isPassword": "N",
+          "isZipped": "N",
+          "password": ""
+        }
+      }
+    },
+    {
+      "messages": {
+        "type": "file",
+        "file": {
+          "location": "/home/setupadmin/adbiz/components/product/metadata/messages.json",
+          "isEncrypted": "N",
+          "isPassword": "N",
+          "isZipped": "N",
+          "password": ""
+        }
+      }
+    },
+    {
+      "masters": {
+        "type": "file",
+        "file": {
+          "location": "/home/setupadmin/adbiz/components/product/metadata/masters.json",
+          "isEncrypted": "N",
+          "isPassword": "N",
+          "isZipped": "N",
+          "password": ""
+        }
+      }
+    }
+  ],
+  "configData": {
+    "type": "database",
+    "database": {
+      "dbType": "mysql",
+      "mysql": {
+        "host": "localhost",
+        "port": "3801",
+        "user": "adbiz_product",
+        "password": "",
+        "dbName": ""
+      }
+    }
+  },
+  "config": {
+    "validateSecretKey": ""
+  },
+  "logging": {
+    "logging_config": {
+        "version": 1,
+        "loggers": {
+            "": {
+                "level": "DEBUG",
+                "handlers": ["debug_console_handler", "info_rotating_file_handler", "error_file_handler"]
+            },
+            "productEngine": {
+                "level": "WARNING",
+                "propagate": "False",
+                "handlers": ["info_rotating_file_handler", "error_file_handler"]
+            }
+        },
+        "handlers": {
+            "debug_console_handler": {
+                "level": "DEBUG",
+                "formatter": "console",
+                "class": "logging.StreamHandler",
+                "stream": "ext://sys.stdout"
+            },
+            "info_rotating_file_handler": {
+                "level": "INFO",
+                "formatter": "info",
+                "class": "logging.handlers.RotatingFileHandler",
+                "filename": "//home//setupadmin//adbiz//logs//product_engine_info.log",
+                "mode": "a",
+                "maxBytes": 1048576,
+                "backupCount": 10
+            },
+            "error_file_handler": {
+                "level": "WARNING",
+                "formatter": "error",
+                "class": "logging.FileHandler",
+                "filename": "//home/setupadmin//adbiz//logs//product_engine_error.log",
+                "mode": "a"
+            }
+        },
+        "formatters": {
+            "info": {
+                "format": "%(asctime)s-%(levelname)s-%(name)s::%(module)s|%(lineno)s:: %(message)s"
+            },
+            "error": {
+                "format": "%(asctime)s-%(levelname)s-%(name)s-%(process)d::%(module)s|%(lineno)s:: %(message)s"
+            },
+            "console": {
+                "datefmt": "%Y-%m-%d %H:%M:%S",
+                "format": "%(asctime)s-%(levelname)s-%(name)s-%(process)d:: %(message)s"
+            }
+        }
+    }
+  }
+}

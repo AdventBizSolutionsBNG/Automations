@@ -1,0 +1,16 @@
+{"etlParameters":
+	{
+		"siteCode":"ST001",		
+		"organizationCode":"ORG001",		 
+		"entityCode":"ORG001-ENT001",		 
+		"moduleCode":"ACTRBL",
+		"divCode":"DIV-A",
+		"datasetCode":"ST001_ORG001_ACTPBL_INVOICE",
+		"calendar":"jan_dec",
+		"processInputData":"True",
+		"processContainers":"True",
+		"processAggregates":"False",
+		"processKPIs":"False",
+		"validateSchema":"False"
+	}
+}

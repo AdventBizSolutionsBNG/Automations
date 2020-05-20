@@ -1,0 +1,55 @@
+{
+	"db_modules": [{
+			"module": "main",
+			"credentials": {
+				"server": "localhost",
+				"user": "adbiz_api",
+				"password": "Adbiz@1234",
+				"database": "adbiz_main",
+				"options": "",
+				"port": "3306",
+				"default-character-set": "utf8",
+				"engine": "django.db.backends.mysql"
+			}
+		},
+		{
+			"module": "actpbl",
+			"credentials": {
+				"server": "localhost",
+				"user": "adbiz_api",
+				"password": "Adbiz@1234",
+				"database": "adbiz_actpbl",
+				"options": "",
+				"port": "3306",
+				"default-character-set": "utf8",
+				"engine": "django.db.backends.mysql"
+			}
+		},
+		{
+			"module": "actrbl",
+			"credentials": {
+				"server": "localhost",
+				"user": "adbiz_api",
+				"password": "Adbiz@1234",
+				"database": "adbiz_actrbl",
+				"options": "",
+				"port": "3306",
+				"default-character-set": "utf8",
+				"engine": "django.db.backends.mysql"
+			}
+		},
+		{
+			"module": "reco",
+			"credentials": {
+				"server": "localhost",
+				"user": "adbiz_api",
+				"password": "Adbiz@1234",
+				"database": "adbiz_reco",
+				"options": "",
+				"port": "3306",
+				"default-character-set": "utf8",
+				"engine": "django.db.backends.mysql"
+			}
+		}
+	]
+}
