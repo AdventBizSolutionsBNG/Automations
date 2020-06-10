@@ -5,6 +5,8 @@ import logging
 from logging.config import dictConfig
 #from packages.logger import Logger
 from components.core.packages.logger import Logger
+from components.core.modules.storageEngines import DataLakeStorage
+
 class Settings:
     _constants = {}
     _messages = {}
@@ -35,6 +37,8 @@ class Settings:
                 fdata = json.load(f)
 
             for k, v in fdata.items():
+                if k == "data_lake_storage":
+                    dl = DataLakeStorage(v)
                 if k == "metaData":
                     for config in v:
                         for k1,v1 in config.items():

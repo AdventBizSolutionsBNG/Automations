@@ -1,5 +1,15 @@
 {
   "product_engine_sync_url": "http://127.0.0.1:8001/adbiz/ProductEngine",
+  "data_lake_storage": {
+    "engine_type": "RDBMS",
+    "engine_sub_type": "MYSQL",
+    "target_host_name": "localhost",
+    "user": "root",
+    "password": "Admin@1234",
+    "access_key": "",
+    "port": "3801",
+    "reference_class": "adbiz.storageEngine.rdbms.mysql"
+  },
   "metaData": [
     {
       "constants": {

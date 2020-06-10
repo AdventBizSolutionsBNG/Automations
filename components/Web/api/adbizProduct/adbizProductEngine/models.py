@@ -16,10 +16,10 @@ pe = ProductEngine()
 constants = pe.constants
 lookups = pe.lookups
 
-# Custom Product Engine (PE) model to manage the product activation. PE will be installed on a separate host on cloud accessible by all the Customer installation sites.
+# Custom Product Engine (PE) model to manage the product activation. PE will be installed on a separate host on cloud accessible by all the Tenant installation sites.
 # PE can be also hosted in the Clients environment managing the Client specific installations. Ony product Admin should be able to manage the PE instance in this case.
-# PE houses all the customers and their licensing needs (new & renewals). PE also generates unique activation keys for customer specific installations.
-# Activation keys are then retrieved by Core Engine (CE) inside Customer Installations to activate instances/modules/engines.
+# PE houses all the Tenants and their licensing needs (new & renewals). PE also generates unique activation keys for Tenant specific installations.
+# Activation keys are then retrieved by Core Engine (CE) inside Tenant Installations to activate instances/modules/engines.
 #
 
 
@@ -55,14 +55,14 @@ class ProductEngine(models.Model):
 #         localized_fields = ('created_on', 'last_updated_on')
 
 
-class Customers(models.Model):
+class Tenants(models.Model):
     class Meta:
-        db_table = "customers"
+        db_table = "tenants"
 
     product_engine= models.ForeignKey(ProductEngine, verbose_name="Product Engine", on_delete=models.CASCADE)
-    customer_name = models.CharField(max_length=constants["ENTITY_NAME"]["maxLength"], verbose_name="Customer Name")
-    customer_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], unique=True, verbose_name="Customer Code (generated)", editable=False)
-    customer_namespace = models.CharField(max_length=constants["CODE"]["maxLength"], verbose_name="Customer Namespace")
+    Tenant_name = models.CharField(max_length=constants["ENTITY_NAME"]["maxLength"], verbose_name="Tenant Name")
+    Tenant_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], unique=True, verbose_name="Tenant Code (generated)", editable=False)
+    Tenant_namespace = models.CharField(max_length=constants["CODE"]["maxLength"], verbose_name="Tenant Namespace")
     registration_number = models.CharField(max_length=constants["REGISTRATION_NUMBER"]["maxLength"], unique=True, verbose_name="Unique Registration Number (any)")
     registration_dt = models.DateTimeField( verbose_name="Registration Date")
     company_category = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"],
@@ -79,7 +79,7 @@ class Customers(models.Model):
                                     default=CompanyTypes.get_value(CompanyTypes.L), null=True, verbose_name="Company Type")
     city = models.CharField(max_length=constants["CITY"]["maxLength"], null=True, verbose_name="City")
     state = models.CharField(max_length=constants["STATE_CODE"]["maxLength"], null = True, verbose_name="State")
-    country = models.CharField(max_length=constants["COUNTRY_CODE"]["maxLength"], verbose_name="Country")
+    country = models.CharField(max_length=constants["COUNTRY_CODE"]["maxLength"], verbose_name="Country", null=True)
     website_url = models.URLField(max_length=constants["URL"]["maxLength"], null = True, verbose_name="URL")
     is_active = models.BooleanField(default=True, verbose_name="Active ?")
     created_on = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Created On",
@@ -91,25 +91,25 @@ class Customers(models.Model):
 
 
     @staticmethod
-    def generate_customer_code(self):
+    def generate_tenant_code(self):
         try:
             pass
         except Exception as e:
-            print("Error in generating Customer Code!!!", e )
+            print("Error in generating Tenant Code!!!", e )
 
 
-    def generate_customer_id(self):
+    def generate_tenant_id(self):
         try:
             pass
         except Exception as e:
-            print("Error in generating Customer ID!!!", e )
+            print("Error in generating Tenant ID!!!", e )
 
 
-class CustomerContactDetails(models.Model):
+class TenantContactDetails(models.Model):
     class Meta:
-        db_table = "customer_contact_details"
+        db_table = "tenant_contact_details"
 
-    customer = models.ForeignKey(Customers, on_delete=models.CASCADE, verbose_name="Customer")
+    tenant = models.ForeignKey(Tenants, on_delete=models.CASCADE, verbose_name="Tenant")
     contact_person_first_name = models.CharField(max_length=constants["PERSON_NAME"]["maxLength"], verbose_name="First Name")
     contact_person_last_name = models.CharField(max_length=constants["PERSON_NAME"]["maxLength"], verbose_name="Last Name", null=True)
     contact_person_designation = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], verbose_name="Designation", null=True)
@@ -125,11 +125,11 @@ class CustomerContactDetails(models.Model):
                                      editable=False)
 
 
-class CustomerLocations(models.Model):
+class TenantLocations(models.Model):
     class Meta:
-        db_table = "customer_locations"
+        db_table = "tenant_locations"
 
-    customer = models.ForeignKey(Customers, on_delete=models.CASCADE, verbose_name="Customer")
+    tenant = models.ForeignKey(Tenants, on_delete=models.CASCADE, verbose_name="Tenant")
     address_type = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"],  choices= [x.value for x in AddressTypes], default = AddressTypes.get_value(AddressTypes.O)),
     address_line_1 = models.CharField(max_length=constants["ADDRESS_LINE"]["maxLength"], verbose_name="Address Line 1", null=True)
     address_line_2 = models.CharField(max_length=constants["ADDRESS_LINE"]["maxLength"], verbose_name="Address Line 2", null=True)
@@ -145,17 +145,17 @@ class CustomerLocations(models.Model):
 
 
 # Summary table for all Licenses issued
-# Keeps track of all the activations of different Engines & modules carried out at different customers.
+# Keeps track of all the activations of different Engines & modules carried out at different Tenants.
 # Single Product Engine will keep track of all these activations.
-# Product Engine is involved in activation of Core Engines only (at customer premises). Passes on the licensing information (incl updates) to respective Core Engine.
-# Core Engine will manage activations of all the engines hosted in Customer Premises.
+# Product Engine is involved in activation of Core Engines only (at Tenant premises). Passes on the licensing information (incl updates) to respective Core Engine.
+# Core Engine will manage activations of all the engines hosted in Tenant Premises.
 # Core Engine will sync the activations to the Product Engine from time to time.
 class LicensingInfo(models.Model):
     class Meta:
         db_table = "license_info"
 
     product_engine = models.ForeignKey(ProductEngine, verbose_name="Product Engine", on_delete=models.CASCADE)
-    customer = models.ForeignKey(Customers,on_delete=models.CASCADE, verbose_name="Customer")
+    tenant = models.ForeignKey(Tenants,on_delete=models.CASCADE, verbose_name="Tenant")
     license_type = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"],  choices= [x.value for x in LicensingTypes ], default = LicensingTypes.get_value(LicensingTypes.SUBCRPTN))
     license_key = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], unique=True, verbose_name="License Key (generated)")
     duration_days = models.PositiveIntegerField(default=0, verbose_name="Validity (days)")
@@ -173,8 +173,8 @@ class LicensingInfo(models.Model):
     last_updated_by = models.CharField(max_length=constants["USER_NAME"]["maxLength"], verbose_name="Last Updated By",
                                      editable=False)
 
-# Initially a Site will be activated for a Customer.
-# A Customer can host multiple Sites. Only one site per customer is recommended
+# Initially a Site will be activated for a Tenant.
+# A Tenant can host multiple Sites. Only one site per Tenant is recommended
 class LicenseSiteActivations(models.Model):
     class Meta:
         db_table = "license_site_activations"
@@ -197,14 +197,14 @@ class LicenseSiteActivations(models.Model):
 
 
 # Each Site will host multiple environments. Each environment needs to be first activated to configure engines and module access
-class LicenseEnvActivations(models.Model):
+class LicenseInstanceActivations(models.Model):
     class Meta:
-        db_table = "license_env_activations"
+        db_table = "license_instance_activations"
 
 
     license = models.ForeignKey(LicensingInfo, on_delete=models.CASCADE)
     site = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], verbose_name="Site")
-    env = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], choices= [x.value for x in EnvTypes], verbose_name="Environment")
+    instance_type = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], choices= [x.value for x in EnvTypes], verbose_name="Environment/Instance Type")
     activation_key = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], unique=True, verbose_name="Activation Key")
     activation_dt = models.DateTimeField(editable=False, verbose_name="Activation Date Time")
     deactivation_dt = models.DateTimeField(editable=False, null=True, verbose_name="Deactivation Date Time")
@@ -227,7 +227,7 @@ class LicenseEngineActivations(models.Model):
 
     license = models.ForeignKey(LicensingInfo, on_delete=models.CASCADE)
     site = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], verbose_name="Site")
-    env = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], choices=[x.value for x in EnvTypes], verbose_name="Environment")
+    instance_type = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], choices= [x.value for x in EnvTypes], verbose_name="Environment/Instance Type")
     processing_engine_type = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], choices= [x.value for x in ProcessingEngines], verbose_name="Processing Engine")
     processing_engine_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], unique=True, verbose_name="Processing Engine")
     activation_key = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], unique=True, verbose_name="Activation Key")
@@ -252,7 +252,7 @@ class LicenseModuleActivations(models.Model):
 
     license = models.ForeignKey(LicensingInfo, on_delete=models.CASCADE)
     site = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], verbose_name="Site")
-    env = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], choices=[x.value for x in EnvTypes], verbose_name="Environment")
+    instance_type = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], choices= [x.value for x in EnvTypes], verbose_name="Environment/Instance Type")
     module = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], choices= [x.value for x in Modules], verbose_name="Module")
     activation_key = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], unique=True, verbose_name="Activation Key")
     activation_dt = models.DateTimeField(editable=False, verbose_name="Activation Date Time")

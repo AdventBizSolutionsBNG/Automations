@@ -6,7 +6,7 @@ import enum
 class Modules(enum.Enum):
     ACTPBL = ('ACTPBL', 'ACCOUNT PAYABLES')
     ACTRBL = ('ACTRBL', 'ACCOUNT RECEIVABLES')
-    RECO = ('RECO', 'RECONCILIATIONS')
+    BANK_RECO = ('BANK_RECO', 'BANK_RECONCILIATIONS')
 
     @classmethod
     def get_value(cls, member):
@@ -66,12 +66,12 @@ class CompanyTypes(enum.Enum):
         return member.value[0]
 
 class ProcessingEngines(enum.Enum):
-    PE = ('PE', 'ProductEngine')
-    CE = ('CE', 'CoreEngine')
-    EE = ('EE', 'ETLEngine')
-    KE = ('KE', 'KPIEngine')
-    QE = ('QE', 'QueryEngine')
+    PE = ('PE', 'Product Engine')
+    CE = ('CE', 'Core Engine')
+    EE = ('EE', 'ETL Engine')
+    IO = ('IO', 'IO Engine')
     UI = ('UI', 'WEB UI ENGINE')
+    CS = ('CS', 'Catalog Service')
 
     @classmethod
     def get_value(cls, member):
@@ -200,6 +200,8 @@ class AttributeType(enum.Enum):
     DC = ('DC', 'Derived Column')
     CNST = ('CONSTANT', 'Constant')
     DCF = ('DCF', 'Derived Column using Function')
+    PC = ("PC", "Partition Column")
+    SYS = ("SYS", "System Generated Column")
 
     @classmethod
     def get_value(cls, member):
@@ -277,15 +279,30 @@ class MeasureOperators(enum.Enum):
         return member.value[0]
 
 
-class SourceConnectors(enum.Enum):
-    DFILE = ('DFILE', 'Delimited Flat File')
-    XLS = ('XLS', 'EXCEL FILE')
-    MYSQL = ('MYSQL', 'MYSQL Database')
-    HIVE = ('HIVE', 'HIVE Database')
-    MONGO = ('MONGO',' MONGO Database')
-    KQ = ('KQ', 'KAFKA QUEUE')
-    S3 = ('S3', 'S3 Connector')
-    BLB = ('BLB', 'AZURE BLOB')
+class SourceConnectorCategories(enum.Enum):
+    FF = ('FF', 'FLAT FILES')
+    BIN = ('BIN' , 'BINARY')
+    DS = ('DS', 'DISTRIBUTED STORAGE')
+    DB  = ('DB', 'RELATIONAL DATABASES')
+    NS = ('NS', 'NOSQL DATABASES')
+    CL = ('CL', 'CLOUD STORAGES')
+    HT = ('HT', 'HTTP API')
+    Q = ('Q', 'QUEUE')
+
+    @classmethod
+    def get_value(cls, member):
+        return member.value[0]
+
+
+class SourceConnectorTypes(enum.Enum):
+    DFILE = ('DFILE', 'FF - Delimited Flat File')
+    XLS = ('XLS', 'BIN - EXCEL FILE')
+    MYSQL = ('MYSQL', 'DB - MYSQL Database')
+    HIVE = ('HIVE', 'DB - HIVE Database')
+    MONGO = ('MONGO','NS - MONGO Database')
+    KQ = ('KQ', 'Q - KAFKA QUEUE')
+    S3 = ('S3', 'CL - S3 Connector')
+    BLB = ('BLB', 'CL - AZURE BLOB')
 
     @classmethod
     def get_value(cls, member):
@@ -334,16 +351,25 @@ class Operators(enum.Enum):
         return member.value[0]
 
 
-class KPIType(enum.Enum):
-    P = ('P', 'Pre Populated KPI')
-    R = ('R', 'Run Time KPI')
+class DashboardCategory(enum.Enum):
+    H = ('H', 'Home Page Dashboards')
+    F = ('F', 'Business Function specific Dashboards')
 
     @classmethod
     def get_value(cls, member):
         return member.value[0]
 
 
-class ComponentType(enum.Enum):
+class DashboardType(enum.Enum):
+    P = ('P', 'Pre Populated Dashboard')
+    R = ('R', 'Run Time Dashboard')
+
+    @classmethod
+    def get_value(cls, member):
+        return member.value[0]
+
+
+class ComponentCategory(enum.Enum):
     T = ('T', 'Time Series')
     V = ('V', 'Value Based')
 
@@ -355,9 +381,136 @@ class ComponentType(enum.Enum):
 class ComponentDisplayType(enum.Enum):
     W = ('W', 'Widget')
     T = ('T', 'Tabular')
-    S = ('S', 'Singular')
+    L = ('L', 'Label')
 
     @classmethod
     def get_value(cls, member):
         return member.value[0]
 
+
+class DataSourceFileTypes(enum.Enum):
+    D = ('D', 'Delimited')
+    X = ('X', 'MS Excel file')
+    J = ('J', 'JSON')
+    P = ('P', 'PARQUET')
+    B = ('B', 'BINARY')
+
+    @classmethod
+    def get_value(cls, member):
+        return member.value[0]
+
+
+class BatchStatus(enum.Enum):
+    N = ('N', 'NEW')
+    I = ('I', 'IN PROGRESS')
+    E = ('E', 'ERROR')
+    S = ('S', 'SUCCESSFUL')
+    P = ('P', 'PLANNED/SCHEDULED')
+    T = ('T', 'TIMED OUT')
+
+    @classmethod
+    def get_value(cls, member):
+        return member.value[0]
+
+
+class TransformationFunction(enum.Enum):
+    CONCAT = ('CONCAT', 'Concatenate String')
+
+    @classmethod
+    def get_value(cls, member):
+        return member.value[0]
+
+
+class StorageEngineTypes(enum.Enum):
+    PARQUET = ('PARQUET','PARQUET')
+    HIVE = ('HIVE','HIVE')
+    MYSQL = ('MYSQL','MYSQL')
+
+    @classmethod
+    def get_value(cls, member):
+        return member.value[0]
+
+
+class DataLakeTypes(enum.Enum):
+    RDBMS = ('RDBMS','ANY RDBMS ENGINE')
+    BD = ('BD','ANY BIG DATA STORAGES LIKE HIVE OR HBASE')
+    NS = ('NS','ANY NOSQL DATABASES')
+    CL = ('CL', 'CLOUD DATABASES')
+
+    @classmethod
+    def get_value(cls, member):
+        return member.value[0]
+
+
+class DataLakeSubTypes(enum.Enum):
+    ORCL = ('ORCL','RDBMS - ORACLE DATABASE')
+    MYSQL = ('MYSQL', 'RDBMS - MYSQL DATABASE')
+    PGRES = ('PGRES','RDBMS - POSTGRES DATABASE')
+    HV = ('HV','BD - HIVE DATABASE')
+    PQ = ('PQ', 'BD - PARQUET FILES')
+
+    @classmethod
+    def get_value(cls, member):
+        return member.value[0]
+
+
+class QuickOptionsDateOperators(enum.Enum):
+    TOP = ('TOP','TOP VALUES')
+    LAST = ('LAST','LAST VALUES')
+    NOW = ('NOW', 'AS OF TODAY')
+
+    @classmethod
+    def get_value(cls, member):
+        return member.value[0]
+
+class QuickOptionsDatePeriods(enum.Enum):
+    Y = ('Y','YEAR')
+    Q = ('Q', 'QUARTER')
+    M = ('M', 'MONTH')
+    W = ('W', 'WEEK')
+    D = ('D', 'DAY')
+
+    @classmethod
+    def get_value(cls, member):
+        return member.value[0]
+
+class CustomOptionsDateOperators(enum.Enum):
+    B = ('B','BETWEEN')
+
+    @classmethod
+    def get_value(cls, member):
+        return member.value[0]
+
+
+class DimensionOperators(enum.Enum):
+    EQ = ('EQ', 'EQUAL TO')
+    NEQ = ('NEQ', 'NOT EQUAL TO')
+    IN = ("IN","INCLUDE")
+    EX = ("EX", "EXCLUDE")
+    LT = ("LT", "LESS THAN")
+    LTE = ("LTE", "LESS THAN EQUAL")
+    GT = ("GT", "GREATER THAN")
+    GTE = ("GTE", "GREATER THAN EQUAL")
+    B = ("B", "BETWEEN")
+
+    @classmethod
+    def get_value(cls, member):
+        return member.value[0]
+
+
+class SortTYpe(enum.Enum):
+    ASC = ('ASC','ASCENDING')
+    DESC = ('DESC', 'DESCENDING')
+
+    @classmethod
+    def get_value(cls, member):
+        return member.value[0]
+
+
+class QuickOptionsMeasureOperators(enum.Enum):
+    TOP = ('TOP','TOP VALUES')
+    LAST = ('LAST','LAST VALUES')
+
+    @classmethod
+    def get_value(cls, member):
+        return member.value[0]

@@ -1,0 +1,24 @@
+[
+  {
+    "module": "ACTRBL",
+    "component_groups": [
+      {
+        "id": 1,
+        "component_group_code": "ACTRBL_INVC",
+        "component_group_name": "ACTRBL - Invoice Sales Summary",
+        "namespace": "adbiz.actrbl.salesSummary",
+        "is_system": "True",
+        "object": "adbiz.actrbl.invoice"
+      },
+      {
+        "id": 2,
+        "component_group_code": "ACTRBL_PYMNT_ADVC",
+        "component_group_name": "ACTRBL - Payment Advice Summary",
+         "namespace": "adbiz.actrbl.paymentAdvice",
+        "module": "ACTRBL",
+        "is_system": "True",
+        "object": "adbiz.actrbl.payment_advice"
+      }
+    ]
+  }
+]

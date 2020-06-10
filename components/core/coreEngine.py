@@ -54,7 +54,7 @@ class CoreEngine:
     def activate_core_engine(self, payload):
         try:
             log = logging.getLogger(__name__)
-            log.info("core activation initiated...")
+            log.info("Core activation initiated...")
             if os.path.exists(self._activation_file_location):
                 log.error(
                     "Error!! Activation file already exists. Please delete the file and proceed to reactivate..")

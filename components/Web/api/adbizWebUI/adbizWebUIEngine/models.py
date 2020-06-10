@@ -14,16 +14,25 @@ class AdbizUIEngine(models.Model):
     class Meta:
         db_table = "engine_metadata"
 
-    ui_engine_code = models.UUIDField(default=uuid.uuid4, unique=True, verbose_name="UI Engine Code (generated)", editable=False)
-    core_engine_code = models.CharField(max_length=64, verbose_name="Core Engine ID",  editable=False)
-    customer_code = models.CharField(max_length=64, editable=False)
-    customer_namespace = models.CharField(max_length=24, editable=False)
-    site_code = models.CharField(max_length=64, editable=False)
-    environment_code = models.CharField(max_length=64, editable=False)
-    activated_dt = models.DateTimeField(editable=False, null=True)
-    activation_key = models.CharField(max_length=64, editable=False)
-    validity_start_date = models.DateTimeField(null=True, editable=False)
-    validity_end_date = models.DateTimeField(null=True, editable=False)
+    ui_engine_code = models.CharField(max_length=255, unique=True, verbose_name="UI Engine Code (generated)")
+    core_engine_code = models.CharField(max_length=255, verbose_name="Core Engine Code", editable=False)
+    catalog_engine_code = models.CharField(max_length=255, verbose_name="Catalog Engine Code", editable=False)
+    tenant_code = models.CharField(max_length=255, verbose_name="Tenant")
+    site_code = models.CharField(max_length=255, verbose_name="Site", editable=False)
+    instance_code = models.CharField(max_length=255, verbose_name="Environment/Instance", editable=False)
+    activation_file_location = models.CharField(max_length=255, verbose_name="Activation File Location")
+    activation_key = models.CharField(max_length=255, verbose_name=" Activation Key (generated)", editable=False)
+    activation_dt = models.DateTimeField(verbose_name="Activation Date Time")
+    host_name = models.CharField(max_length=128, verbose_name="Host Name")
+    host_ip_address = models.GenericIPAddressField(max_length=32, verbose_name="Host IP Address")
+    os_release = models.CharField(max_length=32, null=True, verbose_name="OS Release Version")
+    release_info = models.CharField(max_length=255, null=True, verbose_name="Version Details")
+    validity_start_date = models.DateTimeField(null=True, verbose_name="Validity Start Date")
+    validity_end_date = models.DateTimeField(null=True, verbose_name="Validity End Date")
+    engine_properties = models.TextField(verbose_name="Engine Details", null=True)  # json.
+    core_engine_details = models.TextField(verbose_name="Core Engine Details", null=True)  # json. Used by UI engine to connect to the Core Engine
+    catalog_engine_details = models.TextField(verbose_name="Catalog Engine Details", null=True)  # json. Used by UI engine to connect to Catalog engine
+    io_engine_details = models.TextField(verbose_name="IO Engine Details", null=True)  # json. Used by UI engine to connect to IO engine
     is_activated = models.BooleanField(default=False, verbose_name="Activated ?")
     is_active = models.BooleanField(default=True, verbose_name="Active ?")
     created_on = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Created On", editable=False)

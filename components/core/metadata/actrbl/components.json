@@ -1,0 +1,24 @@
+[{
+  "module": "ACTRBL",
+  "component_group_code": "ACTRBL_INVC",
+  "components": [{
+    "id": 1,
+    "component_code": "ACTRBL_INVC_0001",
+    "component_name": "Display Sales Trend",
+    "namespace": "adbiz.actrbl.salesSummary.salesTrend",
+    "component_description": "",
+    "component_category": "EVENT_BASED",
+    "component_display_type": "WIDGET",
+    "component_dimension": [{
+      "attribute_code": "adbiz.actrbl.invoiceDate",
+      "attribute_type": "adbiz.attribute.datetime"
+    },
+    {
+      "attribute_code": "adbiz.actrbl.invoiceValue",
+      "attribute_type": "adbiz.attribute.currency",
+      "operators": {"SUM", "MAX", "MIN", }
+    }],
+    "is_system": "True"
+  }
+
+}]

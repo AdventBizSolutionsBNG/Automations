@@ -28,6 +28,7 @@ default = ClsDbConfig(DB_CONFIG_FILE, "default")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'ymq0cn)_3nh=^)q5m7f#r90-*szv6eod%t2_r+36eb5=(h^8d$'
+API_KEY = "c7ed4ae2-e2d1-4aae-aa9e-9b117a6bef8d"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False

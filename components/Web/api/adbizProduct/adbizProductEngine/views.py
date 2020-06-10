@@ -9,7 +9,7 @@ import uuid
 import json
 import random
 from .models import ProductEngine as PEModel
-from .models import Customers as CustModel
+from .models import Tenants as TenantModel
 from django.views.generic import TemplateView
 from components.product.productEngine import ProductEngine
 from django.views.decorators.csrf import csrf_exempt
@@ -65,12 +65,12 @@ def add_customer(request, pe):
             print(qs)
             if len(qs)>0:
                 engine_id = pe
-                customer = CustModel()
+                customer = TenantModel()
                 uq = random.randrange(10 ** 11, 10 ** 12)
                 ns = payload["customer_namespace"]
                 customer_code = str(uq) + "@" + str(ns)
                 print(customer_code)
-                o = CustModel.objects.create(
+                o = TenantModel.objects.create(
                     engine_id = engine_id,
                     customer_name = payload["customer_name"],
                     customer_namespace = payload["customer_namespace"],

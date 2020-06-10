@@ -1,0 +1,20 @@
+[
+  {
+  "id": 1,
+  "module_code": "ACTRBL",
+  "module_name": "Account Receivables",
+  "module_description": ""
+  },
+  {
+   "id": 2,
+  "module_code": "ACTPBL",
+  "module_name": "Account Payables",
+  "module_description": ""
+  },
+  {
+   "id": 3,
+  "module_code": "BANK_RECO",
+  "module_name": "Bank Reconciliation",
+  "module_description": ""
+  }
+]
