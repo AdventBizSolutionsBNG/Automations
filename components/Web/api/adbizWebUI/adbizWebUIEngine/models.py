@@ -4,7 +4,8 @@ import uuid
 import datetime
 from django.utils import timezone
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.contrib.auth import login
 import random
 
 # Create your models here.
@@ -16,10 +17,10 @@ class AdbizUIEngine(models.Model):
 
     ui_engine_code = models.CharField(max_length=255, unique=True, verbose_name="UI Engine Code (generated)")
     core_engine_code = models.CharField(max_length=255, verbose_name="Core Engine Code", editable=False)
-    catalog_engine_code = models.CharField(max_length=255, verbose_name="Catalog Engine Code", editable=False)
     tenant_code = models.CharField(max_length=255, verbose_name="Tenant")
     site_code = models.CharField(max_length=255, verbose_name="Site", editable=False)
     instance_code = models.CharField(max_length=255, verbose_name="Environment/Instance", editable=False)
+    tenant_namespace = models.CharField(max_length=8, verbose_name="Tenant Namespace", editable=False, null= True)  #*
     activation_file_location = models.CharField(max_length=255, verbose_name="Activation File Location")
     activation_key = models.CharField(max_length=255, verbose_name=" Activation Key (generated)", editable=False)
     activation_dt = models.DateTimeField(verbose_name="Activation Date Time")
@@ -33,6 +34,8 @@ class AdbizUIEngine(models.Model):
     core_engine_details = models.TextField(verbose_name="Core Engine Details", null=True)  # json. Used by UI engine to connect to the Core Engine
     catalog_engine_details = models.TextField(verbose_name="Catalog Engine Details", null=True)  # json. Used by UI engine to connect to Catalog engine
     io_engine_details = models.TextField(verbose_name="IO Engine Details", null=True)  # json. Used by UI engine to connect to IO engine
+    catalog_details = models.TextField(null=True, verbose_name="Catalog Details") # Json for Catalog details
+    datamodel_details = models.TextField(null=True, verbose_name="Datamodel Details") # json for data model details
     is_activated = models.BooleanField(default=False, verbose_name="Activated ?")
     is_active = models.BooleanField(default=True, verbose_name="Active ?")
     created_on = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Created On", editable=False)
@@ -76,72 +79,75 @@ class AdbizModuleActivations(models.Model):
     last_updated_by = models.CharField(max_length=32, verbose_name="Last Updated By", editable=False)
 
 
-class UserManager(BaseUserManager):
-    def create_user(self, email, password=None):
+class AdbizUserManager(BaseUserManager):
+
+    def create_user(self, email, password, **extra_fields):
         """
         Creates and saves a User with the given email and password.
         """
+
         if not email:
             raise ValueError('Users must have an email address')
 
         user = self.model(
             email=self.normalize_email(email),
+            user_account = uuid.uuid4()
         )
         user.set_password(password)
+
         user.save(using=self._db)
         return user
 
-    def create_system_user(self, email, password):
+    def create_system_user(self, email, password, **extra_fields):
         """
-        Creates and saves a staff user with the given email and password.
+        Creates and saves a system user with the given email and password.
         """
-        user = self.create_user(
-            email,
-            password=password,
-        )
-        user.is_system_user = True
-        user.save(using=self._db)
-        return user
+        extra_fields.setdefault('is_system_user', True)
+        extra_fields.setdefault('is_staff_user', False)
+        user = self.create_user(email, password=password, **extra_fields)
+        #user.save(using=self._db)
+        #return user
 
-    def create_superuser(self, email, password):
+    def create_superuser(self, email, password, **extra_fields):
         """
         Creates and saves a superuser with the given email and password.
         """
+        extra_fields.setdefault('is_super_user', True)
+        extra_fields.setdefault('is_system_user', True)
+        extra_fields.setdefault('is_staff_user', False)
+
         engine = AdbizUIEngine.objects.filter(is_active=True)
-        user = self.create_user(
-            email,
-            password=password,
-        )
-        user.is_super_user = True
-        user.is_system_user = True
-        user.save(using=self._db)
-        return user
+        user = self.create_user(email, password=password, **extra_fields)
+
+        #user.save(using=self._db)
+        #return user
 
 
 # Custom User Model. Each UI Engine Instance will have its own set of UI Users for particular Module
-class Users(AbstractBaseUser):
+class AdbizUser(AbstractBaseUser, PermissionsMixin):
     class Meta:
         db_table = "users"
 
-    user_account = models.CharField(max_length=64, unique=True, verbose_name="User Account (generated)")
-    email = models.EmailField(max_length=254, unique=True, verbose_name="Email Address")
+    user_account = models.CharField(max_length=255, null=True, unique=True, verbose_name="User Account (generated)")
+    email = models.EmailField(max_length=64, unique=True, verbose_name="Login (email)")
     first_name = models.CharField(max_length=64, verbose_name="First Name", null=True)
     last_name = models.CharField(max_length=64, null=True, verbose_name="Last Name")
     dob = models.DateField(verbose_name="Date of birth", null=True)
     engine = models.ForeignKey(AdbizUIEngine, verbose_name="UI Engine ID (generated)", on_delete=models.CASCADE)
-    joined_dt = models.DateTimeField(default=timezone.now)
-    is_super_user = models.BooleanField(default=False)
-    is_system_user = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=True)
-    is_locked = models.BooleanField(default=False)
-    login_attempts = models.SmallIntegerField(default=0)
-    last_login_dt = models.DateTimeField()
+    joined_dt = models.DateTimeField(default=timezone.now, verbose_name="Joining Date")
+    is_staff = models.BooleanField(default=False, verbose_name="App Admin User?")
+    is_super_user = models.BooleanField(default=False, verbose_name="Super User?")
+    is_system_user = models.BooleanField(default=False, verbose_name="System User?")
+    is_active = models.BooleanField(default=True,verbose_name="Active?")
+    is_locked = models.BooleanField(default=False, verbose_name="Locked?")
+    login_attempts = models.SmallIntegerField(default=0 , verbose_name="Login Attempts", editable=False)
+    last_login_dt = models.DateTimeField(null=True, verbose_name="Last Login", editable=False)
     created_on = models.DateTimeField(default=timezone.now, verbose_name="Created on")
     last_updated_on = models.DateTimeField(default=timezone.now, verbose_name="Last updated on")
     last_updated_by = models.CharField(max_length=64, verbose_name="Last updated By")
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['first_name', 'last_name',]
 
     def get_full_name(self):
         """
@@ -158,11 +164,11 @@ class Users(AbstractBaseUser):
 
     @property
     def check_super_user(self):
-        return self.is_super_user
+        return self.is_superuser
 
     @property
     def check_system_user(self):
-        return self.is_system_user
+        return self.is_systemuser
 
     @property
     def check_active(self):
@@ -175,11 +181,18 @@ class Users(AbstractBaseUser):
     def get_engine_instance(self):
         return self.engine_id
 
-    objects = UserManager()
+    def has_perm(self, perm, obj=None):
+        return self.is_superuser
+
+    def has_module_perms(self, app_label):
+        return self.is_superuser
+
+    objects = AdbizUserManager()
 
 
 # Set of Roles defined for each Module. Roles can be System or User defined. System Defined roles cannot be added or modified from UI.
 # User defined roles can be added by the module admin only and can be mapped to an existing system role only.
+# Service Accounts are created for backend operation like ETL's or any downstream applications that calls Adbiz API
 class AdbizRoles(models.Model):
 
     class Meta:
@@ -188,11 +201,15 @@ class AdbizRoles(models.Model):
     role_name = models.CharField(max_length=64, verbose_name="Role Name")
     role_description = models.CharField(max_length=256, verbose_name="Role Description")
     module = models.CharField(max_length=32, verbose_name="Module")
-    role_reference_id = models.PositiveSmallIntegerField()
-    is_system = models.BooleanField(default=False, verbose_name="Is System?")
+    role_code = models.CharField(max_length=32, verbose_name="Role Code",  null=True) #*
+    system_role_reference = models.CharField(max_length=255, verbose_name="System Role", null=True)    #refers to inbuilt system role
+    is_system = models.BooleanField(default=False, verbose_name="Is System?", editable=False)
+    is_service_account = models.BooleanField(default=False, verbose_name="Is a Service Account?", editable=False) # for running background jobs
+    is_module_admin = models.BooleanField(default=False, verbose_name="Is Module Admin?", editable=False)
     is_active = models.BooleanField(default=True,  verbose_name="Is Active?")
 
 
+# Privilege: Permission set for each module. Roles are granted applicable privilges. Users are assiged to Roles which in turn inherit the Privileges.
 class AdbizPrivileges(models.Model):
 
     class Meta:
@@ -201,6 +218,7 @@ class AdbizPrivileges(models.Model):
     privilege_name = models.CharField(max_length=64, verbose_name="Privilege Name")
     privilege_description = models.CharField(max_length=256, verbose_name="Privilege Description")
     module = models.CharField(max_length=32, verbose_name="Module")
+    privilege_code = models.CharField(max_length=32, null=True, verbose_name="Privilege Code") #*
     is_create = models.BooleanField(default=False, verbose_name="Create?")
     is_read = models.BooleanField(default=True, verbose_name="Read?")
     is_update = models.BooleanField(default=False, verbose_name="Update?")
@@ -209,22 +227,41 @@ class AdbizPrivileges(models.Model):
     is_active = models.BooleanField(default=True, verbose_name="Is Active?")
 
 
+# mapping table between roles and privileges
+class AdbizRolePrivileges(models.Model):
+    class Meta:
+        db_table = "role_privileges"
+
+    module = models.CharField(max_length=32, verbose_name="Module")
+    role = models.ForeignKey(AdbizRoles, verbose_name="Role", on_delete=models.CASCADE)
+    privileges = models.ForeignKey(AdbizPrivileges, on_delete=models.CASCADE, verbose_name="Privileges")     # multi-select
+
+
 class AdbizMenuItems(models.Model):
 
     class Meta:
         db_table = "menu_items"
 
+    module = models.CharField(max_length=32, verbose_name="Module")
     menu_name = models.CharField(max_length=64, verbose_name="Menu Name")
     menu_description = models.CharField(max_length=256, verbose_name="Menu Description")
-    module = models.CharField(max_length=32, verbose_name="Module")
-    role = models.ForeignKey(AdbizRoles, on_delete=models.CASCADE, verbose_name="Roles")
+    menu_code = models.CharField(max_length=32, null=True, verbose_name="Menu Item Code", unique=True)
     menu_tooltip = models.CharField(max_length=256, verbose_name="Tooltip")
     menu_url = models.CharField(max_length=256, verbose_name="URL")
+    menu_properties = models.TextField(null=True, verbose_name="Properties")
     parent_menu_id = models.PositiveSmallIntegerField(null=True, blank=True)
-    display_seq = models.PositiveSmallIntegerField()
+    level = models.PositiveSmallIntegerField(default=1)
+    display_seq = models.PositiveSmallIntegerField(default=1)
     privilege = models.ForeignKey(AdbizPrivileges, null=True, blank=True, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True, verbose_name="Is Active?")
 
+# Mapping between Menu Items and the System provided roles
+class AdbizMenuRoles(models.Model):
+    class Meta:
+        db_table = "menu_roles"
+
+    menu_items = models.ForeignKey(AdbizMenuItems, on_delete=models.CASCADE)
+    role = models.ForeignKey(AdbizRoles, on_delete=models.CASCADE)
 
 class AdbizPreferences(models.Model):
 
@@ -233,17 +270,18 @@ class AdbizPreferences(models.Model):
 
     preference_name = models.CharField(max_length=64, verbose_name="Preference Name")
     preference_description = models.CharField(max_length=256, verbose_name="Preference Description")
-    module = models.CharField(max_length=32, verbose_name="Module")
+    preference_code = models.CharField(max_length=32, null=True, verbose_name="Preference Code", unique=True) #*
+    module = models.CharField(max_length=32, verbose_name="Module", null=True)
     default_value = models.CharField(max_length=32, verbose_name="Default Value")
 
 
-class UserPreferences(models.Model):
+class AdbizUserPreferences(models.Model):
 
     class Meta:
         db_table = "user_preferences"
 
-    module = models.CharField(max_length=32, verbose_name="Module")
-    user = models.ForeignKey(Users, on_delete=models.CASCADE)
+    module = models.CharField(max_length=32, verbose_name="Module",null=True)   # For generic settings, module value will be null
+    user = models.ForeignKey(AdbizUser, on_delete=models.CASCADE)
     preference = models.ForeignKey(AdbizPreferences, on_delete=models.CASCADE)
     preference_value = models.CharField(max_length=256)
     created_on = models.DateTimeField(default=timezone.now, verbose_name="Created on")
@@ -253,12 +291,12 @@ class UserPreferences(models.Model):
 
 # Maps Users with predefined Roles (one or many) for each Module (one or many)
 # Final Permission set for a user is a superset of all the privileges
-class UserAccess(models.Model):
+class AdbizUserAccess(models.Model):
 
     class Meta:
         db_table = "user_access"
 
-    user = models.ForeignKey(Users, on_delete=models.CASCADE)
+    user = models.ForeignKey(AdbizUser, on_delete=models.CASCADE)
     module = models.CharField(max_length=32, verbose_name="Module")
     role = models.ForeignKey(AdbizRoles, on_delete=models.CASCADE)
     created_on = models.DateTimeField(default=timezone.now, verbose_name="Created on")

@@ -36,6 +36,12 @@ class CompanyCategories(enum.Enum):
         return member.value[0]
 
 
+class AuthenticationType(enum.Enum):
+    N = ('N', 'User Name & Password')
+    C = ('C', 'With Captcha')
+    F = ('F','2 Factor Authentication')
+    O = ('O', 'Multi Factor Authentication')
+
 class CompanySubCategories(enum.Enum):
     PROP = ('PROP', 'Proprietorship')
     OPC = ('OPC', 'One Person Company')

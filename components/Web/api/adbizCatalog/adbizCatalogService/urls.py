@@ -3,7 +3,7 @@ from . import views
 from django.contrib import admin
 
 urlpatterns = [
-    #path('adbiz/CoreEngine', include('adbizCoreEngine.urls')),
+    path('getAllDashboards/', views.get_all_dashboards, name='get_all_dashboards'),
     # path('/pe/<pe_instance_id>/', views.get_pe_details, name="get_pe_details"),
     # path('/pe/<pe_instance_id>/<customer_id>/', views.get_customer_details, name="get_customer_details"),
     # path('/pe/<pe_instance_id>/<customer_id>/<site_id>', views.get_site_details, name="get_site_details"),

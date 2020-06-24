@@ -16,12 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import TemplateView
-
+from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #path('login/', LoginView.as_view(), name='login'),
+    #path(r'', LoginView.as_view(), name='login'),
+    #path('logout/', LogoutView.as_view(), {'next_page': 'login'}, name='logout'),
+
     #path('accounts/', include('accounts.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
+    #path('accounts/', include('django.contrib.auth.urls')),
     path('adbizUI/', include('adbizWebUIEngine.urls')),
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('adbizUI/adbizActRbl/', include('adbizActRbl.urls')),
+    #path('', TemplateView.as_view(template_name='home.html'), name='home'),
 ]
+

@@ -175,7 +175,7 @@ class Catalogs(models.Model):
     class Meta:
         db_table = "catalogs"
 
-    catolog_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], unique=True, verbose_name="Catalog Code (generated)", editable=False)
+    catalog_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], unique=True, verbose_name="Catalog Code (generated)", editable=False)
     tenant_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], verbose_name="Tenant", editable=False)
     site_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], verbose_name="Site", editable=False)
     instance_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], verbose_name="Environment/Instance", editable=False)
@@ -199,8 +199,12 @@ class DataModels(models.Model):
     datamodel_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], unique=True, verbose_name="Datamodel Code (generated)", editable=False)
     tenant_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], verbose_name="Tenant", editable=False)
     site_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], verbose_name="Site", editable=False)
+    instance_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"],
+                                     verbose_name="Environment/Instance", editable=False)
     module = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], choices= [x.value for x in Modules],  verbose_name="Module", editable=False)
     catalog = models.ForeignKey(Catalogs, on_delete=models.CASCADE)
+    datamodel_name = models.CharField(max_length=constants["ENTITY_NAME"]["maxLength"], verbose_name="Datamodel Name")
+    datamodel_description = models.CharField(max_length=constants["DESCRIPTION"]["maxLength"], null=True, verbose_name="Datamodel Description")
     version = models.PositiveSmallIntegerField(default=1)
     is_active = models.BooleanField(default=True, verbose_name="Active ?")
     created_on = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Created On", editable=False)

@@ -172,7 +172,7 @@ class DashboardQuery(models.Model):
     dtf_qo_operator = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], choices=[x.value for x in QuickOptionsDateOperators], verbose_name="Quick Option - Data Operator", null=True)
     dtf_qo_value= models.CharField(max_length=255, null=True)
     dtf_qo_period = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], choices=[x.value for x in QuickOptionsDatePeriods], verbose_name="Quick Option - Data Operator", null=True)
-    dtf_custom_option = models.TextField(null=True)
+    dtf_custom_option = models.TextField(null=True) #json
     dtf_co_operator = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], choices=[x.value for x in CustomOptionsDateOperators], verbose_name=" Operator", null=True)
     dtf_co_start_date = models.DateField(null=True)
     dtf_co_end_date = models.DateField(null=True)

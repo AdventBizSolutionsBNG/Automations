@@ -8,7 +8,7 @@ import datetime
 # Create your views here.
 def index(request):
     # output = "Welcome to Adbiz"
-    return render(request, 'index.html',{})
+    return render(request, 'actrbl_index.html',{})
 
 def product_engine_index(request):
     try:

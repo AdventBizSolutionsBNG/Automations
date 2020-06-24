@@ -71,7 +71,7 @@ ROOT_URLCONF = 'adbizWebUI.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,"adbizWebUIEngine","templates"), os.path.join(BASE_DIR,"adbizWebUI","templates")],
+        'DIRS': [os.path.join(BASE_DIR,"adbizWebUIEngine","templates"), os.path.join(BASE_DIR,"adbizWebUI","templates"), os.path.join(BASE_DIR,"adbizActRbl","templates"),os.path.join(BASE_DIR,"adbizActPbl","templates"), os.path.join(BASE_DIR,"adbizReco","templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -168,7 +168,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-AUTH_USER_MODEL = 'adbizWebUIEngine.Users'
+AUTH_USER_MODEL = 'adbizWebUIEngine.AdbizUser'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -177,8 +177,9 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'root')
 
 STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, '/home/setupadmin/adbiz/components/Web/ui/veltrix'),
+        os.path.join(BASE_DIR, '/home/setupadmin/adbiz/components/Web/ui/veltrix/'),
 ]
+LOGIN_URL = '/'
+LOGIN_REDIRECT_URL = '/adbizUI/home'
+LOGOUT_REDIRECT_URL = '/adbizUI/'
 
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'

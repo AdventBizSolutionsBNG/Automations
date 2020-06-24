@@ -5,7 +5,7 @@
 				"server": "localhost",
 				"user": "adbiz_api",
 				"password": "Adbiz@1234",
-				"database": "adbiz_core2",
+				"database": "adbiz_core",
 				"options": "",
 				"port": "3306",
 				"default-character-set": "utf8",
