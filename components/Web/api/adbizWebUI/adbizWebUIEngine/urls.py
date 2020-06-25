@@ -11,6 +11,7 @@ urlpatterns = [
     path('logout/', views.custom_Logout, name='logout'),
     path('activate/', views.activation, name="activation"),
     path('actrbl/salesForecast/',views.get_actrbl_sales_forecast , name="actrbl_sales_forecast"),
+    path('actrbl/getOutputData/', views.get_output_data, name="get_output_data")
 ]
 
 #TemplateView.as_view(template_name='actrbl_sales_forecast.html')

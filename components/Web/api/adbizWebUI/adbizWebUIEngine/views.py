@@ -9,6 +9,8 @@ from django.views import View
 import json
 import requests
 from django.core.serializers import serialize
+from django.http import JsonResponse
+
 # Create your views here.
 
 
@@ -344,7 +346,7 @@ def get_actrbl_sales_forecast(request):
                 component_details = k["component_details"]
 
         if component_details is not None:
-            output = {"components": component_details, "count": len(component_details)}
+            output = {"components": component_details, "count": len(component_details)  }
 
             return TemplateResponse(request, 'actrbl_sales_forecast.html', {"output":output})
         else:
@@ -352,3 +354,30 @@ def get_actrbl_sales_forecast(request):
 
     except Exception as e :
         print(e)
+
+# sends request to IO engine for execution and getting the table data
+def get_output_data(request, *args, **kwargs):
+    try:
+        errmsg = {}
+        errmsg["message"] = "Error validating the request"
+        component_query = request.GET['component_query']
+        # print("--->")
+        # for key, value in request.session.items():
+        #     print('{} => {}'.format(key, value))
+
+        post_url = 'http://127.0.0.1:10002/adbiz/IOEngine/executeDashboardQuery/'
+        headers = {"module": request.session["current_module"], "tenant": request.session["tenant_code"],
+                   "site": request.session["site_code"], "instance": request.session["instance_code"],
+                   "Content-Type": "application/json"}
+        payload = json.dumps({"component_query": component_query, "user_id": request.session["user_id"], "hierarchy":{ "H1":"419258870883@dtl.entity", "H2":["ALL"]}})
+        print("-->", headers)
+        print(payload)
+        response = requests.get(post_url, data=payload, headers=headers)
+        print(response.content)
+        return HttpResponse(response.content)
+
+    except Exception as e:
+        print("Error in creating payload for IO Engine!!", e)
+        return JsonResponse({"status": "Error!!"})
+
+

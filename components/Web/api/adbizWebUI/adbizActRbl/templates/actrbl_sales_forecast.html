@@ -17,12 +17,36 @@
             </div>
 
             <div class="row">
-                <p class="getOutupt" hidden>{{ output }}</p>
+                <p class="getOutput" hidden>{{ output }}</p>
                 <script type="text/javascript">
 
-                var output = document.getElementsByClassName("getOutupt")[0].innerHTML.replace(/'/g, '"');
+                var output = document.getElementsByClassName("getOutput")[0].innerHTML.replace(/'/g, '"');
                 var component_details = JSON.parse(output);
-                console.log(Object.values(component_details)[0][1].display_properties.chartTitle);
+
+
+                //console.log(Object.values(component_details)[0][1].display_properties.chartTitle);
+
+                var extraction_type = Object.values(component_details)[0][1].data_source_methods.extractionType;
+
+                if(extraction_type === "api") {
+                    var url = Object.values(component_details)[0][1].data_source_methods.source.url;
+                    var params = Object.values(component_details)[0][1].data_source_methods.source.body;
+                    var component_query = Object.values(component_details)[0][1].component_query;
+
+                    $.ajax({
+                        method : "GET",
+                        url : "{% url 'get_output_data' %}",
+                        data: {"component_query": component_query},
+                        success : function(data_response){
+                             getChart(data_response);
+                            console.log("Charts generated Successfully")
+                        },
+                        error : function(error_data){
+                            console.log(error_data)
+                        }
+                    });
+
+                }
 
                 for (var i=0; i< component_details["count"]; i++){
                     document.write(
@@ -60,14 +84,21 @@
                                 <div>
                                     <canvas id="detail_chart_area" width="400" height="400"></canvas>
                                     <script>
+
+                                    function getChart(data_response){
+
+                                    var data_response = JSON.parse(data_response);
+                                    var data_labels = data_response["data_labels"];
+                                    var data_values = data_response["data_values"];
+
                                     var ctx = document.getElementById('detail_chart_area').getContext('2d');
                                     var myChart = new Chart(ctx, {
                                         type: Object.values(component_details)[0][1].display_properties.chartType,
                                         data: {
-                                            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                                            labels: data_labels,
                                             datasets: [{
                                                 label: '# of Votes',
-                                                data: [12, 19, 3, 5, 2, 3],
+                                                data: data_values,
                                                 backgroundColor: [
                                                     'rgba(255, 99, 132, 0.2)',
                                                     'rgba(54, 162, 235, 0.2)',
@@ -97,6 +128,8 @@
                                             }
                                         }
                                     });
+
+                                    };
                                     </script>
                                 </div>
                             </div>

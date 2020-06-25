@@ -21,8 +21,8 @@ LOG_CONFIG_FILE = os.path.join(BASE_DIR,"adbizIO","config","logging.json")
 DB_CONFIG_FILE = os.path.join(BASE_DIR,"adbizIO","config","db.json")
 
 log = Adbizlogger(BASE_LOG_FOLDER, LOG_CONFIG_FILE)
-default = ClsDbConfig(DB_CONFIG_FILE, "default")
-
+main = ClsDbConfig(DB_CONFIG_FILE, "default")
+#datalake = ClsDbConfig(DB_CONFIG_FILE, "data_lake")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -34,7 +34,7 @@ API_KEY = "1589cac7-150c-4f69-9bdd-e047454c3402"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','127.0.0.1']
 
 
 # Application definition
@@ -48,6 +48,18 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'adbizIOEngine'
 ]
+CORS_ALLOW_HEADERS = (
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+    'Access-Control-Allow-Origin',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -82,19 +94,17 @@ WSGI_APPLICATION = 'adbizIO.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-
+print("$$$$$$$", main.dbname())
 DATABASES = {
     'default': {
-        'ENGINE': default.engine(),
-        'USER': default.user(),
-        'PASSWORD': default.password(),
-        'HOST': default.server(),
-        'PORT': default.port(),
-        'NAME': default.dbname(),
+        'ENGINE':main.engine(),
+        'USER':main.user(),
+        'PASSWORD':main.password(),
+        'HOST':main.server(),
+        'PORT':main.port(),
+        'NAME':main.dbname(),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators

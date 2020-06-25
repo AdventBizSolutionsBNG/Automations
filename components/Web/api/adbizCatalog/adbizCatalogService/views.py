@@ -14,7 +14,6 @@ def get_all_dashboards(request):
         if request.method == "GET":
             if request.headers['module']:
                 module = request.headers['module']
-
                 if request.headers['tenant']:
                     tenant_code = request.headers['tenant']
                     if request.headers['site']:
@@ -77,8 +76,12 @@ def get_all_dashboards(request):
                                                                 else:
                                                                     is_af = "False"
 
+                                                                if k1.component_query:
+                                                                    kq =  k1.component_query
+                                                                else:
+                                                                    kq = "None"
 
-                                                                component_details = {"component_code": k1.component_code, "component_id": k1.id, "component_category": k1.component_category, "component_type": k1.component_type, "component_name": k1.component_name, "component_reference_class": k1.component_reference_class, "sequence": k1.sequence, "display_properties":  dp , "data_filters": df, "data_source_methods": sm , "is_system_defined": is_sd, "is_auto_referesh": is_af, "refresh_interval": k1.refresh_interval }
+                                                                component_details = {"component_code": k1.component_code, "component_id": k1.id, "component_category": k1.component_category, "component_type": k1.component_type, "component_name": k1.component_name, "component_reference_class": k1.component_reference_class, "sequence": k1.sequence, "display_properties":  dp , "data_filters": df, "data_source_methods": sm , "is_system_defined": is_sd, "is_auto_referesh": is_af, "refresh_interval": k1.refresh_interval, "component_query": kq }
                                                                 component_list.append(component_details)
 
                                                         final_details = {"dashboard_id": dashboard_id, "dashboard_details": dashboard_details, "component_details": component_list}

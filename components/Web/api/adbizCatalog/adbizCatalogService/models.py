@@ -679,6 +679,7 @@ class DashboardComponents(models.Model):
     is_incremental =  models.BooleanField(default=True, verbose_name="Incremental ?")   # components data population gets appended during data ingestion process. Overrides Dashboard settings
     is_rebuild = models.BooleanField(default=False, verbose_name="Rebuild Everytime ?")  # components data population get rebuilt every time using the source Container during the data ingestion process. Overrides Dashboard settings
     is_auto_referesh = models.BooleanField(default=False, verbose_name="Auto Refresh ?")
+    component_query = models.TextField(verbose_name="Componet Query")
     refresh_interval  = models.PositiveSmallIntegerField(default=0, verbose_name="Auto Refresh Interval (ms)")  # data refresh happens on the UI every X seconds as set. Default=0 means On Demand Refresh.
     is_active = models.BooleanField(default=True, verbose_name="Active ?")
     created_on = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Created On", editable=False)

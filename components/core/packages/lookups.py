@@ -461,7 +461,7 @@ class DataLakeSubTypes(enum.Enum):
 
 
 class QuickOptionsDateOperators(enum.Enum):
-    TOP = ('TOP','TOP VALUES')
+    NEXT = ('NEXT','NEXT VALUES')
     LAST = ('LAST','LAST VALUES')
     NOW = ('NOW', 'AS OF TODAY')
 
