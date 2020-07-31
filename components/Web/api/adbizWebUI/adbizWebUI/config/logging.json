@@ -22,61 +22,56 @@
     },
     "handlers": {
       "console": {
-        "level": "DEBUG",
+        "level": "INFO",
         "filters": [
-          "require_debug_true"
+          "require_debug_false"
         ],
         "class": "logging.StreamHandler",
         "formatter": "simple"
       },
       "main_logfile": {
-        "level": "ERROR",
+        "level": "INFO",
         "filters": [
-          "require_debug_false"
+          "require_debug_true"
         ],
         "class": "logging.handlers.RotatingFileHandler",
         "filename": "/home/setupadmin/adbiz/logs/adbizWebUI_Main.log",
-
         "backupCount": 5,
         "formatter": "simple"
       },
       "actpbl_logfile": {
-        "level": "ERROR",
+        "level": "INFO",
         "filters": [
-          "require_debug_false"
+          "require_debug_true"
         ],
         "class": "logging.handlers.RotatingFileHandler",
         "filename":  "/home/setupadmin/adbiz/logs/adbizWebUI_Actpbl.log",
-
         "backupCount": 5,
         "formatter": "simple"
       },
       "actrbl_logfile": {
-        "level": "ERROR",
+        "level": "INFO",
         "filters": [
           "require_debug_false"
         ],
         "class": "logging.handlers.RotatingFileHandler",
         "filename":  "/home/setupadmin/adbiz/logs/adbizWebUI_Actrbl.log",
-
         "backupCount": 5,
         "formatter": "simple"
       },
       "reco_logfile": {
-        "level": "ERROR",
+        "level": "INFO",
         "filters": [
-          "require_debug_false"
+          "require_debug_true"
         ],
         "class": "logging.handlers.RotatingFileHandler",
         "filename":  "/home/setupadmin/adbiz/logs/adbizWebUI_Reco.log",
-
         "backupCount": 5,
         "formatter": "simple"
       },
       "dba_logfile": {
         "level": "DEBUG",
         "filters": [
-          "require_debug_false",
           "require_debug_true"
         ],
         "class": "logging.handlers.WatchedFileHandler",
@@ -86,7 +81,6 @@
       "requests_logfile": {
         "level": "DEBUG",
         "filters": [
-          "require_debug_false",
           "require_debug_true"
         ],
         "class": "logging.handlers.WatchedFileHandler",
@@ -103,6 +97,7 @@
     "loggers": {
       "main": {
         "handlers": [
+          "console",
           "main_logfile"
         ]
       },
@@ -112,9 +107,7 @@
         ]
       },
        "actrbl": {
-        "handlers": [
-          "actrbl_logfile"
-        ]
+        "handlers": ["console","actrbl_logfile"]
       },
        "reco": {
         "handlers": [
@@ -128,7 +121,7 @@
       },
       "django": {
         "handlers": [
-          "console"
+          "console", "main_logfile"
         ]
       },
       "django.request": {

@@ -1,0 +1,322 @@
+[2020-07-30 15:28:43] ERROR Internal Server Error: /adbizUI/login/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 143, in _get_response
+    response = response.render()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/response.py", line 65, in resolve_template
+    return get_template(template, using=self.using)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: actrbl_index
+[2020-07-30 15:30:15] ERROR Internal Server Error: /adbizUI/login/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 143, in _get_response
+    response = response.render()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/response.py", line 65, in resolve_template
+    return get_template(template, using=self.using)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: actrbl_index
+[2020-07-30 15:35:15] WARNING Not Found: /adbizUI/login/pages-register-2.html
+[2020-07-30 15:46:23] ERROR Internal Server Error: /adbizUI/login/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/decorators/debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 45, in _wrapped_view_func
+    add_never_cache_headers(response)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/cache.py", line 252, in add_never_cache_headers
+    patch_response_headers(response, cache_timeout=-1)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/cache.py", line 243, in patch_response_headers
+    if not response.has_header('Expires'):
+AttributeError: 'NoneType' object has no attribute 'has_header'
+[2020-07-30 15:50:35] ERROR Internal Server Error: /adbizUI/login/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/decorators/debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 45, in _wrapped_view_func
+    add_never_cache_headers(response)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/cache.py", line 252, in add_never_cache_headers
+    patch_response_headers(response, cache_timeout=-1)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/cache.py", line 243, in patch_response_headers
+    if not response.has_header('Expires'):
+AttributeError: 'NoneType' object has no attribute 'has_header'
+[2020-07-30 15:51:57] ERROR Internal Server Error: /adbizUI/login/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/decorators/debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 45, in _wrapped_view_func
+    add_never_cache_headers(response)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/cache.py", line 252, in add_never_cache_headers
+    patch_response_headers(response, cache_timeout=-1)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/cache.py", line 243, in patch_response_headers
+    if not response.has_header('Expires'):
+AttributeError: 'NoneType' object has no attribute 'has_header'
+[2020-07-30 18:44:18] WARNING Not Found: /favicon.ico
+[2020-07-30 19:34:26] ERROR Internal Server Error: /adbizUI/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 143, in _get_response
+    response = response.render()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 903, in render_annotated
+    return self.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 903, in render_annotated
+    return self.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 903, in render_annotated
+    return self.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 903, in render_annotated
+    return self.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 903, in render_annotated
+    return self.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/defaulttags.py", line 443, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/urls/resolvers.py", line 677, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'actrbl_sales_summary' with no arguments not found. 1 pattern(s) tried: ['adbizUI/adbizActRbl/actrbl_sales_summary/(?P<dashboard_code>[^/]+)/$']
+[2020-07-30 19:34:26] WARNING Not Found: /favicon.ico
+[2020-07-30 19:36:12] ERROR Internal Server Error: /adbizUI/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 143, in _get_response
+    response = response.render()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 903, in render_annotated
+    return self.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loader_tags.py", line 103, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 477, in parse
+    raise self.error(token, e)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 475, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 477, in parse
+    raise self.error(token, e)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 475, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loader_tags.py", line 209, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 477, in parse
+    raise self.error(token, e)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 475, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/defaulttags.py", line 952, in do_if
+    nodelist = parser.parse(('elif', 'else', 'endif'))
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 477, in parse
+    raise self.error(token, e)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 475, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/defaulttags.py", line 1376, in url
+    args.append(parser.compile_filter(value))
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 562, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 661, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '-c221-40cc-8237-063170426436@dtl.site.env.catalog.datamodel.dashboard' from '5aa17d7e-c221-40cc-8237-063170426436@dtl.site.env.catalog.datamodel.dashboard'
+[2020-07-30 19:37:32] ERROR Internal Server Error: /adbizUI/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 143, in _get_response
+    response = response.render()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 903, in render_annotated
+    return self.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loader_tags.py", line 103, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 477, in parse
+    raise self.error(token, e)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 475, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 477, in parse
+    raise self.error(token, e)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 475, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loader_tags.py", line 209, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 477, in parse
+    raise self.error(token, e)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 475, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/defaulttags.py", line 952, in do_if
+    nodelist = parser.parse(('elif', 'else', 'endif'))
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 477, in parse
+    raise self.error(token, e)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 475, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/defaulttags.py", line 1376, in url
+    args.append(parser.compile_filter(value))
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 562, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 661, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '-c221-40cc-8237-063170426436@dtl.site.env.catalog.datamodel.dashboard' from '5aa17d7e-c221-40cc-8237-063170426436@dtl.site.env.catalog.datamodel.dashboard'
+[2020-07-30 19:48:40] ERROR Internal Server Error: /adbizUI/adbizActRbl/actrbl_sales_trends/4625c091-47e0-4721-880e-d41228f43ff8@dtl.site.env.catalog.datamodel.dashboard/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 143, in _get_response
+    response = response.render()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/response.py", line 65, in resolve_template
+    return get_template(template, using=self.using)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: actrbl_sales_trends.html

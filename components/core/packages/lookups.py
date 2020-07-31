@@ -387,12 +387,20 @@ class ComponentCategory(enum.Enum):
 class ComponentDisplayType(enum.Enum):
     W = ('W', 'Widget')
     T = ('T', 'Tabular')
+    C = ('C', 'Chart')
     L = ('L', 'Label')
 
     @classmethod
     def get_value(cls, member):
         return member.value[0]
 
+
+class ComponentSubDisplayType(enum.Enum):
+    G = ('G', 'Widget - Generic')
+
+    @classmethod
+    def get_value(cls, member):
+        return member.value[0]
 
 class DataSourceFileTypes(enum.Enum):
     D = ('D', 'Delimited')

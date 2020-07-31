@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
-{% block title %}Login2{% endblock %}
+{% block title %}Login{% endblock %}
 
-{% block content %}
+{% block dashboard %}
 
 <body>
   {% load static %}
@@ -13,88 +13,89 @@
   <!-- Begin page -->
   <div class="accountbg"></div>
 
-  <div class="wrapper-page account-page-full">
+      <div class="wrapper-page account-page-full">
 
-      <div class="card">
-          <div class="card-body">
+          <div class="card">
+              <div class="card-body">
 
-              <div class="text-center">
-                  <a class="logo"><img src="{% static 'assets/images/cropped-advent-2.png' %}" height="22" alt="logo"></a>
-              </div>
+                  <div class="text-center" style="background-color: whitesmoke; ">
+                      <a class="logo"><img src="{% static 'themeVerticalDark/assets/images/cropped-advent-2.png' %}" height="40" alt="logo"></a>
+                  </div>
 
-              <div class="p-3">
-                  <h4 class="font-18 m-b-5 text-center">Welcome Back !</h4>
-                  <p class="text-muted text-center">Sign in to continue to Adbiz Product Suite.</p>
+                  <div class="p-3">
+                      <h4 class="font-18 m-b-5 text-center">Welcome Back !</h4>
+                      <p class="text-muted text-center">Sign in to continue to Adbiz Product Suite.</p>
 
-                  <form class="form-horizontal m-t-30" method="post" >
-                    {% for field in form %}
-                      {% csrf_token %}
-                      {% if field.name == 'username' %}
-                        <div class="form-group">
-                          <label for="username">{{ field.label_tag }}</label>
-                          <p>{{ field }}</p>
-                        </div>
-                      {% endif %}
-                      {% if field.name == 'password' %}
-                        <div class="form-group">
-                          <label for="userpassword">{{ field.label_tag }}</label>
-                          <p> {{ field }} </p>
-                        </div>
-                      {% endif %}
-                    {% endfor %}
+                      <form class="form-horizontal m-t-30" method="post" >
+                        {% for field in form %}
+                          {% csrf_token %}
+                          {% if field.name == 'username' %}
+                            <div class="form-group">
+                              <label for="username">{{ field.label_tag }}</label>
+                              <p>{{ field }}</p>
+                            </div>
+                          {% endif %}
+                          {% if field.name == 'password' %}
+                            <div class="form-group">
+                              <label for="userpassword">{{ field.label_tag }}</label>
+                              <p> {{ field }} </p>
+                            </div>
+                          {% endif %}
+                        {% endfor %}
 
 
-                      <div class="form-group row m-t-20">
-                          <div class="col-sm-6">
-                              <div class="custom-control custom-checkbox">
-                                  <input type="checkbox" class="custom-control-input" id="customControlInline">
-                                  <label class="custom-control-label" for="customControlInline">Remember me</label>
+                          <div class="form-group row m-t-20">
+                              <div class="col-sm-6">
+                                  <div class="custom-control custom-checkbox">
+                                      <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                      <label class="custom-control-label" for="customControlInline">Remember me</label>
+                                  </div>
+                              </div>
+                              <div class="col-sm-6 text-right">
+                                  <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Log In</button>
                               </div>
                           </div>
-                          <div class="col-sm-6 text-right">
-                              <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Log In</button>
-                          </div>
-                      </div>
 
-                      <div class="form-group m-t-10 mb-0 row">
-                          <div class="col-12 m-t-20">
-                              <a href="pages-recoverpw-2.html"><i class="mdi mdi-lock"></i> Forgot your password?</a>
+                          <div class="form-group m-t-10 mb-0 row">
+                              <div class="col-12 m-t-20">
+                                  <a href="pages-recoverpw-2.html"><i class="mdi mdi-lock"></i> Forgot your password?</a>
+                              </div>
                           </div>
-                      </div>
-                  </form>
+                      </form>
+                  </div>
+
               </div>
-
           </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-            {% if errors %}
-                <p><b>ERRORS<b></b></p>
-                <ul>
-                    {% for error in errors %}
-                        <li>{{ error }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        </div>
-      </div>
-      <div class="m-t-40 text-center">
-          <p>Don't have an account ? <a href="pages-register-2.html" class="font-500 text-primary"> Signup now </a> </p>
-          <p>© 2019 Advent Biz Solutions, India </p>
+          <div class="card">
+            <div class="card-body">
+                {% if errors %}
+                    <p class="text-danger"><b>Errors!!</b></p>
+                    <ul>
+                        {% for error in errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+          </div>
+          <div class="m-t-40 text-center">
+              <p>Don't have an account ? <a href="" class="font-500 text-primary"> Signup now </a> </p>
+              <p>© 2019 Advent Biz Solutions, India </p>
+          </div>
+
       </div>
 
-  </div>
   <!-- end wrapper-page -->
 
   <!-- jQuery  -->
-  <script src="{% static 'assets/js/jquery.min.js' %}"></script>
-  <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'assets/js/metisMenu.min.js' %}"></script>
-  <script src="{% static 'assets/js/jquery.slimscroll.js' %}"></script>
-  <script src="{% static 'assets/js/waves.min.js' %}"></script>
+  <script src="{% static 'themeVerticalDark/assets/js/jquery.min.js' %}"></script>
+  <script src="{% static 'themeVerticalDark/assets/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'themeVerticalDark/assets/js/metisMenu.min.js' %}"></script>
+  <script src="{% static 'themeVerticalDark/assets/js/jquery.slimscroll.js' %}"></script>
+  <script src="{% static 'themeVerticalDark/assets/js/waves.min.js' %}"></script>
 
   <!-- App js -->
-  <script src="{% static 'assets/js/app.js' %}"></script>
+  <script src="{% static 'themeVerticalDark/assets/js/app.js' %}"></script>
 
 </body>
 <!--  <h2>Login</h2>-->

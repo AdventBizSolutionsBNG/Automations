@@ -663,17 +663,22 @@ dt {
 }
 
 .submenu li a:hover {
-  background-color: #2a3142;
-  color: rgba(255, 255, 255, 0.8);
+  background-color:  #85929e;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .submenu > li > a {
   padding-left: 50px;
 }
-
+/*
 .submenu li.active > a {
   color: #b4c9de;
   background-color: #2a3142;
+}
+*/
+.submenu li.active > a {
+  color: whitesmoke;
+  background-color: blue;
 }
 
 .topbar {
@@ -685,7 +690,7 @@ dt {
 }
 
 .topbar .topbar-left {
-  background: #2a3142;
+  background: #cacfd9;
   float: left;
   text-align: center;
   height: 70px;
@@ -789,7 +794,7 @@ dt {
 }
 
 #sidebar-menu > ul > li > a:hover, #sidebar-menu > ul > li > a:focus, #sidebar-menu > ul > li > a:active {
-  color: #b4c9de;
+  color: whitesmoke;
   text-decoration: none;
 }
 
@@ -826,10 +831,10 @@ dt {
 .menu-title {
   padding: 12px 20px !important;
   letter-spacing: 1px;
-  font-size: 10px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 1000;
   text-transform: uppercase;
-  color: #b4bfcc;
+  color: aliceblue;
 }
 
 .enlarged .slimScrollDiv {
@@ -4093,3 +4098,43 @@ Invoice
   }
 }
 /*# sourceMappingURL=style.css.map */
+
+.fade-in {
+opacity: 60%;
+transition:opacity 0.8s
+}
+
+.fade-in:hover {
+opacity:100%;
+transition:opacity 0.5s
+}
+
+.selectedWidget {
+opacity:100%;
+box-shadow: 3px 3px whitesmoke
+}
+
+.selectedChart {
+opacity:100%;
+box-shadow: 2px 2px whitesmoke
+}
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-radius: 50%;
+  border: 3px solid #ccc;
+  border-top-color: #07d;
+  animation: spinner .6s linear infinite;
+}

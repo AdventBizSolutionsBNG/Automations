@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "chart_config": {
+  "chart_library": "chart.js",
+  "include_libraries": [{
+      "chart.js": "<script src=\"https://cdn.jsdelivr.net/npm/chart.js@2.8.0\"></script>",
+      "color_schemes": "<script src=\"https://cdn.jsdelivr.net/npm/chartjs-plugin-colorschemes\"></script>"
+    }]
+  },
+  "id": 2,
+  "chart_config": {
+  "chart_library": "Highchart",
+  "include_libraries": [{
+      "chart.js": "<script src=\"https://cdn.jsdelivr.net/npm/chart.js@2.8.0\"></script>",
+      "color_schemes": "<script src=\"https://cdn.jsdelivr.net/npm/chartjs-plugin-colorschemes\"></script>"
+    }]
+  }
+}

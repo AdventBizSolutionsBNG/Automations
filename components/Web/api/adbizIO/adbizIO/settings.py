@@ -94,7 +94,6 @@ WSGI_APPLICATION = 'adbizIO.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-print("$$$$$$$", main.dbname())
 DATABASES = {
     'default': {
         'ENGINE':main.engine(),

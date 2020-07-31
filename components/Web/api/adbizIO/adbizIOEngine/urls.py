@@ -4,6 +4,9 @@ from django.contrib import admin
 
 urlpatterns = [
     path('executeDashboardQuery/', views.execute_dashboard_query, name="executeDashboardQuery"),
+    path('executeValueQuery/', views.execute_value_query, name="execute_value_query"),
+    path('executeChartQuery/', views.execute_chart_query, name="execute_chart_query"),
+    path('executeTableQuery/', views.execute_table_query, name="execute_table_query"),
     # path('/pe/<pe_instance_id>/', views.get_pe_details, name="get_pe_details"),
     # path('/pe/<pe_instance_id>/<customer_id>/', views.get_customer_details, name="get_customer_details"),
     # path('/pe/<pe_instance_id>/<customer_id>/<site_id>', views.get_site_details, name="get_site_details"),

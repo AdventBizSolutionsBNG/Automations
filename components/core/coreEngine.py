@@ -17,6 +17,9 @@ class CoreEngine:
 
     constants = {}
     lookups = {}
+    components = {}
+    charts = {}
+
 
     _core_engine_code = ""
     _product_engine_url = ""
@@ -41,6 +44,7 @@ class CoreEngine:
                 print("Initializing Core Engine")
                 print("Reading Settings File")
                 coreSettings = Settings(sf)
+                self.components = coreSettings.get_display_components()
                 self.constants = coreSettings.get_constants()
                 self.lookups = coreSettings.get_lookups()
             else:

@@ -1,6 +1,6 @@
 from django.urls import path
 from django.views.decorators.csrf import csrf_exempt
-
+from .views import CountryListView, PersonListView
 from . import views
 
 urlpatterns = [
@@ -9,4 +9,7 @@ urlpatterns = [
     path('state/<cc>/<sc>/', views.get_state),
     path('country/ops/upload/', csrf_exempt(views.upload_country)),
     path('country/ops/add/', csrf_exempt(views.add_country)),
+    path('countryTable/', views.get_country_table ),
+    path('countryLV/', CountryListView.as_view() ),
+    path('persons/', PersonListView.as_view() )
 ]

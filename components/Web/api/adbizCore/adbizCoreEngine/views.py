@@ -9,6 +9,11 @@ from components.core.modules.storageEngines import DataLakeStorage
 
 # Create your views here.
 
+from components.core.modules.settings import Settings
+from components.core.coreEngine import CoreEngine
+
+ce = CoreEngine()
+display_metadata = ce.components
 
 def add_site(requests):
     try:
@@ -175,3 +180,34 @@ def get_data_lake_storage_details(request):
         error = e
         print(e)
         return JsonResponse({"error":output, "error_details":e})
+
+
+def get_display_component_metadata(request):
+    try:
+        if request.method == "GET":
+            print("Request received for Display Components..")
+            body = request.body.decode('utf-8')
+            data = {}
+            data = request.headers
+            print("--->", request.headers)
+            for k,v in data.items():
+                if k == "Tenant":
+                    tenant = v
+                if k == "Site":
+                    site = v
+                if k == "Instance":
+                    instance = v
+                if k == "Module":
+                    module = v
+
+            if tenant is None or tenant == "" or site == "" or instance is None or instance == "":
+
+                output =  "Error!! Incorrect request body received!!!"
+                return JsonResponse(output)
+            else:
+                return JsonResponse(display_metadata)
+    except Exception as e:
+        output = "Error in fetching details for the Data Lake Storage Engine"
+        error = e
+        print(e)
+        return JsonResponse({"error": output, "error_details": e})

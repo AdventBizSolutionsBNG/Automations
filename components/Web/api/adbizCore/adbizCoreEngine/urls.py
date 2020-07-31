@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('DataLake/', views.get_data_lake_storage_details, name="get_data_lake_storage_details"),
+    path('DisplayComponents/', views.get_display_component_metadata, name="get_display_component_metadata"),
     # path('sync/<pe>/', views.sync_hub, name="sync_hub"),
     # path('<ce>/', views.get_ce_details, name="get_ce_details"),
     # path('<ce>/', views.add_site, name="add_site"),

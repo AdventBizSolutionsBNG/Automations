@@ -200,10 +200,10 @@ class DataModels(models.Model):
     tenant_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], verbose_name="Tenant", editable=False)
     site_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], verbose_name="Site", editable=False)
     instance_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"],
-                                     verbose_name="Environment/Instance", editable=False)
+                                     verbose_name="Environment/Instance", editable=False, null=True)  #*
     module = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], choices= [x.value for x in Modules],  verbose_name="Module", editable=False)
     catalog = models.ForeignKey(Catalogs, on_delete=models.CASCADE)
-    datamodel_name = models.CharField(max_length=constants["ENTITY_NAME"]["maxLength"], verbose_name="Datamodel Name")
+    datamodel_name = models.CharField(max_length=constants["ENTITY_NAME"]["maxLength"], verbose_name="Datamodel Name", null=True)  #*
     datamodel_description = models.CharField(max_length=constants["DESCRIPTION"]["maxLength"], null=True, verbose_name="Datamodel Description")
     version = models.PositiveSmallIntegerField(default=1)
     is_active = models.BooleanField(default=True, verbose_name="Active ?")
@@ -644,7 +644,9 @@ class Dashboards(models.Model):
     dashboard_code  = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], verbose_name="Dashboard Code (generated)", editable=False)
     dashboard_storage_properties = models.TextField(verbose_name="Storage Properties", null=True)  #json. Engine Type, Default Location etc
     dashboard_reference_class = models.CharField(max_length=255, verbose_name="Dashboard Reference Class", editable=False, null=True)  # Refer to Adbiz Namespace for Dashboards (out of box offerings)
-    dashboard_name = models.CharField(max_length=255, verbose_name="Dashboard Name")
+    dashboard_name = models.CharField(max_length=255, verbose_name="Dashboard Name", null=True) #*
+    dashboard_title = models.CharField(max_length=255, verbose_name="Dashboard Title", null=True)  #* remove null
+    dashboard_sub_title = models.CharField(max_length=255, verbose_name="Dashboard Sub Title", null=True)  #* remove null
     dashboard_description = models.TextField(verbose_name="Dashboard Description", null=True)
     sequence = models.PositiveSmallIntegerField(default=1, verbose_name="Sequence")     # Priority when rebuilding
     is_system_defined = models.BooleanField(default=True, verbose_name="Is System Defined?")    # if true need to set the dashboard_class
@@ -668,18 +670,21 @@ class DashboardComponents(models.Model):
     component_code  = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], verbose_name="Dashboard Code (generated)", editable=False)
     component_category = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], choices=[x.value for x in ComponentCategory], verbose_name="Component Category")
     component_type = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], choices=[x.value for x in ComponentDisplayType], verbose_name="Component Type")
+    component_sub_type = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], default =  ComponentSubDisplayType.G, choices=[x.value for x in ComponentSubDisplayType], verbose_name="Component Sub Type")
     component_name = models.CharField(max_length=constants["ENTITY_NAME"]["maxLength"], verbose_name="Dashboard Name")
+    component_title = models.CharField(max_length=255, verbose_name="Component Title", null=True)  # * remove null
+    component_tooltip = models.CharField(max_length=255, verbose_name="Component Tooltip", null=True)  # * remove null
     component_description = models.TextField(verbose_name="Dashboard Description", null=True)
     component_reference_class = models.CharField(max_length=255, verbose_name="Component Class Reference", null=True) # Refer to Adbiz Namespace for inbuilt components
     sequence = models.PositiveSmallIntegerField(default=1, verbose_name="Sequence")  # Priority when rebuilding
     display_properties = models.TextField(verbose_name="Display Properties")    #JSON: Contains Display settings (ex: if used iwth Chart.js lib - Graph Type, Color, x Axis labels, Y Axis Parameters)
     data_filters = models.TextField(verbose_name="Data Filters", null=True) # JSON: Contains filters for each Dimension & Measures as per the selected Aggregate in the component definition
     data_source_methods = models.TextField(verbose_name="Data Source")  # JSON. Defines the API URL and the request header along with the payload.
+    component_query = models.TextField(verbose_name="Component Query", null=True)  # *
     is_system_defined = models.BooleanField(default=True, verbose_name="Is System Defined?")  # if true need to set the component_class
     is_incremental =  models.BooleanField(default=True, verbose_name="Incremental ?")   # components data population gets appended during data ingestion process. Overrides Dashboard settings
     is_rebuild = models.BooleanField(default=False, verbose_name="Rebuild Everytime ?")  # components data population get rebuilt every time using the source Container during the data ingestion process. Overrides Dashboard settings
     is_auto_referesh = models.BooleanField(default=False, verbose_name="Auto Refresh ?")
-    component_query = models.TextField(verbose_name="Componet Query")
     refresh_interval  = models.PositiveSmallIntegerField(default=0, verbose_name="Auto Refresh Interval (ms)")  # data refresh happens on the UI every X seconds as set. Default=0 means On Demand Refresh.
     is_active = models.BooleanField(default=True, verbose_name="Active ?")
     created_on = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Created On", editable=False)

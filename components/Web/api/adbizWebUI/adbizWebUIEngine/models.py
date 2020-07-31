@@ -304,3 +304,17 @@ class AdbizUserAccess(models.Model):
     last_updated_by = models.CharField(max_length=64, verbose_name="Last updated By")
 
 
+
+class AdbizDashboards(models.Model):
+
+    class Meta:
+        managed = False
+        db_table = "Dashboards"
+        # abstract = False
+
+    module = models.CharField(max_length=32, verbose_name="Module")
+    dashboard_code = models.CharField(max_length=255, verbose_name="Dashboard Code")
+    dashboard_class = models.CharField(max_length=32, verbose_name="Dashboard Reference Class")
+    dashboard_title = models.CharField(max_length=32, verbose_name="Dashboard Title")
+    dashboard_sub_title = models.CharField(max_length=32, verbose_name="Dashboard Sub Title")
+

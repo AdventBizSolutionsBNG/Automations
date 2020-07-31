@@ -1,162 +1,53 @@
 {% extends 'home.html' %}
+{% load static %}
 
-{% block dashboard %}
-<div class="content-page">
-<!-- Start content -->
+    {% block dashboard %}
     <div class="content">
-        <div class="container-fluid">
-            <div class="page-title-box">
-                <div class="row align-items-center">
-                    <div class="col-sm-6">
-                        <h4 class="page-title">Sales Forecast Dashboards</h4>
-                        <ol class="breadcrumb">
-<!--                            <li class="breadcrumb-item active">Welcome to Adbiz Account Receivables Dashboard</li>-->
-                        </ol>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <p class="getOutput" hidden>{{ output }}</p>
-                <script type="text/javascript">
-
-                var output = document.getElementsByClassName("getOutput")[0].innerHTML.replace(/'/g, '"');
-                var component_details = JSON.parse(output);
-
-
-                //console.log(Object.values(component_details)[0][1].display_properties.chartTitle);
-
-                var extraction_type = Object.values(component_details)[0][1].data_source_methods.extractionType;
-
-                if(extraction_type === "api") {
-                    var url = Object.values(component_details)[0][1].data_source_methods.source.url;
-                    var params = Object.values(component_details)[0][1].data_source_methods.source.body;
-                    var component_query = Object.values(component_details)[0][1].component_query;
-
-                    $.ajax({
-                        method : "GET",
-                        url : "{% url 'get_output_data' %}",
-                        data: {"component_query": component_query},
-                        success : function(data_response){
-                             getChart(data_response);
-                            console.log("Charts generated Successfully")
-                        },
-                        error : function(error_data){
-                            console.log(error_data)
-                        }
-                    });
-
-                }
-
-                for (var i=0; i< component_details["count"]; i++){
-                    document.write(
-                            '<div class="col-xl-3 col-md-6">\
-                                <div class="card mini-stat bg-primary text-white">\
-                                    <div class="card-body">\
-                                        <div class="mb-4">\
-                                            <h5 class="font-16 text-uppercase mt-0 text-white-50">' + Object.values(component_details)[0][i].component_name + '</h5>\
-                                            <h4 class="font-500">'+i+' <i class="mdi mdi-arrow-up text-success ml-2"></i></h4>\
-                                            <div class="mini-stat-label bg-success">\
-                                                <p class="mb-0">+ 12%</p>\
-                                            </div>\
-                                        </div>\
-                                        <div class="pt-2">\
-                                            <div class="float-right">\
-                                                <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>\
-                                            </div>\
-                                        </div>\
-                                    </div>\
-                                </div>\
-                            </div>'
-                        );
-                    };
-                </script>
-            </div>
-            </div>
-
-            <div class="row">
-            <div class="col-xl-9">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="mt-0 header-title mb-5">Details</h4>
-                        <div class="row">
-                            <div class="col-lg-7">
-                                <div>
-                                    <canvas id="detail_chart_area" width="400" height="400"></canvas>
-                                    <script>
-
-                                    function getChart(data_response){
-
-                                    var data_response = JSON.parse(data_response);
-                                    var data_labels = data_response["data_labels"];
-                                    var data_values = data_response["data_values"];
-
-                                    var ctx = document.getElementById('detail_chart_area').getContext('2d');
-                                    var myChart = new Chart(ctx, {
-                                        type: Object.values(component_details)[0][1].display_properties.chartType,
-                                        data: {
-                                            labels: data_labels,
-                                            datasets: [{
-                                                label: '# of Votes',
-                                                data: data_values,
-                                                backgroundColor: [
-                                                    'rgba(255, 99, 132, 0.2)',
-                                                    'rgba(54, 162, 235, 0.2)',
-                                                    'rgba(255, 206, 86, 0.2)',
-                                                    'rgba(75, 192, 192, 0.2)',
-                                                    'rgba(153, 102, 255, 0.2)',
-                                                    'rgba(255, 159, 64, 0.2)'
-                                                ],
-                                                borderColor: [
-                                                    'rgba(255, 99, 132, 1)',
-                                                    'rgba(54, 162, 235, 1)',
-                                                    'rgba(255, 206, 86, 1)',
-                                                    'rgba(75, 192, 192, 1)',
-                                                    'rgba(153, 102, 255, 1)',
-                                                    'rgba(255, 159, 64, 1)'
-                                                ],
-                                                borderWidth: 1
-                                            }]
-                                        },
-                                        options: {
-                                            scales: {
-                                                yAxes: [{
-                                                    ticks: {
-                                                        beginAtZero: true
-                                                    }
-                                                }]
-                                            }
-                                        }
-                                    });
-
-                                    };
-                                    </script>
-                                </div>
+        <div class="content-page">
+            <div class="content">
+                <!-- Dashboard title-->
+                <div class="container-fluid" >
+                    <div class="page-title-box">
+                        <div class="row align-items-center">
+                            <div class="col-sm-6">
+                                <h4 class="page-title" >{{dashboard_title|safe}}</h4>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item active">{{dashboard_sub_title|safe}}</li>
+                                </ol>
                             </div>
-
                         </div>
-                        <!-- end row -->
                     </div>
+
+                    <!-- WIDGET AREA-->
+                    <div class="row">
+                        {{component_tags|safe}}
+                    </div>
+
+                {% endblock %}
+
+                <!-- CHART AREA-->
+                {% block charts %}
+                <div class="row">
+                    {{chart_container_tags|safe}}
+                    {{chart_api_tags|safe}}
                 </div>
-                <!-- end card -->
+                {% endblock %}
+
+                 <!-- TABLE AREA-->
+                {% block tables %}
+                    {{table_container_tags|safe}}
+                    {{table_api_tags|safe}}
+                {% endblock %}
+
+                <!-- SCRIPTS AREA-->
+                {% block scripts %}
+                    {{common_scripts|safe}}
+                {% endblock %}
+
+                </div>
             </div>
-         </div>
         </div>
     </div>
+</div>
 
 
-
-<!--    <div id="container" style="width: 75%;">-->
-<!--    <canvas id="common_chart_canvas" width="400" height="400" data-url = ></canvas>-->
-
-<!--    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
-<!--    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>-->
-
-<!--    </div>-->
-
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-
- </script>
-
-{% endblock %}

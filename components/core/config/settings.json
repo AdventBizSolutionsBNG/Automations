@@ -58,6 +58,30 @@
           "password": ""
         }
       }
+    },
+    {
+      "display_components": {
+        "type": "file",
+        "file": {
+          "location": "/home/setupadmin/adbiz/components/core/metadata/display_components.json",
+          "isEncrypted": "N",
+          "isPassword": "N",
+          "isZipped": "N",
+          "password": ""
+        }
+      }
+    },
+    {
+      "charts": {
+        "type": "file",
+        "file": {
+          "location": "/home/setupadmin/adbiz/components/core/metadata/charts.json",
+          "isEncrypted": "N",
+          "isPassword": "N",
+          "isZipped": "N",
+          "password": ""
+        }
+      }
     }
   ],
   "configData": {

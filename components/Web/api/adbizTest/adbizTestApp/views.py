@@ -5,15 +5,32 @@ from django.views.decorators.csrf import csrf_protect
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 import json
-from .models import Country
+from .models import Country, CountryTable, Person
 from django.db import transaction
 from .forms import CountryForm
 from django.core import serializers
-
+from django.views.generic import ListView
+from django_tables2 import SingleTableView
+from .tables import PersonTable
 
 # Create your views here.
 
 from .models import Country,State
+
+class CountryListView(SingleTableView):
+    model = Country
+    table_class = CountryTable
+    template_name = "CountryTable.html"
+
+class PersonListView(SingleTableView):
+    model = Person
+    table_class = PersonTable
+    template_name = "Persons.html"
+
+def get_country_table(request):
+    queryset = Country.objects.all()
+    table = CountryTable(queryset)
+    return render(request, 'CountryTable.html', {'table': table})
 
 def country_index(request):
     try:

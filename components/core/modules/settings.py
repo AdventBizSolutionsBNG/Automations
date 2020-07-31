@@ -12,6 +12,8 @@ class Settings:
     _messages = {}
     _master = {}
     _lookups = {}
+    _display_components = {}
+    _charts = {}
 
     _constants_file_location = ""
     _messages_file_location = ""
@@ -42,6 +44,40 @@ class Settings:
                 if k == "metaData":
                     for config in v:
                         for k1,v1 in config.items():
+                            if k1 == "display_components":
+                                if v1["type"] == "file":
+                                    if v1["file"]["isEncrypted"] == "N":
+                                        if v1["file"]["isPassword"] == "N":
+                                            if v1["file"]["isZipped"] == "N":
+                                                log.info("Reading Constants..")
+                                                self._constants_file_location = v1["file"]["location"]
+                                                self.load_display_components()
+                                            else:
+                                                log.error("Settings files is zipped. Cannot proceed!!")
+                                        else:
+                                            log.error("Settings file is password protected. Cannot proceed!!")
+                                    else:
+                                        log.error("Settings file is encrypted. Cannot proceed!!")
+                                else:
+                                    log.error("Settings provided in an incorrect data format. Cannot proceed!!")
+
+                            if k1 == "charts":
+                                if v1["type"] == "file":
+                                    if v1["file"]["isEncrypted"] == "N":
+                                        if v1["file"]["isPassword"] == "N":
+                                            if v1["file"]["isZipped"] == "N":
+                                                log.info("Reading Charts..")
+                                                self._constants_file_location = v1["file"]["location"]
+                                                self.load_charts()
+                                            else:
+                                                log.error("Settings files is zipped. Cannot proceed!!")
+                                        else:
+                                            log.error("Settings file is password protected. Cannot proceed!!")
+                                    else:
+                                        log.error("Settings file is encrypted. Cannot proceed!!")
+                                else:
+                                    log.error("Settings provided in an incorrect data format. Cannot proceed!!")
+
                             if k1 == "constants":
                                 if v1["type"] == "file":
                                     if v1["file"]["isEncrypted"] == "N":
@@ -59,7 +95,6 @@ class Settings:
                                 else:
                                     log.error("Settings provided in an incorrect data format. Cannot proceed!!")
                             elif k1 == "messages":
-
                                 if v1["type"] == "file":
                                     if v1["file"]["isEncrypted"] == "N":
                                         if v1["file"]["isPassword"] == "N":
@@ -108,6 +143,30 @@ class Settings:
                                 else:
                                     log.error("Settings provided in an incorrect data format. Cannot proceed!!")
 
+        except Exception as e:
+            log.error(e)
+
+    def load_display_components(self):
+        try:
+            log = logging.getLogger(__name__)
+            log.info("Loading Display Components..")
+            if self._constants_file_location is not None:
+                if os.path.exists(self._constants_file_location):
+                    with open(self._constants_file_location,"r") as f:
+                        self._display_components = json.load(f)
+
+
+        except Exception as e:
+            log.error(e)
+
+    def load_charts(self):
+        try:
+            log = logging.getLogger(__name__)
+            log.info("Loading Charts..")
+            if self._constants_file_location is not None:
+                if os.path.exists(self._constants_file_location):
+                    with open(self._constants_file_location,"r") as f:
+                        self._charts = json.load(f)
         except Exception as e:
             log.error(e)
 
@@ -160,4 +219,10 @@ class Settings:
 
     def get_lookups(self):
         return self._lookups
+
+    def get_display_components(self):
+        return self._display_components
+
+    def get_charts(self):
+        return self._charts
 

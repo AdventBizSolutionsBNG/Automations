@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'adbizTestApp',
     'rest_framework',
     'corsheaders',
+    'django_tables2',
 ]
 
 MIDDLEWARE = [

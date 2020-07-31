@@ -1,14 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-  {% load static %}
+
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
   <title>{% block title %}Advent Biz Solutions Product Suite{% endblock %}</title>
   <meta content="Advent Biz Solutions Product Suite" name="Advent Biz Solutions Product Suite" />
   <meta content="AdventizSolutions.com" name="author" />
-  <link rel="shortcut icon" href="themeVerticalDark/assets/images/favicon.ico">
+
+  <link rel="shortcut icon" href="{% static 'themeVerticalDark/assets/images/favicon.ico' %}">
+
+  <link href="{% static 'plugins/datatables/dataTables.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+  <link href="{% static 'plugins/datatables/autoFill.bootstrap4.css' %}" rel="stylesheet" type="text/css" />
+  <link href="{% static 'plugins/datatables/keyTable.dataTables.min.css' %}" rel="stylesheet" type="text/css" />
+  <link href="{% static 'plugins/datatables/buttons.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+  <link href="{% static 'plugins/datatables/responsive.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+
   <link href="{% static 'themeVerticalDark/assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
   <link href="{% static 'themeVerticalDark/assets/css/metismenu.min.css' %}" rel="stylesheet" type="text/css">
   <link href="{% static 'themeVerticalDark/assets/css/icons.css' %}" rel="stylesheet" type="text/css">
@@ -17,17 +26,26 @@
 
 <body>
   <main>
-    {% block content %}
+    <div id="wrapper">
 
-    {% endblock %}
+      {% block menu %}
+      {% endblock %}
 
-    {% block dashboard %}
 
-    {% endblock %}
+      {% block dashboard %}
+      {% endblock %}
 
-    {% block slicedice %}
+      {% block charts %}
+      {% endblock %}
 
-    {% endblock %}
+      {% block tables %}
+      {% endblock %}
+
+      {% block scripts %}
+      {% endblock %}
+
+    </div>
+
 
   </main>
 </body>

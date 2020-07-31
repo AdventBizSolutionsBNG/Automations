@@ -13,10 +13,11 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 from .common.logger import Adbizlogger
 from .common.utils import ClsDbConfig
+import logging.config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+LOGGING_CONFIG = None
 BASE_LOG_FOLDER = "/home/setupadmin/adbiz/logs"
 
 LOG_CONFIG_FILE = os.path.join(BASE_DIR,"adbizWebUI","config","logging.json")
@@ -53,6 +54,8 @@ INSTALLED_APPS = [
     'adbizActRbl',
     'adbizReco',
     'adbizWebUIEngine',
+    'chartjs',
+    'django_tables2',
 ]
 
 MIDDLEWARE = [
@@ -64,7 +67,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+SECURE_CONTENT_TYPE_NOSNIFF = True
 ROOT_URLCONF = 'adbizWebUI.urls'
 #'adbizActPbl/templates/', 'adbizActRbl/templates/', 'adbizReco/templates/'
 
@@ -90,14 +93,13 @@ WSGI_APPLICATION = 'adbizWebUI.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASE_ROUTERS = ['adbizWebUI.routers.dbrouter.AdbizDbRouter']
+
 
 DATABASE_APPS_MAPPING = {
     'ACTPBL':'ACTPBL',
     'ACTRBL': 'ACTRBL',
     'RECO':'RECO'
 }
-
 
 DATABASES = {
     'default': {
@@ -133,8 +135,8 @@ DATABASES = {
         'NAME': reco.dbname(),
     }
 }
-#/home/setupadmin/adbiz/components/Web/api/adbizWebUI/adbizWebUI/dbrouter.py
 
+DATABASE_ROUTERS = ['adbizWebUI.routers.dbrouter.AdbizDbRouter']
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -180,6 +182,6 @@ STATICFILES_DIRS = [
         os.path.join(BASE_DIR, '/home/setupadmin/adbiz/components/Web/ui/veltrix/'),
 ]
 LOGIN_URL = '/'
-LOGIN_REDIRECT_URL = '/adbizUI/home'
+LOGIN_REDIRECT_URL = '/adbizUI/adbizActRbl/home'
 LOGOUT_REDIRECT_URL = '/adbizUI/'
 
