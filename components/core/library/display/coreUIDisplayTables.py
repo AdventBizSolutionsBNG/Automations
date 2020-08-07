@@ -169,7 +169,7 @@ def generate_table_tags(my_component,  component_display_id, my_chart_id, md_cor
         table_display_tags = []
         final_table_calls = ""
         for my_table in my_tables:
-            log.info("Core Library: Processing Table:", my_table["seq"])
+            log.info("Core Library: Processing Table: %s", my_table["seq"])
             if my_table["table_library"] == "dataTable":
                 if my_table["chart_id"] == my_chart_id:
 
@@ -184,18 +184,18 @@ def generate_table_tags(my_component,  component_display_id, my_chart_id, md_cor
 
                     my_table_display_id = component_display_id + "_C" + str(my_chart_id) + "_T" + str(my_table_id)
                     my_table_display_ids.append(my_table_display_id)
-                    log.info("Core Library:Table Display Id:", my_table_display_ids)
+                    log.info("Core Library:Table Display Id: %s", my_table_display_ids)
 
                     my_table_object_id = my_table_object + "_" + str(my_table_id)
-                    log.info("Core Library:Table Object Id:", my_table_object_id)
+                    log.info("Core Library:Table Object Id: %s", my_table_object_id)
 
                     my_datatable_object_id = my_datatable_object + "_" + str(my_table_id)
-                    log.info("Core Library:Table DataTable Object Id:", my_table_object_id)
+                    log.info("Core Library:Table DataTable Object Id: %s", my_table_object_id)
 
                     my_table_title_element_id = "{table_title_" + str(my_table_id) + "}"
                     my_table_sub_title_element_id = "{table_sub_title_" + str(my_table_id) + "}"
 
-                    log.info("Core Library: Processing Table API Tags :", my_table_display_id)
+                    log.info("Core Library: Processing Table API Tags : %s", my_table_display_id)
                     my_table_api_tags = md_api_tags.replace("{URL}", md_url) \
                         .replace("{TABLE QUERY}", my_table_query) \
                         .replace("{TABLE DISPLAY ID}", my_table_display_id)\
@@ -205,7 +205,7 @@ def generate_table_tags(my_component,  component_display_id, my_chart_id, md_cor
                         # .replace("{TABLE SUB TITLE ELEMENT ID}", my_table_sub_title_element_id)\
                         # .replace("{TABLE SUB_TITLE}", my_table_sub_title)
 
-                    log.info("Core Library: Updating Table Display Tags :", my_table_display_id)
+                    log.info("Core Library: Updating Table Display Tags :%s", my_table_display_id)
                     my_table_display_tags = {
                                                 "table_id": my_table_id,
                                                 "table_container_id": my_table_container_id ,
@@ -217,7 +217,7 @@ def generate_table_tags(my_component,  component_display_id, my_chart_id, md_cor
                                               }
                     table_display_tags.append(my_table_display_tags)
 
-                    log.info("Core Library: Updating Table OnClick Tags :", my_table_display_id)
+                    log.info("Core Library: Updating Table OnClick Tags : %s", my_table_display_id)
                     my_onclick_tags = md_onclick_tags.replace("{TABLE CONTAINER ID}", my_table_container_id) \
                                         .replace("{TABLE TITLE ID}", "table_title_" + str(my_table_id) )\
                                         .replace("{TABLE SUB TITLE ID}", "table_sub_title_" + str(my_table_id))\

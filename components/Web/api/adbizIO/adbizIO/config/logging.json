@@ -22,27 +22,26 @@
     },
     "handlers": {
       "console": {
-        "level": "DEBUG",
+        "level": "INFO",
         "filters": [
-          "require_debug_true"
+          "require_debug_false"
         ],
         "class": "logging.StreamHandler",
         "formatter": "simple"
       },
-      "IO_logfile": {
-        "level": "ERROR",
+      "main_logfile": {
+        "level": "INFO",
         "filters": [
-          "require_debug_false"
+          "require_debug_true"
         ],
         "class": "logging.handlers.RotatingFileHandler",
-        "filename": "/home/setupadmin/adbiz/logs/adbizWebIOEngine.log",
+        "filename": "/home/setupadmin/adbiz/logs/adbizWebIOEngine_Main.log",
         "backupCount": 5,
         "formatter": "simple"
       },
       "dba_logfile": {
-        "level": "DEBUG",
+        "level": "INFO",
         "filters": [
-          "require_debug_false",
           "require_debug_true"
         ],
         "class": "logging.handlers.WatchedFileHandler",
@@ -50,9 +49,8 @@
         "formatter": "simple"
       },
       "requests_logfile": {
-        "level": "DEBUG",
+        "level": "INFO",
         "filters": [
-          "require_debug_false",
           "require_debug_true"
         ],
         "class": "logging.handlers.WatchedFileHandler",
@@ -67,9 +65,9 @@
       ]
     },
     "loggers": {
-      "IO": {
+      "main": {
         "handlers": [
-          "IO_logfile"
+          "main_logfile", "console"
         ]
       },
       "dba": {
@@ -79,7 +77,7 @@
       },
       "django": {
         "handlers": [
-          "console"
+          "console", "main_logfile"
         ]
       },
       "django.request": {

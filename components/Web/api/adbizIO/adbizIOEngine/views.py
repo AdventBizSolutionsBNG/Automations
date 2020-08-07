@@ -7,14 +7,19 @@ import datetime
 from django.db import connection
 from decimal import Decimal
 import pandas as pd
+import logging
+
 from itertools import *
 # Create your views here.
+mylog = logging.getLogger("main")
 
+# Executes a SQL Query
 def execute_sql_query(query, object_type):
-
     with connection.cursor() as cursor:
         try:
-            print(query)
+            mylog.info("Executing SQL Query.. ")
+            mylog.info(query)
+
             cursor.execute(query)
             if object_type == "table":
                 column_names = [col[0] for col in cursor.description]
@@ -28,7 +33,7 @@ def execute_sql_query(query, object_type):
                 return df
 
         except Exception as e:
-            print("Error executing Query!!", e)
+            mylog.info("Error executing Query!!", exc_info=True)
             return None
 
 
@@ -39,18 +44,6 @@ def dictfetchall(cursor):
         dict(zip(column_header, row))
         for row in cursor.fetchall()
     ]
-
-    # data = [str(row) for row in cursor.fetchall()]
-    # output = dict(zip(column_header, data))
-    # return output
-
-    # while True:
-    #     row = cursor.fetchone()
-    #     if row is None:
-    #         break
-    #     row_dict = dict(zip(columns, row))
-    #     yield row_dict
-    # return
 
 def convert_df(df):
     data_labels = list(df[0])
@@ -119,20 +112,18 @@ def execute_dashboard_query(request):
                             return JsonResponse (context, safe=False)
 
     except Exception as e:
-        print("Error in executing Query!!", e)
+        mylog.info("Error in executing Dashboard/Widget Query!!", exc_info=True)
         return JsonResponse({"status": "Error!!"})
 
 
 def execute_chart_query(request):
     try:
-        print("Request received to execute a query for Chart")
+        mylog.info("-----------------------------------------------------")
+        mylog.info("Request received to execute a query for Chart")
         if request.method == "GET":
-
             if validate_request_header(request):
                 body = request.body.decode('utf-8')
                 data = {}
-                # print(request.headers)
-                # print(request.body)
                 data = json.loads(body)
 
                 for k, v in data.items():
@@ -157,25 +148,36 @@ def execute_chart_query(request):
 
                 final_query = chart_query.replace('adbiz.constants.startDate', "'" + start_Date + "'").replace(
                     'adbiz.constants.endDate', "'" + end_date + "'")
+
+                mylog.info(final_query)
                 datadf = execute_sql_query(final_query, "chart")
-
-                value = datadf.iloc[0, 0]
                 my_labels = datadf[0].to_list()
-                my_data = datadf[1].to_list()
+                # if len(datadf.columns) > 2:
+                row_list = []
+                i = 1
+                while i < len(datadf.columns):
+                    #row_list.append(datadf[i].to_list())
+                    row_list.append(list(datadf[i]))
+                    i = i+1
+                output = {"labels": my_labels, "data": row_list}
+                mylog.info(output)
 
-                labels = my_labels
-                data = my_data
-                print(data)
-                output = {"labels":labels,"data":data}
+                # else:
+                #     my_data = datadf[1].to_list()
+                #     output = {"labels": my_labels,"data": my_data}
+
+
                 return JsonResponse(output)
     except Exception as e:
-        print(e)
+        mylog.info("Error occurred in executing Chart Query!!", exc_info=True)
+        return JsonResponse({"status": "Error!!"})
 
 def execute_table_query(request):
     try:
-        print("Request received to execute a query for Table")
-        if request.method == "GET":
+        mylog.info("-----------------------------------------------------")
+        mylog.info("Request received to execute a query for Table")
 
+        if request.method == "GET":
             if validate_request_header(request):
                 body = request.body.decode('utf-8')
                 data = {}
@@ -195,21 +197,23 @@ def execute_table_query(request):
 
                 final_query = table_query.replace('adbiz.constants.startDate', "'" + start_Date + "'").replace(
                     'adbiz.constants.endDate', "'" + end_date + "'")
+
+                mylog.info(final_query)
                 value = execute_sql_query(final_query, "table")
-                print(value)
+                #print(value)
                 #value = datadf.to_json()
                 return HttpResponse(value)
 
     except Exception as e:
-        print("IO Engine Error!! Error in executing Query!!", e)
+        mylog.info("Error occurred in executing Table Query!!", exc_info=True)
         return JsonResponse({"status": "Error!!"})
 
 
 def execute_value_query(request):
     try:
-        print("Request received to execute a query for Widget Values")
+        mylog.info("-----------------------------------------------------")
+        mylog.info("Request received to execute a query for Value/Indicator")
         if request.method == "GET":
-
             if validate_request_header(request):
                 body = request.body.decode('utf-8')
                 data = {}
@@ -229,10 +233,11 @@ def execute_value_query(request):
 
                 final_query = component_query.replace('adbiz.constants.startDate', "'"+start_Date+"'" ).replace('adbiz.constants.endDate', "'"+end_date+"'")
                 datadf = execute_sql_query(final_query, "value")
-                print(datadf)
+
+                mylog.info(datadf)
                 value = datadf.iloc[0,0]        # for single value- first row + first column
                 return HttpResponse (value)
 
     except Exception as e:
-        print("IO Engine Error!! Error in executing Query!!", e)
+        mylog.info("Error occurred in executing Value/Indicator Query!!", exc_info=True)
         return JsonResponse({"status": "Error!!"})

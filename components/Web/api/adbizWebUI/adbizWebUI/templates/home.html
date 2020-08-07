@@ -31,6 +31,21 @@
                         </form>
                     </li>
 
+                    <!-- Heirarchy-->
+                    <li class="dropdown notification-list d-none d-md-block">
+                        <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <i class="ti-receipt">Hierarchy</i>
+                            <span class="mdi mdi-chevron-down"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right language-switch">
+                            <a class="dropdown-item" href="#"><img src="{% static  'themeVerticalDark/assets/images/flags/germany_flag.jpg' %}" alt="" height="16" /><span> German </span></a>
+                            <a class="dropdown-item" href="#"><img src="{% static  'themeVerticalDark/assets/images/flags/italy_flag.jpg' %}" alt="" height="16" /><span> Italian </span></a>
+                            <a class="dropdown-item" href="#"><img src="{% static  'themeVerticalDark/assets/images/flags/french_flag.jpg' %}" alt="" height="16" /><span> French </span></a>
+                            <a class="dropdown-item" href="#"><img src="{% static  'themeVerticalDark/assets/images/flags/spain_flag.jpg' %}" alt="" height="16" /><span> Spanish </span></a>
+                            <a class="dropdown-item" href="#"><img src="{% static  'themeVerticalDark/assets/images/flags/russia_flag.jpg' %}" alt="" height="16" /><span> Russian </span></a>
+                        </div>
+                    </li>
+
                     <!-- language-->
                     <li class="dropdown notification-list d-none d-md-block">
                         <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
@@ -101,12 +116,34 @@
                             <a class="dropdown-toggle nav-link arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <img src="{% static  'themeVerticalDark/assets/images/users/user-generic.png' %}" alt="user" class="rounded-circle">
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                            <div class="dropdown-menu dropdown-menu-right  language-switch">
                                 <!-- item-->
 <!--                                <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle m-r-5"></i> Profile</a>-->
-<!--                                <a class="dropdown-item" href="#"><i class="mdi mdi-wallet m-r-5"></i> My Wallet</a>-->
-<!--                                <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings m-r-5"></i> Settings</a>-->
-<!--                                <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline m-r-5"></i> Lock screen</a>-->
+                                <div class="dropdown-divider"></div>
+                                {% block UserDetails %}
+                                    <select id="test" multiple>
+                                        <option value="1">American Black Bear</option>
+                                        <option value="2">Asiatic Black Bear</option>
+                                        <option value="3">Brown Bear</option>
+                                        <option value="4">Giant Panda</option>
+                                        <option value="5">Sloth Bear</option>
+                                        <option value="6">Sun Bear</option>
+                                        <option value="7">Polar Bear</option>
+                                        <option value="8">Spectacled Bear</option>
+                                    </select>
+<!--                                    <a class="dropdown-item" id="{USER NAME}" href="#">User Name1</a>-->
+<!--                                    <div class="dropdown-divider"></div>-->
+<!--                                    <a class="dropdown-item" href="#"><i class="mdi mdi-wallet m-r-5"></i>-->
+<!--                                        <select name="cars" id="cars" multiple>-->
+<!--                                            <option value="volvo">Volvo</option>-->
+<!--                                            <option value="saab">Saab</option>-->
+<!--                                            <option value="opel">Opel</option>-->
+<!--                                            <option value="audi">Audi</option>-->
+<!--                                        </select>-->
+<!--                                    </a>-->
+<!--                                    <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings m-r-5"></i> Settings</a>-->
+<!--    &lt;!&ndash;                                <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline m-r-5"></i> Lock screen</a>&ndash;&gt;-->
+                                {% endblock %}
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item text-danger" href="{% url 'logout' %}"><i class="mdi mdi-power text-danger"></i> Logout</a>
                             </div>
@@ -168,9 +205,9 @@
                               <li><a href="{% url 'actrbl_sales_summary' dashboard_code='836469cb-e5e2-4151-b285-784623615458@dtl.site.env.catalog.datamodel.dashboard' %}">Summary Report</a></li>
                               <li><a href="{% url 'actrbl_sales_forecasts' dashboard_code='93f1ee8b-cae2-47aa-8fb1-95ded769a513@dtl.site.env.catalog.datamodel.dashboard' %}">Sales Forecast</a></li>
                               <li><a href="{% url 'actrbl_sales_exceptions' dashboard_code='54416a91-9d43-4f98-a69f-a1aa357a2fe6@dtl.site.env.catalog.datamodel.dashboard' %}">Exceptions Report</a></li>
-                              <li><a href="{% url 'actrbl_sales_trends' dashboard_code='4625c091-47e0-4721-880e-d41228f43ff8@dtl.site.env.catalog.datamodel.dashboard' %}">Sales Trends</a></li>
+                              <li><a href="{% url 'actrbl_sales_trends' dashboard_code='4781f53b-e967-4eb8-bd06-b5c377d7645e@dtl.site.env.catalog.datamodel.dashboard' %}">Sales Trends</a></li>
                               <li><a href="{% url 'actrbl_discounted_invoices' dashboard_code='4c9fca79-1fad-4585-9c5c-36ec77327174@dtl.site.env.catalog.datamodel.dashboard' %}">Discounted Invoices</a></li>
-                              <li><a href="#">Goods invoiced vs outward comparison</a></li>
+                              <li><a href="{% url 'actrbl_goods_invoices_dispatch_comparision' dashboard_code='4625c091-47e0-4721-880e-d41228f43ff8@dtl.site.env.catalog.datamodel.dashboard' %}">Goods invoiced vs outward comparison</a></li>
                               <li><a href="#">Customer sales vs Credit limits</a></li>
                           </ul>
                       </li>
@@ -178,7 +215,7 @@
                       <li>
                           <a href="javascript:void(0);" class="waves-effect"><i class="ti-receipt"></i><span>Ageing Summary<span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                           <ul class="submenu">
-                              <li><a href="#">Ageing Report</a></li>
+                              <li><a href="{% url 'actrbl_ageing_report' dashboard_code='c9145c2b-8ad2-4d3b-99e8-23dc4c93352d@dtl.site.env.catalog.datamodel.dashboard' %}">Ageing Report</a></li>
                               <li><a href="#">Blocked customers</a></li>
                           </ul>
                       </li>
@@ -186,9 +223,9 @@
                       <li>
                           <a href="javascript:void(0);" class="waves-effect"><i class="ti-pie-chart"></i><span>Collections Summary<span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                           <ul class="submenu">
-                              <li><a href="#">Collection plan vs Actual</a></li>
-                              <li><a href="#">Customer Collections</a></li>
-                              <li><a href="#">Customer Sales vs Collections</a></li>
+                              <li><a href="{% url 'actrbl_customer_planned_vs_actuals' dashboard_code='8f5cb197-e3ed-4e59-9008-47c53a87b156@dtl.site.env.catalog.datamodel.dashboard' %}">Collection plan vs Actual</a></li>
+                              <li><a href="{% url 'actrbl_customer_collections' dashboard_code='e56aa9e6-aa9a-4109-96a5-e5492ef3fd8a@dtl.site.env.catalog.datamodel.dashboard' %}">Customer Collections</a></li>
+                              <li><a href="{% url 'actrbl_customer_sales_vs_collections' dashboard_code='4ae1ca70-ee60-4f24-a2b1-f0d423fe24fd@dtl.site.env.catalog.datamodel.dashboard' %}">Customer Sales vs Collections</a></li>
                           </ul>
                       </li>
 
@@ -277,6 +314,7 @@
 
         <script src="{% static  'plugins/chart.js/chart.min.js' %}"></script>
         <script src="{% static  'themeVerticalDark/assets/js/app.js' %}"></script>
+
 
     {% else %}
         <p>You are not logged in</p>

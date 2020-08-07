@@ -4105,18 +4105,18 @@ transition:opacity 0.8s
 }
 
 .fade-in:hover {
-opacity:100%;
+opacity:90%;
 transition:opacity 0.5s
 }
 
 .selectedWidget {
 opacity:100%;
-box-shadow: 3px 3px whitesmoke
+box-shadow: 4px 4px whitesmoke
 }
 
 .selectedChart {
 opacity:100%;
-box-shadow: 2px 2px whitesmoke
+box-shadow: 3px 3px whitesmoke
 }
 
 @keyframes spinner {

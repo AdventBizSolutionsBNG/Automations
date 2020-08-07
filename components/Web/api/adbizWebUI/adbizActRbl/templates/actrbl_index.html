@@ -1,7 +1,354 @@
-{% extends 'home.html' %}
-{% load static %}
 
-    {% block dashboard %}
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <title>Advent Biz Solutions Product Suite</title>
+  <meta content="Advent Biz Solutions Product Suite" name="Advent Biz Solutions Product Suite" />
+  <meta content="AdventizSolutions.com" name="author" />
+
+  <link rel="shortcut icon" href="/static/themeVerticalDark/assets/images/favicon.ico">
+
+  <link href="/static/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+  <link href="/static/plugins/datatables/autoFill.bootstrap4.css" rel="stylesheet" type="text/css" />
+  <link href="/static/plugins/datatables/keyTable.dataTables.min.css" rel="stylesheet" type="text/css" />
+  <link href="/static/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+  <link href="/static/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+  <link href="/static/themeVerticalDark/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/static/themeVerticalDark/assets/css/metismenu.min.css" rel="stylesheet" type="text/css">
+  <link href="/static/themeVerticalDark/assets/css/icons.css" rel="stylesheet" type="text/css">
+  <link href="/static/themeVerticalDark/assets/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <main>
+    <div id="wrapper">
+
+
+
+
+
+      <!-- Top Bar Start -->
+        <div class="topbar">
+
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <a href="#" class="logo">
+                    <span>
+                            <img src="/static/themeVerticalDark/assets/images/cropped-advent-2.png" alt="" height="30">
+                        </span>
+                    <i>
+                            <img src="/static/themeVerticalDark/assets/images/cropped-advent-2.png" alt="" height="30">
+                        </i>
+                </a>
+            </div>
+
+            <nav class="navbar-custom">
+                <ul class="navbar-right d-flex list-inline float-right mb-0">
+                    <li class="dropdown notification-list d-none d-md-block">
+                        <form role="search" class="app-search">
+                            <div class="form-group mb-0">
+                                <input type="text" class="form-control" placeholder="Search..">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </li>
+
+                    <!-- Heirarchy-->
+                    <li class="dropdown notification-list d-none d-md-block">
+                        <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <i class="ti-receipt">Hierarchy</i>
+                            <span class="mdi mdi-chevron-down"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right language-switch">
+                            <a class="dropdown-item" href="#"><img src="/static/themeVerticalDark/assets/images/flags/germany_flag.jpg" alt="" height="16" /><span> German </span></a>
+                            <a class="dropdown-item" href="#"><img src="/static/themeVerticalDark/assets/images/flags/italy_flag.jpg" alt="" height="16" /><span> Italian </span></a>
+                            <a class="dropdown-item" href="#"><img src="/static/themeVerticalDark/assets/images/flags/french_flag.jpg" alt="" height="16" /><span> French </span></a>
+                            <a class="dropdown-item" href="#"><img src="/static/themeVerticalDark/assets/images/flags/spain_flag.jpg" alt="" height="16" /><span> Spanish </span></a>
+                            <a class="dropdown-item" href="#"><img src="/static/themeVerticalDark/assets/images/flags/russia_flag.jpg" alt="" height="16" /><span> Russian </span></a>
+                        </div>
+                    </li>
+
+                    <!-- language-->
+                    <li class="dropdown notification-list d-none d-md-block">
+                        <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <img src="/static/themeVerticalDark/assets/images/flags/us_flag.jpg" class="mr-2" height="12" alt=""/> English <span class="mdi mdi-chevron-down"></span>
+                        </a>
+<!--                        <div class="dropdown-menu dropdown-menu-right language-switch">-->
+<!--                            <a class="dropdown-item" href="#"><img src="/static/themeVerticalDark/assets/images/flags/germany_flag.jpg" alt="" height="16" /><span> German </span></a>-->
+<!--                            <a class="dropdown-item" href="#"><img src="/static/themeVerticalDark/assets/images/flags/italy_flag.jpg" alt="" height="16" /><span> Italian </span></a>-->
+<!--                            <a class="dropdown-item" href="#"><img src="/static/themeVerticalDark/assets/images/flags/french_flag.jpg" alt="" height="16" /><span> French </span></a>-->
+<!--                            <a class="dropdown-item" href="#"><img src="/static/themeVerticalDark/assets/images/flags/spain_flag.jpg" alt="" height="16" /><span> Spanish </span></a>-->
+<!--                            <a class="dropdown-item" href="#"><img src="/static/themeVerticalDark/assets/images/flags/russia_flag.jpg" alt="" height="16" /><span> Russian </span></a>-->
+<!--                        </div>-->
+                    </li>
+
+                    <!-- full screen -->
+                    <li class="dropdown notification-list d-none d-md-block">
+                        <a class="nav-link waves-effect" href="#" id="btn-fullscreen">
+                            <i class="mdi mdi-fullscreen noti-icon"></i>
+                        </a>
+                    </li>
+
+                    <!-- notification -->
+                    <li class="dropdown notification-list">
+                        <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <i class="mdi mdi-bell-outline noti-icon"></i>
+                            <span class="badge badge-pill badge-danger noti-icon-badge"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg">
+                            <!-- item-->
+<!--                            <h6 class="dropdown-item-text">-->
+<!--                                    Notifications (258)-->
+<!--                            </h6>-->
+<!--                            <div class="slimscroll notification-item-list">-->
+<!--                                &lt;!&ndash; item&ndash;&gt;-->
+<!--                                <a href="javascript:void(0);" class="dropdown-item notify-item active">-->
+<!--                                    <div class="notify-icon bg-success"><i class="mdi mdi-cart-outline"></i></div>-->
+<!--                                    <p class="notify-details">Your order is placed<span class="text-muted">Dummy text of the printing and typesetting industry.</span></p>-->
+<!--                                </a>-->
+<!--                                &lt;!&ndash; item&ndash;&gt;-->
+<!--                                <a href="javascript:void(0);" class="dropdown-item notify-item">-->
+<!--                                    <div class="notify-icon bg-warning"><i class="mdi mdi-message-text-outline"></i></div>-->
+<!--                                    <p class="notify-details">New Message received<span class="text-muted">You have 87 unread messages</span></p>-->
+<!--                                </a>-->
+<!--                                &lt;!&ndash; item&ndash;&gt;-->
+<!--                                <a href="javascript:void(0);" class="dropdown-item notify-item">-->
+<!--                                    <div class="notify-icon bg-info"><i class="mdi mdi-glass-cocktail"></i></div>-->
+<!--                                    <p class="notify-details">Your item is shipped<span class="text-muted">It is a long established fact that a reader will</span></p>-->
+<!--                                </a>-->
+<!--                                &lt;!&ndash; item&ndash;&gt;-->
+<!--                                <a href="javascript:void(0);" class="dropdown-item notify-item">-->
+<!--                                    <div class="notify-icon bg-primary"><i class="mdi mdi-cart-outline"></i></div>-->
+<!--                                    <p class="notify-details">Your order is placed<span class="text-muted">Dummy text of the printing and typesetting industry.</span></p>-->
+<!--                                </a>-->
+<!--                                &lt;!&ndash; item&ndash;&gt;-->
+<!--                                <a href="javascript:void(0);" class="dropdown-item notify-item">-->
+<!--                                    <div class="notify-icon bg-danger"><i class="mdi mdi-message-text-outline"></i></div>-->
+<!--                                    <p class="notify-details">New Message received<span class="text-muted">You have 87 unread messages</span></p>-->
+<!--                                </a>-->
+<!--                            </div>-->
+                            <!-- All-->
+                            <a href="javascript:void(0);" class="dropdown-item text-center text-primary">
+                                    View all <i class="fi-arrow-right"></i>
+                                </a>
+                        </div>
+                    </li>
+                    <li class="dropdown notification-list">
+                        <div class="dropdown notification-list nav-pro-img">
+                            <a class="dropdown-toggle nav-link arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <img src="/static/themeVerticalDark/assets/images/users/user-generic.png" alt="user" class="rounded-circle">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right  language-switch">
+                                <!-- item-->
+<!--                                <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle m-r-5"></i> Profile</a>-->
+                                <div class="dropdown-divider"></div>
+
+                                    <select id="test" multiple>
+                                        <option value="1">American Black Bear</option>
+                                        <option value="2">Asiatic Black Bear</option>
+                                        <option value="3">Brown Bear</option>
+                                        <option value="4">Giant Panda</option>
+                                        <option value="5">Sloth Bear</option>
+                                        <option value="6">Sun Bear</option>
+                                        <option value="7">Polar Bear</option>
+                                        <option value="8">Spectacled Bear</option>
+                                    </select>
+<!--                                    <a class="dropdown-item" id="{USER NAME}" href="#">User Name1</a>-->
+<!--                                    <div class="dropdown-divider"></div>-->
+<!--                                    <a class="dropdown-item" href="#"><i class="mdi mdi-wallet m-r-5"></i>-->
+<!--                                        <select name="cars" id="cars" multiple>-->
+<!--                                            <option value="volvo">Volvo</option>-->
+<!--                                            <option value="saab">Saab</option>-->
+<!--                                            <option value="opel">Opel</option>-->
+<!--                                            <option value="audi">Audi</option>-->
+<!--                                        </select>-->
+<!--                                    </a>-->
+<!--                                    <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings m-r-5"></i> Settings</a>-->
+<!--    &lt;!&ndash;                                <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline m-r-5"></i> Lock screen</a>&ndash;&gt;-->
+
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="/adbizUI/logout/"><i class="mdi mdi-power text-danger"></i> Logout</a>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <ul class="list-inline menu-left mb-0">
+                    <li class="float-left">
+                        <button class="button-menu-mobile open-left waves-effect">
+                            <i class="mdi mdi-menu"></i>
+                        </button>
+                    </li>
+                    <li class="d-none d-sm-block">
+                        <div class="dropdown pt-3 d-inline-block">
+                            <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Account Receivables
+                                </a>
+
+    <!--                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">-->
+    <!--                            <a class="dropdown-item" href="#">Action</a>-->
+    <!--                            <a class="dropdown-item" href="#">Another action</a>-->
+    <!--                            <a class="dropdown-item" href="#">Something else here</a>-->
+    <!--                            <div class="dropdown-divider"></div>-->
+    <!--                            <a class="dropdown-item" href="#">Separated link</a>-->
+    <!--                        </div>-->
+                        </div>
+                    </li>
+                </ul>
+
+            </nav>
+
+        </div>
+
+      <!-- Top Bar End -->
+
+      <!-- ========== Left Sidebar Start ========== -->
+        <div class="left side-menu">
+            <div class="slimscroll-menu" id="remove-scroll">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                  <!-- Left Menu Start -->
+
+                  <ul class="metismenu" id="side-menu">
+                      <li class="menu-title">Main</li>
+                      <li>
+                          <a href="/adbizUI/adbizActRbl/home/5aa17d7e-c221-40cc-8237-063170426436@dtl.site.env.catalog.datamodel.dashboard/" class="waves-effect">
+                              <i class="ti-home"></i><span class="badge badge-primary badge-pill float-right"></span> <span> Home </span>
+                          </a>
+                      </li>
+
+                      <li class="menu-title">Dashboards</li>
+
+                      <li>
+                          <a href="javascript:void(0);" class="waves-effect"><i class="ti-calendar"></i><span>Sales Dashboard<span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                          <ul class="submenu">
+                              <li><a href="/adbizUI/adbizActRbl/actrbl_sales_summary/836469cb-e5e2-4151-b285-784623615458@dtl.site.env.catalog.datamodel.dashboard/">Summary Report</a></li>
+                              <li><a href="/adbizUI/adbizActRbl/actrbl_sales_forecast/93f1ee8b-cae2-47aa-8fb1-95ded769a513@dtl.site.env.catalog.datamodel.dashboard/">Sales Forecast</a></li>
+                              <li><a href="/adbizUI/adbizActRbl/actrbl_sales_exceptions/54416a91-9d43-4f98-a69f-a1aa357a2fe6@dtl.site.env.catalog.datamodel.dashboard/">Exceptions Report</a></li>
+                              <li><a href="/adbizUI/adbizActRbl/actrbl_sales_trends/4781f53b-e967-4eb8-bd06-b5c377d7645e@dtl.site.env.catalog.datamodel.dashboard/">Sales Trends</a></li>
+                              <li><a href="/adbizUI/adbizActRbl/actrbl_discounted_invoices/4c9fca79-1fad-4585-9c5c-36ec77327174@dtl.site.env.catalog.datamodel.dashboard/">Discounted Invoices</a></li>
+                              <li><a href="/adbizUI/adbizActRbl/actrbl_goods_invoiced_dispatch_comparision/4625c091-47e0-4721-880e-d41228f43ff8@dtl.site.env.catalog.datamodel.dashboard/">Goods invoiced vs outward comparison</a></li>
+                              <li><a href="#">Customer sales vs Credit limits</a></li>
+                          </ul>
+                      </li>
+
+                      <li>
+                          <a href="javascript:void(0);" class="waves-effect"><i class="ti-receipt"></i><span>Ageing Summary<span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                          <ul class="submenu">
+                              <li><a href="/adbizUI/adbizActRbl/actrbl_ageing_report/c9145c2b-8ad2-4d3b-99e8-23dc4c93352d@dtl.site.env.catalog.datamodel.dashboard/">Ageing Report</a></li>
+                              <li><a href="#">Blocked customers</a></li>
+                          </ul>
+                      </li>
+
+                      <li>
+                          <a href="javascript:void(0);" class="waves-effect"><i class="ti-pie-chart"></i><span>Collections Summary<span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                          <ul class="submenu">
+                              <li><a href="/adbizUI/adbizActRbl/actrbl_customer_planned_vs_actuals/8f5cb197-e3ed-4e59-9008-47c53a87b156@dtl.site.env.catalog.datamodel.dashboard/">Collection plan vs Actual</a></li>
+                              <li><a href="/adbizUI/adbizActRbl/actrbl_customer_collections/e56aa9e6-aa9a-4109-96a5-e5492ef3fd8a@dtl.site.env.catalog.datamodel.dashboard/">Customer Collections</a></li>
+                              <li><a href="/adbizUI/adbizActRbl/actrbl_customer_sales_vs_collections/4ae1ca70-ee60-4f24-a2b1-f0d423fe24fd@dtl.site.env.catalog.datamodel.dashboard/">Customer Sales vs Collections</a></li>
+                          </ul>
+                      </li>
+
+                      <li class="menu-title">Manage Masters</li>
+                      <li>
+                          <a href="javascript:void(0);" class="waves-effect"><i class="ti-view-grid"></i><span>Masters<span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                          <ul class="submenu">
+                              <li><a href="#">Customers</a></li>
+                              <li><a href="#">Products</a></li>
+                              <li><a href="#">Payment Terms</a></li>
+                              <li><a href="#">Product Pricing</a></li>
+                          </ul>
+                      </li>
+
+                      <li class="menu-title">Administration</li>
+                      <li>
+                          <a href="javascript:void(0);" class="waves-effect"><i class="ti-archive"></i><span>Security<span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                          <ul class="submenu">
+                              <li><a href="#">Manage Users</a></li>
+                              <li><a href="#">Manage Roles</a></li>
+
+                          </ul>
+                      </li>
+                      <li>
+                          <a href="/adbizUI/logout/" class=" mdi mdi-power waves-effect text-danger">Logoff</a>
+                      </li>
+
+                  </ul>
+
+                </div>
+                <!-- Sidebar -->
+                <div class="clearfix"></div>
+
+            </div>
+        <!-- Sidebar -left -->
+
+        </div>
+
+      <!-- Left Sidebar End -->
+
+
+        <!-- jQuery  -->
+        <script src="/static/themeVerticalDark/assets/js/jquery.min.js"></script>
+        <script src="/static/themeVerticalDark/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="/static/themeVerticalDark/assets/js/metisMenu.min.js"></script>
+        <script src="/static/themeVerticalDark/assets/js/waves.min.js"></script>
+        <script src="/static/themeVerticalDark/assets/js/jquery.slimscroll.js"></script>
+
+
+        <!-- Required datatable js -->
+        <script src="/static/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="/static/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="/static/plugins/datatables/dataTables.autoFill.min.js"></script>
+        <script src="/static/plugins/datatables/autoFill.bootstrap4.min.js"></script>
+        <script src="/static/plugins/datatables/dataTables.keyTable.min.js"></script>
+
+        <!-- Buttons examples -->
+        <script src="/static/plugins/datatables/dataTables.buttons.min.js"></script>
+        <script src="/static/plugins/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="/static/plugins/datatables/jszip.min.js"></script>
+        <script src="/static/plugins/datatables/pdfmake.min.js"></script>
+        <script src="/static/plugins/datatables/vfs_fonts.js"></script>
+        <script src="/static/plugins/datatables/buttons.html5.min.js"></script>
+        <script src="/static/plugins/datatables/buttons.print.min.js"></script>
+        <script src="/static/plugins/datatables/buttons.colVis.min.js"></script>
+
+        <!-- Responsive examples -->
+        <script src="/static/plugins/datatables/dataTables.responsive.min.js"></script>
+        <script src="/static/plugins/datatables/responsive.bootstrap4.min.js"></script>
+
+        <!-- Datatable init js -->
+        <script src="/static/themeVerticalDark/assets/pages/datatables.init.js"></script>
+
+         <!-- peity JS -->
+        <script src="/static/plugins/peity-chart/jquery.peity.min.js"></script>
+        <script src="/static/themeVerticalDark/assets/pages/dashboard.js"></script>
+
+        <!--Chartist Chart-->
+        <script src="/static/plugins/chart.js/chart.js"></script>
+        <script src="/static/plugins/chart.js/chartjs-plugin-colorschemes.js"></script>
+        <script src="/static/plugins/chartist/js/chartist-plugin-tooltip.min.js"></script>
+
+
+
+        <!-- App js -->
+
+        <script src="/static/plugins/chart.js/chart.min.js"></script>
+        <script src="/static/themeVerticalDark/assets/js/app.js"></script>
+
+
+
+
+
+
+
+
     <div class="content">
         <div class="content-page">
             <div class="content">
@@ -10,9 +357,9 @@
                     <div class="page-title-box">
                         <div class="row align-items-center">
                             <div class="col-sm-6">
-                                <h4 class="page-title" >{{dashboard_title|safe}}</h4>
+                                <h4 class="page-title" >Sales Forecast</h4>
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item active">{{dashboard_sub_title|safe}}</li>
+                                    <li class="breadcrumb-item active">View Data</li>
                                 </ol>
                             </div>
                         </div>
@@ -20,34 +367,825 @@
 
                     <!-- WIDGET AREA-->
                     <div class="row">
-                        {{component_tags|safe}}
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card mini-stat bg-primary text-white">
+                            <div class="fade-in card-body" style='background-color:tomato' id='W1'>
+                                <div class="mb-4">
+
+									<div class="float-left mini-stat-img mr-4"><img src="/static/themeVerticalDark/assets/images/services-icon/01.png" alt=""></div>
+
+									<h5 class="font-14 text-uppercase mt-0 text-white">Budgeted Vs Actuals</h5>
+
+									<h4 href="#" class="font-12" data-toggle="tooltip" title="Total Budget Value (INR Lakhs)" id=W1-V1>Loading...<i class="mdi mdi-arrow-up text-success ml-2"></i></h4>
+									<h4 href="#" class="font-12" data-toggle="tooltip" title="Total Actual Value (INR Lakhs)" id=W1-V2>Loading...<i class="mdi mdi-arrow-up text-success ml-2"></i></h4>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({'component_query': 'select SUM(msBudgetInLakhsINR_SUM) FROM 9f2e0174d97d405eb83cbb779155ae30.5ddfbf9ad63a47a79b2863eda68975a3;'}),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W1-V1").innerHTML = response_data   ;
+													console.log("Value generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Value' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Value completed successfully' );
+												});
+											});
+									</script>
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({'component_query': 'select SUM(msActualInLakhsINR_SUM) FROM 9f2e0174d97d405eb83cbb779155ae30.5ddfbf9ad63a47a79b2863eda68975a3;'}),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W1-V2").innerHTML = response_data   ;
+													console.log("Value generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Value' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Value completed successfully' );
+												});
+											});
+									</script>
+
+								<div class="mini-stat-label bg-info" data-toggle="tooltip" title="Max Actual value (INR Lakhs)" id=W1-I1><p class="mb-0">Loading...</p></div>
+								<div class="mini-stat-label bg-info" data-toggle="tooltip" title="Min Actual value (INR Lakhs)" id=W1-I2><p class="mb-0">Loading...</p></div>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({'component_query': 'select MAX(msActualInLakhsINR_SUM) FROM 9f2e0174d97d405eb83cbb779155ae30.5ddfbf9ad63a47a79b2863eda68975a3;'}),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W1-I1").innerHTML = response_data   ;
+													console.log("Indicator generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Indicator' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Indicator completed successfully' );
+												});
+											});
+									</script>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({'component_query': 'select MIN(msActualInLakhsINR_SUM) FROM 9f2e0174d97d405eb83cbb779155ae30.5ddfbf9ad63a47a79b2863eda68975a3;'}),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W1-I2").innerHTML = response_data   ;
+													console.log("Indicator generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Indicator' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Indicator completed successfully' );
+												});
+											});
+									</script>
+
+                                </div>
+                                <div class="pt-2">
+                                    <div class="float-right">
+                                        <a href="#" class="text-white" onclick="select_widget('W1'); hide_all_charts(); hide_all_tables(); W1_C1_getChartData();W1_C2_getChartData();"><i class="mdi mdi-arrow-right h5"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     </div>
 
-                {% endblock %}
 
-                <!-- CHART AREA-->
-                {% block charts %}
+
+
                 <div class="row">
-                    {{chart_container_tags|safe}}
-                    {{chart_api_tags|safe}}
+
+					<div style="visibility:hidden"  class="col-xl-6 fade-in" id="div_chart_container_1">
+						<div class="card" id="chart_1">
+							<div class="card-body">
+								<h4 class="mt-0 header-title">CHART #1</h4>
+								<div class="col-lg-12" class="chart-container responsive" style="position: relative; height:40vh; width:80vw">
+
+									<canvas id="canvas_container_1"  style="background-color: black;"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div style="visibility:hidden"  class="col-xl-6 fade-in" id="div_chart_container_2">
+						<div class="card" id="chart_2">
+							<div class="card-body">
+								<h4 class="mt-0 header-title">CHART #2</h4>
+								<div class="col-lg-12" class="chart-container responsive" style="position: relative; height:40vh; width:80vw">
+
+									<canvas id="canvas_container_2"  style="background-color: black;"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+
+									<script type="text/javascript">
+									function W1_C1_getChartData() {
+										var io_engine_url = "/adbizUI/getChartData/"
+										$.ajax({
+											method : 'GET',
+											url : io_engine_url,
+											data:   $.param({'chart_query': "select concat(LPAD(dmMonth,2,0), '-', dmyear) AS Period, SUM(msBudgetInLakhsINR_SUM) AS Budget, SUM(msActualInLakhsINR_SUM) AS Actual FROM 9f2e0174d97d405eb83cbb779155ae30.5ddfbf9ad63a47a79b2863eda68975a3 GROUP BY dmMonth, dmyear order BY CONCAT(dmYear,LPAD(dmMonth,2,0));"}),
+											beforeSend: function (request) {
+													request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+													request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+												}
+											})
+											.done(function(response_data) {
+												chart_data = JSON.parse(response_data);
+												W1_C1_displayChart(chart_data);
+											})
+											.fail(function() {
+												console.log( 'Error occurred in API Data Extraction method for Chart' );
+											})
+											.always(function() {
+												console.log( 'API Data Extraction method for Chart completed successfully' );
+											});
+										};
+									</script>
+									<script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+									<script type="text/javascript"></script>
+									<script>
+									var myChart_1 = null;
+									function W1_C1_displayChart(chart_data){
+										document.getElementById('div_chart_container_1').style.visibility='visible';
+										if(myChart_1!=null){
+											console.log("Destroying Chart Container");
+											myChart_1.destroy();
+										}
+										var ctx = document.getElementById('canvas_container_1').getContext('2d');
+										my_data = chart_data['data']; console.log(my_data);
+										myChart_1 = new Chart( ctx, {
+											// The type of chart we want to create
+											type: 'bar',
+
+											// The data for our dataset
+											data: {
+												labels: chart_data['labels'],
+												datasets: [{
+													data: my_data[0],
+													label: 'Budgeted',
+													backgroundColor: 'rgb(255,0,0)',
+													borderWidth: '1',
+													borderColor: '',
+													hoverBackgroundColor:'gold'},{
+													data: my_data[1],
+													label: 'Actuals',
+													backgroundColor: 'rgb(0,255,0)',
+													borderWidth: '1',
+													borderColor: '',
+													hoverBackgroundColor:'gold'}]
+											},
+											// Configuration options go here
+											options: {
+												responsive: true,
+												maintainAspectRatio: false,
+												title:{
+													display: true,
+													text: 'Sales Forecast - Month on Month Sales Budgeted Vs Actuals',
+													fontSize: 14,
+													fontColor: 'rgb(255, 255, 255)'
+												},
+												legend: {
+													display: '{LEGEND DISPLAY}',
+													position: 'bottom',
+													fullWidth: true,
+													labels: {
+														fontColor: 'rgb(255, 255, 255)'
+													}
+												},
+												tooltips: {
+                                                      mode: 'label',
+												},
+												hover: {
+													mode: 'nearest',
+													intersect: true
+												},
+												scales: {
+													xAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'By Month and Year',
+															fontColor:'yellow',
+															fontSize:12
+														},
+														ticks: {
+															fontColor: 'white',
+														   fontSize: 14
+														  },
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}],
+													yAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Total Amount (INR Lakhs)',
+															fontColor: 'aqua',
+															fontSize:12
+														},
+														ticks: {
+															  fontColor: 'white',
+															  fontSize: 14
+														},
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}]
+												}
+											}
+										});
+										$("#canvas_container_1").click(
+										function (evt) {
+											select_chart('chart_1');
+											console.log("On Chart Click");
+											var activePoints = myChart_1.getElementsAtEvent(evt);
+											var labeltag = activePoints[0]._view.label;
+											console.log(labeltag);
+											hide_all_tables();
+
+											add_spinner_table('adbizDataTable_1');
+											document.getElementById('div_table_container_1').style.visibility='visible';
+											document.getElementById('table_title_1').innerHTML = 'Aggregates - Sales budget Vs Actual Analysis';
+											document.getElementById('table_sub_title_1').innerHTML = 'By Month';
+											add_spinner_table('adbizDataTable_2');
+											document.getElementById('div_table_container_2').style.visibility='visible';
+											document.getElementById('table_title_2').innerHTML = 'Detailed - Sales budget Vs Actual Analysis';
+											document.getElementById('table_sub_title_2').innerHTML = 'By Month';
+												W1_C1_T1_getTableData();
+												W1_C1_T2_getTableData();
+										});
+
+									};
+									</script>
+									<script type="text/javascript">
+									function W1_C2_getChartData() {
+										var io_engine_url = "/adbizUI/getChartData/"
+										$.ajax({
+											method : 'GET',
+											url : io_engine_url,
+											data:   $.param({'chart_query': "select dmProject AS Project, SUM(msBudgetInLakhsINR_SUM) AS Budgeted, SUM(msActualInLakhsINR_SUM) AS Actuals FROM 9f2e0174d97d405eb83cbb779155ae30.5ddfbf9ad63a47a79b2863eda68975a3 GROUP BY dmProject order BY 1;"}),
+											beforeSend: function (request) {
+													request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+													request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+												}
+											})
+											.done(function(response_data) {
+												chart_data = JSON.parse(response_data);
+												W1_C2_displayChart(chart_data);
+											})
+											.fail(function() {
+												console.log( 'Error occurred in API Data Extraction method for Chart' );
+											})
+											.always(function() {
+												console.log( 'API Data Extraction method for Chart completed successfully' );
+											});
+										};
+									</script>
+									<script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+									<script type="text/javascript"></script>
+									<script>
+									var myChart_2 = null;
+									function W1_C2_displayChart(chart_data){
+										document.getElementById('div_chart_container_2').style.visibility='visible';
+										if(myChart_2!=null){
+											console.log("Destroying Chart Container");
+											myChart_2.destroy();
+										}
+										var ctx = document.getElementById('canvas_container_2').getContext('2d');
+										my_data = chart_data['data']; console.log(my_data);
+										myChart_2 = new Chart( ctx, {
+											// The type of chart we want to create
+											type: 'line',
+
+											// The data for our dataset
+											data: {
+												labels: chart_data['labels'],
+												datasets: [{
+													data: my_data[0],
+													label: 'Budgeted',
+													backgroundColor: 'rgb(255,0,0)',
+													borderWidth: '1',
+													borderColor: '',
+													hoverBackgroundColor:'gold'},{
+													data: my_data[1],
+													label: 'Actuals',
+													backgroundColor: 'rgb(0,0,255)',
+													borderWidth: '1',
+													borderColor: '',
+													hoverBackgroundColor:'gold'}]
+											},
+											// Configuration options go here
+											options: {
+												responsive: true,
+												maintainAspectRatio: false,
+												title:{
+													display: true,
+													text: 'Sales Forecast - Sales Budgeted Vs Actuals by project ',
+													fontSize: 14,
+													fontColor: 'rgb(255, 255, 255)'
+												},
+												legend: {
+													display: '{LEGEND DISPLAY}',
+													position: 'bottom',
+													fullWidth: true,
+													labels: {
+														fontColor: 'rgb(255, 255, 255)'
+													}
+												},
+												tooltips: {
+                                                      mode: 'label',
+												},
+												hover: {
+													mode: 'nearest',
+													intersect: true
+												},
+												scales: {
+													xAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'By Month and Year',
+															fontColor:'yellow',
+															fontSize:12
+														},
+														ticks: {
+															fontColor: 'white',
+														   fontSize: 14
+														  },
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}],
+													yAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Total Amount (INR Lakhs)',
+															fontColor: 'aqua',
+															fontSize:12
+														},
+														ticks: {
+															  fontColor: 'white',
+															  fontSize: 14
+														},
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}]
+												}
+											}
+										});
+										$("#canvas_container_2").click(
+										function (evt) {
+											select_chart('chart_2');
+											console.log("On Chart Click");
+											var activePoints = myChart_2.getElementsAtEvent(evt);
+											var labeltag = activePoints[0]._view.label;
+											console.log(labeltag);
+											hide_all_tables();
+
+											add_spinner_table('adbizDataTable_1');
+											document.getElementById('div_table_container_1').style.visibility='visible';
+											document.getElementById('table_title_1').innerHTML = 'Aggregates - Sales budget Vs Actual Analysis';
+											document.getElementById('table_sub_title_1').innerHTML = 'By Month';
+											add_spinner_table('adbizDataTable_2');
+											document.getElementById('div_table_container_2').style.visibility='visible';
+											document.getElementById('table_title_2').innerHTML = 'Detailed - Sales budget Vs Actual Analysis';
+											document.getElementById('table_sub_title_2').innerHTML = 'By Month';
+												W1_C2_T1_getTableData();
+												W1_C2_T2_getTableData();
+										});
+
+									};
+									</script>
                 </div>
-                {% endblock %}
 
-                 <!-- TABLE AREA-->
-                {% block tables %}
-                    {{table_container_tags|safe}}
-                    {{table_api_tags|safe}}
-                {% endblock %}
 
-                <!-- SCRIPTS AREA-->
-                {% block scripts %}
-                    {{common_scripts|safe}}
-                {% endblock %}
 
-                </div>
-            </div>
-        </div>
+
+			<div class="row" style="visibility:hidden" id="div_table_container_1">
+				<div class="col-12">
+					<div class="card">
+						<div class="card-body">
+							<h4 class="mt-0 header-title" id='table_title_1'></h4>
+							<p class="text-muted m-b-30" id='table_sub_title_1'></p>
+							<div class="table-responsive" id="adbizDataTable_1">
+
+										<script async type="text/javascript">
+											function adbizTable_1_create_and_load(display_table_data){
+												all_data = JSON.parse(display_table_data);
+												response_rows = all_data.data;
+												response_headers = all_data.headers;
+												main_table_tag = "<table id='adbizTable_1' class=' table table-hover condensed table-striped table-bordered nowrap' style='border-collapse:collapse; border-spacing:0; width:100%; ' >$headers_tag $rows_tag</table>"
+												header_tag = "<thead><tr background-color:black;font-weight:bold;font-size: 16px;>$headers</tr></thead>";
+												header_style = "background-color:black;font-weight:bold;font-size: 16px;";
+												var header_data = "";
+												$.each(response_headers, function(index, value){
+													header_data += '<th style="'+ header_style +'">'+ value +'</th>';
+												});
+												my_headers = header_tag.replace("$headers", header_data)
+												// console.log(headers)
+												body_tag = "<tbody>$all_rows</tbody>"
+												final_rows_data = ""
+												my_rows = ""
+												var row_tags = "<tr>$row_data</tr>";
+												$.each(response_rows, function(index, value){
+													var row_data= "";
+													var field_data = "";
+													for (var key in value) {
+														field_data = field_data + "<td>"+ value[key] + "</td>";
+													}
+													row_data = row_tags.replace("$row_data",field_data)
+													final_rows_data = final_rows_data + row_data
+												});
+												my_rows = body_tag.replace("$all_rows",final_rows_data)
+												my_table = main_table_tag.replace("$headers_tag", my_headers).replace("$rows_tag", my_rows)
+
+												document.getElementById('adbizDataTable_1').innerHTML = my_table;
+												console.log("Table Data generated Successfully");
+												adbizDataTable_1_load();
+											};
+										</script>
+
+										<script type="text/javascript">
+											function adbizDataTable_1_load(){
+												try{
+													table = $('#adbizTable_1').DataTable({
+														"lengthChange": 'true',
+														"dom": "B<'row'><'row'<'col-md-6'l><'col-md-6'f>r>tp<'row'<'col-md-4'i>><'row'<'#colvis'>>",
+														buttons: [
+															{
+																extend: 'copy',
+																text: 'Copy'
+															},
+															{
+																extend: 'excelHtml5',
+																title: 'Data export'
+															},
+															{
+																extend: 'pdfHtml5',
+																title: 'Data export'
+															},
+															 'csv', 'print',
+															{
+																extend: 'colvis',
+																postfixButtons: [ 'colvisRestore' ]
+															}],
+														"scrollY": true,
+														"scrollCollapse": true,
+														"paging": true,
+														"ordering": true,
+														"scrollX": true,
+														"pagingType": "first_last_numbers" ,
+														"searching": true
+														});
+													remove_spinner_table('adbizDataTable_1');
+												}
+												catch(err) {
+													console.log(err);
+													remove_spinner_table('adbizDataTable_1');
+												}
+											};
+										</script>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="visibility:hidden" id="div_table_container_2">
+				<div class="col-12">
+					<div class="card">
+						<div class="card-body">
+							<h4 class="mt-0 header-title" id='table_title_2'></h4>
+							<p class="text-muted m-b-30" id='table_sub_title_2'></p>
+							<div class="table-responsive" id="adbizDataTable_2">
+
+										<script async type="text/javascript">
+											function adbizTable_2_create_and_load(display_table_data){
+												all_data = JSON.parse(display_table_data);
+												response_rows = all_data.data;
+												response_headers = all_data.headers;
+												main_table_tag = "<table id='adbizTable_2' class=' table table-hover condensed table-striped table-bordered nowrap' style='border-collapse:collapse; border-spacing:0; width:100%; ' >$headers_tag $rows_tag</table>"
+												header_tag = "<thead><tr background-color:black;font-weight:bold;font-size: 16px;>$headers</tr></thead>";
+												header_style = "background-color:black;font-weight:bold;font-size: 16px;";
+												var header_data = "";
+												$.each(response_headers, function(index, value){
+													header_data += '<th style="'+ header_style +'">'+ value +'</th>';
+												});
+												my_headers = header_tag.replace("$headers", header_data)
+												// console.log(headers)
+												body_tag = "<tbody>$all_rows</tbody>"
+												final_rows_data = ""
+												my_rows = ""
+												var row_tags = "<tr>$row_data</tr>";
+												$.each(response_rows, function(index, value){
+													var row_data= "";
+													var field_data = "";
+													for (var key in value) {
+														field_data = field_data + "<td>"+ value[key] + "</td>";
+													}
+													row_data = row_tags.replace("$row_data",field_data)
+													final_rows_data = final_rows_data + row_data
+												});
+												my_rows = body_tag.replace("$all_rows",final_rows_data)
+												my_table = main_table_tag.replace("$headers_tag", my_headers).replace("$rows_tag", my_rows)
+
+												document.getElementById('adbizDataTable_2').innerHTML = my_table;
+												console.log("Table Data generated Successfully");
+												adbizDataTable_2_load();
+											};
+										</script>
+
+										<script type="text/javascript">
+											function adbizDataTable_2_load(){
+												try{
+													table = $('#adbizTable_2').DataTable({
+														"lengthChange": 'true',
+														"dom": "B<'row'><'row'<'col-md-6'l><'col-md-6'f>r>tp<'row'<'col-md-4'i>><'row'<'#colvis'>>",
+														buttons: [
+															{
+																extend: 'copy',
+																text: 'Copy'
+															},
+															{
+																extend: 'excelHtml5',
+																title: 'Data export'
+															},
+															{
+																extend: 'pdfHtml5',
+																title: 'Data export'
+															},
+															 'csv', 'print',
+															{
+																extend: 'colvis',
+																postfixButtons: [ 'colvisRestore' ]
+															}],
+														"scrollY": true,
+														"scrollCollapse": true,
+														"paging": true,
+														"ordering": true,
+														"scrollX": true,
+														"pagingType": "first_last_numbers" ,
+														"searching": true
+														});
+													remove_spinner_table('adbizDataTable_2');
+												}
+												catch(err) {
+													console.log(err);
+													remove_spinner_table('adbizDataTable_2');
+												}
+											};
+										</script>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+	<script type='text/javascript'></script>
+	<script>
+		function W1_C1_T1_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({'table_query': "SELECT  IFNULL(TRIM(dmProject),'') AS 'Project', IFNULL(TRIM(dmCustomerCode),'') AS 'Customer Code', IFNULL(CONVERT(dmMonth, CHAR), '') AS 'Month', IFNULL(CONVERT(dmYear, CHAR), '') AS 'Year', IFNULL(CONVERT(msBudgetInLakhsINR_SUM, CHAR), '0.00') AS 'Budget Amount In Lakhs Sum',IFNULL(CONVERT(msBudgetInLakhsINR_MAX, CHAR), '0.00') As 'Budget Amount In Lakhs Max', IFNULL(CONVERT(msBudgetInLakhsINR_MIN, CHAR), '0.00') AS 'Budget Amount in Lakhs Min',IFNULL(CONVERT(msBudgetInLakhsINR_AVG, CHAR), '0.00') As 'Budget Amount In Lakhs Avg',IFNULL(CONVERT(msBudgetInLakhsINR_COUNT, CHAR), '0.00') As 'Budget Amount In Lakhs Count',IFNULL(CONVERT(msActualInLakhsINR_SUM, CHAR), '0.00') As 'Actual Amount In Lakhs Sum',IFNULL(CONVERT(msActualInLakhsINR_MAX, CHAR), '0.00') As 'Actual Amount In Lakhs Max',IFNULL(CONVERT(msActualInLakhsINR_MIN, CHAR), '0.00') As 'Actual Amount In Lakhs Min',IFNULL(CONVERT(msActualInLakhsINR_AVG, CHAR), '0.00') As 'Actual Amount In Lakhs Avg',IFNULL(CONVERT(msActualInLakhsINR_COUNT, CHAR), '0.00') As 'Actual Amount In Lakhs Count'FROM `9f2e0174d97d405eb83cbb779155ae30`.`5ddfbf9ad63a47a79b2863eda68975a3`; "}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_1_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W1_C1_T2_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({'table_query': "SELECT  IFNULL(TRIM(project), '') AS 'Project', IFNULL(TRIM(customerCode), '') AS 'Customer Code', IFNULL(CONVERT(month, CHAR), '') AS 'Month', IFNULL(CONVERT(year, CHAR), '') AS 'Year', IFNULL(CONVERT(budgetInLakhs, CHAR), '0.00') AS 'Budget(INR lakhs)',IFNULL(CONVERT(actualInLakshs, CHAR), '') AS 'Actual (INR Lakhs)' FROM `9f2e0174d97d405eb83cbb779155ae30`.`ee236c39781b4c33ad5b8165cfecae9b` "}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_2_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W1_C2_T1_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({'table_query': "SELECT  IFNULL(TRIM(dmProject),'') AS 'Project', IFNULL(TRIM(dmCustomerCode),'') AS 'Customer Code', IFNULL(CONVERT(dmMonth, CHAR), '') AS 'Month', IFNULL(CONVERT(dmYear, CHAR), '') AS 'Year', IFNULL(CONVERT(msBudgetInLakhsINR_SUM, CHAR), '0.00') AS 'Budget Amount In Lakhs Sum',IFNULL(CONVERT(msBudgetInLakhsINR_MAX, CHAR), '0.00') As 'Budget Amount In Lakhs Max', IFNULL(CONVERT(msBudgetInLakhsINR_MIN, CHAR), '0.00') AS 'Budget Amount in Lakhs Min',IFNULL(CONVERT(msBudgetInLakhsINR_AVG, CHAR), '0.00') As 'Budget Amount In Lakhs Avg',IFNULL(CONVERT(msBudgetInLakhsINR_COUNT, CHAR), '0.00') As 'Budget Amount In Lakhs Count',IFNULL(CONVERT(msActualInLakhsINR_SUM, CHAR), '0.00') As 'Actual Amount In Lakhs Sum',IFNULL(CONVERT(msActualInLakhsINR_MAX, CHAR), '0.00') As 'Actual Amount In Lakhs Max',IFNULL(CONVERT(msActualInLakhsINR_MIN, CHAR), '0.00') As 'Actual Amount In Lakhs Min',IFNULL(CONVERT(msActualInLakhsINR_AVG, CHAR), '0.00') As 'Actual Amount In Lakhs Avg',IFNULL(CONVERT(msActualInLakhsINR_COUNT, CHAR), '0.00') As 'Actual Amount In Lakhs Count'FROM `9f2e0174d97d405eb83cbb779155ae30`.`5ddfbf9ad63a47a79b2863eda68975a3`; "}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_1_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W1_C2_T2_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({'table_query': "SELECT  IFNULL(TRIM(project), '') AS 'Project', IFNULL(TRIM(customerCode), '') AS 'Customer Code', IFNULL(CONVERT(month, CHAR), '') AS 'Month', IFNULL(CONVERT(year, CHAR), '') AS 'Year', IFNULL(CONVERT(budgetInLakhs, CHAR), '0.00') AS 'Budget(INR lakhs)',IFNULL(CONVERT(actualInLakshs, CHAR), '') AS 'Actual (INR Lakhs)' FROM `9f2e0174d97d405eb83cbb779155ae30`.`ee236c39781b4c33ad5b8165cfecae9b` "}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_2_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+
+
+
+
+			<script type='text/javascript'></script>
+    <script>
+        function select_widget(widget_id){
+            console.log("selecting widget", widget_id);
+            var elements = document.getElementsByClassName("selectedWidget");
+            while(elements.length){
+                console.log("Element Class:");
+                console.log(elements[0]);
+                elements[0].classList.remove("selectedWidget")
+            }
+            document.getElementById(widget_id).className += " selectedWidget";
+        };
+    </script>
+			<script type='text/javascript'></script>
+    <script>
+        function select_chart(chart_id){
+            console.log("selecting Chart", chart_id);
+            var elements = document.getElementsByClassName("selectedChart");
+            while(elements.length){
+                console.log("Element Class:");
+                console.log(elements[0]);
+                elements[0].classList.remove("selectedChart")
+            }
+            document.getElementById(chart_id).className += " selectedChart";
+        };
+    </script>
+			<script type='text/javascript'></script>
+    <script>
+        function add_spinner_table(table_container_id){
+            console.log('adding spinner');
+            document.getElementById(table_container_id).className += " spinner";
+        };
+    </script>
+			<script>
+        function remove_spinner_table(table_container_id){
+            element = document.getElementById(table_container_id);
+            if (element){
+                console.log('removing spinner');
+                element.classList.remove("spinner");
+            }
+        };
+    </script>
+			<script type='text/javascript'></script>
+    <script>
+        function hide_all_charts(){
+            document.getElementById('div_chart_container_1').style.visibility='hidden';
+            document.getElementById('div_chart_container_2').style.visibility='hidden';
+            var elements = document.getElementsByClassName("selectedChart");
+            while(elements.length){
+                console.log("Element Class:");
+                console.log(elements[0]);
+                elements[0].classList.remove("selectedChart")
+            }
+        };
+    </script>
+			<script type='text/javascript'></script>
+    <script>
+        function hide_all_tables(){
+            document.getElementById('div_table_container_1').style.visibility='hidden';
+            document.getElementById('table_title_1').innerHTML = '';
+            document.getElementById('table_sub_title_1').innerHTML = '';
+            console.log('checking datatables-1...');
+            tableElement = document.getElementById('adbizTable_1');
+            if($.fn.DataTable.fnIsDataTable(tableElement)) {
+                $('#adbizTable_1').DataTable().clear().destroy();
+                $("#adbizTable_1").html("");
+                console.log('datatable 1 destroyed...');
+                console.log('checking datatables-2...');
+             };
+            tableElement = document.getElementById('adbizTable_2');
+            if($.fn.DataTable.fnIsDataTable(tableElement)) {
+                $('#adbizTable_2').DataTable().clear().destroy();
+                $("#adbizTable_2").html("");
+                console.log('datatable 2 destroyed...');
+            };
+            document.getElementById('div_table_container_2').style.visibility='hidden';
+            document.getElementById('table_title_2').innerHTML = '';
+            document.getElementById('table_sub_title_2').innerHTML = '';
+        };
+    </script>
+			<script type='text/javascript'></script>
+    <script>
+            $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+            });
+    </script>
+
+
     </div>
-</div>
 
 
+  </main>
+</body>
+</html>

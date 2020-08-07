@@ -454,11 +454,9 @@ def load_all_dashboards(request, md_corelib_display_components):
                     dash_table_key = "dashboardTableTags" + "$" + dashboard_code
                     request.session[dash_table_key] = final_table_api_tags
 
-                    return True
-
                 else:
                     log.info("No components defined for this dashboard")
-
+            return True
         else:
             log.error("Error in connecting to Catalog Engine!!")
             return False
@@ -553,82 +551,92 @@ def generate_chart_container_tags(md_corelib_display_components):
         return None
 
 # Get data for the Component like Values/Indicators using the Component Query
-# def get_component_data(request):
-#     try:
-#         log = logging.getLogger("main")
-#         log.info("--------------- Get Component Data (API) ---------------")
-#
-#         errmsg = {}
-#         errmsg["message"] = "Error validating the request"
-#
-#         component_query = request.GET['component_query']
-#         post_url = 'http://127.0.0.1:10002/adbiz/IOEngine/executeValueQuery/'
-#
-#         headers = {"module": request.session["current_module"], "tenant": request.session["tenant_code"],
-#                    "site": request.session["site_code"], "instance": request.session["instance_code"],"data_lake": request.session["data_lake"],
-#                    "Content-Type": "application/json"}
-#
-#         payload = json.dumps({"component_query": component_query, "user_id": request.session["user_id"],
-#                               "hierarchy": {"H1": "419258870883@dtl.entity", "H2": ["ALL"]}})
-#
-#         response = requests.get(post_url, data=payload, headers=headers)
-#         return HttpResponse(response.content)
-#
-#     except Exception as e:
-#         print("Error in creating payload for IO Engine!!", e)
-#         return JsonResponse({"status": "Error!!"})
-#
-#
-# def get_chart_data(request):
-#     try:
-#         errmsg = {}
-#         errmsg["message"] = "Error validating the request"
-#
-#         chart_query = request.GET['chart_query']
-#         post_url = 'http://127.0.0.1:10002/adbiz/IOEngine/executeChartQuery/'
-#
-#         headers = {"module": request.session["current_module"], "tenant": request.session["tenant_code"],
-#                    "site": request.session["site_code"], "instance": request.session["instance_code"],"data_lake": request.session["data_lake"],
-#                    "Content-Type": "application/json"}
-#
-#         payload = json.dumps({"chart_query": chart_query, "user_id": request.session["user_id"],
-#                               "hierarchy": {"H1": "419258870883@dtl.entity", "H2": ["ALL"]}})
-#
-#         response = requests.get(post_url, data=payload, headers=headers)
-#         return HttpResponse(response.content)
-#
-#     except Exception as e:
-#         print("Error in creating payload for IO Engine!!", e)
-#         return JsonResponse({"status": "Error!!"})
-#
-#
-# def get_table_data(request):
-#     try:
-#         errmsg = {}
-#         errmsg["message"] = "Error validating the request"
-#
-#         table_query = request.GET['table_query']
-#         print(table_query)
-#         if table_query:
-#             post_url = 'http://127.0.0.1:10002/adbiz/IOEngine/executeTableQuery/'
-#
-#             headers = {"module": request.session["current_module"], "tenant": request.session["tenant_code"],
-#                        "site": request.session["site_code"], "instance": request.session["instance_code"],"data_lake": request.session["data_lake"],
-#                        "Content-Type": "application/json"}
-#
-#             payload = json.dumps({"table_query": table_query, "user_id": request.session["user_id"],
-#                                   "hierarchy": {"H1": "419258870883@dtl.entity", "H2": ["ALL"]}})
-#
-#             response = requests.get(post_url, data=payload, headers=headers)
-#             return HttpResponse(response.content)
-#         else:
-#             errmsg["description"] = "Table Query not correct or not provided in the metadata!!!"
-#             return HttpResponse({"error": errmsg})
-#
-#     except Exception as e:
-#         errmsg["description"] = "Error in creating payload for IO Engine Table Query execution!!" + str(e)
-#         print(errmsg)
-#         return HttpResponse({"error": errmsg})
+def get_component_data(request):
+    try:
+        log = logging.getLogger("main")
+        log.info("--------------- Get Component Data (API) ---------------")
+
+        errmsg = {}
+        errmsg["message"] = "Error validating the request"
+
+        component_query = request.GET['component_query']
+        post_url = 'http://127.0.0.1:10002/adbiz/IOEngine/executeValueQuery/'
+        log.info(post_url)
+
+        headers = {"module": request.session["current_module"], "tenant": request.session["tenant_code"],
+                   "site": request.session["site_code"], "instance": request.session["instance_code"],"data_lake": request.session["data_lake"],
+                   "Content-Type": "application/json"}
+
+        payload = json.dumps({"component_query": component_query, "user_id": request.session["user_id"],
+                              "hierarchy": {"H1": "419258870883@dtl.entity", "H2": ["ALL"]}})
+
+        response = requests.get(post_url, data=payload, headers=headers)
+        return HttpResponse(response.content)
+
+    except Exception as e:
+        log.error("Error in creating payload for IO Engine!!", exc_info=True)
+        return JsonResponse({"status": "Error!!"})
+
+
+def get_chart_data(request):
+    try:
+        log = logging.getLogger("main")
+        log.info("--------------- Get Chart Data (API) ---------------")
+
+        errmsg = {}
+        errmsg["message"] = "Error validating the request"
+
+        chart_query = request.GET['chart_query']
+        post_url = 'http://127.0.0.1:10002/adbiz/IOEngine/executeChartQuery/'
+        log.info(post_url)
+
+        headers = {"module": request.session["current_module"], "tenant": request.session["tenant_code"],
+                   "site": request.session["site_code"], "instance": request.session["instance_code"],"data_lake": request.session["data_lake"],
+                   "Content-Type": "application/json"}
+
+        payload = json.dumps({"chart_query": chart_query, "user_id": request.session["user_id"],
+                              "hierarchy": {"H1": "419258870883@dtl.entity", "H2": ["ALL"]}})
+
+        response = requests.get(post_url, data=payload, headers=headers)
+        return HttpResponse(response.content)
+
+    except Exception as e:
+        log.error("Error in creating payload for IO Engine!!", exc_info=True)
+        return JsonResponse({"status": "Error!!"})
+
+
+def get_table_data(request):
+    try:
+        log = logging.getLogger("main")
+        log.info("--------------- Get Table Data (API) ---------------")
+
+        errmsg = {}
+        errmsg["message"] = "Error validating the request"
+
+        table_query = request.GET['table_query']
+        log.info("TQ: %s", table_query)
+        if table_query:
+            post_url = 'http://127.0.0.1:10002/adbiz/IOEngine/executeTableQuery/'
+            log.info(post_url)
+            headers = {"module": request.session["current_module"], "tenant": request.session["tenant_code"],
+                       "site": request.session["site_code"], "instance": request.session["instance_code"],"data_lake": request.session["data_lake"],
+                       "Content-Type": "application/json"}
+
+            payload = json.dumps({"table_query": table_query, "user_id": request.session["user_id"],
+                                  "hierarchy": {"H1": "419258870883@dtl.entity", "H2": ["ALL"]}})
+
+            response = requests.get(post_url, data=payload, headers=headers)
+            log.info("RC: %s", response.content)
+            return HttpResponse(response.content)
+        else:
+            errmsg["description"] = "Table Query not correct or not provided in the metadata!!!"
+            log.error(errmsg)
+            return HttpResponse({"error": errmsg})
+
+    except Exception as e:
+        errmsg["description"] = "Error in creating payload for IO Engine Table Query execution!!" + str(e)
+        log.error(errmsg, exc_info=True)
+        return HttpResponse({"error": errmsg})
 
 
 

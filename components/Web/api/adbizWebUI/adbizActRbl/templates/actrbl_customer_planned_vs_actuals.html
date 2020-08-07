@@ -1,0 +1,53 @@
+{% extends 'home.html' %}
+{% load static %}
+
+    {% block dashboard %}
+    <div class="content">
+        <div class="content-page">
+            <div class="content">
+                <!-- Dashboard title-->
+                <div class="container-fluid" >
+                    <div class="page-title-box">
+                        <div class="row align-items-center">
+                            <div class="col-sm-6">
+                                <h4 class="page-title" >{{dashboard_title|safe}}</h4>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item active">{{dashboard_sub_title|safe}}</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WIDGET AREA-->
+                    <div class="row">
+                        {{component_tags|safe}}
+                    </div>
+
+                {% endblock %}
+
+                <!-- CHART AREA-->
+                {% block charts %}
+                <div class="row">
+                    {{chart_container_tags|safe}}
+                    {{chart_api_tags|safe}}
+                </div>
+                {% endblock %}
+
+                 <!-- TABLE AREA-->
+                {% block tables %}
+                    {{table_container_tags|safe}}
+                    {{table_api_tags|safe}}
+                {% endblock %}
+
+                <!-- SCRIPTS AREA-->
+                {% block scripts %}
+                    {{common_scripts|safe}}
+                {% endblock %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

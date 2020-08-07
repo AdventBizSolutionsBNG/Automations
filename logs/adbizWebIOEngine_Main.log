@@ -1,0 +1,814 @@
+[2020-08-07 18:12:52] INFO -----------------------------------------------------
+[2020-08-07 18:12:52] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:12:52] INFO Executing SQL Query.. 
+[2020-08-07 18:12:52] INFO select SUM(msBudgetInLakhsINR_SUM) FROM 9f2e0174d97d405eb83cbb779155ae30.5ddfbf9ad63a47a79b2863eda68975a3;
+[2020-08-07 18:12:52] INFO           0
+0  28696.31
+[2020-08-07 18:12:52] INFO -----------------------------------------------------
+[2020-08-07 18:12:52] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:12:52] INFO Executing SQL Query.. 
+[2020-08-07 18:12:52] INFO -----------------------------------------------------
+[2020-08-07 18:12:52] INFO -----------------------------------------------------
+[2020-08-07 18:12:52] INFO select SUM(msActualInLakhsINR_SUM) FROM 9f2e0174d97d405eb83cbb779155ae30.5ddfbf9ad63a47a79b2863eda68975a3;
+[2020-08-07 18:12:52] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:12:52] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:12:52] INFO           0
+0  31169.00
+[2020-08-07 18:12:53] INFO Executing SQL Query.. 
+[2020-08-07 18:12:53] INFO select MIN(msActualInLakhsINR_SUM) FROM 9f2e0174d97d405eb83cbb779155ae30.5ddfbf9ad63a47a79b2863eda68975a3;
+[2020-08-07 18:12:53] INFO Executing SQL Query.. 
+[2020-08-07 18:12:53] INFO select MAX(msActualInLakhsINR_SUM) FROM 9f2e0174d97d405eb83cbb779155ae30.5ddfbf9ad63a47a79b2863eda68975a3;
+[2020-08-07 18:12:53] INFO       0
+0  0.00
+[2020-08-07 18:12:53] INFO         0
+0  991.00
+[2020-08-07 18:13:12] INFO -----------------------------------------------------
+[2020-08-07 18:13:12] INFO Request received to execute a query for Chart
+[2020-08-07 18:13:12] INFO select concat(LPAD(dmMonth,2,0), '-', dmyear) AS Period, SUM(msBudgetInLakhsINR_SUM) AS Budget, SUM(msActualInLakhsINR_SUM) AS Actual FROM 9f2e0174d97d405eb83cbb779155ae30.5ddfbf9ad63a47a79b2863eda68975a3 GROUP BY dmMonth, dmyear order BY CONCAT(dmYear,LPAD(dmMonth,2,0));
+[2020-08-07 18:13:12] INFO Executing SQL Query.. 
+[2020-08-07 18:13:12] INFO select concat(LPAD(dmMonth,2,0), '-', dmyear) AS Period, SUM(msBudgetInLakhsINR_SUM) AS Budget, SUM(msActualInLakhsINR_SUM) AS Actual FROM 9f2e0174d97d405eb83cbb779155ae30.5ddfbf9ad63a47a79b2863eda68975a3 GROUP BY dmMonth, dmyear order BY CONCAT(dmYear,LPAD(dmMonth,2,0));
+[2020-08-07 18:13:12] INFO {'labels': ['04-2019', '05-2019', '06-2019', '07-2019', '08-2019', '09-2019', '10-2019', '11-2019', '12-2019', '01-2020', '02-2020', '03-2020'], 'data': [[Decimal('1762.28'), Decimal('2558.00'), Decimal('1801.00'), Decimal('2394.03'), Decimal('2736.00'), Decimal('2905.00'), Decimal('2863.00'), Decimal('3101.00'), Decimal('1684.00'), Decimal('2763.00'), Decimal('1638.00'), Decimal('2491.00')], [Decimal('2490.00'), Decimal('1566.00'), Decimal('2561.00'), Decimal('2236.00'), Decimal('2869.00'), Decimal('3224.00'), Decimal('2213.00'), Decimal('3469.00'), Decimal('2730.00'), Decimal('3800.00'), Decimal('1134.00'), Decimal('2877.00')]]}
+[2020-08-07 18:13:12] INFO -----------------------------------------------------
+[2020-08-07 18:13:12] INFO Request received to execute a query for Chart
+[2020-08-07 18:13:12] INFO select dmProject AS Project, SUM(msBudgetInLakhsINR_SUM) AS Budgeted, SUM(msActualInLakhsINR_SUM) AS Actuals FROM 9f2e0174d97d405eb83cbb779155ae30.5ddfbf9ad63a47a79b2863eda68975a3 GROUP BY dmProject order BY 1;
+[2020-08-07 18:13:12] INFO Executing SQL Query.. 
+[2020-08-07 18:13:12] INFO select dmProject AS Project, SUM(msBudgetInLakhsINR_SUM) AS Budgeted, SUM(msActualInLakhsINR_SUM) AS Actuals FROM 9f2e0174d97d405eb83cbb779155ae30.5ddfbf9ad63a47a79b2863eda68975a3 GROUP BY dmProject order BY 1;
+[2020-08-07 18:13:12] INFO {'labels': ['Air Bus Assemblies', 'Air Bus NRC', 'Bell 407 Assemblies', 'Bell 407 NRC', 'Boeing P8 India NRE/RE', 'Boeing P8 MC', 'Boeing P8 NRE/ Tooling', 'Boeing P8 PC', 'Chinook NRC', 'Chinook Pylon', 'Chinook Ramp', 'Export Incentive', 'HAL LCA', 'HAL NasiK', 'Others', 'Scrap', 'Spirit', 'TAML'], 'data': [[Decimal('1540.00'), Decimal('131.00'), Decimal('6204.00'), Decimal('1276.00'), Decimal('433.00'), Decimal('6080.00'), Decimal('547.00'), Decimal('1113.80'), Decimal('6.00'), Decimal('1837.00'), Decimal('1818.00'), Decimal('200.00'), Decimal('644.48'), Decimal('737.00'), Decimal('191.53'), Decimal('69.00'), Decimal('5589.00'), Decimal('279.50')], [Decimal('3210.00'), Decimal('94.00'), Decimal('6252.00'), Decimal('187.00'), Decimal('376.00'), Decimal('6467.00'), Decimal('42.00'), Decimal('1346.00'), Decimal('6.00'), Decimal('2679.00'), Decimal('2667.00'), Decimal('789.00'), Decimal('139.00'), Decimal('794.00'), Decimal('239.00'), Decimal('75.00'), Decimal('5419.00'), Decimal('388.00')]]}
+[2020-08-07 18:13:25] INFO -----------------------------------------------------
+[2020-08-07 18:13:25] INFO -----------------------------------------------------
+[2020-08-07 18:13:25] INFO Request received to execute a query for Table
+[2020-08-07 18:13:25] INFO Request received to execute a query for Table
+[2020-08-07 18:13:25] INFO SELECT  IFNULL(TRIM(dmProject),'') AS 'Project', IFNULL(TRIM(dmCustomerCode),'') AS 'Customer Code', IFNULL(CONVERT(dmMonth, CHAR), '') AS 'Month', IFNULL(CONVERT(dmYear, CHAR), '') AS 'Year', IFNULL(CONVERT(msBudgetInLakhsINR_SUM, CHAR), '0.00') AS 'Budget Amount In Lakhs Sum',IFNULL(CONVERT(msBudgetInLakhsINR_MAX, CHAR), '0.00') As 'Budget Amount In Lakhs Max', IFNULL(CONVERT(msBudgetInLakhsINR_MIN, CHAR), '0.00') AS 'Budget Amount in Lakhs Min',IFNULL(CONVERT(msBudgetInLakhsINR_AVG, CHAR), '0.00') As 'Budget Amount In Lakhs Avg',IFNULL(CONVERT(msBudgetInLakhsINR_COUNT, CHAR), '0.00') As 'Budget Amount In Lakhs Count',IFNULL(CONVERT(msActualInLakhsINR_SUM, CHAR), '0.00') As 'Actual Amount In Lakhs Sum',IFNULL(CONVERT(msActualInLakhsINR_MAX, CHAR), '0.00') As 'Actual Amount In Lakhs Max',IFNULL(CONVERT(msActualInLakhsINR_MIN, CHAR), '0.00') As 'Actual Amount In Lakhs Min',IFNULL(CONVERT(msActualInLakhsINR_AVG, CHAR), '0.00') As 'Actual Amount In Lakhs Avg',IFNULL(CONVERT(msActualInLakhsINR_COUNT, CHAR), '0.00') As 'Actual Amount In Lakhs Count'FROM `9f2e0174d97d405eb83cbb779155ae30`.`5ddfbf9ad63a47a79b2863eda68975a3`; 
+[2020-08-07 18:13:25] INFO SELECT  IFNULL(TRIM(project), '') AS 'Project', IFNULL(TRIM(customerCode), '') AS 'Customer Code', IFNULL(CONVERT(month, CHAR), '') AS 'Month', IFNULL(CONVERT(year, CHAR), '') AS 'Year', IFNULL(CONVERT(budgetInLakhs, CHAR), '0.00') AS 'Budget(INR lakhs)',IFNULL(CONVERT(actualInLakshs, CHAR), '') AS 'Actual (INR Lakhs)' FROM `9f2e0174d97d405eb83cbb779155ae30`.`ee236c39781b4c33ad5b8165cfecae9b` 
+[2020-08-07 18:13:25] INFO Executing SQL Query.. 
+[2020-08-07 18:13:25] INFO SELECT  IFNULL(TRIM(dmProject),'') AS 'Project', IFNULL(TRIM(dmCustomerCode),'') AS 'Customer Code', IFNULL(CONVERT(dmMonth, CHAR), '') AS 'Month', IFNULL(CONVERT(dmYear, CHAR), '') AS 'Year', IFNULL(CONVERT(msBudgetInLakhsINR_SUM, CHAR), '0.00') AS 'Budget Amount In Lakhs Sum',IFNULL(CONVERT(msBudgetInLakhsINR_MAX, CHAR), '0.00') As 'Budget Amount In Lakhs Max', IFNULL(CONVERT(msBudgetInLakhsINR_MIN, CHAR), '0.00') AS 'Budget Amount in Lakhs Min',IFNULL(CONVERT(msBudgetInLakhsINR_AVG, CHAR), '0.00') As 'Budget Amount In Lakhs Avg',IFNULL(CONVERT(msBudgetInLakhsINR_COUNT, CHAR), '0.00') As 'Budget Amount In Lakhs Count',IFNULL(CONVERT(msActualInLakhsINR_SUM, CHAR), '0.00') As 'Actual Amount In Lakhs Sum',IFNULL(CONVERT(msActualInLakhsINR_MAX, CHAR), '0.00') As 'Actual Amount In Lakhs Max',IFNULL(CONVERT(msActualInLakhsINR_MIN, CHAR), '0.00') As 'Actual Amount In Lakhs Min',IFNULL(CONVERT(msActualInLakhsINR_AVG, CHAR), '0.00') As 'Actual Amount In Lakhs Avg',IFNULL(CONVERT(msActualInLakhsINR_COUNT, CHAR), '0.00') As 'Actual Amount In Lakhs Count'FROM `9f2e0174d97d405eb83cbb779155ae30`.`5ddfbf9ad63a47a79b2863eda68975a3`; 
+[2020-08-07 18:13:25] INFO Executing SQL Query.. 
+[2020-08-07 18:13:25] INFO SELECT  IFNULL(TRIM(project), '') AS 'Project', IFNULL(TRIM(customerCode), '') AS 'Customer Code', IFNULL(CONVERT(month, CHAR), '') AS 'Month', IFNULL(CONVERT(year, CHAR), '') AS 'Year', IFNULL(CONVERT(budgetInLakhs, CHAR), '0.00') AS 'Budget(INR lakhs)',IFNULL(CONVERT(actualInLakshs, CHAR), '') AS 'Actual (INR Lakhs)' FROM `9f2e0174d97d405eb83cbb779155ae30`.`ee236c39781b4c33ad5b8165cfecae9b` 
+[2020-08-07 18:14:37] INFO -----------------------------------------------------
+[2020-08-07 18:14:37] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:37] INFO -----------------------------------------------------
+[2020-08-07 18:14:37] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:37] INFO Executing SQL Query.. 
+[2020-08-07 18:14:37] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:14:37] INFO Executing SQL Query.. 
+[2020-08-07 18:14:37] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:14:37] INFO       0
+0  5039
+[2020-08-07 18:14:37] INFO         0
+0  730.52
+[2020-08-07 18:14:37] INFO -----------------------------------------------------
+[2020-08-07 18:14:37] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:37] INFO Executing SQL Query.. 
+[2020-08-07 18:14:37] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:14:37] INFO         0
+0  730.52
+[2020-08-07 18:14:37] INFO -----------------------------------------------------
+[2020-08-07 18:14:37] INFO -----------------------------------------------------
+[2020-08-07 18:14:37] INFO -----------------------------------------------------
+[2020-08-07 18:14:37] INFO -----------------------------------------------------
+[2020-08-07 18:14:37] INFO -----------------------------------------------------
+[2020-08-07 18:14:37] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:37] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:37] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:37] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:37] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:37] INFO Executing SQL Query.. 
+[2020-08-07 18:14:37] INFO Executing SQL Query.. 
+[2020-08-07 18:14:37] INFO Executing SQL Query.. 
+[2020-08-07 18:14:37] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmChannel ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:14:37] INFO Executing SQL Query.. 
+[2020-08-07 18:14:37] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmChannel ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:14:37] INFO Executing SQL Query.. 
+[2020-08-07 18:14:37] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmHSNCode ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:14:37] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:14:37] INFO         0
+0  393.57
+[2020-08-07 18:14:37] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmHSNCode ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:14:37] INFO       0
+0  2.89
+[2020-08-07 18:14:37] INFO        0
+0  44.84
+[2020-08-07 18:14:37] INFO -----------------------------------------------------
+[2020-08-07 18:14:37] INFO         0
+0  393.57
+[2020-08-07 18:14:37] INFO       0
+0  5039
+[2020-08-07 18:14:37] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:37] INFO -----------------------------------------------------
+[2020-08-07 18:14:37] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:37] INFO Executing SQL Query.. 
+[2020-08-07 18:14:37] INFO Executing SQL Query.. 
+[2020-08-07 18:14:37] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:14:37] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:14:37] INFO         0
+0  730.52
+[2020-08-07 18:14:37] INFO -----------------------------------------------------
+[2020-08-07 18:14:37] INFO       0
+0  5039
+[2020-08-07 18:14:37] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:37] INFO -----------------------------------------------------
+[2020-08-07 18:14:37] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:37] INFO Executing SQL Query.. 
+[2020-08-07 18:14:37] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:14:37] INFO         0
+0  730.52
+[2020-08-07 18:14:37] INFO -----------------------------------------------------
+[2020-08-07 18:14:37] INFO Executing SQL Query.. 
+[2020-08-07 18:14:37] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:37] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerType ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:14:37] INFO Executing SQL Query.. 
+[2020-08-07 18:14:37] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:14:37] INFO       0
+0  5039
+[2020-08-07 18:14:37] INFO         0
+0  393.57
+[2020-08-07 18:14:37] INFO -----------------------------------------------------
+[2020-08-07 18:14:37] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:37] INFO -----------------------------------------------------
+[2020-08-07 18:14:37] INFO -----------------------------------------------------
+[2020-08-07 18:14:37] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:37] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:37] INFO Executing SQL Query.. 
+[2020-08-07 18:14:37] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerType ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:14:37] INFO Executing SQL Query.. 
+[2020-08-07 18:14:37] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerName ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:14:37] INFO Executing SQL Query.. 
+[2020-08-07 18:14:37] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerName ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:14:37] INFO       0
+0  0.07
+[2020-08-07 18:14:37] INFO        0
+0  43.61
+[2020-08-07 18:14:37] INFO         0
+0  393.57
+[2020-08-07 18:14:37] INFO -----------------------------------------------------
+[2020-08-07 18:14:38] INFO -----------------------------------------------------
+[2020-08-07 18:14:38] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:38] INFO -----------------------------------------------------
+[2020-08-07 18:14:38] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:38] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:38] INFO Executing SQL Query.. 
+[2020-08-07 18:14:38] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:14:38] INFO Executing SQL Query.. 
+[2020-08-07 18:14:38] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerRegion ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:14:38] INFO Executing SQL Query.. 
+[2020-08-07 18:14:38] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:14:38] INFO         0
+0  393.57
+[2020-08-07 18:14:38] INFO         0
+0  730.52
+[2020-08-07 18:14:38] INFO       0
+0  5039
+[2020-08-07 18:14:38] INFO -----------------------------------------------------
+[2020-08-07 18:14:38] INFO -----------------------------------------------------
+[2020-08-07 18:14:38] INFO -----------------------------------------------------
+[2020-08-07 18:14:38] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:38] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:38] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:38] INFO Executing SQL Query.. 
+[2020-08-07 18:14:38] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerRegion ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:14:38] INFO -----------------------------------------------------
+[2020-08-07 18:14:38] INFO Executing SQL Query.. 
+[2020-08-07 18:14:38] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:38] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:14:38] INFO       0
+0  0.08
+[2020-08-07 18:14:38] INFO Executing SQL Query.. 
+[2020-08-07 18:14:38] INFO         0
+0  730.52
+[2020-08-07 18:14:38] INFO -----------------------------------------------------
+[2020-08-07 18:14:38] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:14:38] INFO Executing SQL Query.. 
+[2020-08-07 18:14:38] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:38] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmProductCategory ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:14:38] INFO Executing SQL Query.. 
+[2020-08-07 18:14:38] INFO       0
+0  5039
+[2020-08-07 18:14:38] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmProductCategory ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:14:38] INFO         0
+0  393.57
+[2020-08-07 18:14:38] INFO -----------------------------------------------------
+[2020-08-07 18:14:38] INFO        0
+0  44.84
+[2020-08-07 18:14:38] INFO -----------------------------------------------------
+[2020-08-07 18:14:38] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:38] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:38] INFO -----------------------------------------------------
+[2020-08-07 18:14:38] INFO Executing SQL Query.. 
+[2020-08-07 18:14:38] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:38] INFO Executing SQL Query.. 
+[2020-08-07 18:14:38] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:14:38] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:14:38] INFO       0
+0  5039
+[2020-08-07 18:14:38] INFO Executing SQL Query.. 
+[2020-08-07 18:14:38] INFO         0
+0  730.52
+[2020-08-07 18:14:38] INFO -----------------------------------------------------
+[2020-08-07 18:14:38] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmProject ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:14:38] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:38] INFO Executing SQL Query.. 
+[2020-08-07 18:14:38] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmProject ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:14:38] INFO         0
+0  393.57
+[2020-08-07 18:14:38] INFO        0
+0  12.51
+[2020-08-07 18:14:38] INFO -----------------------------------------------------
+[2020-08-07 18:14:38] INFO -----------------------------------------------------
+[2020-08-07 18:14:38] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:38] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:38] INFO -----------------------------------------------------
+[2020-08-07 18:14:38] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:38] INFO Executing SQL Query.. 
+[2020-08-07 18:14:38] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:14:38] INFO Executing SQL Query.. 
+[2020-08-07 18:14:38] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:14:38] INFO         0
+0  730.52
+[2020-08-07 18:14:38] INFO       0
+0  5039
+[2020-08-07 18:14:38] INFO Executing SQL Query.. 
+[2020-08-07 18:14:38] INFO -----------------------------------------------------
+[2020-08-07 18:14:38] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmInvoiceDate ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:14:38] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:14:38] INFO         0
+0  393.57
+[2020-08-07 18:14:38] INFO Executing SQL Query.. 
+[2020-08-07 18:14:38] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmInvoiceDate ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:14:38] INFO         0
+0  190.12
+[2020-08-07 18:15:34] INFO -----------------------------------------------------
+[2020-08-07 18:15:34] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:34] INFO Executing SQL Query.. 
+[2020-08-07 18:15:34] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:15:34] INFO         0
+0  730.52
+[2020-08-07 18:15:34] INFO -----------------------------------------------------
+[2020-08-07 18:15:34] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:34] INFO Executing SQL Query.. 
+[2020-08-07 18:15:34] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmChannel ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:15:34] INFO       0
+0  2.89
+[2020-08-07 18:15:34] INFO -----------------------------------------------------
+[2020-08-07 18:15:34] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:34] INFO -----------------------------------------------------
+[2020-08-07 18:15:34] INFO -----------------------------------------------------
+[2020-08-07 18:15:34] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:34] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:34] INFO Executing SQL Query.. 
+[2020-08-07 18:15:34] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:15:34] INFO Executing SQL Query.. 
+[2020-08-07 18:15:34] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmChannel ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:15:34] INFO       0
+0  5039
+[2020-08-07 18:15:34] INFO         0
+0  393.57
+[2020-08-07 18:15:34] INFO Executing SQL Query.. 
+[2020-08-07 18:15:34] INFO -----------------------------------------------------
+[2020-08-07 18:15:34] INFO -----------------------------------------------------
+[2020-08-07 18:15:34] INFO -----------------------------------------------------
+[2020-08-07 18:15:34] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:15:34] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:34] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:34] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:34] INFO -----------------------------------------------------
+[2020-08-07 18:15:34] INFO       0
+0  5039
+[2020-08-07 18:15:34] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:34] INFO Executing SQL Query.. 
+[2020-08-07 18:15:34] INFO Executing SQL Query.. 
+[2020-08-07 18:15:34] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:15:34] INFO Executing SQL Query.. 
+[2020-08-07 18:15:34] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmHSNCode ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:15:34] INFO         0
+0  730.52
+[2020-08-07 18:15:34] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmHSNCode ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:15:34] INFO         0
+0  393.57
+[2020-08-07 18:15:34] INFO -----------------------------------------------------
+[2020-08-07 18:15:34] INFO Executing SQL Query.. 
+[2020-08-07 18:15:34] INFO        0
+0  44.84
+[2020-08-07 18:15:34] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:34] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO         0
+0  730.52
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerType ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:15:35] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:15:35] INFO       0
+0  5039
+[2020-08-07 18:15:35] INFO         0
+0  393.57
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerType ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:15:35] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:15:35] INFO       0
+0  0.07
+[2020-08-07 18:15:35] INFO         0
+0  730.52
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:15:35] INFO       0
+0  5039
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerName ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:15:35] INFO         0
+0  730.52
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO         0
+0  393.57
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerName ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO        0
+0  43.61
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO       0
+0  5039
+[2020-08-07 18:15:35] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerRegion ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:15:35] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerRegion ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:15:35] INFO         0
+0  393.57
+[2020-08-07 18:15:35] INFO       0
+0  0.08
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO         0
+0  730.52
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO       0
+0  5039
+[2020-08-07 18:15:35] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmProductCategory ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmProductCategory ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO         0
+0  393.57
+[2020-08-07 18:15:35] INFO        0
+0  44.84
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:15:35] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO         0
+0  730.52
+[2020-08-07 18:15:35] INFO       0
+0  5039
+[2020-08-07 18:15:35] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmProject ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmProject ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:15:35] INFO         0
+0  393.57
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO        0
+0  12.51
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO         0
+0  730.52
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO -----------------------------------------------------
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:15:35] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO       0
+0  5039
+[2020-08-07 18:15:35] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmInvoiceDate ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:15:35] INFO Executing SQL Query.. 
+[2020-08-07 18:15:35] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmInvoiceDate ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:15:35] INFO         0
+0  393.57
+[2020-08-07 18:15:35] INFO         0
+0  190.12
+[2020-08-07 18:16:30] INFO -----------------------------------------------------
+[2020-08-07 18:16:30] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:30] INFO Executing SQL Query.. 
+[2020-08-07 18:16:30] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmChannel ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:16:30] INFO         0
+0  393.57
+[2020-08-07 18:16:30] INFO -----------------------------------------------------
+[2020-08-07 18:16:30] INFO -----------------------------------------------------
+[2020-08-07 18:16:30] INFO -----------------------------------------------------
+[2020-08-07 18:16:30] INFO -----------------------------------------------------
+[2020-08-07 18:16:30] INFO -----------------------------------------------------
+[2020-08-07 18:16:30] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:30] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:30] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:30] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:30] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:30] INFO Executing SQL Query.. 
+[2020-08-07 18:16:30] INFO Executing SQL Query.. 
+[2020-08-07 18:16:30] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:16:30] INFO Executing SQL Query.. 
+[2020-08-07 18:16:30] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmChannel ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:16:30] INFO Executing SQL Query.. 
+[2020-08-07 18:16:30] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:16:30] INFO Executing SQL Query.. 
+[2020-08-07 18:16:30] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:16:30] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:16:30] INFO         0
+0  730.52
+[2020-08-07 18:16:30] INFO       0
+0  5039
+[2020-08-07 18:16:30] INFO       0
+0  2.89
+[2020-08-07 18:16:30] INFO         0
+0  730.52
+[2020-08-07 18:16:30] INFO       0
+0  5039
+[2020-08-07 18:16:30] INFO -----------------------------------------------------
+[2020-08-07 18:16:30] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:30] INFO Executing SQL Query.. 
+[2020-08-07 18:16:30] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmHSNCode ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:16:30] INFO         0
+0  393.57
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmHSNCode ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:16:31] INFO        0
+0  44.84
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:16:31] INFO       0
+0  5039
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerType ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO         0
+0  730.52
+[2020-08-07 18:16:31] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerType ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:16:31] INFO         0
+0  393.57
+[2020-08-07 18:16:31] INFO       0
+0  0.07
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:16:31] INFO       0
+0  5039
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:16:31] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerName ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerName ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:16:31] INFO         0
+0  730.52
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO         0
+0  393.57
+[2020-08-07 18:16:31] INFO        0
+0  43.61
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:16:31] INFO         0
+0  730.52
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:16:31] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerRegion ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:16:31] INFO       0
+0  5039
+[2020-08-07 18:16:31] INFO         0
+0  393.57
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerRegion ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:16:31] INFO       0
+0  0.08
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmProductCategory ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:16:31] INFO       0
+0  5039
+[2020-08-07 18:16:31] INFO         0
+0  730.52
+[2020-08-07 18:16:31] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmProductCategory ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO         0
+0  393.57
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO        0
+0  44.84
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:16:31] INFO         0
+0  730.52
+[2020-08-07 18:16:31] INFO       0
+0  5039
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmProject ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO         0
+0  393.57
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmProject ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:16:31] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:16:31] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:16:31] INFO        0
+0  12.51
+[2020-08-07 18:16:31] INFO       0
+0  5039
+[2020-08-07 18:16:31] INFO         0
+0  730.52
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO -----------------------------------------------------
+[2020-08-07 18:16:31] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmInvoiceDate ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:16:31] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:16:31] INFO         0
+0  393.57
+[2020-08-07 18:16:31] INFO Executing SQL Query.. 
+[2020-08-07 18:16:31] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmInvoiceDate ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:16:31] INFO         0
+0  190.12
+[2020-08-07 18:19:04] INFO -----------------------------------------------------
+[2020-08-07 18:19:04] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:04] INFO Executing SQL Query.. 
+[2020-08-07 18:19:04] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:19:04] INFO         0
+0  730.52
+[2020-08-07 18:19:04] INFO -----------------------------------------------------
+[2020-08-07 18:19:04] INFO -----------------------------------------------------
+[2020-08-07 18:19:04] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:04] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:04] INFO Executing SQL Query.. 
+[2020-08-07 18:19:04] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:19:04] INFO         0
+0  730.52
+[2020-08-07 18:19:04] INFO Executing SQL Query.. 
+[2020-08-07 18:19:04] INFO -----------------------------------------------------
+[2020-08-07 18:19:04] INFO -----------------------------------------------------
+[2020-08-07 18:19:04] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmChannel ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:19:04] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:04] INFO -----------------------------------------------------
+[2020-08-07 18:19:04] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:04] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:04] INFO       0
+0  2.89
+[2020-08-07 18:19:04] INFO Executing SQL Query.. 
+[2020-08-07 18:19:04] INFO -----------------------------------------------------
+[2020-08-07 18:19:04] INFO Executing SQL Query.. 
+[2020-08-07 18:19:04] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:04] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmChannel ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:19:04] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:19:04] INFO Executing SQL Query.. 
+[2020-08-07 18:19:04] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:19:04] INFO       0
+0  5039
+[2020-08-07 18:19:04] INFO         0
+0  393.57
+[2020-08-07 18:19:04] INFO       0
+0  5039
+[2020-08-07 18:19:04] INFO -----------------------------------------------------
+[2020-08-07 18:19:04] INFO Executing SQL Query.. 
+[2020-08-07 18:19:04] INFO -----------------------------------------------------
+[2020-08-07 18:19:04] INFO -----------------------------------------------------
+[2020-08-07 18:19:04] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:04] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmHSNCode ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:19:04] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:04] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:04] INFO         0
+0  393.57
+[2020-08-07 18:19:04] INFO Executing SQL Query.. 
+[2020-08-07 18:19:04] INFO Executing SQL Query.. 
+[2020-08-07 18:19:04] INFO Executing SQL Query.. 
+[2020-08-07 18:19:04] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:19:04] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmHSNCode ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:19:04] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:19:04] INFO         0
+0  730.52
+[2020-08-07 18:19:04] INFO        0
+0  44.84
+[2020-08-07 18:19:04] INFO       0
+0  5039
+[2020-08-07 18:19:04] INFO -----------------------------------------------------
+[2020-08-07 18:19:04] INFO -----------------------------------------------------
+[2020-08-07 18:19:04] INFO -----------------------------------------------------
+[2020-08-07 18:19:04] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:04] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:04] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:04] INFO Executing SQL Query.. 
+[2020-08-07 18:19:04] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerType ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:19:04] INFO Executing SQL Query.. 
+[2020-08-07 18:19:04] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerType ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:19:04] INFO       0
+0  0.07
+[2020-08-07 18:19:04] INFO Executing SQL Query.. 
+[2020-08-07 18:19:04] INFO         0
+0  393.57
+[2020-08-07 18:19:04] INFO -----------------------------------------------------
+[2020-08-07 18:19:04] INFO -----------------------------------------------------
+[2020-08-07 18:19:05] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:19:05] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:05] INFO -----------------------------------------------------
+[2020-08-07 18:19:05] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:05] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:05] INFO         0
+0  730.52
+[2020-08-07 18:19:05] INFO Executing SQL Query.. 
+[2020-08-07 18:19:05] INFO Executing SQL Query.. 
+[2020-08-07 18:19:05] INFO Executing SQL Query.. 
+[2020-08-07 18:19:05] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:19:05] INFO -----------------------------------------------------
+[2020-08-07 18:19:05] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerName ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:19:05] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerName ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:19:05] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:05] INFO       0
+0  5039
+[2020-08-07 18:19:05] INFO        0
+0  43.61
+[2020-08-07 18:19:05] INFO -----------------------------------------------------
+[2020-08-07 18:19:05] INFO         0
+0  393.57
+[2020-08-07 18:19:05] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:05] INFO -----------------------------------------------------
+[2020-08-07 18:19:05] INFO Executing SQL Query.. 
+[2020-08-07 18:19:05] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:05] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:19:05] INFO Executing SQL Query.. 
+[2020-08-07 18:19:05] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:19:05] INFO         0
+0  730.52
+[2020-08-07 18:19:05] INFO       0
+0  5039
+[2020-08-07 18:19:05] INFO -----------------------------------------------------
+[2020-08-07 18:19:05] INFO Executing SQL Query.. 
+[2020-08-07 18:19:05] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:05] INFO -----------------------------------------------------
+[2020-08-07 18:19:05] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerRegion ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:19:05] INFO -----------------------------------------------------
+[2020-08-07 18:19:05] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:05] INFO Executing SQL Query.. 
+[2020-08-07 18:19:05] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:05] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmCustomerRegion ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:19:05] INFO         0
+0  393.57
+[2020-08-07 18:19:05] INFO       0
+0  0.08
+[2020-08-07 18:19:05] INFO -----------------------------------------------------
+[2020-08-07 18:19:05] INFO Executing SQL Query.. 
+[2020-08-07 18:19:05] INFO -----------------------------------------------------
+[2020-08-07 18:19:05] INFO Executing SQL Query.. 
+[2020-08-07 18:19:05] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:05] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:19:05] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:19:05] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:05] INFO         0
+0  730.52
+[2020-08-07 18:19:05] INFO       0
+0  5039
+[2020-08-07 18:19:05] INFO Executing SQL Query.. 
+[2020-08-07 18:19:05] INFO Executing SQL Query.. 
+[2020-08-07 18:19:05] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmProductCategory ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:19:05] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmProductCategory ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:19:05] INFO        0
+0  44.84
+[2020-08-07 18:19:05] INFO         0
+0  393.57
+[2020-08-07 18:19:05] INFO -----------------------------------------------------
+[2020-08-07 18:19:05] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:05] INFO -----------------------------------------------------
+[2020-08-07 18:19:05] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:05] INFO Executing SQL Query.. 
+[2020-08-07 18:19:05] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:19:05] INFO         0
+0  730.52
+[2020-08-07 18:19:05] INFO Executing SQL Query.. 
+[2020-08-07 18:19:05] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:19:05] INFO       0
+0  5039
+[2020-08-07 18:19:05] INFO -----------------------------------------------------
+[2020-08-07 18:19:05] INFO -----------------------------------------------------
+[2020-08-07 18:19:05] INFO -----------------------------------------------------
+[2020-08-07 18:19:05] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:05] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:05] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:05] INFO Executing SQL Query.. 
+[2020-08-07 18:19:05] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmProject ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:19:05] INFO Executing SQL Query.. 
+[2020-08-07 18:19:05] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924 WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmProject ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:19:05] INFO Executing SQL Query.. 
+[2020-08-07 18:19:05] INFO SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b  WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:19:05] INFO        0
+0  12.51
+[2020-08-07 18:19:05] INFO         0
+0  393.57
+[2020-08-07 18:19:05] INFO -----------------------------------------------------
+[2020-08-07 18:19:05] INFO         0
+0  730.52
+[2020-08-07 18:19:05] INFO -----------------------------------------------------
+[2020-08-07 18:19:05] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:05] INFO -----------------------------------------------------
+[2020-08-07 18:19:05] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:05] INFO Request received to execute a query for Value/Indicator
+[2020-08-07 18:19:05] INFO Executing SQL Query.. 
+[2020-08-07 18:19:05] INFO Executing SQL Query.. 
+[2020-08-07 18:19:05] INFO  SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmInvoiceDate ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:19:05] INFO Executing SQL Query.. 
+[2020-08-07 18:19:05] INFO SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07'
+[2020-08-07 18:19:05] INFO SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b WHERE dmInvoiceDate BETWEEN '2017-11-11' AND '2020-08-07' GROUP BY dmInvoiceDate ORDER BY 1 DESC LIMIT 1;
+[2020-08-07 18:19:05] INFO         0
+0  190.12
+[2020-08-07 18:19:05] INFO         0
+0  393.57
+[2020-08-07 18:19:05] INFO       0
+0  5039
