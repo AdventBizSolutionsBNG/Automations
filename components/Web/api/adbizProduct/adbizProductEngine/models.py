@@ -33,7 +33,7 @@ class ProductEngine(models.Model):
     activation_file_location = models.CharField(max_length=constants["FILE_LOCATION"]["maxLength"], verbose_name="Activation File Location")
     activation_key = models.CharField(max_length=constants["ACTIVATION_KEY"]["maxLength"], verbose_name=" Activation Key (generated)", editable = False )
     activation_dt = models.DateTimeField(verbose_name="Activation Date Time")
-    host_name = models.CharField(max_length=constants["ENTITY_NAME"]["maxLength"],   verbose_name="Host Name")
+    host_name = models.CharField(max_length=constants["ENTITY_NAME"]["maxLength"], verbose_name="Host Name")
     host_ip_address = models.GenericIPAddressField(max_length=32, verbose_name="Host IP Address")
     os_release = models.CharField(max_length=32, null = True, verbose_name="OS Release Version")
     release_info = models.CharField(max_length=255, null = True, verbose_name="Version Details")
@@ -173,6 +173,26 @@ class LicensingInfo(models.Model):
     last_updated_by = models.CharField(max_length=constants["USER_NAME"]["maxLength"], verbose_name="Last Updated By",
                                      editable=False)
 
+class LicenseParameters(models.Model):
+    class Meta:
+        db_table = "license_parameters"
+
+    license = models.ForeignKey(LicensingInfo, on_delete=models.CASCADE)
+    product_edition = models.CharField(max_length=255, choices=[x.value for x in Editions], verbose_name="Product Edition")  # list
+    storage_engine = models.CharField(max_length=255, choices=[x.value for x in StorageEngines], verbose_name="Storage Engine")  # list
+    chart_library = models.CharField(max_length=255, choices=[x.value for x in ChartLibraries], verbose_name="Chart Library")  # list
+    table_library = models.CharField(max_length=255, choices=[x.value for x in TableLibraries],
+                                     verbose_name="Table Library")  # list
+    slice_and_dice = models.BooleanField(default=False, verbose_name="Slice & Dice ?")
+    default_period_months = models.SmallIntegerField(verbose_name="Default Period (months)", default=3)
+    created_on = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Created On",
+                                      editable=False)
+    last_updated_on = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Last Updated On",
+                                           editable=False)
+    last_updated_by = models.CharField(max_length=constants["USER_NAME"]["maxLength"], verbose_name="Last Updated By",
+                                       editable=False)
+
+
 # Initially a Site will be activated for a Tenant.
 # A Tenant can host multiple Sites. Only one site per Tenant is recommended
 class LicenseSiteActivations(models.Model):
@@ -200,7 +220,6 @@ class LicenseSiteActivations(models.Model):
 class LicenseInstanceActivations(models.Model):
     class Meta:
         db_table = "license_instance_activations"
-
 
     license = models.ForeignKey(LicensingInfo, on_delete=models.CASCADE)
     site = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], verbose_name="Site")

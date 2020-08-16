@@ -1,0 +1,184 @@
+{
+	"common_filter_options": [{
+		"type": "By Value",
+		"default_operator": "SUM"
+	}, {
+		"type": "By Count",
+		"default_operator": "COUNT"
+	}],
+	"time_dimension": {
+		"category": "date_slider",
+		"search_types": ["trigger_based"],
+		"supported_search_data_types": ["date"],
+		"min_date": ["adbiz.constants.currentYear", "3"],
+		"max_date": ["adbiz.constants.currentYear", "3"],
+		"date_format": "adbiz.settings.currentDateFormat"
+	},
+	"dimensions": {
+		"category": "single_select",
+		"dimension_filters": {
+			"filter_types": ["single_select", "multi_select"],
+			"search_types": ["trigger_based", "type_ahead"],
+			"supported_search_data_types": ["string", "date"],
+			"string_search": {
+				"operators": {
+					"EQ": "Equal to",
+					"NEQ": "Not Equal to",
+					"IN": "List of csv's",
+					"NOT IN": "Not in list of csv's",
+					"LIKE": "Wild Card Search",
+					"NOT LIKE": "Wild Card Search",
+					"REGEX": "Regular Expression"
+				},
+				"default_operator": "EQ",
+				"is_case_sensitive": "False",
+				"min_length": "3",
+				"max_length": "15",
+				"is_wild_search_allowed": "True",
+				"wild_search_delimiter": "*",
+				"is_regEx_allowed": "True",
+				"regEx_delimiter": "%"
+			},
+			"date_search": {
+				"operators": {
+					"EQ": "Equal to",
+					"NEQ": "Not Equal to",
+					"IN": "List of csv's",
+					"NOT IN": "Not in list of csv's",
+					"BETWEEN": "Between a range"
+				},
+				"default_operator": "EQ",
+				"min_date": ["adbiz.constants.currentYear", "3"],
+				"max_date": ["adbiz.constants.currentYear", "3"],
+				"date_format": "adbiz.settings.currentDateFormat",
+				"is_wild_search_allowed": "False",
+				"wild_search_delimiter": "*",
+				"is_regEx_allowed": "False",
+				"regEx_delimiter": "%"
+			}
+		}
+	},
+	"measures": {
+		"category": "single_select",
+		"measure_filters": {
+			"filter_types": ["single_select", "multi_select", "range_select"],
+			"search_types": ["trigger_based", "type_ahead"],
+			"supported_search_data_types": ["number"],
+			"number_search": {
+				"operators": {
+					"EQ": "Equal to",
+					"NEQ": "Not Equal to",
+					"IN": "List of csv's",
+					"NOT IN": "Not in list of csv's",
+					"GT": "Greater Than",
+					"GTE": "Greater Than & Equal to",
+					"LT": "Less Than",
+					"LTE": "Less Than & Equal to",
+					"BETWEEN": "Between min & max"
+				},
+				"default_operator": "EQ",
+				"min_length": "3",
+				"max_length": "15",
+				"is_wild_search_allowed": "True",
+				"wild_search_delimiter": "*",
+				"is_regEx_allowed": "True",
+				"regEx_delimiter": "%"
+			}
+		}
+	},
+	"quick_options": {
+		"last": {
+			"type": "dimension_based",
+			"display_name": "Last",
+			"operand_data_type": "number",
+			"range": {
+				"min_value": "1",
+				"max_value": "50"
+			}
+		},
+		"top": {
+			"type": "dimension_based",
+			"display_name": "Top",
+			"operand_data_type": "number",
+			"range": {
+				"min_value": "1",
+				"max_value": "50"
+			}
+		},
+		"previous": {
+			"type": "date_based",
+			"display_name": "Previous",
+			"operand_data_type": "date",
+			"periods": {
+				"adbiz.settings.dateHierarchy.YQMD": ["Days", "Months", "Quarters", "Years"],
+				"adbiz.settings.dateHierarchy.YMD": ["Days", "Months", "Years"],
+				"adbiz.settings.dateHierarchy.YMWD": ["Days", "Weeks", "Months", "Years"],
+				"adbiz.settings.dateHierarchy.YMDH": ["Hours", "Days", "Months", "Years"]
+			},
+			"range": {
+				"Hours": {
+					"min_value": "1",
+					"max_value": "24"
+				},
+				"Days": {
+					"min_value": "1",
+					"max_value": "31"
+				},
+				"Weeks": {
+					"min_value": "1",
+					"max_value": "52"
+				},
+				"Months": {
+					"min_value": "1",
+					"max_value": "12"
+				},
+				"Quarters": {
+					"min_value": "1",
+					"max_value": "4"
+				},
+				"Years": {
+					"min_value": "1",
+					"max_value": "3"
+				}
+			}
+		},
+		"Next": {
+			"type": "date_based",
+			"display_name": "Next",
+			"operand_data_type": "date",
+			"periods": {
+				"adbiz.settings.dateHierarchy.YQMD": ["Days", "Months", "Quarters", "Years"],
+				"adbiz.settings.dateHierarchy.YMD": ["Days", "Months", "Years"],
+				"adbiz.settings.dateHierarchy.YMWD": ["Days", "Weeks", "Months", "Years"],
+				"adbiz.settings.dateHierarchy.YMDH": ["Hours", "Days", "Months", "Years"]
+			},
+			"range": {
+				"Hours": {
+					"min_value": "1",
+					"max_value": "24"
+				},
+				"Days": {
+					"min_value": "1",
+					"max_value": "31"
+				},
+				"Weeks": {
+					"min_value": "1",
+					"max_value": "52"
+				},
+				"Months": {
+					"min_value": "1",
+					"max_value": "12"
+				},
+				"Quarters": {
+					"min_value": "1",
+					"max_value": "4"
+				},
+				"Years": {
+					"min_value": "1",
+					"max_value": "3"
+				}
+			}
+		},
+		"hierarchy": {"max_levels": "4", "display_name": "Hierarchy"}
+	}
+}

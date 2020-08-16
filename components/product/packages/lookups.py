@@ -357,3 +357,17 @@ class ComponentDisplayType(enum.Enum):
     def get_value(cls, member):
         return member.value[0]
 
+class StorageEngines(enum.Enum):
+    RDBMS = ('RDBMS', 'RDBMS')
+    HIVE = ('HIVE','HIVE')
+
+class ChartLibraries(enum.Enum):
+    CJ = ('CJ', 'CHART.JS LIBRARY')
+    HC = ('HC','HIGHCHART LIBRARY')
+
+class TableLibraries(enum.Enum):
+    DT = ('DT', 'DATA TABLE LIBRARY')
+
+class RemoteCallTypes(enum.Enum):
+    AJX = ('AJX', 'AJAX')
+    DRT = ('DRT', 'DIRECT CALLS')

@@ -9,7 +9,7 @@ from decimal import Decimal
 import pandas as pd
 import logging
 
-from itertools import *
+
 # Create your views here.
 mylog = logging.getLogger("main")
 
@@ -107,12 +107,10 @@ def execute_dashboard_query(request):
                                 "data_values" : data_values
                             }
 
-                            # print(list(data[0]))
-
                             return JsonResponse (context, safe=False)
 
     except Exception as e:
-        mylog.info("Error in executing Dashboard/Widget Query!!", exc_info=True)
+        mylog.error("Error in executing Dashboard/Widget Query!!", exc_info=True)
         return JsonResponse({"status": "Error!!"})
 
 
@@ -165,11 +163,10 @@ def execute_chart_query(request):
                 # else:
                 #     my_data = datadf[1].to_list()
                 #     output = {"labels": my_labels,"data": my_data}
-
-
                 return JsonResponse(output)
+
     except Exception as e:
-        mylog.info("Error occurred in executing Chart Query!!", exc_info=True)
+        mylog.error("Error occurred in executing Chart Query!!", exc_info=True)
         return JsonResponse({"status": "Error!!"})
 
 def execute_table_query(request):
@@ -205,7 +202,7 @@ def execute_table_query(request):
                 return HttpResponse(value)
 
     except Exception as e:
-        mylog.info("Error occurred in executing Table Query!!", exc_info=True)
+        mylog.error("Error occurred in executing Table Query!!", exc_info=True)
         return JsonResponse({"status": "Error!!"})
 
 
@@ -239,5 +236,5 @@ def execute_value_query(request):
                 return HttpResponse (value)
 
     except Exception as e:
-        mylog.info("Error occurred in executing Value/Indicator Query!!", exc_info=True)
+        mylog.error("Error occurred in executing Value/Indicator Query!!", exc_info=True)
         return JsonResponse({"status": "Error!!"})
