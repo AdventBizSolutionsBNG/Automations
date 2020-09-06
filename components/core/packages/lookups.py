@@ -466,16 +466,16 @@ class DataLakeSubTypes(enum.Enum):
     @classmethod
     def get_value(cls, member):
         return member.value[0]
-
-
-class QuickOptionsDateOperators(enum.Enum):
-    NEXT = ('NEXT','NEXT VALUES')
-    LAST = ('LAST','LAST VALUES')
-    NOW = ('NOW', 'AS OF TODAY')
-
-    @classmethod
-    def get_value(cls, member):
-        return member.value[0]
+#
+#
+# class QuickOptionsDateOperators(enum.Enum):
+#     NEXT = ('NEXT','NEXT VALUES')
+#     LAST = ('LAST','LAST VALUES')
+#     NOW = ('NOW', 'AS OF TODAY')
+#
+#     @classmethod
+#     def get_value(cls, member):
+#         return member.value[0]
 
 class QuickOptionsDatePeriods(enum.Enum):
     Y = ('Y','YEAR')
@@ -483,6 +483,16 @@ class QuickOptionsDatePeriods(enum.Enum):
     M = ('M', 'MONTH')
     W = ('W', 'WEEK')
     D = ('D', 'DAY')
+
+    @classmethod
+    def get_value(cls, member):
+        return member.value[0]
+
+class QuickOptionsDateOperators(enum.Enum):
+    NEXT = ('NEXT','NEXT VALUES')
+    LAST = ('LAST','LAST VALUES')
+    BTWN = ('BTWN','BETWEEN')
+    NOW = ('NOW', 'AS OF TODAY')
 
     @classmethod
     def get_value(cls, member):

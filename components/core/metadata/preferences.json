@@ -1,0 +1,51 @@
+{
+	"system_specific": [{
+		"id": 1,
+		"preference_code": "P0001",
+		"preference_name": "Default Module",
+		"preference_description": "Default Module"
+	}],
+	"module_specific": [{
+			"id": 2,
+			"preference_code": "P0100",
+			"preference_name": "Total Displayed Widgets",
+			"preference_description": "Total Displayed Widgets"
+		},
+		{
+			"id": 3,
+			"preference_code": "P0101",
+			"preference_name": "Default Rows",
+			"preference_description": "Default Rows"
+		},
+		{
+			"id": 4,
+			"preference_code": "P0102",
+			"preference_name": "Default Period",
+			"preference_description": "Default Period"
+		},
+		{
+			"id": 8,
+			"preference_code": "P0103",
+			"preference_name": "Default Hist Period",
+			"preference_description": "Default Hist Period"
+		},
+		{
+			"id": 5,
+			"preference_code": "P0200",
+			"preference_name": "Default Hierarchy Type",
+			"preference_description": "Default Hierarchy Type"
+		},
+		{
+			"id": 6,
+			"preference_code": "P0201",
+			"preference_name": "Default Entity",
+			"preference_description": "Default Entity"
+		},
+		{
+			"id": 7,
+			"preference_code": "P0202",
+			"preference_name": "Default Division",
+			"preference_description": "Default Division"
+		}
+	]
+}

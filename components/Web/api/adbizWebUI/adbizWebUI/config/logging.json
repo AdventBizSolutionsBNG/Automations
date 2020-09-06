@@ -23,6 +23,7 @@
     "handlers": {
       "console": {
         "level": "INFO",
+        "stream": "sys.stdout",
         "filters": [
           "require_debug_false"
         ],
@@ -52,7 +53,7 @@
       "actrbl_logfile": {
         "level": "INFO",
         "filters": [
-          "require_debug_false"
+          "require_debug_true"
         ],
         "class": "logging.handlers.RotatingFileHandler",
         "filename":  "/home/setupadmin/adbiz/logs/adbizWebUI_Actrbl.log",
@@ -89,7 +90,7 @@
       }
     },
     "root": {
-      "level": "DEBUG",
+      "level": "INFO",
       "handlers": [
         "console"
       ]
@@ -97,8 +98,7 @@
     "loggers": {
       "main": {
         "handlers": [
-          "console",
-          "main_logfile"
+          "main_logfile", "console"
         ]
       },
        "actpbl": {

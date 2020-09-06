@@ -22,27 +22,27 @@
     },
     "handlers": {
       "console": {
-        "level": "DEBUG",
+        "level": "INFO",
+        "stream": "sys.stdout",
         "filters": [
-          "require_debug_true"
+          "require_debug_false"
         ],
         "class": "logging.StreamHandler",
         "formatter": "simple"
       },
-      "core_logfile": {
-        "level": "ERROR",
+      "main_logfile": {
+        "level": "INFO",
         "filters": [
-          "require_debug_false"
+          "require_debug_true"
         ],
         "class": "logging.handlers.RotatingFileHandler",
-        "filename": "/home/setupadmin/adbiz/logs/adbizWebCoreEngine.log",
+        "filename": "/home/setupadmin/adbiz/logs/adbizWebCoreEngine_main.log",
         "backupCount": 5,
         "formatter": "simple"
       },
       "dba_logfile": {
         "level": "DEBUG",
         "filters": [
-          "require_debug_false",
           "require_debug_true"
         ],
         "class": "logging.handlers.WatchedFileHandler",
@@ -52,7 +52,6 @@
       "requests_logfile": {
         "level": "DEBUG",
         "filters": [
-          "require_debug_false",
           "require_debug_true"
         ],
         "class": "logging.handlers.WatchedFileHandler",
@@ -67,9 +66,9 @@
       ]
     },
     "loggers": {
-      "core": {
+      "main": {
         "handlers": [
-          "core_logfile"
+          "console", "main_logfile"
         ]
       },
       "dba": {

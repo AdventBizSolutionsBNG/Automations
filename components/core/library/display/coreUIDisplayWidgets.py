@@ -40,6 +40,9 @@ def generate_widget_tags(component, md_corelib_display_components, api_call_type
         log.info("Core Library: Retrieving API Extraction methods metadata for the Widget-Indicators")
         md_api_method_indicators_tags = get_api_tags("indicators", api_call_type, md_api_method_details)
 
+        log.info("Core Library: Retrieving API Payload metadata for the Widget Components")
+        md_api_payload = get_api_payload(api_call_type, md_api_method_details)
+
         for md_widget in md_widget_metadata:
             if md_widget["component_sub_type"] == component["component_sub_type"]:
                 md_widget_details = md_widget["widget_details"]
@@ -107,7 +110,7 @@ def generate_widget_tags(component, md_corelib_display_components, api_call_type
 
                                                 log.info("Core Library: Generating Widget API Scripts: %s", my_value_id)
                                                 if my_value_query:
-                                                    my_value_script_tags = generate_api_script_tags(my_value_id,md_api_method_value_tags,component["data_source_methods"],my_value_query)
+                                                    my_value_script_tags = generate_api_script_tags(my_value_id, md_api_payload, md_api_method_value_tags, component["data_source_methods"], my_value_query)
                                                 else:
                                                     my_value_script_tags = ""
                                                     log.error("Core Library: Error Generating Widget API Scripts: %s", my_value_id)
@@ -180,7 +183,7 @@ def generate_widget_tags(component, md_corelib_display_components, api_call_type
 
                                                 if my_indicator_query:
                                                     log.info("Core Library: Generating Indicator API Script Tags: %s", my_indicator_id)
-                                                    my_indicator_script_tags = generate_api_script_tags(my_indicator_id, md_api_method_indicators_tags, component["data_source_methods"],my_indicator_query)
+                                                    my_indicator_script_tags = generate_api_script_tags(my_indicator_id, md_api_payload, md_api_method_indicators_tags, component["data_source_methods"],my_indicator_query)
                                                 else:
                                                     log.error("Core Library: Retrieving Indicator API Script tags: %s", my_indicator_id)
                                                     my_indicator_script_tags = ""
@@ -209,7 +212,7 @@ def generate_widget_tags(component, md_corelib_display_components, api_call_type
         return widget_output
 
     except Exception as e:
-        log.error("Error in CoreLibrary!! Error in generating Widget Tags!!", exc_info=True)
+        log.error("CoreLibrary!! Error in generating Widget Tags!!", exc_info=True)
         return None
 
 
@@ -240,8 +243,19 @@ def get_api_tags(object_type, call_type, md_api_method_details):
         return None
 
 
+def get_api_payload(call_type, md_api_method_details):
+    try:
+        log = logging.getLogger("main")
+        for method_detail in md_api_method_details:
+            if method_detail["call_type"] == call_type:
+                payload = method_detail["payload"]
+                return payload
+        return None
+    except Exception as e:
+        log.error("Error in extracting payload metadata for API", exc_info=True)
+        return None
 
-def generate_api_script_tags(value_id, md_api_metadata_value_tags, data_source_methods, component_query):
+def generate_api_script_tags(value_id, md_api_payload, md_api_metadata_value_tags, data_source_methods, component_query):
     try:
         log = logging.getLogger("main")
         method_type = data_source_methods["extractionType"]
@@ -259,23 +273,29 @@ def generate_api_script_tags(value_id, md_api_metadata_value_tags, data_source_m
             token = source_details["headers"].get("token")
 
             headers = {"io_engine_code": ioEngineCode, "api_key": apiKey," token": token, "data_lake": data_lake}
-            body = source_details["body"]
-
+            payload = md_api_payload
             data = {}
-            for item in body:
-                if item == "component_query":
-                    data["component_query"] = component_query
+            my_payload = payload.replace("{COMPONENT QUERY}" , component_query).replace("{PERIOD START DATE}", 'periodStartDate').replace('{PERIOD END DATE}', 'periodEndDate')
 
-            final_payload = data
-            if final_payload:
+            # for item in body:
+            #     if item == "component_query":
+            #         data["component_query"] = component_query
+            #     if item == "period_start_date":
+            #         data["period_start_date"] = "period_start_date"
+            #     if item == "period_end_date":
+            #         data["period_end_date"] = "period_end_date"
+
+
+            if my_payload:
                 tags = str(md_api_metadata_value_tags)
-                final_extraction_tags = tags.replace("{ELEMENT_ID}", value_id).replace("{URL}", url).replace("{HEADERS}", str(headers)).replace("{PAYLOAD}", str(final_payload))
+                final_extraction_tags = tags.replace("{ELEMENT_ID}", value_id).replace("{URL}", url).replace("{HEADERS}", str(headers)).replace("{PAYLOAD}", str(my_payload))
+                log.info(final_extraction_tags)
                 return final_extraction_tags
             else:
                 log.error( "Core Library: Error generating API Script Tags.")
                 return None
 
     except Exception as e:
-        log.error("Error in generating extraction method tags for API!!!", exc_info=True)
+        log.error("Core Library: Error in generating extraction method tags for API!!!", exc_info=True)
         return None
 

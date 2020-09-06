@@ -4,7 +4,7 @@ import logging.handlers
 import os
 import json
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("main")
 
 
 class Adbizlogger:

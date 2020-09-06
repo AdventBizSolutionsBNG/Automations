@@ -6,6 +6,9 @@ from logging.config import dictConfig
 #from packages.logger import Logger
 from components.core.packages.logger import Logger
 from components.core.modules.storageEngines import DataLakeStorage
+from components.core.modules.calendarEngine import CalendarEngine
+
+log = logging.getLogger("main")
 
 class Settings:
     _constants = {}
@@ -19,6 +22,8 @@ class Settings:
     _messages_file_location = ""
     _master_file_location = ""
     _lookups_file_location = ""
+    _calendar_datasets = ""
+    _datalake_storage = ""
 
     def __init__(self, sfile):
         try:
@@ -32,7 +37,7 @@ class Settings:
                         for k1, config in v.items():
                             if k1 == "logging_config":
                                 Logger(config)
-                                log=logging.getLogger(__name__)
+                                log=logging.getLogger("main")
 
             log.info("Initializing Core Engine Parameters..")
             with open(sfile, "r") as f:
@@ -40,10 +45,14 @@ class Settings:
 
             for k, v in fdata.items():
                 if k == "data_lake_storage":
-                    dl = DataLakeStorage(v)
+                    self._datalake_storage = DataLakeStorage(v)
+
+                if k == "calendars":
+                    self._calendar_datasets = CalendarEngine(v).get_calendar_data()
+
                 if k == "metaData":
                     for config in v:
-                        for k1,v1 in config.items():
+                        for k1, v1 in config.items():
                             if k1 == "display_components":
                                 if v1["type"] == "file":
                                     if v1["file"]["isEncrypted"] == "N":
@@ -144,7 +153,7 @@ class Settings:
                                     log.error("Settings provided in an incorrect data format. Cannot proceed!!")
 
         except Exception as e:
-            log.error(e)
+            log.error(e, exc_info=True)
 
     def load_display_components(self):
         try:
@@ -154,10 +163,8 @@ class Settings:
                 if os.path.exists(self._constants_file_location):
                     with open(self._constants_file_location,"r") as f:
                         self._display_components = json.load(f)
-
-
         except Exception as e:
-            log.error(e)
+            log.error(e, exc_info=True)
 
     def load_charts(self):
         try:
@@ -168,7 +175,7 @@ class Settings:
                     with open(self._constants_file_location,"r") as f:
                         self._charts = json.load(f)
         except Exception as e:
-            log.error(e)
+            log.error(e, exc_info=True)
 
     def load_constants(self):
         try:
@@ -179,40 +186,40 @@ class Settings:
                     with open(self._constants_file_location,"r") as f:
                         self._constants = json.load(f)
         except Exception as e:
-            log.error(e)
+            log.error(e, exc_info=True)
 
     def load_messages(self):
         try:
-            log = logging.getLogger(__name__)
-            log.info("Loading messages..")
-            if self._constants_file_location is not None:
+            log = logging.getLogger("main")
+            log.info("Loading Messages..")
+            if self._messages_file_location is not None:
                 if os.path.exists(self._messages_file_location):
                     with open(self._messages_file_location, "r") as f:
                         self._messages = json.load(f)
         except Exception as e:
-            log.error(e)
+            log.error(e, exc_info=True)
 
     def load_master(self):
         try:
             log = logging.getLogger(__name__)
-            log.info("Loading master..")
+            log.info("Loading Master..")
             if self._master_file_location is not None:
                 if os.path.exists(self._master_file_location):
                     with open(self._master_file_location, "r") as f:
                         self._master = json.load(f)
         except Exception as e:
-            log.error(e)
+            log.error(e, exc_info=True)
 
     def load_lookups(self):
         try:
             log = logging.getLogger(__name__)
-            log.info("Loading lookups..")
-            if self._master_file_location is not None:
-                if os.path.exists(self._master_file_location):
+            log.info("Loading Lookups..")
+            if self._lookups_file_location is not None:
+                if os.path.exists(self._lookups_file_location):
                     with open(self._lookups_file_location, "r") as f:
                         self._lookups = json.load(f)
         except Exception as e:
-            log.error(e)
+            log.error(e, exc_info=True)
 
     def get_constants(self):
         return self._constants
@@ -226,3 +233,8 @@ class Settings:
     def get_charts(self):
         return self._charts
 
+    def get_datalake_storage(self):
+        return self._datalake_storage
+
+    def get_calendar_datasets(self):
+        return self._calendar_datasets

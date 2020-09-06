@@ -10,10 +10,18 @@
                     <div class="page-title-box">
                         <div class="row align-items-center">
                             <div class="col-sm-6">
-                                <h4 class="page-title" >{{dashboard_title|safe}}</h4>
+                                <h4 class="page-title" >{{dashboard_title}}</h4>
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item active">{{dashboard_sub_title|safe}}</li>
                                 </ol>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" id="range_04">
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="#" id="date-slider-range">
+                                    <div class="btn btn-light fa fa-search" role="button"  style="position: absolute; left: 0;padding:5px"></div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -41,8 +49,16 @@
 
                 <!-- SCRIPTS AREA-->
                 {% block scripts %}
+                    <script  type='text/javascript'>
+                        var userDetails = {{user_details|safe}}
+                        var runTimeDetails = {{run_time_details|safe}}
+                    </script>
+
                     {{common_scripts|safe}}
+                    {{user_session_tags|safe}}
+                    {{user_preferences|safe}}
                 {% endblock %}
+
 
                 </div>
             </div>

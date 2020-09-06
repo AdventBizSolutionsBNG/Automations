@@ -10,6 +10,33 @@
     "port": "3801",
     "reference_class": "adbiz.storageEngine.rdbms.mysql"
   },
+  "calendars": {
+    "max": 2,
+    "types": ["system", "user_defined"],
+    "system": {
+      "format": "yyyy-mm-dd",
+      "display_name": "Default Calendar",
+      "reference_class": "adbiz.calendar.type.default",
+      "year_start": {"month": "adbiz.calendar.month.jan", "day": 1},
+      "year_end": {"month": "adbiz.calendar.month.dec", "day": 31},
+      "first_day_week": "adbiz.calendar.weekday.monday",
+      "last_day_week": "adbiz.calendar.weekday.sunday"
+    } ,
+    "user_defined": {
+      "format": "yyyy-mm-dd",
+      "display_name": "Fiscal Calendar",
+      "reference_class": "adbiz.calendar.type.AprMar",
+      "year_start": {"month": "adbiz.calendar.month.apr", "day": 1},
+      "year_end": {"month": "adbiz.calendar.month.mar", "day": 31},
+      "first_day_week": "adbiz.calendar.weekday.monday",
+      "last_day_week": "adbiz.calendar.weekday.sunday"
+    },
+    "date_options": {
+      "max_history_period": {"period": "Y", "value": 2},
+      "max_forecast_period": {"period": "Y", "value": 1}
+    }
+  },
+
   "metaData": [
     {
       "constants": {

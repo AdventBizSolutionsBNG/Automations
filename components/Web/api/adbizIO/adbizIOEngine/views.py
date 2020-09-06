@@ -90,15 +90,20 @@ def execute_dashboard_query(request):
 
                             data_lake_code = "9f2e0174d97d405eb83cbb779155ae30"
                             table_code = "9548f7ef20e04a4082fca7b75834b240"
-                            start_Date = str(datetime.datetime.now()).split(" ")[0]
+                            # start_Date = str(datetime.datetime.now()).split(" ")[0]
 
 
-                            # Calculationg today() - 30 days
-                            end_date = datetime.datetime.today() - datetime.timedelta(days=1000)
-                            end_date = end_date.strftime("%Y-%m-%d")
+                            # # Calculationg today() - 30 days
+                            # end_date = datetime.datetime.today() - datetime.timedelta(days=1000)
+                            # end_date = end_date.strftime("%Y-%m-%d")
 
+                            # start_Date = request.session.get("run_time_details")["period_start_date"]
+                            # end_Date = request.session.get("run_time_details")["period_end_date"]
+                            #
+                            # print("------request details-------")
+                            # print(request.session.get("run_time_details"))
 
-                            final_query = component_query.replace("DB_NAME",data_lake_code).replace("TABLE_NAME", table_code).replace('adbiz.constants.startDate', "'"+start_Date+"'" ).replace('adbiz.constants.endDate', "'"+end_date+"'")
+                            final_query = component_query.replace("DB_NAME",data_lake_code).replace("TABLE_NAME", table_code).replace('adbiz.constants.startDate', "'"+start_Date+"'" ).replace('adbiz.constants.endDate', "'"+end_Date+"'")
                             print(final_query)
                             data = execute_sql_query(final_query, "dashboard")
                             data_labels, data_values = convert_df(data)
@@ -131,6 +136,10 @@ def execute_chart_query(request):
                         chart_category = v
                     if k == "hierarchy":
                         hierarchy = v
+                    if k == "period_start_date":
+                        period_start_date = v
+                    if k == "period_end_date":
+                        period_end_date = v
 
                 # datalake = DataLakes.objects.using('default').filter(is_active = True, tenant_code = tenant_code, site_code = site_code, instance_code = instance_code, module = module)
                 # if len(datalake) > 0:
@@ -140,12 +149,13 @@ def execute_chart_query(request):
                 #         data_lake_sub_type = datalake.data_lake_sub_type
 
 
-                start_Date = str(datetime.datetime.now()).split(" ")[0]
-                end_date = datetime.datetime.today() - datetime.timedelta(days=1000)
-                end_date = end_date.strftime("%Y-%m-%d")
+                # start_Date = str(datetime.datetime.now()).split(" ")[0]
+                # end_date = datetime.datetime.today() - datetime.timedelta(days=1000)
+                # end_date = end_date.strftime("%Y-%m-%d")
+                # start_Date = request.session["period_start_date"]
+                # end_Date = request.session["period_end_date"]
 
-                final_query = chart_query.replace('adbiz.constants.startDate', "'" + start_Date + "'").replace(
-                    'adbiz.constants.endDate', "'" + end_date + "'")
+                final_query = chart_query.replace('adbiz.constants.startDate', "'" + period_start_date + "'").replace('adbiz.constants.endDate', "'" + period_end_date + "'")
 
                 mylog.info(final_query)
                 datadf = execute_sql_query(final_query, "chart")
@@ -187,13 +197,20 @@ def execute_table_query(request):
                         table_query = v
                     if k == "hierarchy":
                         hierarchy = v
+                    if k == "period_start_date":
+                        period_start_date = v
+                    if k == "period_end_date":
+                        period_end_date = v
 
-                start_Date = str(datetime.datetime.now()).split(" ")[0]
-                end_date = datetime.datetime.today() - datetime.timedelta(days=1000)
-                end_date = end_date.strftime("%Y-%m-%d")
+                # start_Date = request.session["period_start_date"]
+                # end_Date = request.session["period_end_date"]
 
-                final_query = table_query.replace('adbiz.constants.startDate', "'" + start_Date + "'").replace(
-                    'adbiz.constants.endDate', "'" + end_date + "'")
+                # start_Date = str(datetime.datetime.now()).split(" ")[0]
+                # end_date = datetime.datetime.today() - datetime.timedelta(days=1000)
+                # end_date = end_date.strftime("%Y-%m-%d")
+
+                final_query = table_query.replace('adbiz.constants.startDate', "'" + period_start_date + "'").replace(
+                    'adbiz.constants.endDate', "'" + period_end_date + "'")
 
                 mylog.info(final_query)
                 value = execute_sql_query(final_query, "table")
@@ -218,19 +235,29 @@ def execute_value_query(request):
                 # print(request.body)
                 data = json.loads(body)
 
+                mylog.info(data)
+
                 for k, v in data.items():
                     if k == "component_query":
                         component_query = v
                     if k == "hierarchy":
                         hierarchy = v
+                    if k == "period_start_date":
+                        period_start_date = v
+                    if k == "period_end_date":
+                        period_end_date = v
 
-                start_Date = str(datetime.datetime.now()).split(" ")[0]
-                end_date = datetime.datetime.today() - datetime.timedelta(days=1000)
-                end_date = end_date.strftime("%Y-%m-%d")
 
-                final_query = component_query.replace('adbiz.constants.startDate', "'"+start_Date+"'" ).replace('adbiz.constants.endDate', "'"+end_date+"'")
+                # start_Date = request.session.get("run_time_details")["period_start_date"]
+                # end_Date = request.session.get("run_time_details")["period_end_date"]
+
+                # start_Date = str(datetime.datetime.now()).split(" ")[0]
+                # end_date = datetime.datetime.today() - datetime.timedelta(days=1000)
+                # end_date = end_date.strftime("%Y-%m-%d")
+
+                final_query = component_query.replace('adbiz.constants.startDate', "'"+period_start_date+"'" ).replace('adbiz.constants.endDate', "'"+period_end_date+"'")
                 datadf = execute_sql_query(final_query, "value")
-
+                mylog.info(final_query)
                 mylog.info(datadf)
                 value = datadf.iloc[0,0]        # for single value- first row + first column
                 return HttpResponse (value)

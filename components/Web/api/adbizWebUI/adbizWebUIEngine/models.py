@@ -257,22 +257,24 @@ class AdbizMenuItems(models.Model):
 
 # Mapping between Menu Items and the System provided roles
 class AdbizMenuRoles(models.Model):
+    objects = None
+
     class Meta:
         db_table = "menu_roles"
 
     menu_items = models.ForeignKey(AdbizMenuItems, on_delete=models.CASCADE)
     role = models.ForeignKey(AdbizRoles, on_delete=models.CASCADE)
 
-class AdbizPreferences(models.Model):
-
-    class Meta:
-        db_table = "preferences"
-
-    preference_name = models.CharField(max_length=64, verbose_name="Preference Name")
-    preference_description = models.CharField(max_length=256, verbose_name="Preference Description")
-    preference_code = models.CharField(max_length=32, null=True, verbose_name="Preference Code", unique=True) #*
-    module = models.CharField(max_length=32, verbose_name="Module", null=True)
-    default_value = models.CharField(max_length=32, verbose_name="Default Value")
+# class AdbizPreferences(models.Model):
+#
+#     class Meta:
+#         db_table = "preferences"
+#
+#     preference_name = models.CharField(max_length=64, verbose_name="Preference Name")
+#     preference_description = models.CharField(max_length=256, verbose_name="Preference Description")
+#     preference_code = models.CharField(max_length=32, null=True, verbose_name="Preference Code", unique=True) #*
+#     module = models.CharField(max_length=32, verbose_name="Module", null=True)
+#     default_value = models.CharField(max_length=32, verbose_name="Default Value")
 
 
 class AdbizUserPreferences(models.Model):
@@ -280,9 +282,9 @@ class AdbizUserPreferences(models.Model):
     class Meta:
         db_table = "user_preferences"
 
-    module = models.CharField(max_length=32, verbose_name="Module",null=True)   # For generic settings, module value will be null
-    user = models.ForeignKey(AdbizUser, on_delete=models.CASCADE)
-    preference = models.ForeignKey(AdbizPreferences, on_delete=models.CASCADE)
+    user = models.ForeignKey(AdbizUser, on_delete=models.CASCADE, null=True)
+    module = models.CharField(max_length=32, verbose_name="Module", null=True)   # For generic settings, module value will be null
+    preference_code = models.CharField(max_length=8 , verbose_name="Preference Code")
     preference_value = models.CharField(max_length=256)
     created_on = models.DateTimeField(default=timezone.now, verbose_name="Created on")
     last_updated_on = models.DateTimeField(default=timezone.now, verbose_name="Last updated on")

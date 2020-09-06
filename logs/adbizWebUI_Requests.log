@@ -451,3 +451,554 @@ Traceback (most recent call last):
   File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/urls/resolvers.py", line 677, in _reverse_with_prefix
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'actrbl_ageing_report' with keyword arguments '{'dashboard_code': 'c9145c2b-8ad2-4d3b-99e8-23dc4c93352d@dtl.site.env.catalog.datamodel.dashboard'}' not found. 1 pattern(s) tried: ['adbizUI/adbizActRbl/actrbl_ageing_report/dashboard_code>/$']
+[2020-08-16 07:41:46] WARNING Not Found: /favicon.ico
+[2020-08-16 07:41:52] ERROR Internal Server Error: /adbizUI/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/deprecation.py", line 96, in __call__
+    response = self.process_response(request, response)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/middleware.py", line 58, in process_response
+    request.session.save()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 83, in save
+    obj = self.create_model_instance(data)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 70, in create_model_instance
+    session_data=self.encode(data),
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 105, in encode
+    serialized = self.serializer().dumps(session_dict)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/signing.py", line 87, in dumps
+    return json.dumps(obj, separators=(',', ':')).encode('latin-1')
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+[2020-08-16 07:44:37] ERROR Internal Server Error: /adbizUI/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/deprecation.py", line 96, in __call__
+    response = self.process_response(request, response)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/middleware.py", line 58, in process_response
+    request.session.save()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 83, in save
+    obj = self.create_model_instance(data)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 70, in create_model_instance
+    session_data=self.encode(data),
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 105, in encode
+    serialized = self.serializer().dumps(session_dict)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/signing.py", line 87, in dumps
+    return json.dumps(obj, separators=(',', ':')).encode('latin-1')
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+[2020-08-16 07:45:29] ERROR Internal Server Error: /adbizUI/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/deprecation.py", line 96, in __call__
+    response = self.process_response(request, response)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/middleware.py", line 58, in process_response
+    request.session.save()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 83, in save
+    obj = self.create_model_instance(data)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 70, in create_model_instance
+    session_data=self.encode(data),
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 105, in encode
+    serialized = self.serializer().dumps(session_dict)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/signing.py", line 87, in dumps
+    return json.dumps(obj, separators=(',', ':')).encode('latin-1')
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+[2020-08-16 07:46:40] ERROR Internal Server Error: /adbizUI/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/deprecation.py", line 96, in __call__
+    response = self.process_response(request, response)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/middleware.py", line 58, in process_response
+    request.session.save()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 83, in save
+    obj = self.create_model_instance(data)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 70, in create_model_instance
+    session_data=self.encode(data),
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 105, in encode
+    serialized = self.serializer().dumps(session_dict)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/signing.py", line 87, in dumps
+    return json.dumps(obj, separators=(',', ':')).encode('latin-1')
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+[2020-08-16 07:47:56] ERROR Internal Server Error: /adbizUI/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/deprecation.py", line 96, in __call__
+    response = self.process_response(request, response)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/middleware.py", line 58, in process_response
+    request.session.save()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 83, in save
+    obj = self.create_model_instance(data)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 70, in create_model_instance
+    session_data=self.encode(data),
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 105, in encode
+    serialized = self.serializer().dumps(session_dict)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/signing.py", line 87, in dumps
+    return json.dumps(obj, separators=(',', ':')).encode('latin-1')
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+[2020-08-16 13:03:11] ERROR Internal Server Error: /adbizUI/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/deprecation.py", line 96, in __call__
+    response = self.process_response(request, response)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/middleware.py", line 58, in process_response
+    request.session.save()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 83, in save
+    obj = self.create_model_instance(data)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 70, in create_model_instance
+    session_data=self.encode(data),
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 105, in encode
+    serialized = self.serializer().dumps(session_dict)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/signing.py", line 87, in dumps
+    return json.dumps(obj, separators=(',', ':')).encode('latin-1')
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+[2020-08-16 13:03:39] ERROR Internal Server Error: /adbizUI/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/deprecation.py", line 96, in __call__
+    response = self.process_response(request, response)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/middleware.py", line 58, in process_response
+    request.session.save()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 83, in save
+    obj = self.create_model_instance(data)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 70, in create_model_instance
+    session_data=self.encode(data),
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 105, in encode
+    serialized = self.serializer().dumps(session_dict)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/signing.py", line 87, in dumps
+    return json.dumps(obj, separators=(',', ':')).encode('latin-1')
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+[2020-08-16 13:13:21] ERROR Internal Server Error: /adbizUI/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/deprecation.py", line 96, in __call__
+    response = self.process_response(request, response)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/middleware.py", line 58, in process_response
+    request.session.save()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 83, in save
+    obj = self.create_model_instance(data)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 70, in create_model_instance
+    session_data=self.encode(data),
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 105, in encode
+    serialized = self.serializer().dumps(session_dict)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/signing.py", line 87, in dumps
+    return json.dumps(obj, separators=(',', ':')).encode('latin-1')
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+[2020-08-16 13:16:00] ERROR Internal Server Error: /adbizUI/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/deprecation.py", line 96, in __call__
+    response = self.process_response(request, response)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/middleware.py", line 58, in process_response
+    request.session.save()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 83, in save
+    obj = self.create_model_instance(data)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 70, in create_model_instance
+    session_data=self.encode(data),
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 105, in encode
+    serialized = self.serializer().dumps(session_dict)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/signing.py", line 87, in dumps
+    return json.dumps(obj, separators=(',', ':')).encode('latin-1')
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+[2020-08-16 13:20:48] ERROR Internal Server Error: /adbizUI/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/deprecation.py", line 96, in __call__
+    response = self.process_response(request, response)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/middleware.py", line 58, in process_response
+    request.session.save()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 83, in save
+    obj = self.create_model_instance(data)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 70, in create_model_instance
+    session_data=self.encode(data),
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 105, in encode
+    serialized = self.serializer().dumps(session_dict)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/signing.py", line 87, in dumps
+    return json.dumps(obj, separators=(',', ':')).encode('latin-1')
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+[2020-08-17 07:24:28] ERROR Internal Server Error: /adbizUI/
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizWebUI/adbizWebUIEngine/views.py", line 263, in post
+    raise InvalidLogin(request, form.cleaned_data.get('username'))
+TypeError: exceptions must derive from BaseException
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/decorators/debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/auth/views.py", line 63, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/generic/base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/setupadmin/adbiz/components/Web/api/adbizWebUI/adbizWebUIEngine/views.py", line 265, in post
+    except InactiveUser:
+TypeError: catching classes that do not inherit from BaseException is not allowed
+[2020-08-17 07:25:09] ERROR Internal Server Error: /adbizUI/
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizWebUI/adbizWebUIEngine/views.py", line 263, in post
+    raise InvalidLogin(request, "")
+TypeError: exceptions must derive from BaseException
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/decorators/debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/contrib/auth/views.py", line 63, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/generic/base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/setupadmin/adbiz/components/Web/api/adbizWebUI/adbizWebUIEngine/views.py", line 265, in post
+    except InactiveUser:
+TypeError: catching classes that do not inherit from BaseException is not allowed
+[2020-08-17 07:52:04] ERROR Internal Server Error: /adbizUI/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/decorators/debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 45, in _wrapped_view_func
+    add_never_cache_headers(response)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/cache.py", line 252, in add_never_cache_headers
+    patch_response_headers(response, cache_timeout=-1)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/cache.py", line 243, in patch_response_headers
+    if not response.has_header('Expires'):
+AttributeError: 'NoneType' object has no attribute 'has_header'
+[2020-08-17 07:52:54] ERROR Internal Server Error: /adbizUI/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/decorators/debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 45, in _wrapped_view_func
+    add_never_cache_headers(response)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/cache.py", line 252, in add_never_cache_headers
+    patch_response_headers(response, cache_timeout=-1)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/cache.py", line 243, in patch_response_headers
+    if not response.has_header('Expires'):
+AttributeError: 'NoneType' object has no attribute 'has_header'
+[2020-08-17 07:53:47] ERROR Internal Server Error: /adbizUI/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/decorators/debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 45, in _wrapped_view_func
+    add_never_cache_headers(response)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/cache.py", line 252, in add_never_cache_headers
+    patch_response_headers(response, cache_timeout=-1)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/cache.py", line 243, in patch_response_headers
+    if not response.has_header('Expires'):
+AttributeError: 'NoneType' object has no attribute 'has_header'
+[2020-08-17 07:55:19] ERROR Internal Server Error: /adbizUI/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/decorators/debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 45, in _wrapped_view_func
+    add_never_cache_headers(response)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/cache.py", line 252, in add_never_cache_headers
+    patch_response_headers(response, cache_timeout=-1)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/utils/cache.py", line 243, in patch_response_headers
+    if not response.has_header('Expires'):
+AttributeError: 'NoneType' object has no attribute 'has_header'
+[2020-08-25 19:36:24] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_sales_summary/836469cb-e5e2-4151-b285-784623615458@dtl.site.env.catalog.datamodel.dashboard/assets/pages/rangeslider-init.js
+[2020-08-27 19:36:07] ERROR Internal Server Error: /adbizUI/adbizActRbl/actrbl_sales_summary/836469cb-e5e2-4151-b285-784623615458@dtl.site.env.catalog.datamodel.dashboard/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 143, in _get_response
+    response = response.render()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/response.py", line 65, in resolve_template
+    return get_template(template, using=self.using)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 448, in parse
+    raise self.error(token, e)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 446, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 562, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 661, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '<%= Session("hist_start_date").ToString() %>' from '<%= Session("hist_start_date").ToString() %>'
+[2020-08-27 19:36:08] WARNING Not Found: /favicon.ico
+[2020-08-28 17:33:32] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_sales_summary/836469cb-e5e2-4151-b285-784623615458@dtl.site.env.catalog.datamodel.dashboard/www.amazon.com
+[2020-08-28 17:33:33] WARNING Not Found: /favicon.ico
+[2020-08-28 18:24:38] WARNING Not Found: /5-2017/9-2019/
+[2020-08-28 18:29:33] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_sales_summary/836469cb-e5e2-4151-b285-784623615458@dtl.site.env.catalog.datamodel.dashboard/7-2017/1-2020/
+[2020-08-28 18:31:12] ERROR Internal Server Error: /adbizUI/adbizActRbl/actrbl_sales_summary/836469cb-e5e2-4151-b285-784623615458@dtl.site.env.catalog.datamodel.dashboard/11-2017/2-2020/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    raise ValueError(
+ValueError: The view adbizActRbl.views.get_actrbl_sales_summary_custom didn't return an HttpResponse object. It returned None instead.
+[2020-08-28 18:33:42] ERROR Internal Server Error: /adbizUI/adbizActRbl/actrbl_sales_summary/836469cb-e5e2-4151-b285-784623615458@dtl.site.env.catalog.datamodel.dashboard/7-2017/4-2020/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    raise ValueError(
+ValueError: The view adbizActRbl.views.get_actrbl_sales_summary_custom didn't return an HttpResponse object. It returned None instead.
+[2020-08-28 18:42:20] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_sales_summary/836469cb-e5e2-4151-b285-784623615458@dtl.site.env.catalog.datamodel.dashboard/7-2017/5-2020/5-2017/9-2020/
+[2020-08-29 10:49:05] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_sales_summary/836469cb-e5e2-4151-b285-784623615458@dtl.site.env.catalog.datamodel.dashboard/9-24-2017/6-16-2019/12-27-2017/5-11-2019/
+[2020-08-29 11:42:14] WARNING Not Found: /date_slider_from_date/date_slider_from_date/
+[2020-08-29 11:57:09] ERROR Internal Server Error: /adbizUI/adbizActRbl/actrbl_sales_exceptions/54416a91-9d43-4f98-a69f-a1aa357a2fe6@dtl.site.env.catalog.datamodel.dashboard/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_actrbl_sales_exceptions() missing 2 required positional arguments: 'start_date' and 'end_date'
+[2020-08-29 12:04:59] WARNING Not Found: /date_slider_from_date/date_slider_from_date/
+[2020-09-02 05:33:01] ERROR Internal Server Error: /adbizUI/adbizActRbl/actrbl_sales_exceptions/54416a91-9d43-4f98-a69f-a1aa357a2fe6@dtl.site.env.catalog.datamodel.dashboard/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_actrbl_sales_exceptions() missing 2 required positional arguments: 'start_date' and 'end_date'
+[2020-09-02 05:33:02] WARNING Not Found: /favicon.ico
+[2020-09-04 16:21:58] ERROR Internal Server Error: /adbizUI/adbizActRbl/actrbl_ageing_report/c9145c2b-8ad2-4d3b-99e8-23dc4c93352d@dtl.site.env.catalog.datamodel.dashboard/2020-10-14/2020-12-17/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    raise ValueError(
+ValueError: The view adbizActRbl.views.get_actrbl_ageing_report_custom didn't return an HttpResponse object. It returned None instead.
+[2020-09-04 16:21:58] WARNING Not Found: /favicon.ico
+[2020-09-05 06:42:50] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_main/c9145c2b-8ad2-4d3b-99e8-23dc4c93352d@dtl.site.env.catalog.datamodel.dashboard/2018-08-29/2020-03-06/
+[2020-09-05 08:15:11] ERROR Internal Server Error: /adbizUI/adbizActRbl/actrbl_sales_exceptions/54416a91-9d43-4f98-a69f-a1aa357a2fe6@dtl.site.env.catalog.datamodel.dashboard/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_actrbl_sales_exceptions() missing 2 required positional arguments: 'start_date' and 'end_date'
+[2020-09-05 10:25:38] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_main/e56aa9e6-aa9a-4109-96a5-e5492ef3fd8a@dtl.site.env.catalog.datamodel.dashboard/2019-09-01/2020-06-13/
+[2020-09-05 10:26:03] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_main/e56aa9e6-aa9a-4109-96a5-e5492ef3fd8a@dtl.site.env.catalog.datamodel.dashboard/2019-09-01/2020-04-03/
+[2020-09-05 10:27:38] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_main/e56aa9e6-aa9a-4109-96a5-e5492ef3fd8a@dtl.site.env.catalog.datamodel.dashboard/2019-09-01/2020-04-03/
+[2020-09-05 10:29:36] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_main/c9145c2b-8ad2-4d3b-99e8-23dc4c93352d@dtl.site.env.catalog.datamodel.dashboard/2019-09-01/2020-06-07/
+[2020-09-05 10:37:14] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_main/e56aa9e6-aa9a-4109-96a5-e5492ef3fd8a@dtl.site.env.catalog.datamodel.dashboard/2018-07-20/2020-01-21/
+[2020-09-05 10:37:48] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_main/e56aa9e6-aa9a-4109-96a5-e5492ef3fd8a@dtl.site.env.catalog.datamodel.dashboard/2018-07-20/2020-01-21/
+[2020-09-05 10:38:28] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_main/c9145c2b-8ad2-4d3b-99e8-23dc4c93352d@dtl.site.env.catalog.datamodel.dashboard/2019-01-31/2020-05-13/
+[2020-09-05 17:35:49] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_sales_summary/836469cb-e5e2-4151-b285-784623615458@dtl.site.env.catalog.datamodel.dashboard/
+[2020-09-05 17:35:49] WARNING Not Found: /favicon.ico
+[2020-09-05 17:36:17] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_sales_forecast/93f1ee8b-cae2-47aa-8fb1-95ded769a513@dtl.site.env.catalog.datamodel.dashboard/
+[2020-09-05 17:38:52] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_sales_forecast/93f1ee8b-cae2-47aa-8fb1-95ded769a513@dtl.site.env.catalog.datamodel.dashboard/
+[2020-09-05 17:39:22] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_sales_forecast/93f1ee8b-cae2-47aa-8fb1-95ded769a513@dtl.site.env.catalog.datamodel.dashboard/
+[2020-09-05 17:40:28] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_sales_trends/4781f53b-e967-4eb8-bd06-b5c377d7645e@dtl.site.env.catalog.datamodel.dashboard/
+[2020-09-05 17:41:35] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_ageing_report/c9145c2b-8ad2-4d3b-99e8-23dc4c93352d@dtl.site.env.catalog.datamodel.dashboard/
+[2020-09-05 17:54:57] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_sales_forecast/93f1ee8b-cae2-47aa-8fb1-95ded769a513@dtl.site.env.catalog.datamodel.dashboard/
+[2020-09-05 18:03:13] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_ageing_report/c9145c2b-8ad2-4d3b-99e8-23dc4c93352d@dtl.site.env.catalog.datamodel.dashboard/
+[2020-09-05 18:03:21] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_ageing_report/c9145c2b-8ad2-4d3b-99e8-23dc4c93352d@dtl.site.env.catalog.datamodel.dashboard/
+[2020-09-05 18:03:30] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_sales_trends/4781f53b-e967-4eb8-bd06-b5c377d7645e@dtl.site.env.catalog.datamodel.dashboard/
+[2020-09-05 18:04:38] WARNING Not Found: /adbizUi
+[2020-09-05 18:04:39] WARNING Not Found: /favicon.ico
+[2020-09-05 18:04:57] WARNING Not Found: /adbizWebUI
+[2020-09-05 18:06:06] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_sales_forecast/93f1ee8b-cae2-47aa-8fb1-95ded769a513@dtl.site.env.catalog.datamodel.dashboard/

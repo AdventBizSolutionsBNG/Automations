@@ -2,7 +2,9 @@ import os
 import yaml
 import sys
 import json
+import logging
 
+log = logging.getLogger("main")
 
 class ClsDbConfig:
     _DB_SERVER_NAME = ""
@@ -15,14 +17,19 @@ class ClsDbConfig:
 
     def __init__(self, db_file, module):
         try:
+            print("Initializing DB Configuration!!")
             if os.path.exists(db_file):
                 print("Reading DB Config File:", db_file)
-                self.read_config(db_file, module)
+                if self.read_config(db_file, module):
+                    print("Successfully read DB config of Core Engine!!")
+                else:
+                    sys.exit()
             else:
-                print("Error!! Database config file not found..", db_file)
+                print("Error!! Database config file not found..")
+                sys.exit()
 
         except Exception as e:
-            print(e)
+            print("Error occurred in initializing DB config of Core Engine!!", exc_info=True)
             sys.exit()
 
     def read_config(self, configfile, module):
@@ -42,9 +49,10 @@ class ClsDbConfig:
                         self._DB_ENGINE = credentials["engine"]
 
             print("DB Settings initialized for module:", module)
-
+            return True
         except Exception as e:
-            print(e)
+            print("Error occurred in reading DB config of Core Engine!!", exc_info=True)
+            return False
 
     def server(self):
         return self._DB_SERVER_NAME

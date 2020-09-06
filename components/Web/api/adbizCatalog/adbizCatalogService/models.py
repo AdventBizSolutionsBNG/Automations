@@ -114,21 +114,19 @@ class Entities(models.Model):
     class Meta:
         db_table = "entities"
 
-    entity_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], unique=True, verbose_name ="Entity Code", editable=False)
     tenant_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], verbose_name="Tenant", editable=False)
     site_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], verbose_name="Site", editable=False)
     instance_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], verbose_name="Environment/Instance", editable=False)
+    hierarchy_type = models.ForeignKey(OrgHierarchyTypes, on_delete=models.CASCADE, verbose_name="Org Hierarchy Type")
+    hierarchy = models.ForeignKey(OrgHierarchy, verbose_name="Org Hierarchy", on_delete=models.CASCADE)
+    parent_entity = models.ForeignKey('self', verbose_name="Parent Entity", null=True, on_delete=models.CASCADE)
+    entity_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], unique=True, verbose_name ="Entity Code", editable=False)
     entity_name = models.CharField(max_length=constants["ENTITY_NAME"]["maxLength"], verbose_name="Entity Name")
-    entity_type = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], choices= [x.value for x in EntityTypes],  verbose_name="Entity Type")
-    entity_sub_type = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], null=True, choices= [x.value for x in EntitySubTypes],  verbose_name="Entity Sub Type")
-    parent_entity = models.PositiveIntegerField(verbose_name="Parent Entity", null=True)
-    hierarchy = models.ForeignKey(OrgHierarchy, verbose_name="Hierarchy", on_delete=models.CASCADE, default=2)
+    entity_display_code = models.CharField(max_length=8, verbose_name="Entity Display Code")
     is_active = models.BooleanField(default=True, verbose_name="Active ?")
     created_on = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Created On", editable=False)
-    last_updated_on = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Last Updated On",
-                                           editable=False)
-    last_updated_by = models.CharField(max_length=constants["USER_NAME"]["maxLength"], verbose_name="Last Updated By",
-                                       editable=False)
+    last_updated_on = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Last Updated On", editable=False)
+    last_updated_by = models.CharField(max_length=constants["USER_NAME"]["maxLength"], verbose_name="Last Updated By", editable=False)
 
 
 class EntityLocations(models.Model):
@@ -665,27 +663,32 @@ class DashboardComponents(models.Model):
         db_table = "dashboard_components"
 
     dashboard = models.ForeignKey(Dashboards, on_delete=models.CASCADE, editable=False, verbose_name="Dashboard")
-    container = models.ForeignKey(Containers, verbose_name="Container", on_delete=models.CASCADE)
     aggregate = models.ForeignKey(Aggregates, verbose_name="Aggregate", on_delete=models.CASCADE)
-    component_code  = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"], verbose_name="Dashboard Code (generated)", editable=False)
+    container = models.ForeignKey(Containers, verbose_name="Container", on_delete=models.CASCADE)
+    component_type = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"],
+                                      choices=[x.value for x in ComponentDisplayType], verbose_name="Component Type")
+    component_sub_type = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"],
+                                          default=ComponentSubDisplayType.G,
+                                          choices=[x.value for x in ComponentSubDisplayType],
+                                          verbose_name="Component Sub Type")
     component_category = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], choices=[x.value for x in ComponentCategory], verbose_name="Component Category")
-    component_type = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], choices=[x.value for x in ComponentDisplayType], verbose_name="Component Type")
-    component_sub_type = models.CharField(max_length=constants["LOOKUP_VALUE"]["maxLength"], default =  ComponentSubDisplayType.G, choices=[x.value for x in ComponentSubDisplayType], verbose_name="Component Sub Type")
     component_name = models.CharField(max_length=constants["ENTITY_NAME"]["maxLength"], verbose_name="Dashboard Name")
+    component_code = models.CharField(max_length=constants["GENERATED_ID"]["maxLength"],
+                                      verbose_name="Dashboard Code (generated)", editable=False)
     component_title = models.CharField(max_length=255, verbose_name="Component Title", null=True)  # * remove null
-    component_tooltip = models.CharField(max_length=255, verbose_name="Component Tooltip", null=True)  # * remove null
     component_description = models.TextField(verbose_name="Dashboard Description", null=True)
     component_reference_class = models.CharField(max_length=255, verbose_name="Component Class Reference", null=True) # Refer to Adbiz Namespace for inbuilt components
     sequence = models.PositiveSmallIntegerField(default=1, verbose_name="Sequence")  # Priority when rebuilding
+    component_query = models.TextField(verbose_name="Component Query", null=True)  # *
+    component_tooltip = models.CharField(max_length=255, verbose_name="Component Tooltip", null=True)  # * remove null
     display_properties = models.TextField(verbose_name="Display Properties")    #JSON: Contains Display settings (ex: if used iwth Chart.js lib - Graph Type, Color, x Axis labels, Y Axis Parameters)
     data_filters = models.TextField(verbose_name="Data Filters", null=True) # JSON: Contains filters for each Dimension & Measures as per the selected Aggregate in the component definition
     data_source_methods = models.TextField(verbose_name="Data Source")  # JSON. Defines the API URL and the request header along with the payload.
-    component_query = models.TextField(verbose_name="Component Query", null=True)  # *
+    refresh_interval  = models.PositiveSmallIntegerField(default=0, verbose_name="Auto Refresh Interval (ms)")  # data refresh happens on the UI every X seconds as set. Default=0 means On Demand Refresh.
     is_system_defined = models.BooleanField(default=True, verbose_name="Is System Defined?")  # if true need to set the component_class
     is_incremental =  models.BooleanField(default=True, verbose_name="Incremental ?")   # components data population gets appended during data ingestion process. Overrides Dashboard settings
     is_rebuild = models.BooleanField(default=False, verbose_name="Rebuild Everytime ?")  # components data population get rebuilt every time using the source Container during the data ingestion process. Overrides Dashboard settings
     is_auto_referesh = models.BooleanField(default=False, verbose_name="Auto Refresh ?")
-    refresh_interval  = models.PositiveSmallIntegerField(default=0, verbose_name="Auto Refresh Interval (ms)")  # data refresh happens on the UI every X seconds as set. Default=0 means On Demand Refresh.
     is_active = models.BooleanField(default=True, verbose_name="Active ?")
     created_on = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Created On", editable=False)
     last_updated_on = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Last Updated On",

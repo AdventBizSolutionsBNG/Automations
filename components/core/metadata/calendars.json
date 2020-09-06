@@ -1,0 +1,19 @@
+{
+
+  "system": {
+    "format": "yyyy-mm-dd",
+    "display_name": "Default Calendar",
+    "year_start": {"month": "JAN", "day": 1},
+    "year_end": {"month": "DEC", "day": 31},
+    "first_day_week": "MONDAY",
+    "last_day_week": "SUNDAY"
+  } ,
+  "user_defined": {
+    "format": "yyyy-mm-dd",
+    "display_name": "Fiscal Calendar",
+    "year_start": {"month": "APRIL", "day": 1},
+    "year_end": {"month": "MARCH", "day": 31},
+    "first_day_week": "MONDAY",
+    "last_day_week": "SUNDAY"
+  }
+}

@@ -143,7 +143,7 @@ def generate_chart_tags(my_component, component_display_id, md_corelib_display_c
 
                         j = j +1
             my_dataset_tags = "[" + my_dataset_tags + "]"
-            log.info("Chart Datasets: %s", my_dataset_tags)
+            # log.info("Chart Datasets: %s", my_dataset_tags)
 
             my_chart_library = my_chart["chart_library"]
             my_chart_title = my_chart["chart_title"]
@@ -247,7 +247,7 @@ def generate_chart_tags(my_component, component_display_id, md_corelib_display_c
                                                     .replace("{CHART Y GRID LINES DISPLAY}", my_chart_y_axis_display_grid) \
                                                     .replace("{CHART Y GRID LINES COLOR}", my_chart_y_axis_display_grid_color)
 
-                        log.info("Display tags: %s", my_chart_display_tags)
+                        # log.info("Display tags: %s", my_chart_display_tags)
 
                         my_chart_titles[my_chart_id] = my_chart_title
                         log.info( "Core Library: Updating API Tags: %s", my_chart_display_id)
@@ -269,7 +269,7 @@ def generate_chart_tags(my_component, component_display_id, md_corelib_display_c
                     i = i +1
 
             log.info( "Core Library: Generating consolidated Chart Tags Output..")
-            log.info(final_chart_tags)
+            # log.info(final_chart_tags)
 
             if len(final_chart_tags) > 0:
                 chart_output = {"chart_tags": final_chart_tags, "chart_display_ids": chart_display_ids,

@@ -7,13 +7,13 @@ import datetime
 from django.utils import timezone
 from django.forms import ModelForm, Textarea
 from django.utils.translation import gettext_lazy as _
-from components.core.coreEngine import CoreEngine
+from components.core.coreEngine import CoreEngine as CoreLib
 from components.core.packages.lookups import *
 
-ce = CoreEngine()
-constants = ce.constants
-lookups = ce.lookups
-
+coreLib = CoreLib()
+constants = coreLib.constants
+lookups = coreLib.lookups
+calendars = coreLib.calendars
 
 
 class EngineProperties(models.Model):

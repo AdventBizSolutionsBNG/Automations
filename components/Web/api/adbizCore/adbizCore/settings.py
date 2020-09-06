@@ -31,7 +31,7 @@ SECRET_KEY = 'ymq0cn)_3nh=^)q5m7f#r90-*szv6eod%t2_r+36eb5=(h^8d$'
 API_KEY = "5dacec94-d887-4994-8869-029fc74bb6e5"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
@@ -139,7 +139,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 #--------------------------------------------------
 STATIC_ROOT = os.path.join(BASE_DIR, 'root')
-print(STATIC_ROOT)
 
 #-----------------------------------------------------
 STATICFILES_DIRS = [

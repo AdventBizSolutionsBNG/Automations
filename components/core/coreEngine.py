@@ -19,7 +19,7 @@ class CoreEngine:
     lookups = {}
     components = {}
     charts = {}
-
+    calendars = []
 
     _core_engine_code = ""
     _product_engine_url = ""
@@ -47,6 +47,7 @@ class CoreEngine:
                 self.components = coreSettings.get_display_components()
                 self.constants = coreSettings.get_constants()
                 self.lookups = coreSettings.get_lookups()
+                self.calendars = coreSettings.get_calendar_datasets()
             else:
                 print("Error!! Settings file not found. Cannot initialize Core Engine.")
         except Exception as e:
