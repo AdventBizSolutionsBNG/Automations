@@ -33,17 +33,17 @@
 
                     <!-- Heirarchy-->
                     <li class="dropdown notification-list d-none d-md-block">
-                        <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <i class="ti-receipt">Hierarchy</i>
-                            <span class="mdi mdi-chevron-down"></span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right language-switch">
-                            <a class="dropdown-item" href="#"><img src="{% static  'themeVerticalDark/assets/images/flags/germany_flag.jpg' %}" alt="" height="16" /><span> German </span></a>
-                            <a class="dropdown-item" href="#"><img src="{% static  'themeVerticalDark/assets/images/flags/italy_flag.jpg' %}" alt="" height="16" /><span> Italian </span></a>
-                            <a class="dropdown-item" href="#"><img src="{% static  'themeVerticalDark/assets/images/flags/french_flag.jpg' %}" alt="" height="16" /><span> French </span></a>
-                            <a class="dropdown-item" href="#"><img src="{% static  'themeVerticalDark/assets/images/flags/spain_flag.jpg' %}" alt="" height="16" /><span> Spanish </span></a>
-                            <a class="dropdown-item" href="#"><img src="{% static  'themeVerticalDark/assets/images/flags/russia_flag.jpg' %}" alt="" height="16" /><span> Russian </span></a>
-                        </div>
+<!--                        <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">-->
+<!--                            <i class="ti-receipt">Hierarchy</i>-->
+<!--                            <span class="mdi mdi-chevron-down"></span>-->
+<!--                        </a>-->
+<!--                        <div class="dropdown-menu dropdown-menu-right language-switch">-->
+<!--                            <a class="dropdown-item" href="#"><img src="{% static  'themeVerticalDark/assets/images/flags/germany_flag.jpg' %}" alt="" height="16" /><span> German </span></a>-->
+<!--                            <a class="dropdown-item" href="#"><img src="{% static  'themeVerticalDark/assets/images/flags/italy_flag.jpg' %}" alt="" height="16" /><span> Italian </span></a>-->
+<!--                            <a class="dropdown-item" href="#"><img src="{% static  'themeVerticalDark/assets/images/flags/french_flag.jpg' %}" alt="" height="16" /><span> French </span></a>-->
+<!--                            <a class="dropdown-item" href="#"><img src="{% static  'themeVerticalDark/assets/images/flags/spain_flag.jpg' %}" alt="" height="16" /><span> Spanish </span></a>-->
+<!--                            <a class="dropdown-item" href="#"><img src="{% static  'themeVerticalDark/assets/images/flags/russia_flag.jpg' %}" alt="" height="16" /><span> Russian </span></a>-->
+<!--                        </div>-->
                     </li>
 
                     <!-- language-->
@@ -121,16 +121,7 @@
 <!--                                <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle m-r-5"></i> Profile</a>-->
                                 <div class="dropdown-divider"></div>
                                 {% block UserDetails %}
-                                    <select id="test" multiple>
-                                        <option value="1">American Black Bear</option>
-                                        <option value="2">Asiatic Black Bear</option>
-                                        <option value="3">Brown Bear</option>
-                                        <option value="4">Giant Panda</option>
-                                        <option value="5">Sloth Bear</option>
-                                        <option value="6">Sun Bear</option>
-                                        <option value="7">Polar Bear</option>
-                                        <option value="8">Spectacled Bear</option>
-                                    </select>
+
 <!--                                    <a class="dropdown-item" id="{USER NAME}" href="#">User Name1</a>-->
 <!--                                    <div class="dropdown-divider"></div>-->
 <!--                                    <a class="dropdown-item" href="#"><i class="mdi mdi-wallet m-r-5"></i>-->
@@ -208,7 +199,7 @@
                               <li><a href="{% url 'actrbl_main' dashboard_code='4781f53b-e967-4eb8-bd06-b5c377d7645e@dtl.site.env.catalog.datamodel.dashboard' %}">Sales Trends</a></li>
                               <li><a href="{% url 'actrbl_main' dashboard_code='4c9fca79-1fad-4585-9c5c-36ec77327174@dtl.site.env.catalog.datamodel.dashboard' %}">Discounted Invoices</a></li>
                               <li><a href="{% url 'actrbl_main' dashboard_code='4625c091-47e0-4721-880e-d41228f43ff8@dtl.site.env.catalog.datamodel.dashboard' %}">Goods invoiced vs outward comparison</a></li>
-                              <li><a href="#">Customer sales vs Credit limits</a></li>
+                              <li><a href="{% url 'actrbl_main' dashboard_code='3b8e2566-4850-41e5-8bd2-aafcc38fe087@dtl.site.env.catalog.datamodel.dashboard' %}">Customer sales vs Credit limits</a></li>
                           </ul>
                       </li>
 
@@ -216,7 +207,7 @@
                           <a href="javascript:void(0);" class="waves-effect"><i class="ti-receipt"></i><span>Ageing Summary<span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                           <ul class="submenu">
                               <li><a href="{% url 'actrbl_main' dashboard_code='c9145c2b-8ad2-4d3b-99e8-23dc4c93352d@dtl.site.env.catalog.datamodel.dashboard' %}">Ageing Report</a></li>
-                              <li><a href="#">Blocked customers</a></li>
+                              <li><a href="{% url 'actrbl_main' dashboard_code='f5eb26ab-7b49-46d1-a51c-492be476237b@dtl.site.env.catalog.datamodel.dashboard' %}">Blocked customers</a></li>
                           </ul>
                       </li>
 

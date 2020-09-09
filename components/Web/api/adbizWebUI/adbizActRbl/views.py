@@ -87,6 +87,10 @@ def get_actrbl_main(request, dashboard_code):
             return TemplateResponse(request, 'actrbl_customer_collections.html', context)
         elif dashboard_code == "4ae1ca70-ee60-4f24-a2b1-f0d423fe24fd@dtl.site.env.catalog.datamodel.dashboard":
             return TemplateResponse(request, 'actrbl_customer_sales_vs_collections.html', context)
+        elif dashboard_code == "f5eb26ab-7b49-46d1-a51c-492be476237b@dtl.site.env.catalog.datamodel.dashboard":
+            return TemplateResponse(request, 'actrbl_blocked_customers.html', context)
+        elif dashboard_code == "3b8e2566-4850-41e5-8bd2-aafcc38fe087@dtl.site.env.catalog.datamodel.dashboard":
+            return TemplateResponse(request, 'actrbl_customer_sales_vs_credit_loss.html', context)
 
 
 

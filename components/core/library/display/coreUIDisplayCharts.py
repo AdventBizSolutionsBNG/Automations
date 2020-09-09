@@ -5,7 +5,6 @@ def generate_chart_container_tags(md_corelib_display_components):
     try:
         log = logging.getLogger("main")
         log.info( "Core Library: Processing Chart Metadata")
-
         md_charts = md_corelib_display_components["charts"]
         for md_chart in md_charts:
             if md_chart["chart_library"] == "chart.js":  # todo from settings module. currently only set for table
@@ -52,19 +51,48 @@ def generate_chart_container_tags(md_corelib_display_components):
         return None
 
 
-
-def generate_chart_tags(my_component, component_display_id, md_corelib_display_components):
+# Generic function to retrieve the metadata for a particular object Type
+def get_api_tags(object_type, call_type, md_api_method_details):
     try:
         log = logging.getLogger("main")
 
+        for method_detail in md_api_method_details:
+            if method_detail["call_type"] == call_type:
+                for objects in method_detail["objects"]:
+                    if objects["object_type"] == object_type:
+                        return(objects["tags"])
+        return None
+    except Exception as e:
+        log.error("Error in Extracting metadata for API", exc_info=True)
+        return None
+
+
+def generate_chart_tags(my_component, component_display_id, md_corelib_display_components, api_call_type):
+    try:
+        log = logging.getLogger("main")
+
+        md_extraction_metadata = md_corelib_display_components["data_extraction"]
+        log.info("Core Library: Retrieving Extraction methods metadata for the Widget")
+        for methods in md_extraction_metadata:
+            if methods["method"] == "api":
+                method_details = methods["method_details"]
+                md_api_method_details = method_details
+
+        log.info("Core Library: Retrieving API Extraction methods metadata for the Chart")
+        md_api_method_value_tags = get_api_tags("chart", api_call_type, md_api_method_details)
+
+        log.info("Core Library: Retrieving API Payload metadata for the Chart")
+        md_api_payload = get_api_payload(api_call_type, md_api_method_details)
+
         # loading chart queries as list
-        log.info( "Core Library: Loading Chart Queries from Display Properties for Widget: %s" , component_display_id)
+        log.info( "Core Library: Loading Chart Queries from Display Properties for Chart: %s" , component_display_id)
         my_charts = my_component["display_properties"].get("chart")
         all_queries = json.loads(my_component["component_query"])
         component_queries = all_queries["chart"]
         my_chart_queries = {}
         for q in component_queries:
             my_chart_queries[q["id"]] = q["query"]
+
 
 
         # loading Chart API metadata
@@ -202,6 +230,9 @@ def generate_chart_tags(my_component, component_display_id, md_corelib_display_c
             log.info("Chart Display Id: %s", my_chart_display_id)
 
             my_chart_query = my_chart_queries[my_chart_id]
+            my_payload = md_api_payload.replace("{CHART QUERY}", my_chart_query)\
+                                .replace("{PERIOD START DATE}",'periodStartDate')\
+                                .replace('{PERIOD END DATE}', 'periodEndDate')
 
             chart_display_ids.append(my_chart_display_id)
             chart_ids.append(my_chart_id)
@@ -253,7 +284,7 @@ def generate_chart_tags(my_component, component_display_id, md_corelib_display_c
                         log.info( "Core Library: Updating API Tags: %s", my_chart_display_id)
                         if md_chart_api_tags:
                             my_chart_api_tags = md_chart_api_tags.replace("{CHART OBJECT}", my_chart_display_id) \
-                                                    .replace("{CHART QUERY}", my_chart_query )
+                                                    .replace("{PAYLOAD}", my_payload )
 
                             log.info( "Core Library: Creating Chart output: %s", my_chart_display_id)
                             if my_chart_display_tags is not None and my_chart_api_tags is not None:
@@ -283,6 +314,17 @@ def generate_chart_tags(my_component, component_display_id, md_corelib_display_c
         log.error("Core Library Error!! Error in generating chart tags", exc_info=True)
         return None
 
+def get_api_payload(call_type, md_api_method_details):
+    try:
+        log = logging.getLogger("main")
+        for method_detail in md_api_method_details:
+            if method_detail["call_type"] == call_type:
+                payload = method_detail["chart_payload"]
+                return payload
+        return None
+    except Exception as e:
+        log.error("Error in extracting payload metadata for API", exc_info=True)
+        return None
 
 # def generate_chart_tags(my_component, component_display_id, md_corelib_display_components):
 #     try:
@@ -376,3 +418,4 @@ def generate_chart_tags(my_component, component_display_id, md_corelib_display_c
 #             print("Core Library Error!! Errror in generating chart tags")
 #             print(e)
 #
+

@@ -196,7 +196,6 @@ class CustomLogin(LoginView):
 
                                                             system_period_preference = my_system_preferences["P0102"]["preference_value"]
                                                             date_range = CoreLibQueryEngine.decode_date_range(system_period_preference)
-                                                            log.info(date_range)
 
                                                             request.session["period_start_date"] = date_range["start_date"]
                                                             request.session["period_end_date"] = date_range["end_date"]
@@ -205,12 +204,9 @@ class CustomLogin(LoginView):
 
                                                             system_hist_preference = my_system_preferences["P0103"]["preference_value"]
                                                             date_range = CoreLibQueryEngine.decode_date_range(system_hist_preference)
-                                                            log.info(date_range)
 
                                                             request.session["hist_start_date"] = date_range["start_date"]
                                                             request.session["hist_end_date"] = date_range["end_date"]
-
-                                                    log.info(my_system_preferences)
 
                                                 # Load Default Module
                                                 log.info("Load Default Module set for user login")
@@ -227,7 +223,6 @@ class CustomLogin(LoginView):
 
                                                 # Load User Preferences
                                                 log.info("Load User Preferences")
-                                                print(current_module)
                                                 user_preferences_qs = AdbizUserPreferences.objects.filter(user_id=my_user_id, module = current_module)
                                                 if len(user_preferences_qs) > 0:
                                                     my_user_preferences = {}
@@ -244,7 +239,6 @@ class CustomLogin(LoginView):
                                                             user_period_preference = user_preference.preference_value
                                                             print(type(user_period_preference))
                                                             date_range = CoreLibQueryEngine.decode_date_range(user_period_preference)
-                                                            log.info(date_range)
 
                                                             request.session["period_start_date"] = date_range["start_date"]
                                                             request.session["period_end_date"] = date_range["end_date"]
@@ -253,13 +247,9 @@ class CustomLogin(LoginView):
                                                             print('P0103')
                                                             user_hist_preference = user_preference.preference_value
                                                             date_range = CoreLibQueryEngine.decode_date_range(user_hist_preference)
-                                                            log.info(date_range)
 
                                                             request.session["hist_start_date"] = date_range["start_date"]
                                                             request.session["hist_end_date"] = date_range["end_date"]
-
-                                                    log.info(my_user_preferences)
-
 
                                                     if request.session["default_module"]:
                                                         log.info("User Default Module: %s", request.session["default_module"])
@@ -282,7 +272,6 @@ class CustomLogin(LoginView):
                                                                 if entities:
                                                                     my_org_entities[hierarchy_type_id] = entities
 
-                                                            log.info(my_org_entities)
                                                             request.session["org_entities"] = my_org_entities
 
                                                             # Load metadata from Core Engine (API call)
@@ -290,12 +279,8 @@ class CustomLogin(LoginView):
                                                             disp_metadata = load_coreLib_display_components(request)
                                                             if disp_metadata:
                                                                 md_corelib_display_components = json.loads(disp_metadata)
-
                                                                 log.info("Loading all dashboards")
                                                                 all_dashboards = load_all_dashboards(request, md_corelib_display_components)
-
-
-
                                                                 if all_dashboards:
                                                                     log.info("Loading Menu items")
                                                                     menu = get_menu_items(request, request.session["default_module"], my_user_id)

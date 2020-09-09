@@ -61,17 +61,17 @@
 
                     <!-- Heirarchy-->
                     <li class="dropdown notification-list d-none d-md-block">
-                        <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <i class="ti-receipt">Hierarchy</i>
-                            <span class="mdi mdi-chevron-down"></span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right language-switch">
-                            <a class="dropdown-item" href="#"><img src="/static/themeVerticalDark/assets/images/flags/germany_flag.jpg" alt="" height="16" /><span> German </span></a>
-                            <a class="dropdown-item" href="#"><img src="/static/themeVerticalDark/assets/images/flags/italy_flag.jpg" alt="" height="16" /><span> Italian </span></a>
-                            <a class="dropdown-item" href="#"><img src="/static/themeVerticalDark/assets/images/flags/french_flag.jpg" alt="" height="16" /><span> French </span></a>
-                            <a class="dropdown-item" href="#"><img src="/static/themeVerticalDark/assets/images/flags/spain_flag.jpg" alt="" height="16" /><span> Spanish </span></a>
-                            <a class="dropdown-item" href="#"><img src="/static/themeVerticalDark/assets/images/flags/russia_flag.jpg" alt="" height="16" /><span> Russian </span></a>
-                        </div>
+<!--                        <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">-->
+<!--                            <i class="ti-receipt">Hierarchy</i>-->
+<!--                            <span class="mdi mdi-chevron-down"></span>-->
+<!--                        </a>-->
+<!--                        <div class="dropdown-menu dropdown-menu-right language-switch">-->
+<!--                            <a class="dropdown-item" href="#"><img src="/static/themeVerticalDark/assets/images/flags/germany_flag.jpg" alt="" height="16" /><span> German </span></a>-->
+<!--                            <a class="dropdown-item" href="#"><img src="/static/themeVerticalDark/assets/images/flags/italy_flag.jpg" alt="" height="16" /><span> Italian </span></a>-->
+<!--                            <a class="dropdown-item" href="#"><img src="/static/themeVerticalDark/assets/images/flags/french_flag.jpg" alt="" height="16" /><span> French </span></a>-->
+<!--                            <a class="dropdown-item" href="#"><img src="/static/themeVerticalDark/assets/images/flags/spain_flag.jpg" alt="" height="16" /><span> Spanish </span></a>-->
+<!--                            <a class="dropdown-item" href="#"><img src="/static/themeVerticalDark/assets/images/flags/russia_flag.jpg" alt="" height="16" /><span> Russian </span></a>-->
+<!--                        </div>-->
                     </li>
 
                     <!-- language-->
@@ -149,16 +149,7 @@
 <!--                                <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle m-r-5"></i> Profile</a>-->
                                 <div class="dropdown-divider"></div>
 
-                                    <select id="test" multiple>
-                                        <option value="1">American Black Bear</option>
-                                        <option value="2">Asiatic Black Bear</option>
-                                        <option value="3">Brown Bear</option>
-                                        <option value="4">Giant Panda</option>
-                                        <option value="5">Sloth Bear</option>
-                                        <option value="6">Sun Bear</option>
-                                        <option value="7">Polar Bear</option>
-                                        <option value="8">Spectacled Bear</option>
-                                    </select>
+
 <!--                                    <a class="dropdown-item" id="{USER NAME}" href="#">User Name1</a>-->
 <!--                                    <div class="dropdown-divider"></div>-->
 <!--                                    <a class="dropdown-item" href="#"><i class="mdi mdi-wallet m-r-5"></i>-->
@@ -358,7 +349,7 @@
                     <div class="page-title-box">
                         <div class="row align-items-center">
                             <div class="col-sm-6">
-                                <h4 class="page-title" >Sales Exception Report</h4>
+                                <h4 class="page-title" >Sales Trends</h4>
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item active">View Data</li>
                                 </ol>
@@ -368,7 +359,7 @@
                             </div>
                             <div class="col-sm-2">
                                 <a href="#" id="date-slider-range">
-                                    <div class="btn btn-light fa fa-search" role="button"  style="position: absolute; left: 0;padding:5px"></div>
+                                    <div class="btn btn-light fa fa-search" role="button"  style="position: absolute; left: 2px;padding:7px"></div>
                                 </a>
                             </div>
                         </div>
@@ -384,7 +375,7 @@
 
 									<div class="float-left mini-stat-img mr-4"><img src="/static/themeVerticalDark/assets/images/services-icon/01.png" alt=""></div>
 
-									<h5 class="font-14 text-uppercase mt-0 text-white">Exceptions</h5>
+									<h5 class="font-14 text-uppercase mt-0 text-white">Channels</h5>
 
 									<h4 href="#" class="font-12" data-toggle="tooltip" title="Total Invoice Value (INR Crores)" id=W1-V1>Loading...<i class="mdi mdi-arrow-up text-success ml-2"></i></h4>
 									<h4 href="#" class="font-12" data-toggle="tooltip" title="Total Invoice Count" id=W1-V2>Loading...<i class="mdi mdi-arrow-up text-success ml-2"></i></h4>
@@ -396,7 +387,7 @@
 											$.ajax({
 													method : 'GET',
 													url : '/adbizUI/getComponentData/',
-													data:   $.param({ "component_query": "SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.811b457d68f044eebd8287409e81746a  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													data:   $.param({ "component_query": "SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
 													beforeSend: function (request) {
 														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
 														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
@@ -421,7 +412,7 @@
 											$.ajax({
 													method : 'GET',
 													url : '/adbizUI/getComponentData/',
-													data:   $.param({ "component_query": "SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.811b457d68f044eebd8287409e81746a WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													data:   $.param({ "component_query": "SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
 													beforeSend: function (request) {
 														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
 														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
@@ -450,7 +441,7 @@
 											$.ajax({
 													method : 'GET',
 													url : '/adbizUI/getComponentData/',
-													data:   $.param({ "component_query": " SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.811b457d68f044eebd8287409e81746a WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmInvoiceDate ORDER BY 1 DESC LIMIT 1;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													data:   $.param({ "component_query": " SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmChannel ORDER BY 1 DESC LIMIT 1;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
 													beforeSend: function (request) {
 														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
 														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
@@ -476,7 +467,7 @@
 											$.ajax({
 													method : 'GET',
 													url : '/adbizUI/getComponentData/',
-													data:   $.param({ "component_query": "SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.811b457d68f044eebd8287409e81746a WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmInvoiceDate ORDER BY 1 DESC LIMIT 1;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													data:   $.param({ "component_query": "SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmChannel ORDER BY 1 DESC LIMIT 1;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
 													beforeSend: function (request) {
 														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
 														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
@@ -499,6 +490,895 @@
                                 <div class="pt-2">
                                     <div class="float-right">
                                         <a href="#" class="text-white" onclick="select_widget('W1'); hide_all_charts(); hide_all_tables(); W1_C1_getChartData();W1_C2_getChartData();"><i class="mdi mdi-arrow-right h5"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card mini-stat bg-primary text-white">
+                            <div class="fade-in card-body" style='background-color:blue' id='W2'>
+                                <div class="mb-4">
+
+									<div class="float-left mini-stat-img mr-4"><img src="/static/themeVerticalDark/assets/images/services-icon/02.png" alt=""></div>
+
+									<h5 class="font-14 text-uppercase mt-0 text-white">HSN Code</h5>
+
+									<h4 href="#" class="font-12" data-toggle="tooltip" title="Total Invoice Value (INR Crores)" id=W2-V1>Loading...<i class="mdi mdi-arrow-up text-success ml-2"></i></h4>
+									<h4 href="#" class="font-12" data-toggle="tooltip" title="Total Invoice Count" id=W2-V2>Loading...<i class="mdi mdi-arrow-up text-success ml-2"></i></h4>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W2-V1").innerHTML = response_data   ;
+													console.log("Value generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Value' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Value completed successfully' );
+												});
+											});
+									</script>
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W2-V2").innerHTML = response_data   ;
+													console.log("Value generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Value' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Value completed successfully' );
+												});
+											});
+									</script>
+
+								<div class="mini-stat-label bg-info" data-toggle="tooltip" title="Max Invoice Value (INR Lakhs)" id=W2-I1><p class="mb-0">Loading...</p></div>
+								<div class="mini-stat-label bg-info" data-toggle="tooltip" title="Min Invoice Value (INR Lakhs)" id=W2-I2><p class="mb-0">Loading...</p></div>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": " SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmHSNCode ORDER BY 1 DESC LIMIT 1;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W2-I1").innerHTML = response_data   ;
+													console.log("Indicator generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Indicator' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Indicator completed successfully' );
+												});
+											});
+									</script>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmHSNCode ORDER BY 1 DESC LIMIT 1;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W2-I2").innerHTML = response_data   ;
+													console.log("Indicator generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Indicator' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Indicator completed successfully' );
+												});
+											});
+									</script>
+
+                                </div>
+                                <div class="pt-2">
+                                    <div class="float-right">
+                                        <a href="#" class="text-white" onclick="select_widget('W2'); hide_all_charts(); hide_all_tables(); W2_C1_getChartData();W2_C2_getChartData();"><i class="mdi mdi-arrow-right h5"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card mini-stat bg-primary text-white">
+                            <div class="fade-in card-body" style='background-color:green' id='W3'>
+                                <div class="mb-4">
+
+									<div class="float-left mini-stat-img mr-4"><img src="/static/themeVerticalDark/assets/images/services-icon/03.png" alt=""></div>
+
+									<h5 class="font-14 text-uppercase mt-0 text-white">Customer Type</h5>
+
+									<h4 href="#" class="font-12" data-toggle="tooltip" title="Total Invoice Value (INR Crores)" id=W3-V1>Loading...<i class="mdi mdi-arrow-up text-success ml-2"></i></h4>
+									<h4 href="#" class="font-12" data-toggle="tooltip" title="Total Invoice Count" id=W3-V2>Loading...<i class="mdi mdi-arrow-up text-success ml-2"></i></h4>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W3-V1").innerHTML = response_data   ;
+													console.log("Value generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Value' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Value completed successfully' );
+												});
+											});
+									</script>
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W3-V2").innerHTML = response_data   ;
+													console.log("Value generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Value' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Value completed successfully' );
+												});
+											});
+									</script>
+
+								<div class="mini-stat-label bg-info" data-toggle="tooltip" title="Max Invoice Value (INR Lakhs)" id=W3-I1><p class="mb-0">Loading...</p></div>
+								<div class="mini-stat-label bg-info" data-toggle="tooltip" title="Min Invoice Value (INR Lakhs)" id=W3-I2><p class="mb-0">Loading...</p></div>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": " SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmCustomerType ORDER BY 1 DESC LIMIT 1;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W3-I1").innerHTML = response_data   ;
+													console.log("Indicator generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Indicator' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Indicator completed successfully' );
+												});
+											});
+									</script>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmCustomerType ORDER BY 1 DESC LIMIT 1;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W3-I2").innerHTML = response_data   ;
+													console.log("Indicator generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Indicator' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Indicator completed successfully' );
+												});
+											});
+									</script>
+
+                                </div>
+                                <div class="pt-2">
+                                    <div class="float-right">
+                                        <a href="#" class="text-white" onclick="select_widget('W3'); hide_all_charts(); hide_all_tables(); W3_C1_getChartData();W3_C2_getChartData();"><i class="mdi mdi-arrow-right h5"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card mini-stat bg-primary text-white">
+                            <div class="fade-in card-body" style='background-color:orange' id='W4'>
+                                <div class="mb-4">
+
+									<div class="float-left mini-stat-img mr-4"><img src="/static/themeVerticalDark/assets/images/services-icon/04.png" alt=""></div>
+
+									<h5 class="font-14 text-uppercase mt-0 text-white">Customer Name</h5>
+
+									<h4 href="#" class="font-12" data-toggle="tooltip" title="Total Invoice Value (INR Crores)" id=W4-V1>Loading...<i class="mdi mdi-arrow-up text-success ml-2"></i></h4>
+									<h4 href="#" class="font-12" data-toggle="tooltip" title="Total Invoice Count" id=W4-V2>Loading...<i class="mdi mdi-arrow-up text-success ml-2"></i></h4>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W4-V1").innerHTML = response_data   ;
+													console.log("Value generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Value' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Value completed successfully' );
+												});
+											});
+									</script>
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W4-V2").innerHTML = response_data   ;
+													console.log("Value generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Value' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Value completed successfully' );
+												});
+											});
+									</script>
+
+								<div class="mini-stat-label bg-info" data-toggle="tooltip" title="Max Invoice Value (INR Lakhs)" id=W4-I1><p class="mb-0">Loading...</p></div>
+								<div class="mini-stat-label bg-info" data-toggle="tooltip" title="Min Invoice Value (INR Lakhs)" id=W4-I2><p class="mb-0">Loading...</p></div>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": " SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmCustomerName ORDER BY 1 DESC LIMIT 1;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W4-I1").innerHTML = response_data   ;
+													console.log("Indicator generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Indicator' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Indicator completed successfully' );
+												});
+											});
+									</script>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmCustomerName ORDER BY 1 DESC LIMIT 1;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W4-I2").innerHTML = response_data   ;
+													console.log("Indicator generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Indicator' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Indicator completed successfully' );
+												});
+											});
+									</script>
+
+                                </div>
+                                <div class="pt-2">
+                                    <div class="float-right">
+                                        <a href="#" class="text-white" onclick="select_widget('W4'); hide_all_charts(); hide_all_tables(); W4_C1_getChartData();W4_C2_getChartData();"><i class="mdi mdi-arrow-right h5"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card mini-stat bg-primary text-white">
+                            <div class="fade-in card-body" style='background-color:brown' id='W5'>
+                                <div class="mb-4">
+
+									<div class="float-left mini-stat-img mr-4"><img src="/static/themeVerticalDark/assets/images/services-icon/05.png" alt=""></div>
+
+									<h5 class="font-14 text-uppercase mt-0 text-white">Customer Region</h5>
+
+									<h4 href="#" class="font-12" data-toggle="tooltip" title="Total Invoice Value (INR Crores)" id=W5-V1>Loading...<i class="mdi mdi-arrow-up text-success ml-2"></i></h4>
+									<h4 href="#" class="font-12" data-toggle="tooltip" title="Total Invoice Count" id=W5-V2>Loading...<i class="mdi mdi-arrow-up text-success ml-2"></i></h4>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W5-V1").innerHTML = response_data   ;
+													console.log("Value generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Value' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Value completed successfully' );
+												});
+											});
+									</script>
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W5-V2").innerHTML = response_data   ;
+													console.log("Value generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Value' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Value completed successfully' );
+												});
+											});
+									</script>
+
+								<div class="mini-stat-label bg-info" data-toggle="tooltip" title="Max Invoice Value (INR Lakhs)" id=W5-I1><p class="mb-0">Loading...</p></div>
+								<div class="mini-stat-label bg-info" data-toggle="tooltip" title="Min Invoice Value (INR Lakhs)" id=W5-I2><p class="mb-0">Loading...</p></div>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": " SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmCustomerRegion ORDER BY 1 DESC LIMIT 1;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W5-I1").innerHTML = response_data   ;
+													console.log("Indicator generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Indicator' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Indicator completed successfully' );
+												});
+											});
+									</script>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmCustomerRegion ORDER BY 1 DESC LIMIT 1;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W5-I2").innerHTML = response_data   ;
+													console.log("Indicator generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Indicator' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Indicator completed successfully' );
+												});
+											});
+									</script>
+
+                                </div>
+                                <div class="pt-2">
+                                    <div class="float-right">
+                                        <a href="#" class="text-white" onclick="select_widget('W5'); hide_all_charts(); hide_all_tables(); W5_C1_getChartData();W5_C2_getChartData();"><i class="mdi mdi-arrow-right h5"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card mini-stat bg-primary text-white">
+                            <div class="fade-in card-body" style='background-color:blueviolet' id='W6'>
+                                <div class="mb-4">
+
+									<div class="float-left mini-stat-img mr-4"><img src="/static/themeVerticalDark/assets/images/services-icon/06.png" alt=""></div>
+
+									<h5 class="font-14 text-uppercase mt-0 text-white">Product Category</h5>
+
+									<h4 href="#" class="font-12" data-toggle="tooltip" title="Total Invoice Value (INR Crores)" id=W6-V1>Loading...<i class="mdi mdi-arrow-up text-success ml-2"></i></h4>
+									<h4 href="#" class="font-12" data-toggle="tooltip" title="Total Invoice Count" id=W6-V2>Loading...<i class="mdi mdi-arrow-up text-success ml-2"></i></h4>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W6-V1").innerHTML = response_data   ;
+													console.log("Value generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Value' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Value completed successfully' );
+												});
+											});
+									</script>
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W6-V2").innerHTML = response_data   ;
+													console.log("Value generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Value' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Value completed successfully' );
+												});
+											});
+									</script>
+
+								<div class="mini-stat-label bg-info" data-toggle="tooltip" title="Max Invoice Value (INR Lakhs)" id=W6-I1><p class="mb-0">Loading...</p></div>
+								<div class="mini-stat-label bg-info" data-toggle="tooltip" title="Min Invoice Value (INR Lakhs)" id=W6-I2><p class="mb-0">Loading...</p></div>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": " SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmProductCategory ORDER BY 1 DESC LIMIT 1;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W6-I1").innerHTML = response_data   ;
+													console.log("Indicator generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Indicator' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Indicator completed successfully' );
+												});
+											});
+									</script>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmProductCategory ORDER BY 1 DESC LIMIT 1;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W6-I2").innerHTML = response_data   ;
+													console.log("Indicator generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Indicator' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Indicator completed successfully' );
+												});
+											});
+									</script>
+
+                                </div>
+                                <div class="pt-2">
+                                    <div class="float-right">
+                                        <a href="#" class="text-white" onclick="select_widget('W6'); hide_all_charts(); hide_all_tables(); W6_C1_getChartData();W6_C2_getChartData();"><i class="mdi mdi-arrow-right h5"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card mini-stat bg-primary text-white">
+                            <div class="fade-in card-body" style='background-color:magenta' id='W7'>
+                                <div class="mb-4">
+
+									<div class="float-left mini-stat-img mr-4"><img src="/static/themeVerticalDark/assets/images/services-icon/07.png" alt=""></div>
+
+									<h5 class="font-14 text-uppercase mt-0 text-white">Project</h5>
+
+									<h4 href="#" class="font-12" data-toggle="tooltip" title="Total Invoice Value (INR Crores)" id=W7-V1>Loading...<i class="mdi mdi-arrow-up text-success ml-2"></i></h4>
+									<h4 href="#" class="font-12" data-toggle="tooltip" title="Total Invoice Count" id=W7-V2>Loading...<i class="mdi mdi-arrow-up text-success ml-2"></i></h4>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W7-V1").innerHTML = response_data   ;
+													console.log("Value generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Value' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Value completed successfully' );
+												});
+											});
+									</script>
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W7-V2").innerHTML = response_data   ;
+													console.log("Value generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Value' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Value completed successfully' );
+												});
+											});
+									</script>
+
+								<div class="mini-stat-label bg-info" data-toggle="tooltip" title="Max Invoice Value (INR Lakhs)" id=W7-I1><p class="mb-0">Loading...</p></div>
+								<div class="mini-stat-label bg-info" data-toggle="tooltip" title="Min Invoice Value (INR Lakhs)" id=W7-I2><p class="mb-0">Loading...</p></div>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": " SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmProject ORDER BY 1 DESC LIMIT 1;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W7-I1").innerHTML = response_data   ;
+													console.log("Indicator generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Indicator' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Indicator completed successfully' );
+												});
+											});
+									</script>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924 WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmProject ORDER BY 1 DESC LIMIT 1;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W7-I2").innerHTML = response_data   ;
+													console.log("Indicator generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Indicator' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Indicator completed successfully' );
+												});
+											});
+									</script>
+
+                                </div>
+                                <div class="pt-2">
+                                    <div class="float-right">
+                                        <a href="#" class="text-white" onclick="select_widget('W7'); hide_all_charts(); hide_all_tables(); W7_C1_getChartData();W7_C2_getChartData();"><i class="mdi mdi-arrow-right h5"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card mini-stat bg-primary text-white">
+                            <div class="fade-in card-body" style='background-color:blueviolet' id='W8'>
+                                <div class="mb-4">
+
+									<div class="float-left mini-stat-img mr-4"><img src="/static/themeVerticalDark/assets/images/services-icon/08.png" alt=""></div>
+
+									<h5 class="font-14 text-uppercase mt-0 text-white">Month on Month</h5>
+
+									<h4 href="#" class="font-12" data-toggle="tooltip" title="Total Invoice Value (INR Crores)" id=W8-V1>Loading...<i class="mdi mdi-arrow-up text-success ml-2"></i></h4>
+									<h4 href="#" class="font-12" data-toggle="tooltip" title="Total Invoice Count" id=W8-V2>Loading...<i class="mdi mdi-arrow-up text-success ml-2"></i></h4>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W8-V1").innerHTML = response_data   ;
+													console.log("Value generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Value' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Value completed successfully' );
+												});
+											});
+									</script>
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W8-V2").innerHTML = response_data   ;
+													console.log("Value generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Value' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Value completed successfully' );
+												});
+											});
+									</script>
+
+								<div class="mini-stat-label bg-info" data-toggle="tooltip" title="Max Invoice Value (INR Lakhs)" id=W8-I1><p class="mb-0">Loading...</p></div>
+								<div class="mini-stat-label bg-info" data-toggle="tooltip" title="Min Invoice Value (INR Lakhs)" id=W8-I2><p class="mb-0">Loading...</p></div>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": " SELECT ROUND(MAX(msTotalLineAmount_MAX)/100000,2) MAX FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmInvoiceDate ORDER BY 1 DESC LIMIT 1;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W8-I1").innerHTML = response_data   ;
+													console.log("Indicator generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Indicator' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Indicator completed successfully' );
+												});
+											});
+									</script>
+
+
+									<script type='text/javascript'></script>
+									<script>
+										$(document).ready(function() {
+											$.ajax({
+													method : 'GET',
+													url : '/adbizUI/getComponentData/',
+													data:   $.param({ "component_query": "SELECT ROUND(MIN(msTotalLineAmount_MIN)/100000,2) MIN FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmInvoiceDate ORDER BY 1 DESC LIMIT 1;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+													beforeSend: function (request) {
+														request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+														request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+													}
+												})
+												.done(function(response_data) {
+													document.getElementById("W8-I2").innerHTML = response_data   ;
+													console.log("Indicator generated Successfully")
+												})
+												.fail(function() {
+														console.log( 'Error occurred in API Data Extraction method for Indicator' );
+												})
+												.always(function() {
+													console.log( 'API Data Extraction method for Indicator completed successfully' );
+												});
+											});
+									</script>
+
+                                </div>
+                                <div class="pt-2">
+                                    <div class="float-right">
+                                        <a href="#" class="text-white" onclick="select_widget('W8'); hide_all_charts(); hide_all_tables(); W8_C1_getChartData();W8_C2_getChartData();"><i class="mdi mdi-arrow-right h5"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -540,16 +1420,21 @@
 										$.ajax({
 											method : 'GET',
 											url : io_engine_url,
-											data:   $.param({'chart_query': "SELECT CONCAT(dmInvoiceDate_MONTH, '-', dmInvoiceDate_YEAR) PERIOD, SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.811b457d68f044eebd8287409e81746a WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmInvoiceDate_MONTH, dmInvoiceDate_YEAR ORDER BY 2 DESC;"}),
+											data:   $.param({ "chart_query": "SELECT dmChannel, ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmChannel ORDER BY 2 DESC;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
 											beforeSend: function (request) {
 													request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
 													request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
 												}
 											})
-											.done(function(response_data) {
-												chart_data = JSON.parse(response_data);
-												W1_C1_displayChart(chart_data);
-											})
+											.done(function(response_data) {4
+											    console.log(response_data);
+                                                if (response_data!= 'null'){
+                                                    chart_data = JSON.parse(response_data);
+                                                    W1_C1_displayChart(chart_data);
+                                                } else {
+                                                    console.log ('No data for Chart to display!!');
+                                                };
+                                            })
 											.fail(function() {
 												console.log( 'Error occurred in API Data Extraction method for Chart' );
 											})
@@ -579,7 +1464,7 @@
 												labels: chart_data['labels'],
 												datasets: [{
 													data: my_data[0],
-													label: 'Invoice Number Count',
+													label: 'Channel',
 													backgroundColor: 'rgb(255,0,0)',
 													borderWidth: '1',
 													borderColor: '',
@@ -591,7 +1476,7 @@
 												maintainAspectRatio: false,
 												title:{
 													display: true,
-													text: 'Exception Analysis 1 - Detailed on Cancelled Invoices',
+													text: 'Sales Trend Analysis - Detailed By Channel',
 													fontSize: 14,
 													fontColor: 'rgb(255, 255, 255)'
 												},
@@ -615,7 +1500,7 @@
 														display: true,
 														scaleLabel: {
 															display: true,
-															labelString: 'Month',
+															labelString: 'Channel',
 															fontColor:'yellow',
 															fontSize:12
 														},
@@ -632,7 +1517,7 @@
 														display: true,
 														scaleLabel: {
 															display: true,
-															labelString: 'Cancelled Invoices Count',
+															labelString: 'Total Invoice Value (INR Lakhs)',
 															fontColor: 'aqua',
 															fontSize:12
 														},
@@ -659,12 +1544,12 @@
 
 											add_spinner_table('adbizDataTable_1');
 											document.getElementById('div_table_container_1').style.visibility='visible';
-											document.getElementById('table_title_1').innerHTML = 'Aggregates - Cancelled Invoices';
-											document.getElementById('table_sub_title_1').innerHTML = 'By Date';
+											document.getElementById('table_title_1').innerHTML = 'Aggregates Table - Sales';
+											document.getElementById('table_sub_title_1').innerHTML = 'By Channel';
 											add_spinner_table('adbizDataTable_2');
 											document.getElementById('div_table_container_2').style.visibility='visible';
-											document.getElementById('table_title_2').innerHTML = 'Cancelled Invoices - Detailed';
-											document.getElementById('table_sub_title_2').innerHTML = 'By Date';
+											document.getElementById('table_title_2').innerHTML = 'Detailed Table - Sales';
+											document.getElementById('table_sub_title_2').innerHTML = 'By Channel';
 												W1_C1_T1_getTableData();
 												W1_C1_T2_getTableData();
 										});
@@ -677,16 +1562,22 @@
 										$.ajax({
 											method : 'GET',
 											url : io_engine_url,
-											data:   $.param({'chart_query': "SELECT CONCAT(dmInvoiceDate_MONTH, '-', dmInvoiceDate_YEAR) PERIOD, SUM(msTotalLineAmount_COUNT) COUNT FROM 9f2e0174d97d405eb83cbb779155ae30.811b457d68f044eebd8287409e81746a WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmInvoiceDate_MONTH, dmInvoiceDate_YEAR ORDER BY 2 DESC LIMIT 10;"}),
+											data:   $.param({ "chart_query": "SELECT dmChannel, ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.9548f7ef20e04a4082fca7b75834b240  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmChannel ORDER BY 2 DESC LIMIT 10;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
 											beforeSend: function (request) {
 													request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
 													request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
 												}
 											})
 											.done(function(response_data) {
-												chart_data = JSON.parse(response_data);
-												W1_C2_displayChart(chart_data);
-											})
+											    console.log(response_data);
+                                                if (response_data!='null')
+                                                {
+                                                    chart_data = JSON.parse(response_data);
+                                                    W1_C2_displayChart(chart_data);
+                                                } else {
+                                                   console.log ('No data for Chart to display!!')
+                                                };
+                                            })
 											.fail(function() {
 												console.log( 'Error occurred in API Data Extraction method for Chart' );
 											})
@@ -716,7 +1607,7 @@
 												labels: chart_data['labels'],
 												datasets: [{
 													data: my_data[0],
-													label: 'Invoice Number Count',
+													label: 'Channel',
 													backgroundColor: 'rgb(208,15,214)',
 													borderWidth: '1',
 													borderColor: '',
@@ -728,7 +1619,7 @@
 												maintainAspectRatio: false,
 												title:{
 													display: true,
-													text: 'Exception Analysis 2 - Detailed on Cancelled Invoices',
+													text: 'Sales Trend Analysis Detailed By Channel TOP 10',
 													fontSize: 14,
 													fontColor: 'rgb(255, 255, 255)'
 												},
@@ -752,7 +1643,7 @@
 														display: true,
 														scaleLabel: {
 															display: true,
-															labelString: 'Month',
+															labelString: 'Channel',
 															fontColor:'yellow',
 															fontSize:12
 														},
@@ -769,7 +1660,7 @@
 														display: true,
 														scaleLabel: {
 															display: true,
-															labelString: 'Cancelled Invoices Count',
+															labelString: 'Total Invoice Value (INR Lakhs)',
 															fontColor: 'aqua',
 															fontSize:12
 														},
@@ -796,14 +1687,1932 @@
 
 											add_spinner_table('adbizDataTable_1');
 											document.getElementById('div_table_container_1').style.visibility='visible';
-											document.getElementById('table_title_1').innerHTML = 'Aggregates - Cancelled Invoices';
-											document.getElementById('table_sub_title_1').innerHTML = 'By Date';
+											document.getElementById('table_title_1').innerHTML = 'Aggregates Table - Sales';
+											document.getElementById('table_sub_title_1').innerHTML = 'By Channel';
 											add_spinner_table('adbizDataTable_2');
 											document.getElementById('div_table_container_2').style.visibility='visible';
-											document.getElementById('table_title_2').innerHTML = 'Cancelled Invoices - Detailed';
-											document.getElementById('table_sub_title_2').innerHTML = 'By Date';
+											document.getElementById('table_title_2').innerHTML = 'Detailed Table - Sales';
+											document.getElementById('table_sub_title_2').innerHTML = 'By Channel';
 												W1_C2_T1_getTableData();
 												W1_C2_T2_getTableData();
+										});
+
+									};
+									</script>
+									<script type="text/javascript">
+									function W2_C1_getChartData() {
+										var io_engine_url = "/adbizUI/getChartData/"
+										$.ajax({
+											method : 'GET',
+											url : io_engine_url,
+											data:   $.param({ "chart_query": "SELECT dmHSNCode, CONVERT(ROUND(SUM(msTotalLineAmount_SUM)/10000000,2),CHAR) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmHSNCode ORDER BY 2 DESC;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+											beforeSend: function (request) {
+													request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+													request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+												}
+											})
+											.done(function(response_data) {
+												chart_data = JSON.parse(response_data);
+												W2_C1_displayChart(chart_data);
+											})
+											.fail(function() {
+												console.log( 'Error occurred in API Data Extraction method for Chart' );
+											})
+											.always(function() {
+												console.log( 'API Data Extraction method for Chart completed successfully' );
+											});
+										};
+									</script>
+									<script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+									<script type="text/javascript"></script>
+									<script>
+									var myChart_1 = null;
+									function W2_C1_displayChart(chart_data){
+										document.getElementById('div_chart_container_1').style.visibility='visible';
+										if(myChart_1!=null){
+											console.log("Destroying Chart Container");
+											myChart_1.destroy();
+										}
+										var ctx = document.getElementById('canvas_container_1').getContext('2d');
+										my_data = chart_data['data']; console.log(my_data);
+										myChart_1 = new Chart( ctx, {
+											// The type of chart we want to create
+											type: 'bar',
+
+											// The data for our dataset
+											data: {
+												labels: chart_data['labels'],
+												datasets: [{
+													data: my_data[0],
+													label: 'HSN Code',
+													backgroundColor: 'rgb(255,0,0)',
+													borderWidth: '1',
+													borderColor: '',
+													hoverBackgroundColor:'gold'}]
+											},
+											// Configuration options go here
+											options: {
+												responsive: true,
+												maintainAspectRatio: false,
+												title:{
+													display: true,
+													text: 'Sales Trend Analysis - Detailed By HSN Code',
+													fontSize: 14,
+													fontColor: 'rgb(255, 255, 255)'
+												},
+												legend: {
+													display: '{LEGEND DISPLAY}',
+													position: 'bottom',
+													fullWidth: true,
+													labels: {
+														fontColor: 'rgb(255, 255, 255)'
+													}
+												},
+												tooltips: {
+                                                      mode: 'label',
+												},
+												hover: {
+													mode: 'nearest',
+													intersect: true
+												},
+												scales: {
+													xAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'HSN Code',
+															fontColor:'yellow',
+															fontSize:12
+														},
+														ticks: {
+															fontColor: 'white',
+														   fontSize: 14
+														  },
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}],
+													yAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Total Invoice Value (INR Lakhs)',
+															fontColor: 'aqua',
+															fontSize:12
+														},
+														ticks: {
+															  fontColor: 'white',
+															  fontSize: 14
+														},
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}]
+												}
+											}
+										});
+										$("#canvas_container_1").click(
+										function (evt) {
+											select_chart('chart_1');
+											console.log("On Chart Click");
+											var activePoints = myChart_1.getElementsAtEvent(evt);
+											var labeltag = activePoints[0]._view.label;
+											console.log(labeltag);
+											hide_all_tables();
+
+											add_spinner_table('adbizDataTable_1');
+											document.getElementById('div_table_container_1').style.visibility='visible';
+											document.getElementById('table_title_1').innerHTML = 'Aggregates Table - Sales';
+											document.getElementById('table_sub_title_1').innerHTML = 'By HSN Code';
+											add_spinner_table('adbizDataTable_2');
+											document.getElementById('div_table_container_2').style.visibility='visible';
+											document.getElementById('table_title_2').innerHTML = 'Detailed Table - Sales';
+											document.getElementById('table_sub_title_2').innerHTML = 'By HSN Code';
+												W2_C1_T1_getTableData();
+												W2_C1_T2_getTableData();
+										});
+
+									};
+									</script>
+									<script type="text/javascript">
+									function W2_C2_getChartData() {
+										var io_engine_url = "/adbizUI/getChartData/"
+										$.ajax({
+											method : 'GET',
+											url : io_engine_url,
+											data:   $.param({ "chart_query": "SELECT dmHSNCode, CONVERT(ROUND(SUM(msTotalLineAmount_SUM)/10000000,2),CHAR) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.e66eaa93ab014f08b141a0d1f7014129  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmHSNCode ORDER BY 2 DESC LIMIT 10;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+											beforeSend: function (request) {
+													request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+													request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+												}
+											})
+											.done(function(response_data) {
+												chart_data = JSON.parse(response_data);
+												W2_C2_displayChart(chart_data);
+											})
+											.fail(function() {
+												console.log( 'Error occurred in API Data Extraction method for Chart' );
+											})
+											.always(function() {
+												console.log( 'API Data Extraction method for Chart completed successfully' );
+											});
+										};
+									</script>
+									<script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+									<script type="text/javascript"></script>
+									<script>
+									var myChart_2 = null;
+									function W2_C2_displayChart(chart_data){
+										document.getElementById('div_chart_container_2').style.visibility='visible';
+										if(myChart_2!=null){
+											console.log("Destroying Chart Container");
+											myChart_2.destroy();
+										}
+										var ctx = document.getElementById('canvas_container_2').getContext('2d');
+										my_data = chart_data['data']; console.log(my_data);
+										myChart_2 = new Chart( ctx, {
+											// The type of chart we want to create
+											type: 'bar',
+
+											// The data for our dataset
+											data: {
+												labels: chart_data['labels'],
+												datasets: [{
+													data: my_data[0],
+													label: 'HSN Code',
+													backgroundColor: 'rgb(208,15,214)',
+													borderWidth: '1',
+													borderColor: '',
+													hoverBackgroundColor:'gold'}]
+											},
+											// Configuration options go here
+											options: {
+												responsive: true,
+												maintainAspectRatio: false,
+												title:{
+													display: true,
+													text: 'Sales Trend Analysis Detailed By HSN Code TOP 10',
+													fontSize: 14,
+													fontColor: 'rgb(255, 255, 255)'
+												},
+												legend: {
+													display: '{LEGEND DISPLAY}',
+													position: 'bottom',
+													fullWidth: true,
+													labels: {
+														fontColor: 'rgb(255, 255, 255)'
+													}
+												},
+												tooltips: {
+                                                      mode: 'label',
+												},
+												hover: {
+													mode: 'nearest',
+													intersect: true
+												},
+												scales: {
+													xAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'HSN Code',
+															fontColor:'yellow',
+															fontSize:12
+														},
+														ticks: {
+															fontColor: 'white',
+														   fontSize: 14
+														  },
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}],
+													yAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Total Invoice Value (INR Lakhs)',
+															fontColor: 'aqua',
+															fontSize:12
+														},
+														ticks: {
+															  fontColor: 'white',
+															  fontSize: 14
+														},
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}]
+												}
+											}
+										});
+										$("#canvas_container_2").click(
+										function (evt) {
+											select_chart('chart_2');
+											console.log("On Chart Click");
+											var activePoints = myChart_2.getElementsAtEvent(evt);
+											var labeltag = activePoints[0]._view.label;
+											console.log(labeltag);
+											hide_all_tables();
+
+											add_spinner_table('adbizDataTable_1');
+											document.getElementById('div_table_container_1').style.visibility='visible';
+											document.getElementById('table_title_1').innerHTML = 'Aggregates Table - Sales';
+											document.getElementById('table_sub_title_1').innerHTML = 'By HSN Code';
+											add_spinner_table('adbizDataTable_2');
+											document.getElementById('div_table_container_2').style.visibility='visible';
+											document.getElementById('table_title_2').innerHTML = 'Detailed Table - Sales';
+											document.getElementById('table_sub_title_2').innerHTML = 'By HSN Code';
+												W2_C2_T1_getTableData();
+												W2_C2_T2_getTableData();
+										});
+
+									};
+									</script>
+									<script type="text/javascript">
+									function W3_C1_getChartData() {
+										var io_engine_url = "/adbizUI/getChartData/"
+										$.ajax({
+											method : 'GET',
+											url : io_engine_url,
+											data:   $.param({ "chart_query": "SELECT dmCustomerType, ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmCustomerType ORDER BY 2 DESC;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+											beforeSend: function (request) {
+													request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+													request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+												}
+											})
+											.done(function(response_data) {
+												chart_data = JSON.parse(response_data);
+												W3_C1_displayChart(chart_data);
+											})
+											.fail(function() {
+												console.log( 'Error occurred in API Data Extraction method for Chart' );
+											})
+											.always(function() {
+												console.log( 'API Data Extraction method for Chart completed successfully' );
+											});
+										};
+									</script>
+									<script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+									<script type="text/javascript"></script>
+									<script>
+									var myChart_1 = null;
+									function W3_C1_displayChart(chart_data){
+										document.getElementById('div_chart_container_1').style.visibility='visible';
+										if(myChart_1!=null){
+											console.log("Destroying Chart Container");
+											myChart_1.destroy();
+										}
+										var ctx = document.getElementById('canvas_container_1').getContext('2d');
+										my_data = chart_data['data']; console.log(my_data);
+										myChart_1 = new Chart( ctx, {
+											// The type of chart we want to create
+											type: 'bar',
+
+											// The data for our dataset
+											data: {
+												labels: chart_data['labels'],
+												datasets: [{
+													data: my_data[0],
+													label: 'Customer Type',
+													backgroundColor: 'rgb(255,0,0)',
+													borderWidth: '1',
+													borderColor: '',
+													hoverBackgroundColor:'gold'}]
+											},
+											// Configuration options go here
+											options: {
+												responsive: true,
+												maintainAspectRatio: false,
+												title:{
+													display: true,
+													text: 'Sales Trend Analysis - Detailed By Customer Type',
+													fontSize: 14,
+													fontColor: 'rgb(255, 255, 255)'
+												},
+												legend: {
+													display: '{LEGEND DISPLAY}',
+													position: 'bottom',
+													fullWidth: true,
+													labels: {
+														fontColor: 'rgb(255, 255, 255)'
+													}
+												},
+												tooltips: {
+                                                      mode: 'label',
+												},
+												hover: {
+													mode: 'nearest',
+													intersect: true
+												},
+												scales: {
+													xAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Customer Type',
+															fontColor:'yellow',
+															fontSize:12
+														},
+														ticks: {
+															fontColor: 'white',
+														   fontSize: 14
+														  },
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}],
+													yAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Total Invoice Value (INR Lakhs)',
+															fontColor: 'aqua',
+															fontSize:12
+														},
+														ticks: {
+															  fontColor: 'white',
+															  fontSize: 14
+														},
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}]
+												}
+											}
+										});
+										$("#canvas_container_1").click(
+										function (evt) {
+											select_chart('chart_1');
+											console.log("On Chart Click");
+											var activePoints = myChart_1.getElementsAtEvent(evt);
+											var labeltag = activePoints[0]._view.label;
+											console.log(labeltag);
+											hide_all_tables();
+
+											add_spinner_table('adbizDataTable_1');
+											document.getElementById('div_table_container_1').style.visibility='visible';
+											document.getElementById('table_title_1').innerHTML = 'Aggregates Table - Sales';
+											document.getElementById('table_sub_title_1').innerHTML = 'By Customer Type';
+											add_spinner_table('adbizDataTable_2');
+											document.getElementById('div_table_container_2').style.visibility='visible';
+											document.getElementById('table_title_2').innerHTML = 'Detailed Table - Sales';
+											document.getElementById('table_sub_title_2').innerHTML = 'By Customer Type';
+												W3_C1_T1_getTableData();
+												W3_C1_T2_getTableData();
+										});
+
+									};
+									</script>
+									<script type="text/javascript">
+									function W3_C2_getChartData() {
+										var io_engine_url = "/adbizUI/getChartData/"
+										$.ajax({
+											method : 'GET',
+											url : io_engine_url,
+											data:   $.param({ "chart_query": "SELECT dmCustomerType, ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.39b85bfc3432481683d72142014394f9  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmCustomerType ORDER BY 2 DESC LIMIT 10;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+											beforeSend: function (request) {
+													request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+													request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+												}
+											})
+											.done(function(response_data) {
+												chart_data = JSON.parse(response_data);
+												W3_C2_displayChart(chart_data);
+											})
+											.fail(function() {
+												console.log( 'Error occurred in API Data Extraction method for Chart' );
+											})
+											.always(function() {
+												console.log( 'API Data Extraction method for Chart completed successfully' );
+											});
+										};
+									</script>
+									<script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+									<script type="text/javascript"></script>
+									<script>
+									var myChart_2 = null;
+									function W3_C2_displayChart(chart_data){
+										document.getElementById('div_chart_container_2').style.visibility='visible';
+										if(myChart_2!=null){
+											console.log("Destroying Chart Container");
+											myChart_2.destroy();
+										}
+										var ctx = document.getElementById('canvas_container_2').getContext('2d');
+										my_data = chart_data['data']; console.log(my_data);
+										myChart_2 = new Chart( ctx, {
+											// The type of chart we want to create
+											type: 'bar',
+
+											// The data for our dataset
+											data: {
+												labels: chart_data['labels'],
+												datasets: [{
+													data: my_data[0],
+													label: 'Customer Type',
+													backgroundColor: 'rgb(208,15,214)',
+													borderWidth: '1',
+													borderColor: '',
+													hoverBackgroundColor:'gold'}]
+											},
+											// Configuration options go here
+											options: {
+												responsive: true,
+												maintainAspectRatio: false,
+												title:{
+													display: true,
+													text: 'Sales Trend Analysis Detailed By Customer Type TOP 10',
+													fontSize: 14,
+													fontColor: 'rgb(255, 255, 255)'
+												},
+												legend: {
+													display: '{LEGEND DISPLAY}',
+													position: 'bottom',
+													fullWidth: true,
+													labels: {
+														fontColor: 'rgb(255, 255, 255)'
+													}
+												},
+												tooltips: {
+                                                      mode: 'label',
+												},
+												hover: {
+													mode: 'nearest',
+													intersect: true
+												},
+												scales: {
+													xAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Customer Type',
+															fontColor:'yellow',
+															fontSize:12
+														},
+														ticks: {
+															fontColor: 'white',
+														   fontSize: 14
+														  },
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}],
+													yAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Total Invoice Value (INR Lakhs)',
+															fontColor: 'aqua',
+															fontSize:12
+														},
+														ticks: {
+															  fontColor: 'white',
+															  fontSize: 14
+														},
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}]
+												}
+											}
+										});
+										$("#canvas_container_2").click(
+										function (evt) {
+											select_chart('chart_2');
+											console.log("On Chart Click");
+											var activePoints = myChart_2.getElementsAtEvent(evt);
+											var labeltag = activePoints[0]._view.label;
+											console.log(labeltag);
+											hide_all_tables();
+
+											add_spinner_table('adbizDataTable_1');
+											document.getElementById('div_table_container_1').style.visibility='visible';
+											document.getElementById('table_title_1').innerHTML = 'Aggregates Table - Sales';
+											document.getElementById('table_sub_title_1').innerHTML = 'By Customer Type';
+											add_spinner_table('adbizDataTable_2');
+											document.getElementById('div_table_container_2').style.visibility='visible';
+											document.getElementById('table_title_2').innerHTML = 'Detailed Table - Sales';
+											document.getElementById('table_sub_title_2').innerHTML = 'By Customer Type';
+												W3_C2_T1_getTableData();
+												W3_C2_T2_getTableData();
+										});
+
+									};
+									</script>
+									<script type="text/javascript">
+									function W4_C1_getChartData() {
+										var io_engine_url = "/adbizUI/getChartData/"
+										$.ajax({
+											method : 'GET',
+											url : io_engine_url,
+											data:   $.param({ "chart_query": "SELECT dmCustomerName, ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmCustomerName ORDER BY 2 DESC;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+											beforeSend: function (request) {
+													request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+													request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+												}
+											})
+											.done(function(response_data) {
+												chart_data = JSON.parse(response_data);
+												W4_C1_displayChart(chart_data);
+											})
+											.fail(function() {
+												console.log( 'Error occurred in API Data Extraction method for Chart' );
+											})
+											.always(function() {
+												console.log( 'API Data Extraction method for Chart completed successfully' );
+											});
+										};
+									</script>
+									<script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+									<script type="text/javascript"></script>
+									<script>
+									var myChart_1 = null;
+									function W4_C1_displayChart(chart_data){
+										document.getElementById('div_chart_container_1').style.visibility='visible';
+										if(myChart_1!=null){
+											console.log("Destroying Chart Container");
+											myChart_1.destroy();
+										}
+										var ctx = document.getElementById('canvas_container_1').getContext('2d');
+										my_data = chart_data['data']; console.log(my_data);
+										myChart_1 = new Chart( ctx, {
+											// The type of chart we want to create
+											type: 'bar',
+
+											// The data for our dataset
+											data: {
+												labels: chart_data['labels'],
+												datasets: [{
+													data: my_data[0],
+													label: 'Customer Name',
+													backgroundColor: 'rgb(255,0,0)',
+													borderWidth: '1',
+													borderColor: '',
+													hoverBackgroundColor:'gold'}]
+											},
+											// Configuration options go here
+											options: {
+												responsive: true,
+												maintainAspectRatio: false,
+												title:{
+													display: true,
+													text: 'Sales Trend Analysis - Detailed By Customer Name',
+													fontSize: 14,
+													fontColor: 'rgb(255, 255, 255)'
+												},
+												legend: {
+													display: '{LEGEND DISPLAY}',
+													position: 'bottom',
+													fullWidth: true,
+													labels: {
+														fontColor: 'rgb(255, 255, 255)'
+													}
+												},
+												tooltips: {
+                                                      mode: 'label',
+												},
+												hover: {
+													mode: 'nearest',
+													intersect: true
+												},
+												scales: {
+													xAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Customer Name',
+															fontColor:'yellow',
+															fontSize:12
+														},
+														ticks: {
+															fontColor: 'white',
+														   fontSize: 14
+														  },
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}],
+													yAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Total Invoice Value (INR Lakhs)',
+															fontColor: 'aqua',
+															fontSize:12
+														},
+														ticks: {
+															  fontColor: 'white',
+															  fontSize: 14
+														},
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}]
+												}
+											}
+										});
+										$("#canvas_container_1").click(
+										function (evt) {
+											select_chart('chart_1');
+											console.log("On Chart Click");
+											var activePoints = myChart_1.getElementsAtEvent(evt);
+											var labeltag = activePoints[0]._view.label;
+											console.log(labeltag);
+											hide_all_tables();
+
+											add_spinner_table('adbizDataTable_1');
+											document.getElementById('div_table_container_1').style.visibility='visible';
+											document.getElementById('table_title_1').innerHTML = 'Aggregates Table - Sales';
+											document.getElementById('table_sub_title_1').innerHTML = 'By Customer Name';
+											add_spinner_table('adbizDataTable_2');
+											document.getElementById('div_table_container_2').style.visibility='visible';
+											document.getElementById('table_title_2').innerHTML = 'Detailed Table - Sales';
+											document.getElementById('table_sub_title_2').innerHTML = 'By Customer Name';
+												W4_C1_T1_getTableData();
+												W4_C1_T2_getTableData();
+										});
+
+									};
+									</script>
+									<script type="text/javascript">
+									function W4_C2_getChartData() {
+										var io_engine_url = "/adbizUI/getChartData/"
+										$.ajax({
+											method : 'GET',
+											url : io_engine_url,
+											data:   $.param({ "chart_query": "SELECT dmCustomerName, ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.9d91a5aeefed43ffb3827f8020c49d20  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmCustomerName ORDER BY 2 DESC LIMIT 10;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+											beforeSend: function (request) {
+													request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+													request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+												}
+											})
+											.done(function(response_data) {
+												chart_data = JSON.parse(response_data);
+												W4_C2_displayChart(chart_data);
+											})
+											.fail(function() {
+												console.log( 'Error occurred in API Data Extraction method for Chart' );
+											})
+											.always(function() {
+												console.log( 'API Data Extraction method for Chart completed successfully' );
+											});
+										};
+									</script>
+									<script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+									<script type="text/javascript"></script>
+									<script>
+									var myChart_2 = null;
+									function W4_C2_displayChart(chart_data){
+										document.getElementById('div_chart_container_2').style.visibility='visible';
+										if(myChart_2!=null){
+											console.log("Destroying Chart Container");
+											myChart_2.destroy();
+										}
+										var ctx = document.getElementById('canvas_container_2').getContext('2d');
+										my_data = chart_data['data']; console.log(my_data);
+										myChart_2 = new Chart( ctx, {
+											// The type of chart we want to create
+											type: 'bar',
+
+											// The data for our dataset
+											data: {
+												labels: chart_data['labels'],
+												datasets: [{
+													data: my_data[0],
+													label: 'Customer Name',
+													backgroundColor: 'rgb(208,15,214)',
+													borderWidth: '1',
+													borderColor: '',
+													hoverBackgroundColor:'gold'}]
+											},
+											// Configuration options go here
+											options: {
+												responsive: true,
+												maintainAspectRatio: false,
+												title:{
+													display: true,
+													text: 'Sales Trend Analysis Detailed By Customer Name TOP 10',
+													fontSize: 14,
+													fontColor: 'rgb(255, 255, 255)'
+												},
+												legend: {
+													display: '{LEGEND DISPLAY}',
+													position: 'bottom',
+													fullWidth: true,
+													labels: {
+														fontColor: 'rgb(255, 255, 255)'
+													}
+												},
+												tooltips: {
+                                                      mode: 'label',
+												},
+												hover: {
+													mode: 'nearest',
+													intersect: true
+												},
+												scales: {
+													xAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Customer Name',
+															fontColor:'yellow',
+															fontSize:12
+														},
+														ticks: {
+															fontColor: 'white',
+														   fontSize: 14
+														  },
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}],
+													yAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Total Invoice Value (INR Lakhs)',
+															fontColor: 'aqua',
+															fontSize:12
+														},
+														ticks: {
+															  fontColor: 'white',
+															  fontSize: 14
+														},
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}]
+												}
+											}
+										});
+										$("#canvas_container_2").click(
+										function (evt) {
+											select_chart('chart_2');
+											console.log("On Chart Click");
+											var activePoints = myChart_2.getElementsAtEvent(evt);
+											var labeltag = activePoints[0]._view.label;
+											console.log(labeltag);
+											hide_all_tables();
+
+											add_spinner_table('adbizDataTable_1');
+											document.getElementById('div_table_container_1').style.visibility='visible';
+											document.getElementById('table_title_1').innerHTML = 'Aggregates Table - Sales';
+											document.getElementById('table_sub_title_1').innerHTML = 'By Customer Name';
+											add_spinner_table('adbizDataTable_2');
+											document.getElementById('div_table_container_2').style.visibility='visible';
+											document.getElementById('table_title_2').innerHTML = 'Detailed Table - Sales';
+											document.getElementById('table_sub_title_2').innerHTML = 'By Customer Name';
+												W4_C2_T1_getTableData();
+												W4_C2_T2_getTableData();
+										});
+
+									};
+									</script>
+									<script type="text/javascript">
+									function W5_C1_getChartData() {
+										var io_engine_url = "/adbizUI/getChartData/"
+										$.ajax({
+											method : 'GET',
+											url : io_engine_url,
+											data:   $.param({ "chart_query": "SELECT dmCustomerRegion, ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmCustomerRegion ORDER BY 2 DESC;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+											beforeSend: function (request) {
+													request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+													request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+												}
+											})
+											.done(function(response_data) {
+												chart_data = JSON.parse(response_data);
+												W5_C1_displayChart(chart_data);
+											})
+											.fail(function() {
+												console.log( 'Error occurred in API Data Extraction method for Chart' );
+											})
+											.always(function() {
+												console.log( 'API Data Extraction method for Chart completed successfully' );
+											});
+										};
+									</script>
+									<script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+									<script type="text/javascript"></script>
+									<script>
+									var myChart_1 = null;
+									function W5_C1_displayChart(chart_data){
+										document.getElementById('div_chart_container_1').style.visibility='visible';
+										if(myChart_1!=null){
+											console.log("Destroying Chart Container");
+											myChart_1.destroy();
+										}
+										var ctx = document.getElementById('canvas_container_1').getContext('2d');
+										my_data = chart_data['data']; console.log(my_data);
+										myChart_1 = new Chart( ctx, {
+											// The type of chart we want to create
+											type: 'bar',
+
+											// The data for our dataset
+											data: {
+												labels: chart_data['labels'],
+												datasets: [{
+													data: my_data[0],
+													label: 'Customer Region',
+													backgroundColor: 'rgb(255,0,0)',
+													borderWidth: '1',
+													borderColor: '',
+													hoverBackgroundColor:'gold'}]
+											},
+											// Configuration options go here
+											options: {
+												responsive: true,
+												maintainAspectRatio: false,
+												title:{
+													display: true,
+													text: 'Sales Trend Analysis - Detailed By Customer Region',
+													fontSize: 14,
+													fontColor: 'rgb(255, 255, 255)'
+												},
+												legend: {
+													display: '{LEGEND DISPLAY}',
+													position: 'bottom',
+													fullWidth: true,
+													labels: {
+														fontColor: 'rgb(255, 255, 255)'
+													}
+												},
+												tooltips: {
+                                                      mode: 'label',
+												},
+												hover: {
+													mode: 'nearest',
+													intersect: true
+												},
+												scales: {
+													xAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Customer Region',
+															fontColor:'yellow',
+															fontSize:12
+														},
+														ticks: {
+															fontColor: 'white',
+														   fontSize: 14
+														  },
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}],
+													yAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Total Invoice Value (INR Lakhs)',
+															fontColor: 'aqua',
+															fontSize:12
+														},
+														ticks: {
+															  fontColor: 'white',
+															  fontSize: 14
+														},
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}]
+												}
+											}
+										});
+										$("#canvas_container_1").click(
+										function (evt) {
+											select_chart('chart_1');
+											console.log("On Chart Click");
+											var activePoints = myChart_1.getElementsAtEvent(evt);
+											var labeltag = activePoints[0]._view.label;
+											console.log(labeltag);
+											hide_all_tables();
+
+											add_spinner_table('adbizDataTable_1');
+											document.getElementById('div_table_container_1').style.visibility='visible';
+											document.getElementById('table_title_1').innerHTML = 'Aggregates Table - Sales';
+											document.getElementById('table_sub_title_1').innerHTML = 'By Customer Region';
+											add_spinner_table('adbizDataTable_2');
+											document.getElementById('div_table_container_2').style.visibility='visible';
+											document.getElementById('table_title_2').innerHTML = 'Detailed Table - Sales';
+											document.getElementById('table_sub_title_2').innerHTML = 'By Customer Region';
+												W5_C1_T1_getTableData();
+												W5_C1_T2_getTableData();
+										});
+
+									};
+									</script>
+									<script type="text/javascript">
+									function W5_C2_getChartData() {
+										var io_engine_url = "/adbizUI/getChartData/"
+										$.ajax({
+											method : 'GET',
+											url : io_engine_url,
+											data:   $.param({ "chart_query": "SELECT dmCustomerRegion, ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.986469587939422b92878a58a489e3d9  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmCustomerRegion ORDER BY 2 DESC LIMIT 10;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+											beforeSend: function (request) {
+													request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+													request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+												}
+											})
+											.done(function(response_data) {
+												chart_data = JSON.parse(response_data);
+												W5_C2_displayChart(chart_data);
+											})
+											.fail(function() {
+												console.log( 'Error occurred in API Data Extraction method for Chart' );
+											})
+											.always(function() {
+												console.log( 'API Data Extraction method for Chart completed successfully' );
+											});
+										};
+									</script>
+									<script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+									<script type="text/javascript"></script>
+									<script>
+									var myChart_2 = null;
+									function W5_C2_displayChart(chart_data){
+										document.getElementById('div_chart_container_2').style.visibility='visible';
+										if(myChart_2!=null){
+											console.log("Destroying Chart Container");
+											myChart_2.destroy();
+										}
+										var ctx = document.getElementById('canvas_container_2').getContext('2d');
+										my_data = chart_data['data']; console.log(my_data);
+										myChart_2 = new Chart( ctx, {
+											// The type of chart we want to create
+											type: 'bar',
+
+											// The data for our dataset
+											data: {
+												labels: chart_data['labels'],
+												datasets: [{
+													data: my_data[0],
+													label: 'Customer Region',
+													backgroundColor: 'rgb(208,15,214)',
+													borderWidth: '1',
+													borderColor: '',
+													hoverBackgroundColor:'gold'}]
+											},
+											// Configuration options go here
+											options: {
+												responsive: true,
+												maintainAspectRatio: false,
+												title:{
+													display: true,
+													text: 'Sales Trend Analysis Detailed By Customer Region TOP 10',
+													fontSize: 14,
+													fontColor: 'rgb(255, 255, 255)'
+												},
+												legend: {
+													display: '{LEGEND DISPLAY}',
+													position: 'bottom',
+													fullWidth: true,
+													labels: {
+														fontColor: 'rgb(255, 255, 255)'
+													}
+												},
+												tooltips: {
+                                                      mode: 'label',
+												},
+												hover: {
+													mode: 'nearest',
+													intersect: true
+												},
+												scales: {
+													xAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Customer Region',
+															fontColor:'yellow',
+															fontSize:12
+														},
+														ticks: {
+															fontColor: 'white',
+														   fontSize: 14
+														  },
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}],
+													yAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Total Invoice Value (INR Lakhs)',
+															fontColor: 'aqua',
+															fontSize:12
+														},
+														ticks: {
+															  fontColor: 'white',
+															  fontSize: 14
+														},
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}]
+												}
+											}
+										});
+										$("#canvas_container_2").click(
+										function (evt) {
+											select_chart('chart_2');
+											console.log("On Chart Click");
+											var activePoints = myChart_2.getElementsAtEvent(evt);
+											var labeltag = activePoints[0]._view.label;
+											console.log(labeltag);
+											hide_all_tables();
+
+											add_spinner_table('adbizDataTable_1');
+											document.getElementById('div_table_container_1').style.visibility='visible';
+											document.getElementById('table_title_1').innerHTML = 'Aggregates Table - Sales';
+											document.getElementById('table_sub_title_1').innerHTML = 'By Customer Region';
+											add_spinner_table('adbizDataTable_2');
+											document.getElementById('div_table_container_2').style.visibility='visible';
+											document.getElementById('table_title_2').innerHTML = 'Detailed Table - Sales';
+											document.getElementById('table_sub_title_2').innerHTML = 'By Customer Region';
+												W5_C2_T1_getTableData();
+												W5_C2_T2_getTableData();
+										});
+
+									};
+									</script>
+									<script type="text/javascript">
+									function W6_C1_getChartData() {
+										var io_engine_url = "/adbizUI/getChartData/"
+										$.ajax({
+											method : 'GET',
+											url : io_engine_url,
+											data:   $.param({ "chart_query": "SELECT dmProductCategory, ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmProductCategory ORDER BY 2 DESC;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+											beforeSend: function (request) {
+													request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+													request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+												}
+											})
+											.done(function(response_data) {
+												chart_data = JSON.parse(response_data);
+												W6_C1_displayChart(chart_data);
+											})
+											.fail(function() {
+												console.log( 'Error occurred in API Data Extraction method for Chart' );
+											})
+											.always(function() {
+												console.log( 'API Data Extraction method for Chart completed successfully' );
+											});
+										};
+									</script>
+									<script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+									<script type="text/javascript"></script>
+									<script>
+									var myChart_1 = null;
+									function W6_C1_displayChart(chart_data){
+										document.getElementById('div_chart_container_1').style.visibility='visible';
+										if(myChart_1!=null){
+											console.log("Destroying Chart Container");
+											myChart_1.destroy();
+										}
+										var ctx = document.getElementById('canvas_container_1').getContext('2d');
+										my_data = chart_data['data']; console.log(my_data);
+										myChart_1 = new Chart( ctx, {
+											// The type of chart we want to create
+											type: 'bar',
+
+											// The data for our dataset
+											data: {
+												labels: chart_data['labels'],
+												datasets: [{
+													data: my_data[0],
+													label: 'Product Category',
+													backgroundColor: 'rgb(255,0,0)',
+													borderWidth: '1',
+													borderColor: '',
+													hoverBackgroundColor:'gold'}]
+											},
+											// Configuration options go here
+											options: {
+												responsive: true,
+												maintainAspectRatio: false,
+												title:{
+													display: true,
+													text: 'Sales Trend Analysis - Detailed By Product Category',
+													fontSize: 14,
+													fontColor: 'rgb(255, 255, 255)'
+												},
+												legend: {
+													display: '{LEGEND DISPLAY}',
+													position: 'bottom',
+													fullWidth: true,
+													labels: {
+														fontColor: 'rgb(255, 255, 255)'
+													}
+												},
+												tooltips: {
+                                                      mode: 'label',
+												},
+												hover: {
+													mode: 'nearest',
+													intersect: true
+												},
+												scales: {
+													xAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Product Category',
+															fontColor:'yellow',
+															fontSize:12
+														},
+														ticks: {
+															fontColor: 'white',
+														   fontSize: 14
+														  },
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}],
+													yAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Total Invoice Value (INR Lakhs)',
+															fontColor: 'aqua',
+															fontSize:12
+														},
+														ticks: {
+															  fontColor: 'white',
+															  fontSize: 14
+														},
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}]
+												}
+											}
+										});
+										$("#canvas_container_1").click(
+										function (evt) {
+											select_chart('chart_1');
+											console.log("On Chart Click");
+											var activePoints = myChart_1.getElementsAtEvent(evt);
+											var labeltag = activePoints[0]._view.label;
+											console.log(labeltag);
+											hide_all_tables();
+
+											add_spinner_table('adbizDataTable_1');
+											document.getElementById('div_table_container_1').style.visibility='visible';
+											document.getElementById('table_title_1').innerHTML = 'Aggregates Table - Sales';
+											document.getElementById('table_sub_title_1').innerHTML = 'By Product Category';
+											add_spinner_table('adbizDataTable_2');
+											document.getElementById('div_table_container_2').style.visibility='visible';
+											document.getElementById('table_title_2').innerHTML = 'Detailed Table - Sales';
+											document.getElementById('table_sub_title_2').innerHTML = 'By Product Category';
+												W6_C1_T1_getTableData();
+												W6_C1_T2_getTableData();
+										});
+
+									};
+									</script>
+									<script type="text/javascript">
+									function W6_C2_getChartData() {
+										var io_engine_url = "/adbizUI/getChartData/"
+										$.ajax({
+											method : 'GET',
+											url : io_engine_url,
+											data:   $.param({ "chart_query": "SELECT dmProductCategory, ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.58811f52e24143cd9a16b73037efdf28  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmProductCategory ORDER BY 2 DESC lIMIT 10;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+											beforeSend: function (request) {
+													request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+													request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+												}
+											})
+											.done(function(response_data) {
+												chart_data = JSON.parse(response_data);
+												W6_C2_displayChart(chart_data);
+											})
+											.fail(function() {
+												console.log( 'Error occurred in API Data Extraction method for Chart' );
+											})
+											.always(function() {
+												console.log( 'API Data Extraction method for Chart completed successfully' );
+											});
+										};
+									</script>
+									<script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+									<script type="text/javascript"></script>
+									<script>
+									var myChart_2 = null;
+									function W6_C2_displayChart(chart_data){
+										document.getElementById('div_chart_container_2').style.visibility='visible';
+										if(myChart_2!=null){
+											console.log("Destroying Chart Container");
+											myChart_2.destroy();
+										}
+										var ctx = document.getElementById('canvas_container_2').getContext('2d');
+										my_data = chart_data['data']; console.log(my_data);
+										myChart_2 = new Chart( ctx, {
+											// The type of chart we want to create
+											type: 'bar',
+
+											// The data for our dataset
+											data: {
+												labels: chart_data['labels'],
+												datasets: [{
+													data: my_data[0],
+													label: 'Product Category',
+													backgroundColor: 'rgb(208,15,214)',
+													borderWidth: '1',
+													borderColor: '',
+													hoverBackgroundColor:'gold'}]
+											},
+											// Configuration options go here
+											options: {
+												responsive: true,
+												maintainAspectRatio: false,
+												title:{
+													display: true,
+													text: 'Sales Trend Analysis Detailed By Product Category TOP 10',
+													fontSize: 14,
+													fontColor: 'rgb(255, 255, 255)'
+												},
+												legend: {
+													display: '{LEGEND DISPLAY}',
+													position: 'bottom',
+													fullWidth: true,
+													labels: {
+														fontColor: 'rgb(255, 255, 255)'
+													}
+												},
+												tooltips: {
+                                                      mode: 'label',
+												},
+												hover: {
+													mode: 'nearest',
+													intersect: true
+												},
+												scales: {
+													xAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Product Category',
+															fontColor:'yellow',
+															fontSize:12
+														},
+														ticks: {
+															fontColor: 'white',
+														   fontSize: 14
+														  },
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}],
+													yAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Total Invoice Value (INR Lakhs)',
+															fontColor: 'aqua',
+															fontSize:12
+														},
+														ticks: {
+															  fontColor: 'white',
+															  fontSize: 14
+														},
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}]
+												}
+											}
+										});
+										$("#canvas_container_2").click(
+										function (evt) {
+											select_chart('chart_2');
+											console.log("On Chart Click");
+											var activePoints = myChart_2.getElementsAtEvent(evt);
+											var labeltag = activePoints[0]._view.label;
+											console.log(labeltag);
+											hide_all_tables();
+
+											add_spinner_table('adbizDataTable_1');
+											document.getElementById('div_table_container_1').style.visibility='visible';
+											document.getElementById('table_title_1').innerHTML = 'Aggregates Table - Sales';
+											document.getElementById('table_sub_title_1').innerHTML = 'By Product Category';
+											add_spinner_table('adbizDataTable_2');
+											document.getElementById('div_table_container_2').style.visibility='visible';
+											document.getElementById('table_title_2').innerHTML = 'Detailed Table - Sales';
+											document.getElementById('table_sub_title_2').innerHTML = 'By Product Category';
+												W6_C2_T1_getTableData();
+												W6_C2_T2_getTableData();
+										});
+
+									};
+									</script>
+									<script type="text/javascript">
+									function W7_C1_getChartData() {
+										var io_engine_url = "/adbizUI/getChartData/"
+										$.ajax({
+											method : 'GET',
+											url : io_engine_url,
+											data:   $.param({ "chart_query": "SELECT dmProject, ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmProject ORDER BY 2 DESC;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+											beforeSend: function (request) {
+													request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+													request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+												}
+											})
+											.done(function(response_data) {
+												chart_data = JSON.parse(response_data);
+												W7_C1_displayChart(chart_data);
+											})
+											.fail(function() {
+												console.log( 'Error occurred in API Data Extraction method for Chart' );
+											})
+											.always(function() {
+												console.log( 'API Data Extraction method for Chart completed successfully' );
+											});
+										};
+									</script>
+									<script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+									<script type="text/javascript"></script>
+									<script>
+									var myChart_1 = null;
+									function W7_C1_displayChart(chart_data){
+										document.getElementById('div_chart_container_1').style.visibility='visible';
+										if(myChart_1!=null){
+											console.log("Destroying Chart Container");
+											myChart_1.destroy();
+										}
+										var ctx = document.getElementById('canvas_container_1').getContext('2d');
+										my_data = chart_data['data']; console.log(my_data);
+										myChart_1 = new Chart( ctx, {
+											// The type of chart we want to create
+											type: 'bar',
+
+											// The data for our dataset
+											data: {
+												labels: chart_data['labels'],
+												datasets: [{
+													data: my_data[0],
+													label: 'Project',
+													backgroundColor: 'rgb(255,0,0)',
+													borderWidth: '1',
+													borderColor: '',
+													hoverBackgroundColor:'gold'}]
+											},
+											// Configuration options go here
+											options: {
+												responsive: true,
+												maintainAspectRatio: false,
+												title:{
+													display: true,
+													text: 'Sales Trend Analysis - Detailed By Project',
+													fontSize: 14,
+													fontColor: 'rgb(255, 255, 255)'
+												},
+												legend: {
+													display: '{LEGEND DISPLAY}',
+													position: 'bottom',
+													fullWidth: true,
+													labels: {
+														fontColor: 'rgb(255, 255, 255)'
+													}
+												},
+												tooltips: {
+                                                      mode: 'label',
+												},
+												hover: {
+													mode: 'nearest',
+													intersect: true
+												},
+												scales: {
+													xAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Project',
+															fontColor:'yellow',
+															fontSize:12
+														},
+														ticks: {
+															fontColor: 'white',
+														   fontSize: 14
+														  },
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}],
+													yAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Total Invoice Value (INR Lakhs)',
+															fontColor: 'aqua',
+															fontSize:12
+														},
+														ticks: {
+															  fontColor: 'white',
+															  fontSize: 14
+														},
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}]
+												}
+											}
+										});
+										$("#canvas_container_1").click(
+										function (evt) {
+											select_chart('chart_1');
+											console.log("On Chart Click");
+											var activePoints = myChart_1.getElementsAtEvent(evt);
+											var labeltag = activePoints[0]._view.label;
+											console.log(labeltag);
+											hide_all_tables();
+
+											add_spinner_table('adbizDataTable_1');
+											document.getElementById('div_table_container_1').style.visibility='visible';
+											document.getElementById('table_title_1').innerHTML = 'Aggregates Table - Sales';
+											document.getElementById('table_sub_title_1').innerHTML = 'By Project';
+											add_spinner_table('adbizDataTable_2');
+											document.getElementById('div_table_container_2').style.visibility='visible';
+											document.getElementById('table_title_2').innerHTML = 'Detailed Table - Sales';
+											document.getElementById('table_sub_title_2').innerHTML = 'By Project';
+												W7_C1_T1_getTableData();
+												W7_C1_T2_getTableData();
+										});
+
+									};
+									</script>
+									<script type="text/javascript">
+									function W7_C2_getChartData() {
+										var io_engine_url = "/adbizUI/getChartData/"
+										$.ajax({
+											method : 'GET',
+											url : io_engine_url,
+											data:   $.param({ "chart_query": "SELECT dmProject, ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.6d68f97c44974c57b9141b2dae597924  WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate GROUP BY dmProject ORDER BY 2 DESC LIMIT 10;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+											beforeSend: function (request) {
+													request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+													request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+												}
+											})
+											.done(function(response_data) {
+												chart_data = JSON.parse(response_data);
+												W7_C2_displayChart(chart_data);
+											})
+											.fail(function() {
+												console.log( 'Error occurred in API Data Extraction method for Chart' );
+											})
+											.always(function() {
+												console.log( 'API Data Extraction method for Chart completed successfully' );
+											});
+										};
+									</script>
+									<script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+									<script type="text/javascript"></script>
+									<script>
+									var myChart_2 = null;
+									function W7_C2_displayChart(chart_data){
+										document.getElementById('div_chart_container_2').style.visibility='visible';
+										if(myChart_2!=null){
+											console.log("Destroying Chart Container");
+											myChart_2.destroy();
+										}
+										var ctx = document.getElementById('canvas_container_2').getContext('2d');
+										my_data = chart_data['data']; console.log(my_data);
+										myChart_2 = new Chart( ctx, {
+											// The type of chart we want to create
+											type: 'bar',
+
+											// The data for our dataset
+											data: {
+												labels: chart_data['labels'],
+												datasets: [{
+													data: my_data[0],
+													label: 'Project',
+													backgroundColor: 'rgb(208,15,214)',
+													borderWidth: '1',
+													borderColor: '',
+													hoverBackgroundColor:'gold'}]
+											},
+											// Configuration options go here
+											options: {
+												responsive: true,
+												maintainAspectRatio: false,
+												title:{
+													display: true,
+													text: 'Sales Trend Analysis Detailed By Project TOP 10',
+													fontSize: 14,
+													fontColor: 'rgb(255, 255, 255)'
+												},
+												legend: {
+													display: '{LEGEND DISPLAY}',
+													position: 'bottom',
+													fullWidth: true,
+													labels: {
+														fontColor: 'rgb(255, 255, 255)'
+													}
+												},
+												tooltips: {
+                                                      mode: 'label',
+												},
+												hover: {
+													mode: 'nearest',
+													intersect: true
+												},
+												scales: {
+													xAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Project',
+															fontColor:'yellow',
+															fontSize:12
+														},
+														ticks: {
+															fontColor: 'white',
+														   fontSize: 14
+														  },
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}],
+													yAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Total Invoice Value (INR Lakhs)',
+															fontColor: 'aqua',
+															fontSize:12
+														},
+														ticks: {
+															  fontColor: 'white',
+															  fontSize: 14
+														},
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}]
+												}
+											}
+										});
+										$("#canvas_container_2").click(
+										function (evt) {
+											select_chart('chart_2');
+											console.log("On Chart Click");
+											var activePoints = myChart_2.getElementsAtEvent(evt);
+											var labeltag = activePoints[0]._view.label;
+											console.log(labeltag);
+											hide_all_tables();
+
+											add_spinner_table('adbizDataTable_1');
+											document.getElementById('div_table_container_1').style.visibility='visible';
+											document.getElementById('table_title_1').innerHTML = 'Aggregates Table - Sales';
+											document.getElementById('table_sub_title_1').innerHTML = 'By Project';
+											add_spinner_table('adbizDataTable_2');
+											document.getElementById('div_table_container_2').style.visibility='visible';
+											document.getElementById('table_title_2').innerHTML = 'Detailed Table - Sales';
+											document.getElementById('table_sub_title_2').innerHTML = 'By Project';
+												W7_C2_T1_getTableData();
+												W7_C2_T2_getTableData();
+										});
+
+									};
+									</script>
+									<script type="text/javascript">
+									function W8_C1_getChartData() {
+										var io_engine_url = "/adbizUI/getChartData/"
+										$.ajax({
+											method : 'GET',
+											url : io_engine_url,
+											data:   $.param({ "chart_query": "SELECT CONCAT(LPAD(dmInvoiceDate_MONTH,2,0), '-', dmInvoiceDate_YEAR) AS 'Month', ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b GROUP BY dmInvoiceDate_YEAR, dmInvoiceDate_MONTH ORDER BY CONCAT(dmInvoiceDate_YEAR,LPAD(dmInvoiceDate_MONTH,2,0)) DESC LIMIT 12;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+											beforeSend: function (request) {
+													request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+													request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+												}
+											})
+											.done(function(response_data) {
+												chart_data = JSON.parse(response_data);
+												W8_C1_displayChart(chart_data);
+											})
+											.fail(function() {
+												console.log( 'Error occurred in API Data Extraction method for Chart' );
+											})
+											.always(function() {
+												console.log( 'API Data Extraction method for Chart completed successfully' );
+											});
+										};
+									</script>
+									<script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+									<script type="text/javascript"></script>
+									<script>
+									var myChart_1 = null;
+									function W8_C1_displayChart(chart_data){
+										document.getElementById('div_chart_container_1').style.visibility='visible';
+										if(myChart_1!=null){
+											console.log("Destroying Chart Container");
+											myChart_1.destroy();
+										}
+										var ctx = document.getElementById('canvas_container_1').getContext('2d');
+										my_data = chart_data['data']; console.log(my_data);
+										myChart_1 = new Chart( ctx, {
+											// The type of chart we want to create
+											type: 'bar',
+
+											// The data for our dataset
+											data: {
+												labels: chart_data['labels'],
+												datasets: [{
+													data: my_data[0],
+													label: 'Last 12 Months',
+													backgroundColor: 'rgb(255,0,0)',
+													borderWidth: '1',
+													borderColor: '',
+													hoverBackgroundColor:'gold'}]
+											},
+											// Configuration options go here
+											options: {
+												responsive: true,
+												maintainAspectRatio: false,
+												title:{
+													display: true,
+													text: 'Sales Trend Analysis - Detailed By Last 12 Months',
+													fontSize: 14,
+													fontColor: 'rgb(255, 255, 255)'
+												},
+												legend: {
+													display: '{LEGEND DISPLAY}',
+													position: 'bottom',
+													fullWidth: true,
+													labels: {
+														fontColor: 'rgb(255, 255, 255)'
+													}
+												},
+												tooltips: {
+                                                      mode: 'label',
+												},
+												hover: {
+													mode: 'nearest',
+													intersect: true
+												},
+												scales: {
+													xAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Last 12 Months',
+															fontColor:'yellow',
+															fontSize:12
+														},
+														ticks: {
+															fontColor: 'white',
+														   fontSize: 14
+														  },
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}],
+													yAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Total Invoice Value (INR Lakhs)',
+															fontColor: 'aqua',
+															fontSize:12
+														},
+														ticks: {
+															  fontColor: 'white',
+															  fontSize: 14
+														},
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}]
+												}
+											}
+										});
+										$("#canvas_container_1").click(
+										function (evt) {
+											select_chart('chart_1');
+											console.log("On Chart Click");
+											var activePoints = myChart_1.getElementsAtEvent(evt);
+											var labeltag = activePoints[0]._view.label;
+											console.log(labeltag);
+											hide_all_tables();
+
+											add_spinner_table('adbizDataTable_1');
+											document.getElementById('div_table_container_1').style.visibility='visible';
+											document.getElementById('table_title_1').innerHTML = 'Aggregates Table - Sales';
+											document.getElementById('table_sub_title_1').innerHTML = 'By Month on Month';
+											add_spinner_table('adbizDataTable_2');
+											document.getElementById('div_table_container_2').style.visibility='visible';
+											document.getElementById('table_title_2').innerHTML = 'Detailed Table - Sales';
+											document.getElementById('table_sub_title_2').innerHTML = 'By Month on Month';
+												W8_C1_T1_getTableData();
+												W8_C1_T2_getTableData();
+										});
+
+									};
+									</script>
+									<script type="text/javascript">
+									function W8_C2_getChartData() {
+										var io_engine_url = "/adbizUI/getChartData/"
+										$.ajax({
+											method : 'GET',
+											url : io_engine_url,
+											data:   $.param({ "chart_query": "SELECT CONCAT(LPAD(dmInvoiceDate_MONTH,2,0), '-', dmInvoiceDate_YEAR) AS 'Month', ROUND(SUM(msTotalLineAmount_SUM)/10000000,2) SUM FROM 9f2e0174d97d405eb83cbb779155ae30.964085a7d7264d40974706c68241129b GROUP BY dmInvoiceDate_YEAR, dmInvoiceDate_MONTH ORDER BY CONCAT(dmInvoiceDate_YEAR,LPAD(dmInvoiceDate_MONTH,2,0)) DESC LIMIT 6;", "period_start_date": periodStartDate, "period_end_date": periodEndDate }),
+											beforeSend: function (request) {
+													request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+													request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+												}
+											})
+											.done(function(response_data) {
+												chart_data = JSON.parse(response_data);
+												W8_C2_displayChart(chart_data);
+											})
+											.fail(function() {
+												console.log( 'Error occurred in API Data Extraction method for Chart' );
+											})
+											.always(function() {
+												console.log( 'API Data Extraction method for Chart completed successfully' );
+											});
+										};
+									</script>
+									<script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+									<script type="text/javascript"></script>
+									<script>
+									var myChart_2 = null;
+									function W8_C2_displayChart(chart_data){
+										document.getElementById('div_chart_container_2').style.visibility='visible';
+										if(myChart_2!=null){
+											console.log("Destroying Chart Container");
+											myChart_2.destroy();
+										}
+										var ctx = document.getElementById('canvas_container_2').getContext('2d');
+										my_data = chart_data['data']; console.log(my_data);
+										myChart_2 = new Chart( ctx, {
+											// The type of chart we want to create
+											type: 'bar',
+
+											// The data for our dataset
+											data: {
+												labels: chart_data['labels'],
+												datasets: [{
+													data: my_data[0],
+													label: 'Last 6 Months',
+													backgroundColor: 'rgb(208,15,214)',
+													borderWidth: '1',
+													borderColor: '',
+													hoverBackgroundColor:'gold'}]
+											},
+											// Configuration options go here
+											options: {
+												responsive: true,
+												maintainAspectRatio: false,
+												title:{
+													display: true,
+													text: 'Sales Trend Analysis Detailed By Last 6 Months',
+													fontSize: 14,
+													fontColor: 'rgb(255, 255, 255)'
+												},
+												legend: {
+													display: '{LEGEND DISPLAY}',
+													position: 'bottom',
+													fullWidth: true,
+													labels: {
+														fontColor: 'rgb(255, 255, 255)'
+													}
+												},
+												tooltips: {
+                                                      mode: 'label',
+												},
+												hover: {
+													mode: 'nearest',
+													intersect: true
+												},
+												scales: {
+													xAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Last 6 Months',
+															fontColor:'yellow',
+															fontSize:12
+														},
+														ticks: {
+															fontColor: 'white',
+														   fontSize: 14
+														  },
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}],
+													yAxes: [{
+														display: true,
+														scaleLabel: {
+															display: true,
+															labelString: 'Total Invoice Value (INR Lakhs)',
+															fontColor: 'aqua',
+															fontSize:12
+														},
+														ticks: {
+															  fontColor: 'white',
+															  fontSize: 14
+														},
+														gridLines: {
+															display: true ,
+															color: 'grey'
+														}
+													}]
+												}
+											}
+										});
+										$("#canvas_container_2").click(
+										function (evt) {
+											select_chart('chart_2');
+											console.log("On Chart Click");
+											var activePoints = myChart_2.getElementsAtEvent(evt);
+											var labeltag = activePoints[0]._view.label;
+											console.log(labeltag);
+											hide_all_tables();
+
+											add_spinner_table('adbizDataTable_1');
+											document.getElementById('div_table_container_1').style.visibility='visible';
+											document.getElementById('table_title_1').innerHTML = 'Aggregates Table - Sales';
+											document.getElementById('table_sub_title_1').innerHTML = 'By Month on Month';
+											add_spinner_table('adbizDataTable_2');
+											document.getElementById('div_table_container_2').style.visibility='visible';
+											document.getElementById('table_title_2').innerHTML = 'Detailed Table - Sales';
+											document.getElementById('table_sub_title_2').innerHTML = 'By Month on Month';
+												W8_C2_T1_getTableData();
+												W8_C2_T2_getTableData();
 										});
 
 									};
@@ -998,7 +3807,7 @@
 			$.ajax({
 				method : 'GET',
 				url : '/adbizUI/getTableData/',
-				data:   $.param({'table_query': "SELECT IFNULL(date_format(dmInvoiceDate, '%d-%m-%Y'), '') AS 'Invoice Date', IFNULL(CONVERT(msInvoiceAmountINR_SUM, CHAR), '0.00') AS 'Invoice Amount Sum', IFNULL(CONVERT(msInvoiceAmountINR_MAX, CHAR), '0.00') AS 'Invoice Amount Max', IFNULL(CONVERT(msInvoiceAmountINR_MIN, CHAR), '0.00') AS 'Invoice Amount Min', IFNULL(CONVERT(msInvoiceAmountINR_AVG,CHAR), '0.00') AS 'Invoice Amount Avg', IFNULL(CONVERT(msInvoiceAmountINR_COUNT, CHAR), '0.00') AS 'Invoice Amount Count', IFNULL(CONVERT(msTotalLineAmount_SUM, ChAR), '0.00') AS 'Line Amount Sum', IFNULL(CONVERT(msTotalLineAmount_MAX, CHAR), '0.00') AS 'Line Amount Max', IFNULL(CONVERT(msTotalLineAmount_MIN, CHAR),'0.00') AS 'Line Amount min', IFNULL(CONVERT(msTotalLineAmount_AVG, CHAR), '0.00') AS 'Line Amount Avg', IFNULL(CONVERT(msTotalLineAmount_COUNT, CHAR), '0.00') AS 'Line Amount Count' FROM `9f2e0174d97d405eb83cbb779155ae30`.`811b457d68f044eebd8287409e81746a` WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate "}),
+				data:   $.param({PAYLOAD}),
 				beforeSend: function (request) {
 					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
 					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
@@ -1022,7 +3831,7 @@
 			$.ajax({
 				method : 'GET',
 				url : '/adbizUI/getTableData/',
-				data:   $.param({'table_query': "SELECT  IFNULL(shipSite,'') AS 'Shipping Site 1',    IFNULL(shipSiteName, '') AS 'Shipping Site Name',     IFNULL(invoiceId, '') AS 'Invoice Number',     IFNULL(date_format(invoiceDate,'%d-%m-%Y'), '') AS 'Invoice Date',   IFNULL(invoiceStatus,'') AS 'Invoice Status',     IFNULL(invoiceType, '') AS 'Invoice Type',     IFNULL(invoiceCategory,'') AS 'Invoice Category',    IFNULL(salesOrderId, '') AS 'Sales Order',    IFNULL(date_format(salesOrderDate,'%d-%m-%Y') , '')  AS 'Sales OrderDate',     IFNULL(gstID, '') AS 'GST Number',     IFNULL(channel , '') AS 'Channel',     IFNULL(customerCode, '')  AS 'Customer Code',     IFNULL(project, '') AS 'Project',     IFNULL(customerName, '')  AS 'Customer Name',     IFNULL(city, '') AS 'City',     IFNULL(state, '') AS 'State',     IFNULL(country, '') AS 'Country',  IFNULL(customerType, '')  AS 'Customer Type',  IFNULL(productCategory, '') AS 'Product Category',     IFNULL(customerRegion, '')  AS 'Customer Region',    IFNULL(productLine, '')  AS 'Product Line',     IFNULL(productType,'') AS 'Product Type',  IFNULL(lineItem, '') AS 'Line Item',     IFNULL(productCode, '') AS 'Product Code',  IFNULL(productDescription_1, '') AS 'Item Description 1',     IFNULL(productDescription_2,'') AS 'Item Description 2',  IFNULL(hsnCode,'') AS 'HSN Code',  IFNULL(invoiceQty, '') AS 'Invoice Quantity',     CONVERT(IFNULL(unitPrice, '0.00'), CHAR) AS 'Unit Price',     CONVERT(IFNULL(listPrice, '0.00'), CHAR) AS 'ListPrice',     IFNULL(isPriceListMasterAvailable,'') AS 'Price List Master Available?',  IFNULL(CONVERT(discountPercent, CHAR), '0.00') AS 'Discount Percent',     IFNULL(CONVERT(discountValue, CHAR), '0.00') AS 'Discount Value',     IFNULL(CONVERT(totalDiscountPercent, CHAR), '0.00') AS 'Total Discount Percent',     IFNULL(CONVERT(totalDiscountValue, CHAR) , '0.00')AS 'TotalDiscountValue',     IFNULL(CONVERT(invoiceValue, CHAR) ,'0.00')AS 'Invoice Value',     IFNULL(CONVERT(invoiceValueINR, CHAR), '0.00') AS 'Invoice Value[INR]',     IFNULL(currency, '') AS 'Currency',     IFNULL(currency1,'') AS 'Currency-1',     IFNULL(currency2,'') AS 'Currency-2',     IFNULL(CONVERT(rate1, CHAR), '0.00') AS 'rate1',     IFNULL(CONVERT(rate2, CHAR), '0.00') AS 'rate2',  IFNULL(BOL, '') AS 'BOL',     IFNULL(paymentTerms, '') AS 'Payment Terms',     IFNULL(paymentDescription, '') AS 'Payment Description',     IFNULL(taxUsage, '')  AS 'Tax Usage',  IFNULL(taxCategory, '')  AS 'Tax Category',     IFNULL(taxClass, '') AS 'Tax Class', IFNULL(CONVERT(salesHandlingCharges,CHAR), '0.00') AS 'Sales Handling Charges', IFNULL(CONVERT(salesHandlingChargesValue,CHAR), '0.00') AS 'salesHandlingChargesValue', IFNULL(CONVERT(salespackingAndForwardCharges,CHAR), '0.00') AS 'Sales Packing And Forward Charges',  IFNULL(CONVERT(salespackingAndForwardValue, CHAR), '0.00') AS 'Sales Packing And Forward Value', IFNULL(CONVERT(salesTCSGSTCharges, CHAR), '0.00') AS 'Sales TCSGST Charges', IFNULL(CONVERT(salesTCSGSTValue, CHAR), '0.00') AS 'Sales TCSGST Value',  IFNULL(CONVERT(salesCGSTCharges, CHAR), '0.00') AS 'Sales CGST Charges',     IFNULL(CONVERT(salesCGSTValue, CHAR), '0.00') AS 'Sales CGST Value',   IFNULL(CONVERT(salesSGSTCharges, CHAR), '0.00') AS 'Sales SGST Charges', IFNULL(CONVERT(salesSGSTvalue, CHAR), '0.00') AS 'Sales SGST Value', IFNULL(CONVERT(salesIGSTCharges, CHAR) , '0.00')AS 'Sales IGST Charges',    IFNULL(CONVERT(salesIGSTValue, CHAR) , '0.00')AS 'Sales IGST Value',     IFNULL(CONVERT(totalLineAmount, CHAR) , '0.00')AS 'Total Line Amount',     IFNULL(CONVERT(totalAssessablevalue, CHAR) , '') AS 'Total Assessable Value',     IFNULL(customerPart, '') AS 'Customer Part',  IFNULL(customerPO, '') AS 'Customer PO'     FROM `9f2e0174d97d405eb83cbb779155ae30`.`822284f3d63a46ceb83d13a43b279e2` WHERE invoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate LIMIT 50 "}),
+				data:   $.param({PAYLOAD}),
 				beforeSend: function (request) {
 					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
 					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
@@ -1046,7 +3855,7 @@
 			$.ajax({
 				method : 'GET',
 				url : '/adbizUI/getTableData/',
-				data:   $.param({'table_query': "SELECT IFNULL(date_format(dmInvoiceDate, '%d-%m-%Y'), '') AS 'Invoice Date', IFNULL(CONVERT(msInvoiceAmountINR_SUM, CHAR), '0.00') AS 'Invoice Amount Sum', IFNULL(CONVERT(msInvoiceAmountINR_MAX, CHAR), '0.00') AS 'Invoice Amount Max', IFNULL(CONVERT(msInvoiceAmountINR_MIN, CHAR), '0.00') AS 'Invoice Amount Min', IFNULL(CONVERT(msInvoiceAmountINR_AVG,CHAR), '0.00') AS 'Invoice Amount Avg', IFNULL(CONVERT(msInvoiceAmountINR_COUNT, CHAR), '0.00') AS 'Invoice Amount Count', IFNULL(CONVERT(msTotalLineAmount_SUM, ChAR), '0.00') AS 'Line Amount Sum', IFNULL(CONVERT(msTotalLineAmount_MAX, CHAR), '0.00') AS 'Line Amount Max', IFNULL(CONVERT(msTotalLineAmount_MIN, CHAR),'0.00') AS 'Line Amount min', IFNULL(CONVERT(msTotalLineAmount_AVG, CHAR), '0.00') AS 'Line Amount Avg', IFNULL(CONVERT(msTotalLineAmount_COUNT, CHAR), '0.00') AS 'Line Amount Count' FROM `9f2e0174d97d405eb83cbb779155ae30`.`811b457d68f044eebd8287409e81746a` WHERE dmInvoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate "}),
+				data:   $.param({PAYLOAD}),
 				beforeSend: function (request) {
 					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
 					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
@@ -1070,7 +3879,679 @@
 			$.ajax({
 				method : 'GET',
 				url : '/adbizUI/getTableData/',
-				data:   $.param({'table_query': "SELECT  IFNULL(shipSite,'') AS 'Shipping Site 1',    IFNULL(shipSiteName, '') AS 'Shipping Site Name',     IFNULL(invoiceId, '') AS 'Invoice Number',     IFNULL(date_format(invoiceDate,'%d-%m-%Y'), '') AS 'Invoice Date',   IFNULL(invoiceStatus,'') AS 'Invoice Status',     IFNULL(invoiceType, '') AS 'Invoice Type',     IFNULL(invoiceCategory,'') AS 'Invoice Category',    IFNULL(salesOrderId, '') AS 'Sales Order',    IFNULL(date_format(salesOrderDate,'%d-%m-%Y') , '')  AS 'Sales OrderDate',     IFNULL(gstID, '') AS 'GST Number',     IFNULL(channel , '') AS 'Channel',     IFNULL(customerCode, '')  AS 'Customer Code',     IFNULL(project, '') AS 'Project',     IFNULL(customerName, '')  AS 'Customer Name',     IFNULL(city, '') AS 'City',     IFNULL(state, '') AS 'State',     IFNULL(country, '') AS 'Country',  IFNULL(customerType, '')  AS 'Customer Type',  IFNULL(productCategory, '') AS 'Product Category',     IFNULL(customerRegion, '')  AS 'Customer Region',    IFNULL(productLine, '')  AS 'Product Line',     IFNULL(productType,'') AS 'Product Type',  IFNULL(lineItem, '') AS 'Line Item',     IFNULL(productCode, '') AS 'Product Code',  IFNULL(productDescription_1, '') AS 'Item Description 1',     IFNULL(productDescription_2,'') AS 'Item Description 2',  IFNULL(hsnCode,'') AS 'HSN Code',  IFNULL(invoiceQty, '') AS 'Invoice Quantity',     CONVERT(IFNULL(unitPrice, '0.00'), CHAR) AS 'Unit Price',     CONVERT(IFNULL(listPrice, '0.00'), CHAR) AS 'ListPrice',     IFNULL(isPriceListMasterAvailable,'') AS 'Price List Master Available?',  IFNULL(CONVERT(discountPercent, CHAR), '0.00') AS 'Discount Percent',     IFNULL(CONVERT(discountValue, CHAR), '0.00') AS 'Discount Value',     IFNULL(CONVERT(totalDiscountPercent, CHAR), '0.00') AS 'Total Discount Percent',     IFNULL(CONVERT(totalDiscountValue, CHAR) , '0.00')AS 'TotalDiscountValue',     IFNULL(CONVERT(invoiceValue, CHAR) ,'0.00')AS 'Invoice Value',     IFNULL(CONVERT(invoiceValueINR, CHAR), '0.00') AS 'Invoice Value[INR]',     IFNULL(currency, '') AS 'Currency',     IFNULL(currency1,'') AS 'Currency-1',     IFNULL(currency2,'') AS 'Currency-2',     IFNULL(CONVERT(rate1, CHAR), '0.00') AS 'rate1',     IFNULL(CONVERT(rate2, CHAR), '0.00') AS 'rate2',  IFNULL(BOL, '') AS 'BOL',     IFNULL(paymentTerms, '') AS 'Payment Terms',     IFNULL(paymentDescription, '') AS 'Payment Description',     IFNULL(taxUsage, '')  AS 'Tax Usage',  IFNULL(taxCategory, '')  AS 'Tax Category',     IFNULL(taxClass, '') AS 'Tax Class', IFNULL(CONVERT(salesHandlingCharges,CHAR), '0.00') AS 'Sales Handling Charges', IFNULL(CONVERT(salesHandlingChargesValue,CHAR), '0.00') AS 'salesHandlingChargesValue', IFNULL(CONVERT(salespackingAndForwardCharges,CHAR), '0.00') AS 'Sales Packing And Forward Charges',  IFNULL(CONVERT(salespackingAndForwardValue, CHAR), '0.00') AS 'Sales Packing And Forward Value', IFNULL(CONVERT(salesTCSGSTCharges, CHAR), '0.00') AS 'Sales TCSGST Charges', IFNULL(CONVERT(salesTCSGSTValue, CHAR), '0.00') AS 'Sales TCSGST Value',  IFNULL(CONVERT(salesCGSTCharges, CHAR), '0.00') AS 'Sales CGST Charges',     IFNULL(CONVERT(salesCGSTValue, CHAR), '0.00') AS 'Sales CGST Value',   IFNULL(CONVERT(salesSGSTCharges, CHAR), '0.00') AS 'Sales SGST Charges', IFNULL(CONVERT(salesSGSTvalue, CHAR), '0.00') AS 'Sales SGST Value', IFNULL(CONVERT(salesIGSTCharges, CHAR) , '0.00')AS 'Sales IGST Charges',    IFNULL(CONVERT(salesIGSTValue, CHAR) , '0.00')AS 'Sales IGST Value',     IFNULL(CONVERT(totalLineAmount, CHAR) , '0.00')AS 'Total Line Amount',     IFNULL(CONVERT(totalAssessablevalue, CHAR) , '') AS 'Total Assessable Value',     IFNULL(customerPart, '') AS 'Customer Part',  IFNULL(customerPO, '') AS 'Customer PO'     FROM `9f2e0174d97d405eb83cbb779155ae30`.`822284f3d63a46ceb83d13a43b279e2` WHERE invoiceDate BETWEEN adbiz.constants.endDate AND adbiz.constants.startDate LIMIT 50 "}),
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_2_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W2_C1_T1_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_1_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W2_C1_T2_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_2_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W2_C2_T1_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_1_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W2_C2_T2_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_2_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W3_C1_T1_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_1_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W3_C1_T2_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_2_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W3_C2_T1_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_1_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W3_C2_T2_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_2_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W4_C1_T1_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_1_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W4_C1_T2_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_2_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W4_C2_T1_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_1_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W4_C2_T2_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_2_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W5_C1_T1_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_1_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W5_C1_T2_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_2_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W5_C2_T1_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_1_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W5_C2_T2_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_2_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W6_C1_T1_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_1_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W6_C1_T2_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_2_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W6_C2_T1_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_1_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W6_C2_T2_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_2_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W7_C1_T1_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_1_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W7_C1_T2_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_2_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W7_C2_T1_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_1_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W7_C2_T2_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_2_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W8_C1_T1_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_1_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W8_C1_T2_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_2_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W8_C2_T1_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
+				beforeSend: function (request) {
+					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
+					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
+					}
+				})
+				.done(function(response_data) {
+					 console.log(response_data);
+					adbizTable_1_create_and_load(response_data);
+				})
+				.fail(function() {
+						console.log( 'Error occurred in API Data Extraction method for Table' );
+				})
+				.always(function() {
+					console.log( 'API Data Extraction method for Table completed successfully' );
+				});
+			};
+	</script>
+	<script type='text/javascript'></script>
+	<script>
+		function W8_C2_T2_getTableData(){
+			$.ajax({
+				method : 'GET',
+				url : '/adbizUI/getTableData/',
+				data:   $.param({PAYLOAD}),
 				beforeSend: function (request) {
 					request.setRequestHeader('io_engine_code', '2aea740b-18b8-44da-a468-5c6ef8cac9b7');
 					request.setRequestHeader('api_key', '1589cac7-150c-4f69-9bdd-e047454c3402');
@@ -1093,7 +4574,10 @@
 
                     <script  type='text/javascript'>
                         var userDetails = {'user_id': '4', 'user_name': 'actrbl_manager1@adventbizsolutions.com', 'first_name': 'ACTRBL Manager', 'last_name': '1'}
-                        var runTimeDetails = {'period_start_date': '2020-06-07', 'period_end_date': '2020-09-05', 'hist_start_date': '2019-09-06', 'hist_end_date': '2020-09-05'}
+                        var runTimeDetails = {'period_start_date': '2019-08-13', 'period_end_date': '2019-09-21', 'hist_start_date': '2018-09-09', 'hist_end_date': '2020-09-08'}
+                        // var userDetails = {{user_details|safe}};
+                        // var runTimeDetails = {{run_time_details|safe}};
+
                     </script>
 
 
@@ -1238,7 +4722,10 @@
 			histEndDate = h2
 		}
 
-
+		console.log(histStartDate);
+		console.log(histEndDate);
+		console.log(periodStartDate);
+		console.log(periodEndDate);
 
 	</script>
 	<script type="text/javascript">
@@ -1250,35 +4737,34 @@
 
 			function tsToDate (ts) {
 				var d = new Date(ts);
+				var dToLocalString = d.toLocaleDateString(lang, {
+					year: 'numeric',
+					month: 'numeric',
+					day: 'numeric'
+				});
 
-				return d.toLocaleDateString("en-US");
+				var properDate = dToLocalString.split("/")[1] + "/" + dToLocalString.split("/")[0] + "/" + dToLocalString.split("/")[2]
+                console.log(properDate);
+				return properDate;
 			}
 
-			console.log(histStartDate);
-			console.log(histEndDate);
+			// console.log(histStartDate);
+			// console.log(histEndDate);
 
 			$(document).ready(function ()
 			{
 				var dateSliderStartDate = ""
 				var dateSliderEndDate = ""
-                var minDate = ""
-
-                console.log(histStartDate)
-
-                minDate =  new Date( histStartDate ).valueOf()
-                maxDate = new Date ( histEndDate ).valueOf()
-                fromDate = new Date( periodStartDate ).valueOf()
-                endDate = new Date( periodEndDate ).valueOf()
-
 
 				$("#range_04").ionRangeSlider({
 				skin: "modern",
 				type: "double",
 				grid: true,
-				min : minDate,
-				max : maxDate,
-				from: fromDate,
-				to: endDate,
+				min : dateToTS(new Date(histStartDate)),
+				max : dateToTS(new Date(histEndDate)),
+				from: dateToTS(new Date(periodStartDate)),
+				to: dateToTS(new Date(periodEndDate)),
+
 				prettify: tsToDate,
 				onChange: function (data) {
 						dateSliderFromDate = data.from_pretty;
@@ -1288,19 +4774,16 @@
 				});
 
 				function setDateRange(dateSliderFromDate, dateSliderToDate){
-				    console.log(dateSliderFromDate);
-				    console.log(dateSliderToDate);
-
 					 var fromDate = dateSliderFromDate.replace(/\//g, "-");
 					 var toDate = dateSliderToDate.replace(/\//g, "-");
 
 					 var fromDateYear = fromDate.split("-")[2];
-					 var fromDateMonth = checkDateLength(fromDate.split("-")[0]);
-					 var fromDateDay = checkDateLength(fromDate.split("-")[1]);
+					 var fromDateMonth = checkDateLength(fromDate.split("-")[1]);
+					 var fromDateDay = checkDateLength(fromDate.split("-")[0]);
 
 					 var toDateYear = toDate.split("-")[2];
-					 var toDateMonth = checkDateLength(toDate.split("-")[0]);
-					 var toDateDay = checkDateLength(toDate.split("-")[1]);
+					 var toDateMonth = checkDateLength(toDate.split("-")[1]);
+					 var toDateDay = checkDateLength(toDate.split("-")[0]);
 
 					 var fromDateProper = fromDateYear + "-" + fromDateMonth + "-" + fromDateDay
 					 var toDateProper = toDateYear + "-" + toDateMonth + "-" + toDateDay

@@ -14,6 +14,7 @@ coreLib = CoreLib()
 constants = coreLib.constants
 lookups = coreLib.lookups
 calendars = coreLib.calendars
+datalake = coreLib.datelake
 
 
 class EngineProperties(models.Model):
@@ -196,3 +197,61 @@ class DashboardQuery(models.Model):
     total_rows = models.PositiveIntegerField(default=0)
     query_log = models.TextField(null=True) # json. Output of query execution if any
     error_log = models.TextField(null=True) # json
+
+class SystemCalendar(models.Model):
+    class Meta:
+        managed = False
+
+    date_key = models.CharField(max_length=8, unique=True, verbose_name="Date Key")
+    display_date = models.CharField(max_length=16, unique=True, verbose_name="Display Date")
+    year = models.PositiveIntegerField(verbose_name="Year")
+    quarter_of_year = models.PositiveIntegerField(verbose_name="Quarter")
+    month_of_year = models.PositiveIntegerField(verbose_name="Month")
+    month_name = models.CharField(max_length=16, unique=True, verbose_name="Month Name")
+    week_of_year = models.PositiveIntegerField(verbose_name="Week Of the Year")
+    week_of_month = models.PositiveIntegerField(verbose_name="Week Of the Month")
+    week_of_quarter = models.PositiveIntegerField(verbose_name="Week Of the Quarter")
+    day_of_year = models.PositiveIntegerField(verbose_name="Day of the Year")
+    day_of_quarter = models.PositiveIntegerField(verbose_name="Day of the Quarter")
+    day_of_month = models.PositiveIntegerField(verbose_name="Day of the Month")
+    day_of_week = models.PositiveIntegerField(verbose_name="Day of the Week")
+    day_name = models.CharField(max_length=16, unique=True, verbose_name="Week Day Name")
+    first_date_of_year =  models.DateTimeField(default=django.utils.timezone.now, verbose_name="First Date of the Year")
+    last_date_of_year = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Last Date of the Year")
+    first_date_of_quarter = models.DateTimeField(default=django.utils.timezone.now, verbose_name="First Date of the Quarter")
+    last_date_of_quarter = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Last Date of the Quarter")
+    first_date_of_month = models.DateTimeField(default=django.utils.timezone.now, verbose_name="First Date of the Month")
+    last_date_of_month = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Last Date of the Month")
+    first_date_of_week = models.DateTimeField(default=django.utils.timezone.now, verbose_name="First Date of the Week")
+    last_date_of_week = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Last Date of the Week")
+    is_weekday = models.BooleanField(default=True, verbose_name="Is Weekday ?")
+    is_working_day = models.BooleanField(default=True, verbose_name="Is Working Day ?")
+    is_holiday = models.BooleanField(default=True, verbose_name="Is Holiday ?")
+    holiday_name = models.CharField(max_length=64, unique=True, verbose_name="Holiday Name")
+
+class UserDefinedCalendar(models.Model):
+    class Meta:
+        managed = False
+
+    system_date = models.ForeignKey(SystemCalendar, on_delete= models.CASCADE)
+    year = models.PositiveIntegerField(verbose_name="Year")
+    quarter_of_year = models.PositiveIntegerField(verbose_name="Quarter")
+    month_of_year = models.PositiveIntegerField(verbose_name="Month")
+    month_name = models.CharField(max_length=16, unique=True, verbose_name="Month Name")
+    week_of_year = models.PositiveIntegerField(verbose_name="Week Of the Year")
+    week_of_month = models.PositiveIntegerField(verbose_name="Week Of the Month")
+    week_of_quarter = models.PositiveIntegerField(verbose_name="Week Of the Quarter")
+    day_of_year = models.PositiveIntegerField(verbose_name="Day of the Year")
+    day_of_quarter = models.PositiveIntegerField(verbose_name="Day of the Quarter")
+    day_of_month = models.PositiveIntegerField(verbose_name="Day of the Month")
+    day_of_week = models.PositiveIntegerField(verbose_name="Day of the Week")
+    day_name = models.CharField(max_length=16, unique=True, verbose_name="Week Day Name")
+    first_date_of_year =  models.DateTimeField(default=django.utils.timezone.now, verbose_name="First Date of the Year")
+    last_date_of_year = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Last Date of the Year")
+    first_date_of_quarter = models.DateTimeField(default=django.utils.timezone.now, verbose_name="First Date of the Quarter")
+    last_date_of_quarter = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Last Date of the Quarter")
+    first_date_of_month = models.DateTimeField(default=django.utils.timezone.now, verbose_name="First Date of the Month")
+    last_date_of_month = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Last Date of the Month")
+    first_date_of_week = models.DateTimeField(default=django.utils.timezone.now, verbose_name="First Date of the Week")
+    last_date_of_week = models.DateTimeField(default=django.utils.timezone.now, verbose_name="Last Date of the Week")
+

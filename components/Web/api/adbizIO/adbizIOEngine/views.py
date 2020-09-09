@@ -155,25 +155,24 @@ def execute_chart_query(request):
                 # start_Date = request.session["period_start_date"]
                 # end_Date = request.session["period_end_date"]
 
-                final_query = chart_query.replace('adbiz.constants.startDate', "'" + period_start_date + "'").replace('adbiz.constants.endDate', "'" + period_end_date + "'")
+                final_query = chart_query.replace('adbiz.constants.startDate', "'" + period_end_date + "'").replace('adbiz.constants.endDate', "'" + period_start_date  + "'")
 
                 mylog.info(final_query)
                 datadf = execute_sql_query(final_query, "chart")
-                my_labels = datadf[0].to_list()
-                # if len(datadf.columns) > 2:
-                row_list = []
-                i = 1
-                while i < len(datadf.columns):
-                    #row_list.append(datadf[i].to_list())
-                    row_list.append(list(datadf[i]))
-                    i = i+1
-                output = {"labels": my_labels, "data": row_list}
-                mylog.info(output)
+                if not datadf.empty:
+                    my_labels = datadf[0].to_list()
+                    row_list = []
+                    i = 1
+                    while i < len(datadf.columns):
+                        #row_list.append(datadf[i].to_list())
+                        row_list.append(list(datadf[i]))
+                        i = i+1
+                    output = {"labels": my_labels, "data": row_list}
+                    mylog.info(output)
+                else:
+                    output = None
 
-                # else:
-                #     my_data = datadf[1].to_list()
-                #     output = {"labels": my_labels,"data": my_data}
-                return JsonResponse(output)
+                return JsonResponse(output, safe=False)
 
     except Exception as e:
         mylog.error("Error occurred in executing Chart Query!!", exc_info=True)
@@ -209,14 +208,15 @@ def execute_table_query(request):
                 # end_date = datetime.datetime.today() - datetime.timedelta(days=1000)
                 # end_date = end_date.strftime("%Y-%m-%d")
 
-                final_query = table_query.replace('adbiz.constants.startDate', "'" + period_start_date + "'").replace(
-                    'adbiz.constants.endDate', "'" + period_end_date + "'")
+                final_query = table_query.replace('adbiz.constants.startDate', "'" + period_end_date + "'").replace(
+                    'adbiz.constants.endDate', "'" + period_start_date + "'")
 
                 mylog.info(final_query)
-                value = execute_sql_query(final_query, "table")
-                #print(value)
-                #value = datadf.to_json()
-                return HttpResponse(value)
+                datadf = execute_sql_query(final_query, "table")
+                if datadf:
+                    return HttpResponse(datadf)
+                else:
+                    return None
 
     except Exception as e:
         mylog.error("Error occurred in executing Table Query!!", exc_info=True)
@@ -255,11 +255,15 @@ def execute_value_query(request):
                 # end_date = datetime.datetime.today() - datetime.timedelta(days=1000)
                 # end_date = end_date.strftime("%Y-%m-%d")
 
-                final_query = component_query.replace('adbiz.constants.startDate', "'"+period_start_date+"'" ).replace('adbiz.constants.endDate', "'"+period_end_date+"'")
+                final_query = component_query.replace('adbiz.constants.startDate', "'"+period_end_date+"'" ).replace('adbiz.constants.endDate', "'"+period_start_date+"'")
                 datadf = execute_sql_query(final_query, "value")
                 mylog.info(final_query)
                 mylog.info(datadf)
-                value = datadf.iloc[0,0]        # for single value- first row + first column
+
+                if not datadf.empty:
+                    value = datadf.iloc[0,0]        # for single value- first row + first column
+                else:
+                    value = None
                 return HttpResponse (value)
 
     except Exception as e:

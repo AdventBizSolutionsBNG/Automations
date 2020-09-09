@@ -20,6 +20,7 @@ class CoreEngine:
     components = {}
     charts = {}
     calendars = []
+    datelake = {}
 
     _core_engine_code = ""
     _product_engine_url = ""
@@ -48,6 +49,7 @@ class CoreEngine:
                 self.constants = coreSettings.get_constants()
                 self.lookups = coreSettings.get_lookups()
                 self.calendars = coreSettings.get_calendar_datasets()
+                self.datelake = coreSettings.get_datalake_storage()
             else:
                 print("Error!! Settings file not found. Cannot initialize Core Engine.")
         except Exception as e:

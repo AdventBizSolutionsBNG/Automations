@@ -33,7 +33,7 @@ def generate_chart_tags(my_component, component_display_id, md_corelib_display_c
         default_call_type = "ajax"
         log.info("Core Library: Using Default call Type: %s", default_call_type)
 
-        chart_output = CoreLibCharts.generate_chart_tags(my_component, component_display_id, md_corelib_display_components)
+        chart_output = CoreLibCharts.generate_chart_tags(my_component, component_display_id, md_corelib_display_components, default_call_type)
         if chart_output:
             return chart_output
         else:
@@ -54,7 +54,7 @@ def generate_table_tags(my_component, component_display_id, chart_display_id, md
         log.info("Core Library: Using Default call Type: %s", default_call_type)
 
         table_output = CoreLibTables.generate_table_tags(my_component, component_display_id, chart_display_id,
-                                                                     md_corelib_display_components)
+                                                                     md_corelib_display_components, default_call_type)
         if table_output:
             return table_output
         else:

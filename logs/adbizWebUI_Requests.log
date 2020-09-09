@@ -1002,3 +1002,79 @@ TypeError: get_actrbl_sales_exceptions() missing 2 required positional arguments
 [2020-09-05 18:04:39] WARNING Not Found: /favicon.ico
 [2020-09-05 18:04:57] WARNING Not Found: /adbizWebUI
 [2020-09-05 18:06:06] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_sales_forecast/93f1ee8b-cae2-47aa-8fb1-95ded769a513@dtl.site.env.catalog.datamodel.dashboard/
+[2020-09-07 18:14:28] WARNING Not Found: /adbizUI/adbizActRbl/actrbl_custom/93f1ee8b-cae2-47aa-8fb1-95ded769a513@dtl.site.env.catalog.datamodel.dashboard/2018-12-29/2020-10-07/:684
+[2020-09-07 18:14:28] WARNING Not Found: /favicon.ico
+[2020-09-08 19:41:09] ERROR Internal Server Error: /adbizUI/login/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 143, in _get_response
+    response = response.render()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 903, in render_annotated
+    return self.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 903, in render_annotated
+    return self.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 903, in render_annotated
+    return self.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 903, in render_annotated
+    return self.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/base.py", line 903, in render_annotated
+    return self.render(context)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/template/defaulttags.py", line 443, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/urls/resolvers.py", line 677, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'actrbl_main' with keyword arguments '{'dashboard_code': ''}' not found. 1 pattern(s) tried: ['adbizUI/adbizActRbl/actrbl_main/(?P<dashboard_code>[^/]+)/$']
+[2020-09-08 19:41:11] WARNING Not Found: /favicon.ico
+[2020-09-08 19:43:13] ERROR Internal Server Error: /adbizUI/adbizActRbl/actrbl_main/xyz/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    raise ValueError(
+ValueError: The view adbizActRbl.views.get_actrbl_main didn't return an HttpResponse object. It returned None instead.
+[2020-09-08 20:16:47] ERROR Internal Server Error: /adbizUI/adbizActRbl/actrbl_main/xyz/
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    raise ValueError(
+ValueError: The view adbizActRbl.views.get_actrbl_main didn't return an HttpResponse object. It returned None instead.
+[2020-09-09 06:02:08] WARNING Not Found: /
+[2020-09-09 06:02:09] WARNING Not Found: /favicon.ico

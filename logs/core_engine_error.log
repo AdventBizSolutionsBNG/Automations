@@ -5565,3 +5565,1061 @@ Traceback (most recent call last):
   File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
     raise IndexError("single positional indexer is out-of-bounds")
 IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:33:26,460-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:33:26,654-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:33:37,935-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:33:37,971-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:33:53,773-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:33:53,837-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:35:07,813-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:35:08,011-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:35:08,236-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:35:08,441-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:35:08,502-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:35:08,691-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:35:08,802-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:35:08,858-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:35:08,942-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:35:09,011-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:35:09,020-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:35:09,063-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:35:09,295-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:35:09,298-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:35:09,362-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:35:09,374-ERROR-main-19915::views|266:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 262, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:36:55,927-ERROR-main-21656::views|267:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:36:55,992-ERROR-main-21656::views|267:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:36:56,085-ERROR-main-21656::views|267:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:36:56,271-ERROR-main-21656::views|267:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:36:56,346-ERROR-main-21656::views|267:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:36:56,380-ERROR-main-21656::views|267:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:36:56,392-ERROR-main-21656::views|267:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:36:56,440-ERROR-main-21656::views|267:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:36:56,643-ERROR-main-21656::views|267:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:36:56,660-ERROR-main-21656::views|267:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:36:56,788-ERROR-main-21656::views|267:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:36:56,904-ERROR-main-21656::views|267:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:36:56,980-ERROR-main-21656::views|267:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:36:57,010-ERROR-main-21656::views|267:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:36:57,061-ERROR-main-21656::views|267:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:36:57,061-ERROR-main-21656::views|267:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    value = datadf.iloc[0,0]        # for single value- first row + first column
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1762, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2067, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 703, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 1994, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2020-09-07 17:39:12,380-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:12,436-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:12,507-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:12,565-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:12,578-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:12,620-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:12,651-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:12,837-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:12,922-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:12,971-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,014-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,031-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,063-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,114-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,140-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,155-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,259-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,292-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,386-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,428-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,432-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,451-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,518-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,521-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,575-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,612-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,634-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,658-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,685-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,708-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,741-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-07 17:39:13,767-ERROR-main-21764::views|270:: Error occurred in executing Value/Indicator Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 263, in execute_value_query
+    if datadf:
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/generic.py", line 1478, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2020-09-08 04:11:52,577-ERROR-main-22356::views|179:: Error occurred in executing Chart Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 162, in execute_chart_query
+    my_labels = datadf[0].to_list()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+2020-09-08 04:11:52,778-ERROR-main-22356::views|179:: Error occurred in executing Chart Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 162, in execute_chart_query
+    my_labels = datadf[0].to_list()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+2020-09-08 04:18:30,815-ERROR-main-22356::views|179:: Error occurred in executing Chart Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 162, in execute_chart_query
+    my_labels = datadf[0].to_list()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+2020-09-08 04:18:30,817-ERROR-main-22356::views|179:: Error occurred in executing Chart Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 162, in execute_chart_query
+    my_labels = datadf[0].to_list()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+2020-09-08 04:19:23,605-ERROR-main-22356::views|179:: Error occurred in executing Chart Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 162, in execute_chart_query
+    my_labels = datadf[0].to_list()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+2020-09-08 04:19:23,607-ERROR-main-22356::views|179:: Error occurred in executing Chart Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 162, in execute_chart_query
+    my_labels = datadf[0].to_list()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+2020-09-08 04:20:38,943-ERROR-main-22356::views|179:: Error occurred in executing Chart Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 162, in execute_chart_query
+    my_labels = datadf[0].to_list()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+2020-09-08 04:20:38,969-ERROR-main-22356::views|179:: Error occurred in executing Chart Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 162, in execute_chart_query
+    my_labels = datadf[0].to_list()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+2020-09-08 04:21:04,258-ERROR-main-22356::views|179:: Error occurred in executing Chart Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 162, in execute_chart_query
+    my_labels = datadf[0].to_list()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+2020-09-08 04:21:04,259-ERROR-main-22356::views|179:: Error occurred in executing Chart Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 162, in execute_chart_query
+    my_labels = datadf[0].to_list()
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 0
+2020-09-08 04:24:42,782-ERROR-main-28032::views|181:: Error occurred in executing Chart Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 178, in execute_chart_query
+    return JsonResponse(output)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/http/response.py", line 554, in __init__
+    raise TypeError(
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+2020-09-08 04:24:42,785-ERROR-main-28032::views|181:: Error occurred in executing Chart Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 178, in execute_chart_query
+    return JsonResponse(output)
+  File "/home/setupadmin/tools/anaconda3/envs/adbizEnv/lib/python3.8/site-packages/django/http/response.py", line 554, in __init__
+    raise TypeError(
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+2020-09-08 05:13:38,205-ERROR-main-31630::views|222:: Error occurred in executing Table Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 216, in execute_table_query
+    if not datadf.empty:
+AttributeError: 'str' object has no attribute 'empty'
+2020-09-08 05:13:38,286-ERROR-main-31630::views|222:: Error occurred in executing Table Query!!
+Traceback (most recent call last):
+  File "/home/setupadmin/adbiz/components/Web/api/adbizIO/adbizIOEngine/views.py", line 216, in execute_table_query
+    if not datadf.empty:
+AttributeError: 'str' object has no attribute 'empty'

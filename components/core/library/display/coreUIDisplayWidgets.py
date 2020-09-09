@@ -248,7 +248,7 @@ def get_api_payload(call_type, md_api_method_details):
         log = logging.getLogger("main")
         for method_detail in md_api_method_details:
             if method_detail["call_type"] == call_type:
-                payload = method_detail["payload"]
+                payload = method_detail["widget_payload"]
                 return payload
         return None
     except Exception as e:

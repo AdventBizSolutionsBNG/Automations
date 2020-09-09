@@ -124,9 +124,23 @@ def generate_table_container_tags(md_corelib_display_components):
         return None
 
 
-def generate_table_tags(my_component,  component_display_id, my_chart_id, md_corelib_display_components):
+def generate_table_tags(my_component,  component_display_id, my_chart_id, md_corelib_display_components, api_call_type):
     try:
         log = logging.getLogger("main")
+
+        md_extraction_metadata = md_corelib_display_components["data_extraction"]
+        log.info("Core Library: Retrieving Extraction methods metadata for the Widget")
+        for methods in md_extraction_metadata:
+            if methods["method"] == "api":
+                method_details = methods["method_details"]
+                md_api_method_details = method_details
+
+        log.info("Core Library: Retrieving API Extraction methods metadata for the Chart")
+        md_api_method_value_tags = get_api_tags("chart", api_call_type, md_api_method_details)
+
+        log.info("Core Library: Retrieving API Payload metadata for the Chart")
+        md_api_payload = get_api_payload(api_call_type, md_api_method_details)
+
         # loading table queries for the current chart
         log.info("Core Library: Loading Table Queries from Display Properties..")
         my_tables = my_component["display_properties"].get("tables")
@@ -195,9 +209,13 @@ def generate_table_tags(my_component,  component_display_id, my_chart_id, md_cor
                     my_table_title_element_id = "{table_title_" + str(my_table_id) + "}"
                     my_table_sub_title_element_id = "{table_sub_title_" + str(my_table_id) + "}"
 
+                    my_payload = md_api_payload.replace("{TABLE QUERY}", my_table_query) \
+                        .replace("{PERIOD START DATE}", 'periodStartDate') \
+                        .replace('{PERIOD END DATE}', 'periodEndDate')
+
                     log.info("Core Library: Processing Table API Tags : %s", my_table_display_id)
                     my_table_api_tags = md_api_tags.replace("{URL}", md_url) \
-                        .replace("{TABLE QUERY}", my_table_query) \
+                        .replace("{PAYLOAD}", my_payload) \
                         .replace("{TABLE DISPLAY ID}", my_table_display_id)\
                         .replace("{TABLE OBJECT ID}",my_table_object_id)
                         # .replace("{TABLE TITLE ELEMENT ID}", my_table_title_element_id)\
@@ -251,3 +269,29 @@ def generate_table_tags(my_component,  component_display_id, my_chart_id, md_cor
             table_output = {"table_tags": "", "table_display_ids": "", "errors": errmsg}
             return table_output
 
+# Generic function to retrieve the metadata for a particular object Type
+def get_api_tags(object_type, call_type, md_api_method_details):
+    try:
+        log = logging.getLogger("main")
+
+        for method_detail in md_api_method_details:
+            if method_detail["call_type"] == call_type:
+                for objects in method_detail["objects"]:
+                    if objects["object_type"] == object_type:
+                        return(objects["tags"])
+        return None
+    except Exception as e:
+        log.error("Error in Extracting metadata for API", exc_info=True)
+        return None
+
+def get_api_payload(call_type, md_api_method_details):
+    try:
+        log = logging.getLogger("main")
+        for method_detail in md_api_method_details:
+            if method_detail["call_type"] == call_type:
+                payload = method_detail["table_payload"]
+                return payload
+        return None
+    except Exception as e:
+        log.error("Error in extracting payload metadata for API", exc_info=True)
+        return None

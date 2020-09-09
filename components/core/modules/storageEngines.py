@@ -23,6 +23,7 @@ class DataLakeStorage:
 
             if self.validate_connection():
                 print("Successfully connected to Data lake storage system!!")
+
         except Exception as e:
             print("Error in setting up Data lake Storage Engine!!", e)
 
@@ -43,6 +44,10 @@ class DataLakeStorage:
 
     def get_data_lake_engine_class(self):
         return self._reference_class
+
+    def get_datalake_storage(self):
+        storage = {"engine_type": self._engine_type, "engine_sub_type": self._engine_sub_type, "host_name": self._target_host_name, "user_name": self._user, "password": self._password , "port": self._port, "access_token": self._access_key, "reference_class": self._reference_class }
+        return storage
 
     # validate the settings by connecting to the target storage system on init
     def validate_connection(self):

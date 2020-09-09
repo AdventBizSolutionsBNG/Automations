@@ -45,7 +45,7 @@ class Settings:
 
             for k, v in fdata.items():
                 if k == "data_lake_storage":
-                    self._datalake_storage = DataLakeStorage(v)
+                    self._datalake_storage = DataLakeStorage(v).get_datalake_storage()
 
                 if k == "calendars":
                     self._calendar_datasets = CalendarEngine(v).get_calendar_data()
